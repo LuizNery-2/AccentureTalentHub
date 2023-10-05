@@ -6,103 +6,11 @@
     
 }
 
-#body_login{
-    background-image: linear-gradient(#3B0B5A, #000000);
-}
-
-#box_center{
-    width: 95%;
-    margin: auto;
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 6%;
-}
-
-#box_login{
-    width: 450px;
-    height: 350px;
-    background-color: #fff;
-    
-    border-radius: 15px;
-}
-
-#box_login{
-    margin: 0;
-    padding: 1%;
-}
-
-#box_login h2{
-    color: #3B0B5A;
-    font-family: 'Inter', sans-serif;
-    font-weight: 700;
-    text-align: center;
-    margin-top: 3%;
-}
-
-#form_login{
-    width: 90%;
-    margin: auto;
-    text-align: center;
-}
-
-#form_login label{
-    display: block;
-    margin-top: 3%;
-    color: #6404A3;
-    font-family: 'Inter', sans-serif;
-    font-weight: 600;
-    text-align: left;
-}
-
-#form_login input[type='text'], #form_login input[type='password']{
-    display: block;
+html, body{
     width: 100%;
-    height: 40px;
-    margin-top: 1%;
-    margin-bottom: 3%;
-    border: 1px solid #280036;
-    border-radius: 8px;
-    padding-left: 2%;
-}
-
-#form_login input[type='submit']{
-    display: block;
-    width: 100%;
-    height: 40px;
-    margin-top: 10%;
-    margin-bottom: 5%;
-    border: none;
-    background-color: #3C2245;
-    cursor: pointer;
-    color: #fff;
-}
-
-#form_login a{
-    color: #B05CEF;
-    margin-top: 10%;
-    text-decoration: none;
-}
-
-#box_name_plataform{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    width: 100%;
-    margin-top: 10%;
-    color: #B05CEF;
-}
-
-.line{
-    width: 40%;
-    font-size: 1px;
-    border-bottom: 1px solid #B05CEF;
-}
-
-#footer_login{
-    color: #969696;
-    text-align: center;
-    padding: 2% 0;
+    height: 100%;
+    max-width: 1366px;
+    margin: 0 auto;
 }
 
 
@@ -127,14 +35,14 @@ nav{
     position: fixed;
 }
 
-ul{
+.lista_dashboard{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-li{
+.lista_dashboard li{
     list-style: none;
     width: 60px;
     height: 60px;
@@ -285,4 +193,44 @@ li{
     background-color: #3B0B5A;
     text-align: center;
     padding: 1% 0;
+}
+
+
+
+
+
+#box_center_primeiro_acesso p{
+    color: #B05CEF;
+    font-size: 20px;
+}
+
+#box_center_primeiro_acesso h1{
+    color: #fff;
+    font-size: 60px;
+    padding: 0 5%;
+}
+
+#box_center_primeiro_acesso{
+    width: 95%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-top: 6%;
+}
+
+#lista_primeiro_acesso li{
+    list-style: none;
+    text-align: left;
+    font-size: 14px;
+    color: #B05CEF;
+}
+
+#body_primeiro_acesso{
+    /* background-image: linear-gradient(#3B0B5A, #000000); */
+    background-color: #200533;
+    background-image: url('../img/fundo_left.png');
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: 27%;
 }

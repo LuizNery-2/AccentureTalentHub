@@ -11,20 +11,42 @@
     <link rel="stylesheet" type="text/css" href="../static/css/indexstyle.css">
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
-<body id="body_login">
+<body id="body_primeiro_acesso">
     <br>
     <section id="box_center">
-        <div id="box_login">
-            <h2>Conectar</h2>
-            <form id="form_login">
-                <label>Usuário</label>
-                <input id="usuarioLogin" type="text" name="usuarioLogin" required>
-                <label>Senha</label>
-                <input id="senhaLogin" type="password" name="senhaLogin" required>
-                <input id="validarLogin" type="submit" name="validarLogin" value="Entrar">
-                <a href="#">Esqueci minha senha</a>
-            </form>
+
+        <div id="box_center_primeiro_acesso">
+            <div class="box_center_txt">
+
+                <div>
+                    <p>Bem-vindo a nossa plataforma!</p>
+                    <h1>Primeiro Acesso</h1>
+                </div>
+    
+                <div>
+                    <img src="../static/img/chave.png">
+                </div>
+            </div>
+    
+            <div id="box_login">
+                <form id="form_login">
+                    <label>Insira sua nova senha</label>
+                    <input id="usuarioLogin" type="text" name="usuarioLogin" required>
+                    <ul id="lista_primeiro_acesso">
+                        <li>* Mínimo de 8 caracteres</li>
+                        <li>* Letras minúsculas e maiúsculas</li>
+                        <li>* Caracteres especiais.</li>
+                        <li>* Lembre-se de criar uma senha diferente das que você já utiliza</li>
+                    </ul>
+    
+                    <label>Confirme sua senha</label>
+                    <input id="senhaLogin" type="password" name="senhaLogin" required>
+                    <input id="validarLogin" type="submit" name="validarLogin" value="Cadastrar">
+                </form>
+            </div>
         </div>
+
+        
         
 
         <section id="box_name_plataform">
