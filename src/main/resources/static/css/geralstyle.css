@@ -1,0 +1,288 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+#body_login{
+    background-image: linear-gradient(#3B0B5A, #000000);
+}
+
+#box_center{
+    width: 95%;
+    margin: auto;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 6%;
+}
+
+#box_login{
+    width: 450px;
+    height: 350px;
+    background-color: #fff;
+    
+    border-radius: 15px;
+}
+
+#box_login{
+    margin: 0;
+    padding: 1%;
+}
+
+#box_login h2{
+    color: #3B0B5A;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 3%;
+}
+
+#form_login{
+    width: 90%;
+    margin: auto;
+    text-align: center;
+}
+
+#form_login label{
+    display: block;
+    margin-top: 3%;
+    color: #6404A3;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    text-align: left;
+}
+
+#form_login input[type='text'], #form_login input[type='password']{
+    display: block;
+    width: 100%;
+    height: 40px;
+    margin-top: 1%;
+    margin-bottom: 3%;
+    border: 1px solid #280036;
+    border-radius: 8px;
+    padding-left: 2%;
+}
+
+#form_login input[type='submit']{
+    display: block;
+    width: 100%;
+    height: 40px;
+    margin-top: 10%;
+    margin-bottom: 5%;
+    border: none;
+    background-color: #3C2245;
+    cursor: pointer;
+    color: #fff;
+}
+
+#form_login a{
+    color: #B05CEF;
+    margin-top: 10%;
+    text-decoration: none;
+}
+
+#box_name_plataform{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 10%;
+    color: #B05CEF;
+}
+
+.line{
+    width: 40%;
+    font-size: 1px;
+    border-bottom: 1px solid #B05CEF;
+}
+
+#footer_login{
+    color: #969696;
+    text-align: center;
+    padding: 2% 0;
+}
+
+
+
+
+
+/* css do menu lateral */
+
+#body_dashboard{
+    background-color: #1D0D28;
+    display: flex;
+}
+
+nav{
+    width: 120px;
+    height: 100%;
+    background-color: #0E0E0E;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+}
+
+ul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+li{
+    list-style: none;
+    width: 60px;
+    height: 60px;
+    margin: 10% 0;
+    border: 1px solid #5B2182;
+    background-color: #5B2182;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.active{
+    background-color: transparent;
+}
+
+.icon_menu{
+    width: 40px;
+}
+
+#logo{
+    border: none;
+    background-color: transparent;
+    width: 90px;
+}
+
+#icon_usuario_menu{
+    margin-bottom: 10%;
+}
+
+/* css do menu lateral */
+
+#box_info_dashboard{
+    width: 80%;
+    margin: auto;
+    margin-top: 5%;
+    margin-left: 15%;
+}
+
+#box_perfil{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#box_info_perfil{
+    width: 100%;
+    display: flex;
+}
+
+#info_perfil{
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#txt_perfil{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+#txt_perfil h3{
+    font-size: 35px;
+    color: #fff;
+}
+
+#txt_perfil p{
+    background-color: #9200FF;
+    width: 100px;
+    height: 16px;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #fff;
+    margin-top: 10px;
+}
+
+#box_info_perfil img{
+    width: 130px;
+}
+
+#barra_progresso{
+    width: 100%;
+    height: 20px;
+    border-radius: 10px;
+    background-color: #C881FD;
+}
+
+
+/* Código da barra de pesquisa */
+
+.search-container {
+    position: relative;
+    width: 400px;
+    margin: 0 auto;
+}
+
+.search-container input[type="search"] {
+    width: 400px;
+    padding: 10px 30px 10px 10px;
+    border: 1px solid #B05CEF;
+    border-radius: 120px;
+    background-color: transparent;
+    outline: none;
+    color: #fff;
+}
+
+.search-container i.fas.fa-search {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    color: #B05CEF;
+    cursor: pointer;
+}
+
+/* Código da barra de pesquisa */
+
+#line_perfil{
+    margin: 5% 0;
+    border-bottom: 1px solid #E1BBFD;
+}
+
+.txt_trilhas_cursos{
+    display: flex;
+    align-items: center;
+}
+
+.txt_trilhas_cursos h2{
+    color: #B05CEF;
+    margin-bottom: 1%;
+}
+
+#icon_trilha{
+    width: 30px;
+    margin-bottom: 1%;
+}
+
+.multiple-items img{
+    margin-right: 1%;
+}
+
+.footer_geral{
+    color: #969696;
+    background-color: #3B0B5A;
+    text-align: center;
+    padding: 1% 0;
+}
