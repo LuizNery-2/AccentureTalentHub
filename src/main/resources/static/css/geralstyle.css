@@ -207,16 +207,16 @@ nav{
 #box_center_primeiro_acesso h1{
     color: #fff;
     font-size: 60px;
-    padding: 0 5%;
+    padding-right: 5%;
 }
 
 #box_center_primeiro_acesso{
-    width: 95%;
+    width: 90%;
     margin: auto;
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding-top: 6%;
+    padding: 0 8%;
 }
 
 #lista_primeiro_acesso li{
@@ -227,10 +227,11 @@ nav{
 }
 
 #body_primeiro_acesso{
-    /* background-image: linear-gradient(#3B0B5A, #000000); */
-    /* background-color: #200533; */
     background-image: url('../img/fundo_rigth.png');
-    /* background-position: right; */
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: 100% 100%;
+}
+
+.box_center_txt{
+    margin: auto;
 }
