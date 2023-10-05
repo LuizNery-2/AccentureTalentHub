@@ -4,6 +4,7 @@
     background-image: url('../img/fundo_down.png');
     background-position: bottom;
     background-repeat: no-repeat;
+    background-size: 100%;
 }
 
 #box_center{
