@@ -6,20 +6,12 @@
     
 }
 
-#box_name_plataform{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+html, body{
     width: 100%;
-    margin-top: 10%;
-    color: #B05CEF;
+    max-width: 1366px;
+    margin: 0 auto;
 }
 
-.line{
-    width: 40%;
-    font-size: 1px;
-    border-bottom: 1px solid #B05CEF;
-}
 
 
 

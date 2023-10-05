@@ -80,6 +80,21 @@
     text-decoration: none;
 }
 
+#box_name_plataform{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 8%;
+    color: #B05CEF;
+}
+
+.line{
+    width: 40%;
+    font-size: 1px;
+    border-bottom: 1px solid #B05CEF;
+}
+
 #footer_login{
     color: #969696;
     text-align: center;
