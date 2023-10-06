@@ -1,3 +1,12 @@
+html, body{
+    width: 100%;
+    max-width: 1366px;
+    margin: 0 auto;
+    background-image: url('../img/fundo_down.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
 #box_center{
     width: 95%;
     margin: auto;
