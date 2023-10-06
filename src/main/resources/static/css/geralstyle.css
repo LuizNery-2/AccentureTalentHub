@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Marcellus+SC&family=Poppins:wght@700&display=swap');
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
+    font-family: 'Poppins', sans-serif;
 }
 
 html, body{
@@ -12,10 +12,6 @@ html, body{
     max-width: 1366px;
     margin: 0 auto;
 }
-
-
-
-
 
 /* css do menu lateral */
 
@@ -199,39 +195,3 @@ nav{
 
 
 
-#box_center_primeiro_acesso p{
-    color: #B05CEF;
-    font-size: 20px;
-}
-
-#box_center_primeiro_acesso h1{
-    color: #fff;
-    font-size: 60px;
-    padding-right: 5%;
-}
-
-#box_center_primeiro_acesso{
-    width: 90%;
-    margin: auto;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 0 8%;
-}
-
-#lista_primeiro_acesso li{
-    list-style: none;
-    text-align: left;
-    font-size: 14px;
-    color: #B05CEF;
-}
-
-#body_primeiro_acesso{
-    background-image: url('../img/fundo_rigth.png');
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-}
-
-.box_center_txt{
-    margin: auto;
-}
