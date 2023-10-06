@@ -1,3 +1,12 @@
+html, body{
+    width: 100%;
+    max-width: 1366px;
+    margin: 0 auto;
+    background-image: url('../img/fundo_rigth.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
 #box_center_primeiro_acesso p{
     color: #B05CEF;
     font-size: 20px;
