@@ -2,12 +2,13 @@
 html, body{
     width: 100%;
     max-width: 1366px;
-    height: 100%;
+    /* height: 100%;
     max-height: 641px;
+    overflow-y: auto; */
     margin: 0 auto;
     background-image: url('../img/fundo_top.png');
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: 100% 100%;
 }
 
 main{
@@ -16,8 +17,8 @@ main{
 }
 
 #box_info_dashboard{
-    width: 90%;
-    margin: 0 auto;
+    width: 100%;
+    padding-left: 5%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -48,6 +49,12 @@ main{
     flex-direction: column;
     justify-content: space-around;
     margin-left: 2%;
+}
+
+#info_perfil p{
+    text-align: right;
+    color: #fff;
+    font-size: 12px;
 }
 
 #txt_perfil{
@@ -113,9 +120,11 @@ main{
 
 /* Código da barra de pesquisa */
 
-#line_perfil{
-    margin: 5% 0;
-    border-bottom: 1px solid #E1BBFD;
+
+
+.box_trilhas{
+    width: 90%;
+    margin: 2% auto;
 }
 
 .txt_trilhas_cursos{
@@ -129,10 +138,56 @@ main{
 }
 
 #icon_trilha{
-    width: 30px;
+    width: 30px !important;
     margin-bottom: 1%;
 }
 
-.multiple-items img{
-    margin-right: 1%;
+#box_exemplos_cursos{
+    margin: 2% 0;
 }
+
+.multiple-items img{
+    width: 400px !important;
+    border-radius: 10px;
+}
+
+.multiple-items a{
+    margin-right: 2% !important;
+}
+
+.multiple-items, .multiple-items-cursos{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    overflow-x: scroll;
+}
+
+.multiple-items::-webkit-scrollbar{
+    height: 7px;
+}
+
+.multiple-items::-webkit-scrollbar-thumb {
+    background-color: #B05CEF;
+    border-radius: 3.5px;
+    cursor: pointer;
+}
+
+.multiple-items-cursos::-webkit-scrollbar{
+    height: 7px;
+}
+
+.multiple-items-cursos::-webkit-scrollbar-thumb {
+    background-color: #B05CEF;
+    border-radius: 3.5px;
+    cursor: pointer;
+}
+
+.multiple-items-cursos img{
+    width: 300px !important;
+    border-radius: 10px;
+}
+
+.multiple-items-cursos a{
+    margin-right: 2% !important;
+}
+

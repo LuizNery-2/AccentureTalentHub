@@ -12,12 +12,13 @@
 nav{
     width: 90px;
     height: 100%;
+    max-height: 1550px;
     background-color: #0E0E0E;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    /* position: fixed; */
+    position: fixed;
 }
 
 .lista_dashboard{
