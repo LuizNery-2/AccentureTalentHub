@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');html, body{
+    width: 100%;
+    max-width: 1366px;
+    /* height: 100%;
+    max-height: 641px;
+    overflow-y: auto; */
+    margin: 0 auto;
+    background-image: url('../img/fundo_top.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+#Icon_filtrar{
+    width: 60px !important;
+    height: 48px;
+    cursor: pointer;
+}
+
+#title_curso{
+    color: #fff;
+    text-align: left !important;
+    font-size: 50px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    margin-top: 5%;
+}
+
+.box_filtro{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.lista_filtro{
+    display: flex;
+}
+
+.lista_filtro li{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 2%;
+    font-size: 14px;
+    width: 120px;
+    border: 1px solid #E1BBFD;
+    border-radius: 15px;
+    margin-left: 2%;
+    color: #FFF;
+}
+
+.icon_fechar{
+    width: 15px !important;
+    margin-left: 2%;
+    cursor: pointer;
+}
