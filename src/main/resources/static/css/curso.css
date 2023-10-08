@@ -54,3 +54,60 @@
     margin-left: 2%;
     cursor: pointer;
 }
+
+.center_cursos{
+    display: flex;
+    justify-content: space-between;
+    margin: 2% 0;
+}
+
+.box_curso{
+    background-color: #3B0B5A;
+    padding: 2%;
+    border-radius: 10px;
+    height: 280px;
+    width: 300px;
+}
+
+.info_curso{
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+}
+
+.info_curso img{
+    width: 250px !important;
+    border-radius: 10px;
+}
+
+.info_curso ul{
+    display: flex;
+}
+
+.info_curso h2{
+    font-weight: 500;
+    margin: 2% 0;
+}
+
+.info_curso ul li{
+    list-style: none;
+    margin-right: 5%;
+    font-size: 12px;
+}
+
+.info_curso button{
+    height: 30px;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 5%;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background-color: #E1BBFD;
+}
+
+.info_curso button:hover{
+    background-color: #5B2182;
+    border: 1px solid #FFF;
+    color: #fff;
+}
