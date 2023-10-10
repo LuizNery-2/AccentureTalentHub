@@ -21,6 +21,8 @@ html, body{
     height: 350px;
     background-color: #fff;
     border-radius: 15px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
 }
 
 #box_login{
@@ -67,7 +69,7 @@ html, body{
     width: 80%;
     height: 40px;
     margin: 0 auto;
-    margin-top: 10%;
+    margin-top: 5%;
     margin-bottom: 5%;
     border: none;
     border-radius: 18px;

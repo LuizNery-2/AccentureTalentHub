@@ -7,6 +7,13 @@
     font-family: 'Poppins', sans-serif;
 }
 
+html, body{
+    width: 100%;
+    max-width: 1366px;
+    margin: 0 auto;
+    background-color: #1D0D28;
+}
+
 /* css do menu lateral */
 
 nav{

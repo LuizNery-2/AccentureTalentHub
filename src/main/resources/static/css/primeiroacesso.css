@@ -2,7 +2,7 @@ html, body{
     width: 100%;
     max-width: 1366px;
     margin: 0 auto;
-    background-image: url('../img/fundo_rigth.png');
+    background-image: url('../img/fundo_rigth.png') !important;
     background-repeat: no-repeat;
     background-size: 100%;
 }
