@@ -5,7 +5,7 @@
 	<meta name="description" content="">
 	<meta name="keywords" content="palavras,separadas,por,vírgulas">
 	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
-	<title>AccentureTalentHub | Login</title>
+	<title>AccentureTalentHub | Recuperar senha</title>
 	<link rel="shortcut icon" href="../static/img/logo_accenture.png" type="image/x-icon">
 	<link rel="stylesheet" type="text/css" href="../static/css/geralstyle.css">
     <link rel="stylesheet" type="text/css" href="../static/css/indexstyle.css">
@@ -13,15 +13,13 @@
 </head>
 <body id="body_login">
     <section id="box_center">
-        <div id="box_login">
-            <h2>Conectar</h2>
+        <div style="width: 500px; height: 100%;" id="box_login">
+            <h2>Esqueci minha senha</h2>
+            <br>
             <form id="form_login">
-                <label>Usuário</label>
-                <input id="usuarioLogin" type="text" name="usuarioLogin" required>
-                <label>Senha</label>
-                <input id="senhaLogin" type="password" name="senhaLogin" required>
-                <input id="validarLogin" type="submit" name="validarLogin" value="Entrar">
-                <a href="recuperar_senha.html">Esqueci minha senha</a>
+                <label>Insira seu e-mail corporativo:</label>
+                <input id="" type="text" name="" required>
+                <input id="recuperar_senha" type="submit" name="" value="Enviar mensagem">
             </form>
         </div>
         
@@ -40,20 +38,19 @@
 
 	
 
-	
+
+
 	<script>
         $(document).ready(function(){
             $("#box_center").fadeIn(2000);
             $("#box_center").css("display", "flex");
 
-            $("#validarLogin").click(function() {
+            $('#recuperar_senha').click(function() {
+                alert('E-mail enviado com sucesso!');
                 window.location.href = 'primeiroacesso.html';
             })
 
         });
-
-
-
     </script>
 </body>
 </html>
