@@ -101,14 +101,14 @@
                     <div class="center_cursos"> <!--Aqui só pode ter três divs de cursos. -->
                         <div class="box_curso">
                             <div class="info_curso">
-                                <img src="../static/img/curso_js.png" alt="">
+                                <img class="img_curso" src="../static/img/curso_js.png" alt="">
                                 <h2>Curso JavaScript</h2>
                                 <ul>
                                     <li>P.O.O</li>
                                     <li>CSS</li>
                                     <li>JavaScript-puro</li>
                                 </ul>
-                                <button>Saiba mais</button>
+                                <button class="button_curso">Saiba mais</button>
                             </div>
                         </div>
 
@@ -183,20 +183,29 @@
             </div>
 
             <section class="modal">
-                <img style="width: 30px; cursor: pointer;" src="../static/img/icon_fechar.png">
-                <div>
-                    <div id="capa_curso"></div>
+                <div style="display: flex; justify-content: space-between;">
+                    <div></div>
+                    <img id="fechar_modal" style="width: 15px; cursor: pointer;" src="../static/img/icon_fechar.png">
+                </div>
+                
+                <div id="detalhe_curso">
+                    <div id="capa_curso">
+                        <img src="../static/img/curso_js.png" alt="">
+                        <p class="txt_info_curso">Horas totais: 5H</p>
+                        <p class="txt_info_curso">Instrutor: Jorge Dário</p>
+                        <p class="txt_info_curso">Categorias: P.O.O | CSS | JavaScript-puro</p>
+                    </div>
                     <div>
-                        <h3>Curso JavaScript</h3>
-                        <p>Mussum Ipsum, cacilds vidis litro abertis.  Mé faiz elementum girarzis, 
+                        <h3 style="text-align: center; color: #fff; font-weight: normal;">Curso JavaScript</h3>
+                        <br>
+                        <p style="margin-bottom: 0.5%; color: #fff;">Mussum Ipsum, cacilds vidis litro abertis.  Mé faiz elementum girarzis, 
+                            nisi eros vermeio. Mais vale um bebadis conhecidiss, que um alcoolatra anonimis.Mussum Ipsum, cacilds vidis litro abertis.  Mé faiz elementum girarzis, 
                             nisi eros vermeio. Mais vale um bebadis conhecidiss, que um alcoolatra anonimis.</p>
-                        <p>Horas totais: 5H</p>
-                        <p>Instrutor: Jorge Dário</p>
+                       
                         <input id="" type="submit" name="" value="Adicionar a sua sala">
                     </div>
                     
                 </div>
-                
             </section>
 
         </section>
@@ -209,6 +218,20 @@
     <footer class="footer_geral">
         <p>© 2023 AccentureTalentHub.Inc | Todos os direitos reservados </p>
     </footer>
+
+    <script>
+        $(document).ready(function(){
+            $(".button_curso").click(function() {
+                $(".modal").css("display", "flex");
+            });
+            
+            $("#fechar_modal").click(function() {
+                $(".modal").css("display", "none");
+            });
+            
+
+        });
+    </script>
 
 </body>
 </html>

@@ -118,3 +118,60 @@ header h1{
     border: 1px solid #FFF;
     color: #fff;
 }
+
+
+.modal{
+    width: 700px;
+    height: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #3F115F;
+    padding: 1%;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#detalhe_curso{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10%;
+}
+
+#detalhe_curso p {
+    font-size: 13px;
+    padding: 0 5%;
+    text-align: justify;
+}
+
+.txt_info_curso{
+    color: #C881FD;
+    padding: 0 1% !important;
+}
+
+#capa_curso img{
+    width: 400px;
+    border-radius: 15px;   
+}
+
+input[type='submit']{
+    display: block;
+    width: 80%;
+    height: 40px;
+    margin: 0 auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    border: none;
+    border-radius: 18px;
+    background-color: #5B2182;
+    cursor: pointer;
+    color: #fff;
+}
+
+input[type='submit']:hover{
+    background-color: #CD41FF;
+}
+
