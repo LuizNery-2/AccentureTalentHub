@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+header{
+    background-image: url('../img/Sala1.png');
+    width: 100%;
+    height: 235px;
+    padding-left: 6%;
+}
+
+.info_sala{
+    width: 90%;
+    margin: 0 auto;
+    color: #B05CEF;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.info_sala_txt{
+    width: 50%;
+}
+
+.info_sala_txt h1{
+    font-size: 45px;
+}
+
+.info_sala_txt p{
+    font-size: 16px;
+}
+
+.info_sala_caracteristicas{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: right;
+}
+
+#titulo_chat{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    margin: 0 auto;
+}
+
+#titulo_chat span{
+    font-size: 22px;
+    color: #6404A3;
+}
+
+.border_dashed{
+    border-bottom: 5px dashed #5B2182;
+    width: 38%;
+    margin: 0 2%;
+}
