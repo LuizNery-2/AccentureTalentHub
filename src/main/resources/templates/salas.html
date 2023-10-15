@@ -104,7 +104,7 @@
                                 <div class="info_curso_txt">
                                     <h2>Sua sala Pessoal</h2>
                                     <p>Criada por você no dia 00/00/0000</p>
-                                    <button>Entrar</button>
+                                    <button id="minha_sala">Entrar</button>
                                 </div>  
                             </div>
                         </div>
@@ -113,14 +113,14 @@
                     <div class="center_cursos">
                         <div class="box_curso">
                             <div class="info_curso">
-                                <img src="../static/img/curso_js.png" alt="">
+                                <img src="../static/img/Sala2.png" alt="">
                                 <div class="info_curso_txt">
                                     <h2>Nome da Sala</h2>
                                     <p>Criada por xxxxxx no dia 00/00/0000</p>
                                     <p>Mussum Ipsum, cacilds vidis litro abertis. 
                                     In elementis mé pra quem é amistosis quis leo. 
                                     Negão é teu passadis, eu sou faxa pretis. </p>
-                                    <button>Entrar</button>
+                                    <button class="sala_de_aula">Entrar</button>
                                 </div>  
                             </div>
                         </div>
@@ -165,6 +165,20 @@
     <footer class="footer_geral">
         <p>© 2023 AccentureTalentHub.Inc | Todos os direitos reservados </p>
     </footer>
+
+    <script>
+        $(document).ready(function(){
+
+            $("#minha_sala").click(function() {
+                window.location.href = 'minha_sala_de_aula.html';
+            })
+
+            $(".sala_de_aula").click(function() {
+                window.location.href = 'sala_de_aula.html';
+            })
+
+        });
+    </script>
 
 </body>
 </html>
