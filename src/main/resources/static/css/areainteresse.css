@@ -70,3 +70,7 @@
     border-radius: 8px;
     background-color: #E1BBFD;
 }
+
+#enviar_resposta img{
+    width: 30px;
+}

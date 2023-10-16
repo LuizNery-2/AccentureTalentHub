@@ -18,11 +18,9 @@ html, body{
 
 #box_login{
     width: 450px;
-    height: 350px;
+    height: 400px;
     background-color: #fff;
     border-radius: 15px;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
 }
 
 #box_login{
@@ -46,7 +44,7 @@ html, body{
 
 #form_login label{
     display: block;
-    margin-top: 3%;
+    margin-top: 10%;
     color: #6404A3;
     font-family: 'Inter', sans-serif;
     font-weight: 600;
