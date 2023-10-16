@@ -47,8 +47,74 @@
     margin: 2% 0;
 }
 
-.fundo{
-    background-image: url('../img/Fundo_pixel.png');
-    width: 100%;
-    height: 231px;
+#info_instrutor{
+    display: flex;
+    align-items: center;
+    margin-top: 2%;
+}
+
+#info_instrutor img{
+    width: 120px;
+    height: 120px;
+}
+
+#info_instrutor span{
+    color: #B05CEF;
+    margin-left: 2%;
+}
+
+#box_modulos_curso{
+    /* background-color: red; */
+    width: 30%;
+    height: 100%;
+    max-height: 1136px;
+    color: #B05CEF;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+}
+
+#box_modulos_curso::-webkit-scrollbar{
+    width: 7px;
+}
+
+#box_modulos_curso::-webkit-scrollbar-thumb {
+    background-color: #B05CEF;
+    border-radius: 3.5px;
+    cursor: pointer;
+}
+
+.modulos_curso{
+    padding-left: 20%;
+    margin-top: 5%;
+}
+
+.titulo_modulo{
+    display: flex;
+    align-items: center;
+}
+
+.titulo_modulo h4{
+    color: #fff;
+    font-weight: normal;
+    margin-right: 8%;
+}
+
+.titulo_modulo img{
+    cursor: pointer;
+}
+
+.aulas_modulo{
+    padding-left: 8%;
+    margin-top: 3%;
+}
+
+.aulas_modulo img{
+    margin-right: 5%;
+}
+
+.aulas_modulo p {
+    color: #E1BBFD;
+    cursor: pointer;
 }
