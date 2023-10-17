@@ -128,10 +128,12 @@ header h1{
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: #3F115F;
+    border-radius: 15px;
     padding: 1%;
     display: none;
     flex-direction: column;
     justify-content: space-between;
+    
 }
 
 #detalhe_curso{

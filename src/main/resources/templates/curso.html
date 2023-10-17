@@ -182,32 +182,34 @@
                 </div>
             </div>
 
-            <section class="modal">
-                <div style="display: flex; justify-content: space-between;">
-                    <div></div>
-                    <img id="fechar_modal" style="width: 15px; cursor: pointer;" src="../static/img/icon_fechar.png">
+           
+
+        </section>
+
+        <section class="modal">
+            <div style="display: flex; justify-content: space-between;">
+                <div></div>
+                <img id="fechar_modal" style="width: 15px; cursor: pointer;" src="../static/img/icon_fechar.png">
+            </div>
+            
+            <div id="detalhe_curso">
+                <div id="capa_curso">
+                    <img src="../static/img/curso_js.png" alt="">
+                    <p class="txt_info_curso">Horas totais: 5H</p>
+                    <p class="txt_info_curso">Instrutor: Jorge Dário</p>
+                    <p class="txt_info_curso">Categorias: P.O.O | CSS | JavaScript-puro</p>
+                </div>
+                <div>
+                    <h3 style="text-align: center; color: #fff; font-weight: normal;">Curso JavaScript</h3>
+                    <br>
+                    <p style="margin-bottom: 0.5%; color: #fff;">Mussum Ipsum, cacilds vidis litro abertis.  Mé faiz elementum girarzis, 
+                        nisi eros vermeio. Mais vale um bebadis conhecidiss, que um alcoolatra anonimis.Mussum Ipsum, cacilds vidis litro abertis.  Mé faiz elementum girarzis, 
+                        nisi eros vermeio. Mais vale um bebadis conhecidiss, que um alcoolatra anonimis.</p>
+                   
+                    <input id="adicionar_sala" type="submit" name="" value="Adicionar a sua sala">
                 </div>
                 
-                <div id="detalhe_curso">
-                    <div id="capa_curso">
-                        <img src="../static/img/curso_js.png" alt="">
-                        <p class="txt_info_curso">Horas totais: 5H</p>
-                        <p class="txt_info_curso">Instrutor: Jorge Dário</p>
-                        <p class="txt_info_curso">Categorias: P.O.O | CSS | JavaScript-puro</p>
-                    </div>
-                    <div>
-                        <h3 style="text-align: center; color: #fff; font-weight: normal;">Curso JavaScript</h3>
-                        <br>
-                        <p style="margin-bottom: 0.5%; color: #fff;">Mussum Ipsum, cacilds vidis litro abertis.  Mé faiz elementum girarzis, 
-                            nisi eros vermeio. Mais vale um bebadis conhecidiss, que um alcoolatra anonimis.Mussum Ipsum, cacilds vidis litro abertis.  Mé faiz elementum girarzis, 
-                            nisi eros vermeio. Mais vale um bebadis conhecidiss, que um alcoolatra anonimis.</p>
-                       
-                        <input id="adicionar_sala" type="submit" name="" value="Adicionar a sua sala">
-                    </div>
-                    
-                </div>
-            </section>
-
+            </div>
         </section>
 
         
@@ -223,10 +225,12 @@
         $(document).ready(function(){
             $(".button_curso").click(function() {
                 $(".modal").css("display", "flex");
+                $("#box_info_dashboard").css("opacity", "0.5");
             });
             
             $("#fechar_modal").click(function() {
                 $(".modal").css("display", "none");
+                $("#box_info_dashboard").css("opacity", "1");
             });
 
             $("#adicionar_sala").click(function() {
