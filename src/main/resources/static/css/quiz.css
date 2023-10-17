@@ -1,0 +1,69 @@
+html, body{
+    width: 100%;
+    max-width: 1366px;
+    margin: 0 auto;
+    background-image: url('../img/fundo_down.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+#box_name_plataform{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 6%;
+    color: #B05CEF;
+}
+.tick, .tick1, .tick2, .tick3 {
+    position: absolute;
+    height: 14px;
+    width: 2px;
+    background-color: #fff;
+}
+.label, .label1, .label2, .label3 {
+    position: absolute;
+    font-size: 12px;
+    text-align: center;
+}
+.line{
+    width: 40%;
+    font-size: 1px;
+    border-bottom: 1px solid #B05CEF;
+}
+#line2, #line3, #line4, #line5 {
+    width: 70%;
+    font-size: 1px;
+    border-bottom: 1px solid #fff;
+    position: relative;
+    margin-top: 30px;
+}
+
+#footer_login{
+    color: #969696;
+    text-align: center;
+    padding: 1% 0;
+    padding-top: 0;
+} 
+#ball, #ball2, #ball3, #ball4 {
+    cursor: pointer;
+    width: 15px;
+    height: 15px;
+    background-color: #E1BBFD;
+    border-radius: 50%;
+    position: absolute;
+    transform: translate(210px, -7px);
+}
+#enviar_resposta{
+    display: flex;
+    width: 200px;
+    margin: 0px 80%;    justify-content: space-around;
+    align-items: center;
+    cursor: pointer;
+    color: #5B2182;
+    border-radius: 8px;
+    background-color: #E1BBFD;
+}
+
+#enviar_resposta img{
+    width: 30px;
+}
