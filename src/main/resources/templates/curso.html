@@ -202,7 +202,7 @@
                             nisi eros vermeio. Mais vale um bebadis conhecidiss, que um alcoolatra anonimis.Mussum Ipsum, cacilds vidis litro abertis.  Mé faiz elementum girarzis, 
                             nisi eros vermeio. Mais vale um bebadis conhecidiss, que um alcoolatra anonimis.</p>
                        
-                        <input id="" type="submit" name="" value="Adicionar a sua sala">
+                        <input id="adicionar_sala" type="submit" name="" value="Adicionar a sua sala">
                     </div>
                     
                 </div>
@@ -228,8 +228,11 @@
             $("#fechar_modal").click(function() {
                 $(".modal").css("display", "none");
             });
-            
 
+            $("#adicionar_sala").click(function() {
+                alert("Curso adicionado com sucesso!");
+                window.location.href = 'minha_sala_de_aula.html';
+            })
         });
     </script>
 

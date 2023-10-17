@@ -118,3 +118,13 @@
     color: #E1BBFD;
     cursor: pointer;
 }
+
+
+
+#box_sobre_instrutor, #box_forum{
+    display: none;
+}
+
+#box_descricao{
+    display: block;
+}

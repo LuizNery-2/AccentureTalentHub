@@ -66,12 +66,12 @@
                     <button>Concluir aula</button>
                 </div>
                 <br>
-                <div">
+                <div id="box_descricao">
                     <div id="box_info">
                         <ul>
-                            <li class="lista_action">Descrição</li>
-                            <li>Sobre o Instrutor</li>
-                            <li>Fórum</li>
+                            <li class="lista_descricao lista_action">Descrição</li>
+                            <li class="lista_sobre">Sobre o Instrutor</li>
+                            <li class="lista_forum">Fórum</li>
                             <li style="color: #B05CEF;">Horas Totais: 5H</li>
                         </ul>
                     </div>
@@ -81,12 +81,12 @@
                        que o mundo vai girarzis! Per aumento de cachacis, eu reclamis.
                     </p>
                 </div>
-                <div style="display: none;">
+                <div id="box_sobre_instrutor">
                     <div id="box_info">
                         <ul>
-                            <li>Descrição</li>
-                            <li class="lista_action">Sobre o Instrutor</li>
-                            <li>Fórum</li>
+                            <li class="lista_descricao">Descrição</li>
+                            <li class="lista_sobre lista_action">Sobre o Instrutor</li>
+                            <li class="lista_forum">Fórum</li>
                             <li style="color: #B05CEF;">Horas Totais: 5H</li>
                         </ul>
                     </div>
@@ -106,12 +106,12 @@
                     </div>
                 </div>
 
-                <div style="display: none;">
+                <div id="box_forum">
                     <div id="box_info">
                         <ul>
-                            <li>Descrição</li>
-                            <li>Sobre o Instrutor</li>
-                            <li class="lista_action">Fórum</li>
+                            <li class="lista_descricao">Descrição</li>
+                            <li class="lista_sobre">Sobre o Instrutor</li>
+                            <li class="lista_forum lista_action">Fórum</li>
                             <li style="color: #B05CEF;">Horas Totais: 5H</li>
                         </ul>
                     </div>
@@ -369,6 +369,29 @@
         <p>© 2023 AccentureTalentHub.Inc | Todos os direitos reservados </p>
     </footer>
 
+
+    <script>
+        $(document).ready(function(){
+            $(".lista_sobre").click(function() {
+                $("#box_sobre_instrutor").css("display", "block");
+                $("#box_descricao").css("display", "none");
+                $("#box_forum").css("display", "none");
+            });
+
+            $(".lista_forum").click(function() {
+                $("#box_descricao").css("display", "none");
+                $("#box_sobre_instrutor").css("display", "none");
+                $("#box_forum").css("display", "block");
+            });
+
+            $(".lista_descricao").click(function() {
+                $("#box_descricao").css("display", "block");
+                $("#box_sobre_instrutor").css("display", "none");
+                $("#box_forum").css("display", "none");
+            });
+            
+        });
+    </script>
 
 </body>
 </html>
