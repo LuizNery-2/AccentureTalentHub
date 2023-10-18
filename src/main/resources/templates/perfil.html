@@ -112,7 +112,7 @@
                 </div>
 
                 <div style="display: flex; flex-direction: column; align-items: center; margin-top: 5%;">
-                    <div class="button_carreira">
+                    <div class="button_carreira1">
                         <img src="../static/img/interativo.png">
                         <p style="color: #E1BBFD;">Atualizar Áreas de Interesse</p>
                     </div>
@@ -127,6 +127,47 @@
             </div>
         </div>
 
+    </section>
+
+    <section class="modal-senha">
+        <div style="display: flex; justify-content: space-between;">
+            <div></div>
+            <img id="fechar_modal-senha" style="width: 15px; cursor: pointer;" src="../static/img/icon_fechar.png">
+        </div>
+        
+        <div id="detalhe_senha">
+            <div id="alterar-senha">
+                <div style="display: flex; flex-direction: row; margin-left: 50px;">
+                    <img src="../static/img/redefinir-senha.png">
+                    <h3 style="color: #fff; font-weight: normal; font-size: 25px;">Alterar Senha</h3>
+                </div>
+
+                <div class="alterar-senha-inputs">
+
+                    <h4 style="color: #E1BBFD; font-size: 20px;">Insira sua senha mais recente</h4>
+                    <input type="text" style="border-radius: 10px; width: 100%;">
+                    
+                    <h4 style="color: #E1BBFD; font-size: 20px;">Insira sua nova senha</h4>
+                <input type="text" style="border-radius: 10px; width: 100%;" >
+                <p class="txt_info_curso-senha" style="font-size: 10px;">
+                    *Mínimo de 8 caracteres <br>
+                    *Letras minúsculas e maiúsculas <br>
+                    *Caracteres especiais. <br>
+                    *Lembre-se de criar uma senha diferente das que  você já utiliza.</p>
+                    
+                <h4 style="color: #E1BBFD; font-size: 20px;">Confirme sua senha</h4>
+                <input type="text" style="border-radius: 10px; width: 100%;">
+
+            </div>
+                
+                
+                    <input id="altere_Senha" type="submit" name="" value="Cadastrar">
+
+            </div>
+          
+            
+        </div>
+    </section>
         
     </main>
 
@@ -135,6 +176,20 @@
     <footer class="footer_geral">
         <p>© 2023 AccentureTalentHub.Inc | Todos os direitos reservados </p>
     </footer>
+
+    <script>
+        $(document).ready(function(){
+            $(".button_carreira").click(function() {
+                $(".modal-senha").css("display", "flex");
+                $("#box_info_dashboard").css("opacity", "0.5");
+            });
+            
+            $("#fechar_modal-senha").click(function() {
+                $(".modal-senha").css("display", "none");
+                $("#box_info_dashboard").css("opacity", "1");
+            })
+        });
+    </script>
 
 </body>
 </html>

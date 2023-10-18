@@ -92,7 +92,7 @@
     cursor: pointer;
 }
 
-.button_carreira{
+.button_carreira, .button_carreira1{
     background-color: #40165D;
     width: 50%;
     display: flex;
@@ -103,6 +103,66 @@
     cursor: pointer;
 }
 
-.button_carreira p{
+.button_carreira p, .button_carreira1 p{
     margin-left: 2%;
+}
+
+input[type='submit']{
+    display: block;
+    width: 80%;
+    height: 40px;
+    margin: 0 auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    border: none;
+    border-radius: 18px;
+    background-color: #5B2182;
+    cursor: pointer;
+    color: #fff;
+}
+
+input[type='submit']:hover{
+    background-color: #CD41FF;
+}
+
+#alterar-senha img{
+    width: 40px;
+    border-radius: 15px;   
+}
+
+#detalhe_senha{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40%;
+    font-size: 25px;
+}
+
+#detalhe_senha p {
+    /* font-size: 40px; */
+    padding: 0 5%;
+    text-align: justify;
+    margin: 30px
+}
+
+.modal-senha{
+    width: 500px;
+    height: 550px;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #3F115F;
+    border-radius: 15px;
+    padding: 1%;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+.txt_info_curso-senha{
+    color: #C881FD;
+}
+.alterar-senha-inputs{
+    margin-top: 40px;
 }
