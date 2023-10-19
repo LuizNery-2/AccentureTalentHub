@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Marcellus+SC&family=Poppins:wght@700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
 *{
     margin: 0;
     padding: 0;
@@ -16,7 +15,7 @@ html, body{
 
 /* css do menu lateral */
 
-nav{
+#menu-desktop{
     width: 90px;
     height: 100%;
     max-height: 1550px;
@@ -52,6 +51,131 @@ nav{
 }
 
 /* css do menu lateral */
+
+/* css do menu lateral RESPONSIVO*/
+
+.nav-responsivo{
+    width: 220px;
+    height: 100%;
+    background-color: #0E0E0E;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-left: 1rem;
+    position: fixed;
+    /* transition: right 5s ease; */
+}
+
+.lista_dashboard-responsivo{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 0.1rem;
+    margin-top: 5px;
+}
+
+.lista_dashboard-responsivo p{
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    color:#C881FD
+}
+
+.lista_dashboard-responsivo a{
+    text-decoration: none; 
+    color: inherit; 
+    cursor: pointer;
+}
+
+.lista_dashboard-responsivo li{
+    list-style: none;
+    display: flex;
+    padding: 8px
+}
+
+.icon_menu-responsivo{
+    width: 25px;
+}
+
+#icon_usuario_menu-responsivo{
+    margin-bottom: 10%;
+}
+
+.link-page-responsivo {
+    display: flex;
+    flex-direction: row;
+    gap: 0.75rem;
+}
+
+#logo-responsivo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#logo-responsivo p{
+    color:#FFFFFF
+}
+
+#logo-responsivo img{
+    width: 30px;
+}
+
+#icon_fechar-responsivo{
+    align-self: flex-end;
+    cursor: pointer;
+}
+
+#icon-menu-responsivo{
+    margin-top: 20px;
+    display: none;
+    height: 52px;
+    background-color: #0E0E0E;
+    padding: 10px;
+    padding-right: 15px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    cursor: pointer;
+}
+
+#icon-menu-responsivo img {
+    width: 32px;
+    height: 32px;
+}
+
+/* css do menu lateral RESPONSIVO*/
+
+/*Botao suspenso do perfil
+
+#menu-suspenso {
+    position: absolute;
+    top: 30px; Ajuste conforme necessário para a posição do menu
+    right: 300px; Ajuste conforme necessário para a posição do menu
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    padding: 0;
+}
+
+#menu-suspenso ul {
+    list-style: none;
+    padding-bottom: 0;
+}
+
+#menu-suspenso ul li a {
+    text-decoration: none;
+    color:#C881FD;
+}
+
+#menu-suspenso.active {
+    display: flex;
+}
+
+/*Botao suspenso do perfil*/
+
+
 
 
 #box_info_dashboard{
@@ -168,4 +292,120 @@ nav{
 
 
 
+@media screen and (max-width: 1181px){
+    html, body{
+        font-size: 15px;
+    }
 
+    #txt_perfil h3{
+        font-size: 30px;
+    }
+
+    #info_perfil p{
+        font-size: 12px;
+    }
+
+    .footer_geral p{
+        font-size: 15px;
+    }
+}
+ 
+@media screen and (max-width: 1121px){
+    html, body{
+        font-size: 12px;
+    }
+    .footer_geral p{
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 1048px){
+    #box_perfil{
+        width: 85%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+    
+    #box_info_perfil{
+        width: 100%;
+        display: flex;
+        align-items: center;
+    }
+    
+    #info_perfil{
+        width: 250px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        margin-left: 2%;
+    }
+
+    #txt_perfil h3{
+        font-size: 25px;
+    }
+
+    .search-container {
+        position: relative;
+        width: 300px;
+        margin: 0 auto;
+    }
+    
+    .search-container input[type="search"] {
+        width: 300px;
+        padding: 8px 28px 8px 8px;
+        border: 1px solid #B05CEF;
+        border-radius: 120px;
+        background-color: transparent;
+        outline: none;
+        color: #fff;
+    }
+
+}
+
+@media screen and (max-width: 880px){
+    #box_perfil{
+        flex-direction: column;
+        align-items: center;
+        gap: 3rem;
+    }  
+
+    #box_info_perfil{
+        width: 60%;
+        display: flex;
+        align-items: center;
+    }
+
+    
+
+}
+ 
+@media screen and (max-width: 847px){
+    html, body{
+        font-size: 10px;
+    }
+    .footer_geral p{
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width: 600px){
+    
+    #menu-desktop{
+        display: none;
+    }
+
+    #icon-menu-responsivo{
+        display: flex;
+        position: absolute;
+    }
+
+    #box_info_dashboard{
+        padding-left: 0;
+    }
+
+    #box_info_perfil{
+        width: 100%;
+    }  
+}
