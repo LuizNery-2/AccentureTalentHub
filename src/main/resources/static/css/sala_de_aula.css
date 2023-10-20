@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+header{
+    background-image: url('../img/Sala1.png');
+    width: 100%;
+    height: 235px;
+    padding-left: 6%;
+}
+
+.info_sala{
+    width: 90%;
+    margin: 0 auto;
+    color: #B05CEF;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.info_sala_txt{
+    width: 50%;
+}
+
+.info_sala_txt h1{
+    font-size: 45px;
+}
+
+.info_sala_txt p{
+    font-size: 16px;
+}
+
+.info_sala_caracteristicas{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: right;
+}
+
+#titulo_chat{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    margin: 0 auto;
+}
+
+#titulo_chat span{
+    font-size: 20px;
+    color: #6404A3;
+}
+
+.border_dashed{
+    border-bottom: 5px dashed #5B2182;
+    width: 38%;
+    margin: 0 2%;
+}
+
+.area_chat{
+    width: 90%;
+    margin: auto;
+}
+
+.icon_participantes_sala{
+    display: flex;
+    justify-content: space-between;
+    /* width: 95%;
+    margin: auto; */
+    overflow-x: scroll;
+}
+
+.icon_participantes_sala::-webkit-scrollbar{
+    height: 7px;
+}
+
+.icon_participantes_sala::-webkit-scrollbar-thumb {
+    background-color: #B05CEF;
+    border-radius: 3.5px;
+    cursor: pointer;
+}
+
+.info_participante{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 0%;
+    color: #B05CEF;
+}
+
+.info_participante img{
+    width: 80px !important;
+    height: 80px !important;
+    cursor: pointer;
+}
+
+.chat{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    height: 520px;
+    border: 3px solid #531F77;
+    border-radius: 15px;
+    margin: 2% auto;
+}
+
+.area_mensagens{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.area_mensagens::-webkit-scrollbar{
+    width: 7px;
+}
+
+.area_mensagens::-webkit-scrollbar-thumb {
+    background-color: #B05CEF;
+    border-radius: 3.5px;
+    cursor: pointer;
+}
+
+.mensagens_chat{
+    display: flex;
+    align-items: center;
+}
+
+.txt_mensagem{
+    background-color: #321147;
+    color: #fff;
+    font-size: 12px;
+    padding: 2%;
+    border-radius: 20px;
+    width: 90%;
+}
+
+.mensagens_chat img{
+    width: 70px !important;
+}
+
+.chat input[type='text']{
+    width: 90%;
+    margin-left: 2%;
+    background-color: transparent;
+    border: none;
+    padding-left: 15px;
+    color: #fff;
+}

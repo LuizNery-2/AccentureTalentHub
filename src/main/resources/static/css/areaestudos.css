@@ -1,0 +1,130 @@
+#box_info_curso{
+    /* background-color: red !important; */
+    width: 68.7%;
+}
+
+#box_info_header, #box_info ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#box_info_header h2{
+    color: #fff;
+    font-weight: normal;
+    font-size: 20px;
+}
+
+#box_info_header button{
+    background-color: transparent;
+    border: 2px solid #B05CEF;
+    border-radius: 20px;
+    width: 200px;
+    height: 40px;
+    color: #fff;
+    cursor: pointer;
+}
+
+#box_info ul li{
+    list-style: none;
+    color: #fff;
+    font-size: 14px;
+    height: 30px;
+    width: 140px;
+    cursor: pointer;
+}
+
+.lista_action{
+    background-color: #5B2182;
+    text-align: center;
+    padding-top: 0.3%;
+    border-radius: 15px; 
+}
+
+#box_info_curso p{
+    font-size: 14px;
+    text-align: justify;
+    margin: 2% 0;
+}
+
+#info_instrutor{
+    display: flex;
+    align-items: center;
+    margin-top: 2%;
+}
+
+#info_instrutor img{
+    width: 120px;
+    height: 120px;
+}
+
+#info_instrutor span{
+    color: #B05CEF;
+    margin-left: 2%;
+}
+
+#box_modulos_curso{
+    /* background-color: red; */
+    width: 30%;
+    height: 100%;
+    max-height: 1136px;
+    color: #B05CEF;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+}
+
+#box_modulos_curso::-webkit-scrollbar{
+    width: 7px;
+}
+
+#box_modulos_curso::-webkit-scrollbar-thumb {
+    background-color: #B05CEF;
+    border-radius: 3.5px;
+    cursor: pointer;
+}
+
+.modulos_curso{
+    padding-left: 20%;
+    margin-top: 5%;
+}
+
+.titulo_modulo{
+    display: flex;
+    align-items: center;
+}
+
+.titulo_modulo h4{
+    color: #fff;
+    font-weight: normal;
+    margin-right: 8%;
+}
+
+.titulo_modulo img{
+    cursor: pointer;
+}
+
+.aulas_modulo{
+    padding-left: 8%;
+    margin-top: 3%;
+}
+
+.aulas_modulo img{
+    margin-right: 5%;
+}
+
+.aulas_modulo p {
+    color: #E1BBFD;
+    cursor: pointer;
+}
+
+
+
+#box_sobre_instrutor, #box_forum{
+    display: none;
+}
+
+#box_descricao{
+    display: block;
+}

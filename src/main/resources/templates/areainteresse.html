@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="">
+	<meta name="keywords" content="palavras,separadas,por,vírgulas">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+	<title>AccentureTalentHub | Interesses</title>
+	<link rel="shortcut icon" href="../static/img/logo_accenture.png" type="image/x-icon">
+	<link rel="stylesheet" type="text/css" href="../static/css/areainteresse.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/geralstyle.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/indexstyle.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body id="body_login">
+    <section id="box_center">
+
+        <div class="box_center_chamada_txt">
+
+            <div id="box_chamada">
+                <img id="foguete" src="../static/img/foguete.png">
+                <div id="chamada_txt">
+                    <div>
+                        <h3>SELECIONE SUAS</h3>
+                        <div id="faixa_chamada"></div>
+                    </div>
+                    
+                    <div>
+                        <h1>Tecnologias De Interesse</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="box_tecnologias">
+            <div id="exemplo_tecnologias">
+                <ul>
+                    <li id="">JavaScript</li>
+                    <li id="">Data Science</li>
+                    <li id="">Java</li>
+                    <li id="">Docker</li>
+                    <li id="">HTML</li>
+                    <li id="">CSS</li>
+                    <li id="">Python</li>
+                </ul>
+    
+                <ul>
+                    <li id="">PHP</li>
+                    <li id="">Salesforce</li>
+                    <li id="">SAP ABAP</li>
+                    <li id="">TypeScript</li>
+                    <li id="">MySQL</li>
+                    <li id="">Kubernetes</li>
+                </ul>
+    
+                <ul>
+                    <li id="">Cloud Computing</li>
+                    <li id="">Azure </li>
+                    <li id="">Hadoop</li>
+                    <li id="">Spark</li>
+                    <li id="">Machine Learning</li>
+                    <li id="">TensorFlow</li>
+                </ul>
+    
+                <ul>
+                    <li id="">DevOps </li>
+                    <li id="">Jenkins</li>
+                    <li id="">Blockchain</li>
+                    <li id="">Cibersegurança</li>
+                    <li id="">Virtualização</li>
+                    <li id="">Angular</li>
+                </ul>
+
+                <ul>
+                    <li id="">React </li>
+                    <li id="">Vue.js</li>
+                    <li id="">IoT </li>
+                    <li id="">Flutter </li>
+                    <li id="">Big Data</li>
+                    <li id="">Analytics</li>
+                    <li id="">Inteligência Artificial</li>
+                </ul>
+                <ul>
+                    <li id="">PyTorch</li>
+                    <li id="">React Native</li>
+                    <li id="">MongoDB</li>
+                    <li id="">Cassandra</li>
+                    <li id="">PostgreSQL</li>
+                    <li id="">Oracle</li>
+                    <li id="">AWS </li>
+                </ul>
+            </div>
+            
+
+            <div id="enviar_resposta">
+                <p id="enviarDados">Enviar Resposta</p>
+                <img src="../static/img/seta_direita.png">
+            </div>
+        </div>
+        
+
+        <section id="box_name_plataform">
+            <div class="line"></div>
+            <p>AccentureTalentHub</p>
+            <div class="line"></div>
+        </section>
+
+        <footer id="footer_login">
+            <p>© 2023 AccentureTalentHub.Inc | Todos os direitos reservados </p>
+        </footer>
+    </section>
+	
+
+	
+
+	
+	<script>
+        $(document).ready(function(){
+            $("#box_center").fadeIn(2000);
+            $("#box_center").css("display", "flex");
+
+            // $("#enviar_resposta").click(function() {
+            //     
+            // })
+
+        });
+    </script>
+
+    <script>
+
+        // Seleciona todos os elementos li nas listas dentro da div com id "exemplo_tecnologias"
+        const elementosLista = document.querySelectorAll("#exemplo_tecnologias li");
+
+        // Itera sobre os elementos e define o valor do atributo id como o texto do elemento
+        elementosLista.forEach(function(elemento) {
+        elemento.id = elemento.textContent.trim(); // Remove espaços em branco do início e do fim
+        });
+
+        // Array para armazenar os IDs selecionados
+        const selecionados = [];
+
+        // Seleciona todos os elementos li nas listas dentro da div com id "exemplo_tecnologias"
+        const elementosLi = document.querySelectorAll("#exemplo_tecnologias li");
+
+        elementosLi.forEach(function(elemento) {
+            elemento.addEventListener("click", function() {
+                const id = elemento.id;
+
+                // Verifica se o elemento já foi selecionado
+                if (selecionados.includes(id)) {
+                    // Se já estiver selecionado, remova-o do array e restaure a cor
+                    const index = selecionados.indexOf(id);
+                    selecionados.splice(index, 1);
+                    elemento.classList.remove("selected");
+                } else {
+                    // Se não estiver selecionado, adicione ao array e mude a cor
+                    selecionados.push(id);
+                    elemento.classList.add("selected");
+                }
+            });
+        });
+
+        // Evento de clique no botão "Enviar Dados"
+        const enviarDadosBtn = document.getElementById("enviarDados");
+        enviarDadosBtn.addEventListener("click", function() {
+
+            if(selecionados!=''){
+                alert("Tecnologias selecionadas: " + selecionados);
+                window.location.href = 'home.html';
+            }else{
+                alert("Selecione pelo menos uma tecnologia para continuar!");
+            }
+
+            // const dadosParaEnviar = {
+            //     tecnologiasSelecionadas: selecionados
+            // };
+
+            // solicitação AJAX para enviar os dados para o servidor
+
+            // fetch('/seu-endpoint-no-backend', {
+            //     method: 'POST',
+            //     headers: {
+            //         'Content-Type': 'application/json',
+            //     },
+            //     body: JSON.stringify(dadosParaEnviar),
+            // })
+            // .then(response => {
+            //     if (response.ok) {
+            //         return response.json(); // Se desejar tratar uma resposta JSON do servidor
+            //     }
+            // })
+            // .then(data => {
+            //     // Lidar com a resposta do servidor, se necessário
+            // })
+            // .catch(error => {
+            //     console.error('Erro ao enviar dados para o servidor:', error);
+            // });
+
+            
+        });
+    </script>
+</body>
+</html>

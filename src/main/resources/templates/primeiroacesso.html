@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="">
+	<meta name="keywords" content="palavras,separadas,por,vírgulas">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+	<title>AccentureTalentHub | Primeiro Acesso</title>
+	<link rel="shortcut icon" href="../static/img/logo_accenture.png" type="image/x-icon">
+	<link rel="stylesheet" type="text/css" href="../static/css/primeiroacesso.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/indexstyle.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/geralstyle.css">
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body id="body_primeiro_acesso">
+    <section id="box_center">
+
+        <div id="box_center_primeiro_acesso">
+            <div class="box_center_txt">
+
+                <div id="center_txt">
+                    <p>Bem-vindo a nossa plataforma!</p>
+                    <h1>Primeiro Acesso</h1>
+                    <img src="../static/img/chave.png">
+                </div>
+    
+            </div>
+    
+            <div id="box_login">
+                <form id="form_login" class="formNovaSenha">
+                    <label>Insira sua nova senha</label>
+                    <input id="novaSenha" type="password" name="usuarioLogin" required>
+                    <ul id="lista_primeiro_acesso">
+                        <li id="validacao-minimo">* Mínimo de 8 caracteres</li>
+                        <li id="validacao-letras">* Letras minúsculas e maiúsculas</li>
+                        <li id="validacao-caracteres">* Caracteres especiais.</li>
+                        
+                    </ul>
+    
+                    <label>Confirme sua senha</label>
+                    <input id="novaSenhaConfirmacao" type="password" name="senhaLogin" required>
+                    <p class="mensagem-erro" style="color: red;font-size: 12px;"></p>
+                    <input id="validarLogin" type="submit" name="validarLogin" value="Cadastrar">
+                </form>
+            </div>
+        </div>
+
+        
+        
+
+        <section id="box_name_plataform">
+            <div class="line"></div>
+            <p>AccentureTalentHub</p>
+            <div class="line"></div>
+        </section>
+
+        <footer id="footer_login">
+            <p>© 2023 AccentureTalentHub.Inc | Todos os direitos reservados </p>
+        </footer>
+    </section>
+	
+
+	
+
+	
+	<script>
+        $(document).ready(function(){
+            $("#box_center").fadeIn(2000);
+            $("#box_center").css("display", "flex");
+
+            // $("#validarLogin").click(function() {
+            //     
+            // })
+
+        });
+    </script>
+
+    <script>
+        const senhaInput = document.getElementById('novaSenha');
+        const senhaConfirmacaoInput = document.getElementById('novaSenhaConfirmacao');
+        const validacaoMinimo = document.getElementById('validacao-minimo');
+        const validacaoLetras = document.getElementById('validacao-letras');
+        const validacaoCaracteres = document.getElementById('validacao-caracteres');
+        const formNovaSenha = document.querySelector('.formNovaSenha');
+        const mensagemErro = document.querySelector('.mensagem-erro');
+
+        senhaInput.addEventListener('input', function () {
+            const senha = senhaInput.value;
+            const senhaConfirmacao = senhaConfirmacaoInput.value;
+
+            // Validação do tamanho mínimo
+            if (senha.length >= 8) {
+                validacaoMinimo.style.color = 'green';
+            }
+
+            // Validação de letras minúsculas e maiúsculas
+            if (/[a-z]/.test(senha) && /[A-Z]/.test(senha)) {
+                validacaoLetras.style.color = 'green';
+            }
+
+            // Validação de caracteres especiais (por exemplo, !, @, #, $, etc.)
+            if (/[!@#$%^&*]/.test(senha)) {
+                validacaoCaracteres.style.color = 'green';
+            }
+        });
+
+        formNovaSenha.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+            const senha = senhaInput.value;
+            const senhaConfirmacao = senhaConfirmacaoInput.value;
+
+            // Validação de confirmação de senha
+            if (senha === senhaConfirmacao) {
+
+                // const dadosNovaSenha = {
+                //     novaSenha: senhaConfirmacao
+                // };
+
+                //Use o Axios para enviar o objeto JSON para o backend
+
+                //Importe a biblioteca Axios
+                //const axios = require('axios');
+
+                // axios.post('/sua-rota-backend', dadosNovaSenha)
+                //     .then(response => {
+                //     // Lógica para lidar com a resposta do backend
+                //     console.log('Resposta do servidor:', response.data);
+                //     })
+                //     .catch(error => {
+                //     // Lógica para lidar com erros na solicitação
+                //     console.error('Erro na solicitação:', error);
+                // });
+
+                window.location.href = 'areainteresse.html';
+            } else {
+                const mensagem = 'As senhas não são correspondentes';
+                mensagemErro.textContent = mensagem;
+            }
+
+
+        });
+
+    </script>
+</body>
+</html>

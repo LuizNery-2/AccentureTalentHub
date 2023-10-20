@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="">
+	<meta name="keywords" content="palavras,separadas,por,vírgulas">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+	<title>AccentureTalentHub | Adicionar Curso</title>
+	<link rel="shortcut icon" href="../static/img/logo_accenture.png" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="../static/css/home.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/geralstyle.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/indexstyle.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/curso.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/adicionarCurso.css">
+    <link rel="stylesheet" href="../static/css/criar_sala.css">
+
+    <!-- Importação dos arquivos CSS para barra de pesquisa -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- Importação dos arquivos Jquary -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+<body id="">
+ <main>
+        <nav>
+            <ul class="lista_dashboard">
+                <li id="logo">
+                    <a href="home.html">
+                        <img src="../static/img/logo_menu.png">
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="curso.html">
+                        <img class="icon_menu" src="../static/img/icon_cursos.png">
+                    </a>
+                </li>
+                <li>
+                    <a href="salas.html">
+                        <img class="icon_menu" src="../static/img/icon_trilhas.png">
+                    </a>
+                </li>
+                <li>
+                    <a href="desenvol_pessoal.html">
+                        <img class="icon_menu" src="../static/img/icon_dp.png">
+                    </a>
+                </li>
+                <li>
+                    <a href="curso_concluido.html">
+                        <img class="icon_menu" src="../static/img/icon_cursos_concluidos.png">
+                    </a>
+                </li>
+            </ul>
+    
+            <ul>
+                <li id="icon_usuario_menu" class="lista_dashboard">
+                    <a href="perfil.html">
+                        <img class="icon_menu" src="../static/img/icon_perfil.png">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+     
+    </main>
+    
+    <div class="box_CriarModulo">
+        <h2>Adicione um Curso</h2>
+       <a href="perfilLider.html"> <img src="../static/img/icon_fechar.png" alt="" style="transform: translate(755px, -850%);">  </a> 
+
+        <section class="Criar_Modulo">
+            <p>Nome do curso</p>
+        <div style="width: 270px; height: 25px; background-color:#481A67;border-radius: 5px; margin-bottom: 30px; margin-top: 10px;">
+     </div>       
+    
+
+            <p>Adicione um banner ao curso</p>
+            <div class="banner_CriarModulo"></div>
+
+            <button id="botao-criarModulo">Criar Modulo</button>  
+
+            <div style="display: flex; flex-direction: row;">
+                <div>
+
+                    <div class="modulos">
+                        <p>
+                            Clique aqui para <br> adicionar vídeos, <br> materiais e quizes <br> ao módulo.
+                        </p>
+                    </div>
+
+                    <div style="display: flex; border-bottom: 1px dashed #B05CEF; height: 18px; width: 200px; transform: translate(30px, 50%);">
+                   <p style="margin-left: 70px; font-size: 10px; color: grey;">Modulo 1</p> </div>
+                </div>
+    
+                <div>
+
+                    <div class="modulos">
+                        <p>
+                            Clique aqui para <br> adicionar vídeos, <br> materiais e quizes <br> ao módulo.
+                        </p>
+                    </div>
+
+                    <div style="display: flex; border-bottom: 1px dashed #B05CEF; height: 18px; width: 200px; transform: translate(30px, 50%);">
+                   <p style="margin-left: 70px; font-size: 10px; color: grey;">Modulo 1</p> </div>
+                </div>
+            
+                <div>
+
+                    <div class="modulos">
+                        <p>
+                            Clique aqui para <br> adicionar vídeos, <br> materiais e quizes <br> ao módulo.
+                        </p>
+                    </div>
+
+                    <div style="display: flex; border-bottom: 1px dashed #B05CEF; height: 18px; width: 200px; transform: translate(30px, 50%);">
+                   <p style="margin-left: 70px; font-size: 10px; color: grey;">Modulo 1</p> </div>
+                </div>
+        </div>
+          
+            <p style="transform: translate(400px, -1980%);">Adicione uma descrição</p>
+            <div style="width: 270px; height: 100px; background-color:#481A67;border-radius: 5px; transform: translate(400px, -490%);"> <p style="display: flex; font-size: 8px; color: grey;float: right; transform: translate(-8px, 600%); ">0/500
+            </p>
+            </div>
+            
+
+            <div class="dropdown">
+                <p>Quais tecnologias seu curso aborda?</p>
+                <button class="dropbtn">Selecione a tecnologia <img style="width: 10px; margin-left: 5px;" src="../static/img/icon_expandir.png" alt=""> </button>
+                <div class="dropdown-content">
+                  <a href="#">Java</a>
+                  <a href="#">Jquary</a>
+                  <a href="#">javascript</a>
+                  <a href="#">MySql</a>
+                  <a href="#">Spark</a>
+                  <a href="#">Docker</a>
+                </div>
+              </div>
+
+
+            <!-- <div style="transform: translate(400px, -300%);">
+                <p>Data de início</p>
+                <div style=" width: 150px; height: 40px; background-color:#481A67;border-radius: 5px;">
+            </div>     
+
+            </div> -->
+
+
+            <div style="border: 1px solid white; border-radius: 10px; display: flex; width: 70px; padding: 5px; transform: translate(400px, -1450%);font-size: 10px;" >
+                <p>Java</p>
+                <div style="margin-left: 10px;">
+                    <img class="icon_fechar" src="../static/img/icon_fechar.png">
+                </div>
+            </div>
+
+            <div style="display: flex; background-color: #B05CEF; padding: 15px; border-radius: 10px; transform: translate(620px, -280%); width: 140px;">
+                <p>
+                    CRIAR SALA
+                </p>
+            </div>
+
+
+            </div>
+        </section>
+
+        <section class="modal-modulo">
+            <div style="display: flex; justify-content: space-between;">
+                <div></div>
+                <img id="fechar_modal-modulo" style="width: 15px; cursor: pointer;" src="../static/img/icon_fechar.png">
+            </div>
+            
+            <div id="detalhe_senha">
+                <div id="alterar-senha">
+                    <div style="display: flex; flex-direction: row; margin-left: 50px;">
+                        <h3 style="color: #fff; font-weight: normal; font-size: 25px;">Modulo 1</h3>
+                    </div>
+    
+                    <div class="modulosmodal" style="margin-bottom: 10px; border-radius: 15px;">
+                            
+                        <div style="display: flex; margin: 10px;">
+                            <img style="margin-right: 10px;" src="../static/img/marketing-de-video.png" alt="">
+                            <p>Apresentação do curso</p>
+                            <img style="margin-left: 500px;" src="../static/img/setas.png" alt="">
+                        </div>
+                        </div>
+
+                        <div class="modulosmodal" style="margin-bottom: 10px;border-radius: 15px;">
+                            
+                            <div style="display: flex; margin: 10px;">
+                                <img style="margin-right: 10px;" src="../static/img/arquivo.png" alt="">
+                                <p>Material de apoio</p>
+                                <img style="margin-left: 550px;" src="../static/img/setas.png" alt="">
+                            </div>
+                            </div>
+
+                            <div class="modulosmodal" style="margin-bottom: 10px;border-radius: 15px;">
+                            
+                                <div style="display: flex; margin: 10px;">
+                                    <img style="margin-right: 20px;" src="../static/img/perguntando.png" alt="">
+                                    <p>Quiz</p>
+                                    <img style="margin-left: 649px;" src="../static/img/setas.png" alt="">
+                                </div>
+                                </div>
+                                
+                                <div style="display: flex; flex-direction: column; width: 30px; margin: 10px; background-color: #481A67;">
+                                    <img src="../static/img/marketing-de-video.png" alt="">
+                                    <img src="../static/img/arquivo.png" alt="">
+                                    <img src="../static/img/perguntando.png" alt="">
+                                </div>
+
+
+                        <input id="altere_Senha" type="submit" name="" value="Adicionar ao bloco">
+    
+                </div>
+              
+                
+            </div>
+        </section>  
+        
+    </div>   
+    
+    
+
+
+    <footer class="footer_geral">
+        <p>© 2023 AccentureTalentHub.Inc | Todos os direitos reservados </p>
+    </footer>
+
+    <script>
+        $(document).ready(function(){
+            $("#botao-criarModulo").click(function() {
+                $(".modal-modulo").css("display", "flex");
+                $("#box_CriarModulo").css("opacity", "0.5");
+            });
+            
+            $("#fechar_modal-modulo").click(function() {
+                $(".modal-modulo").css("display", "none");
+                $("#box_CriarModulo").css("opacity", "1");
+            })
+        });
+    </script>
+
+</body>
+</html>

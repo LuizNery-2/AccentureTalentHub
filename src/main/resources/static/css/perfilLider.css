@@ -1,0 +1,166 @@
+#poligono{
+    background-image: url("../img/Polygon.png") !important;
+    background-size: 100% 100%;
+    width: 62px;
+    height: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+#nome_perfil{
+    background-color: #5B2182;
+    color: #fff;
+    border-radius: 20px;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    width: 200px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#box_informacoes_perfil{
+    display: flex;
+    align-items: center;
+    position: relative;
+    top: 35px;
+}
+
+#box_center_perfil{
+    padding-left: 10%;
+    margin-top: -80px;
+    display: flex;
+}
+
+#box_detalhes_perfil{
+    background-color: #5B2182;
+    width: 350px;
+    height: 530px;
+    margin-bottom: 2%;
+    border-radius: 15px;
+}
+
+#info_perfil{
+    padding-left: 5%;
+}
+
+#box_carreira{
+    margin-top: 70px;
+    margin-left: 2%;
+    border: 2px solid #5B2182;
+    width: 60%;
+    height: 350px;
+    border-radius: 15px;
+}
+
+#box_carreira h2{
+    background-color: #5B2182;
+    width: 50%;
+    height: 50px;
+    text-align: center;
+    color: #fff;
+    font-weight: normal;
+    border-bottom-left-radius: 50px;
+}
+
+#box_info_metas{
+    /* margin-top: 15%; */
+    padding: 0 5%;
+}
+
+.box_metas{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: #0E0E0E;
+    margin: 2% 0;
+    height: 30px;
+    padding: 0 2%;
+    border-radius: 15px;
+}
+
+.box_metas p{
+    color: #B05CEF;
+}
+
+.box_metas img{
+    cursor: pointer;
+}
+
+.button_carreira{
+    background-color: #40165D;
+    width: 45%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    height: 60px;
+    cursor: pointer;
+}
+
+.button_carreira p{
+    margin-left: 2%;
+}
+
+#box_equipe{
+    margin-top: 50px;
+    margin-left: 10%;
+    margin-bottom: 70px;
+    border: 2px solid #5B2182;
+    width: 83%;
+    height: 300px;
+    border-radius: 15px;
+}
+#box_equipe h2{
+    background-color: #5B2182;
+    width: 50%;
+    height: 50px;
+    width: 300px;
+    text-align: center;
+    color: #fff;
+    font-weight: normal;
+    border-bottom-right-radius: 50px;
+}
+
+.button_equipe{
+    background-color: #40165D;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    height: 60px;
+    cursor: pointer;
+}
+.button_criar{
+    margin-left: 50px;
+    margin-top: 80px;
+    background-color: #B05CEF;
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    height: 50px;
+    cursor: pointer;
+}
+
+#lista_foto{
+    display: flex;
+    list-style: none;
+    /* margin-top: 20px;
+    margin-left: 50px; */
+}
+
+#lista_foto li{
+    margin: 20px 25px 0px 40px;
+}
+
+.seta-foto{
+    display: flex;
+    margin-left: 50px;
+}

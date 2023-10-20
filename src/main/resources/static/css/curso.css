@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+html, body{
+    width: 100%;
+    max-width: 1366px;
+    margin: 0 auto;
+    background-color: #1D0D28;
+}
+
+header{
+    background-image: url('../img/teste.png');
+    width: 100%;
+    height: 235px;
+    padding-left: 6%;
+}
+
+header h1{
+    text-align: left !important;
+}
+
+#Icon_filtrar{
+    width: 60px !important;
+    height: 48px;
+    cursor: pointer;
+}
+
+#title_curso{
+    color: #fff;
+    text-align: left !important;
+    font-size: 50px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    margin-top: 5%;
+}
+
+.box_filtro{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.lista_filtro{
+    display: flex;
+}
+
+.lista_filtro li{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 2%;
+    font-size: 14px;
+    width: 120px;
+    border: 1px solid #E1BBFD;
+    border-radius: 15px;
+    margin-left: 2%;
+    color: #FFF;
+}
+
+.icon_fechar{
+    width: 15px !important;
+    margin-left: 2%;
+    cursor: pointer;
+}
+
+.center_cursos{
+    display: flex;
+    justify-content: space-between;
+    margin: 2% 0;
+}
+
+.box_curso{
+    background-color: #3B0B5A;
+    padding: 2%;
+    border-radius: 10px;
+    height: 280px;
+    width: 300px;
+}
+
+.info_curso{
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+}
+
+.info_curso img{
+    width: 250px !important;
+    border-radius: 10px;
+}
+
+.info_curso ul{
+    display: flex;
+}
+
+.info_curso h2{
+    font-weight: 500;
+    margin: 2% 0;
+}
+
+.info_curso ul li{
+    list-style: none;
+    margin-right: 5%;
+    font-size: 12px;
+}
+
+.info_curso button{
+    height: 30px;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 5%;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background-color: #E1BBFD;
+}
+
+.info_curso button:hover{
+    background-color: #5B2182;
+    border: 1px solid #FFF;
+    color: #fff;
+}
+
+
+.modal{
+    width: 700px;
+    height: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #3F115F;
+    border-radius: 15px;
+    padding: 1%;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+
+#detalhe_curso{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10%;
+}
+
+#detalhe_curso p {
+    font-size: 13px;
+    padding: 0 5%;
+    text-align: justify;
+}
+
+.txt_info_curso{
+    color: #C881FD;
+    padding: 0 1% !important;
+}
+
+#capa_curso img{
+    width: 400px;
+    border-radius: 15px;   
+}
+
+input[type='submit']{
+    display: block;
+    width: 80%;
+    height: 40px;
+    margin: 0 auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    border: none;
+    border-radius: 18px;
+    background-color: #5B2182;
+    cursor: pointer;
+    color: #fff;
+}
+
+input[type='submit']:hover{
+    background-color: #CD41FF;
+}
+

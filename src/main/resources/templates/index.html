@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="">
+	<meta name="keywords" content="palavras,separadas,por,vírgulas">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+	<title>AccentureTalentHub | Login</title>
+	<link rel="shortcut icon" href="../static/img/logo_accenture.png" type="image/x-icon">
+	<link rel="stylesheet" type="text/css" href="../static/css/geralstyle.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/indexstyle.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body id="body_login">
+    <section id="box_center">
+        <!-- <img style="width: 456px;border-top-left-radius: 15px;border-top-right-radius: 15px;" src="../static/img/logo_index.png"> -->
+        <div id="box_login">
+            <h2>Conectar</h2>
+            <form id="form_login">
+                <label>Usuário</label>
+                <input id="usuarioLogin" type="text" name="usuarioLogin" required>
+                <label>Senha</label>
+                <input id="senhaLogin" type="password" name="senhaLogin" required>
+                <input id="validarLogin" type="submit" name="validarLogin" value="Entrar">
+                <a href="recuperar_senha.html">Esqueci minha senha</a>
+            </form>
+        </div>
+        
+
+        <section id="box_name_plataform">
+            <div class="line"></div>
+            <p>AccentureTalentHub</p>
+            <div class="line"></div>
+        </section>
+
+        <footer id="footer_login">
+            <p>© 2023 AccentureTalentHub.Inc | Todos os direitos reservados </p>
+        </footer>
+    </section>
+	
+
+	
+
+	
+	<script>
+        $(document).ready(function(){
+            $("#box_center").fadeIn(2000);
+            $("#box_center").css("display", "flex");
+
+            $("#validarLogin").click(function() {
+                window.location.href = 'primeiroacesso.html';
+            })
+
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="">
+	<meta name="keywords" content="palavras,separadas,por,vírgulas">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+	<title>AccentureTalentHub | Recuperar senha</title>
+	<link rel="shortcut icon" href="../static/img/logo_accenture.png" type="image/x-icon">
+	<link rel="stylesheet" type="text/css" href="../static/css/geralstyle.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/indexstyle.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="../static/js/script.js"></script>
+
+</head>
+<body id="body_login">
+    <section id="box_center">
+        <div style="width: 500px; height: 100%;" id="box_login">
+            <h2>Esqueci minha senha</h2>
+            <br>
+            <form id="form_login" class="form_recuperacao">
+                <label>Insira seu e-mail corporativo:</label>
+                <input id="emailRecuperacao" type="text" name="" required>
+                <p class="mensagem-erro" style="color: red;font-size: 12px;"></p>
+                <input id="recuperar_senha" type="submit" name="" value="Enviar mensagem">
+            </form>
+        </div>
+        
+
+        <section id="box_name_plataform">
+            <div class="line"></div>
+            <p>AccentureTalentHub</p>
+            <div class="line"></div>
+        </section>
+
+        <footer id="footer_login">
+            <p>© 2023 AccentureTalentHub.Inc | Todos os direitos reservados </p>
+        </footer>
+    </section>
+	
+
+	
+
+
+
+	<script>
+        $(document).ready(function(){
+            $("#box_center").fadeIn(2000);
+            $("#box_center").css("display", "flex");
+        });
+    </script>
+
+    <script>
+        const formRecuperacao = document.querySelector('.form_recuperacao');
+        const emailRecuperacao = document.getElementById('emailRecuperacao');
+        const mensagemErro = document.querySelector('.mensagem-erro');
+    
+        formRecuperacao.addEventListener('submit', function (e) {
+        e.preventDefault();
+    
+        const emailValue = emailRecuperacao.value;
+        
+        
+    
+        //Expressão regular para validar um email
+        const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+    
+        if (emailRegex.test(emailValue)) {
+
+            // Limpar a mensagem de erro (tornando o parágrafo vazio)
+            mensagemErro.textContent = "";
+
+            alert('Código de confirmação enviado para o e-mail: ' +  emailValue + ' com sucesso!');
+            window.location.href = 'primeiroacesso.html';
+
+        } else {
+            // O email não é válido, exiba uma mensagem de erro
+            const mensagem = 'Email inválido. Digite um email válido.';
+            console.error(mensagem);
+    
+            // Exibir a mensagem de erro para o usuário
+            mensagemErro.textContent = mensagem;
+        }
+        });
+
+        //Esse código a seguir faz o mesmo que o de cima e cria um objeto JSON para mandar o valor do email para o back end com o axios
+
+        // const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+        // if (!emailRegex.test(emailValue)) {
+        //     // Exibir uma mensagem de erro se o email não for válido
+        //     const mensagem = 'Email inválido. Digite um email válido.';
+        //     console.error(mensagem);
+        //     mensagemErro.textContent = mensagem;
+        //     return; // Saia da função se o email não for válido
+        // }
+
+        // // Crie um objeto JSON com o email
+        // const dados = {
+        //     email: emailValue
+        // };
+
+        // Use o Axios para enviar o objeto JSON para o backend
+
+        // Importe a biblioteca Axios
+    //     const axios = require('axios');
+
+    //     axios.post('/sua-rota-backend', dados)
+    //         .then(response => {
+    //         // Lógica para lidar com a resposta do backend
+    //         console.log('Resposta do servidor:', response.data);
+    //         })
+    //         .catch(error => {
+    //         // Lógica para lidar com erros na solicitação
+    //         console.error('Erro na solicitação:', error);
+    //     });
+    // });
+    </script>
+</body>
+</html>
