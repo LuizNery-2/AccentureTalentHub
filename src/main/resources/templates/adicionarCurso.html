@@ -151,7 +151,7 @@
                 </div>
             </div>
 
-            <div style="display: flex; background-color: #B05CEF; padding: 15px; border-radius: 10px; transform: translate(620px, -280%); width: 140px;">
+            <div style="display: flex; background-color: #B05CEF; padding: 15px; border-radius: 10px; transform: translate(620px, -280%); width: 140px; cursor: pointer;">
                 <p>
                     CRIAR SALA
                 </p>
@@ -169,20 +169,21 @@
             
             <div id="detalhe_senha">
                 <div id="alterar-senha">
-                    <div style="display: flex; flex-direction: row; margin-left: 50px;">
+                    <div style="display: flex; flex-direction: row; margin-left: 350px;
+                    margin-bottom: 10px;">
                         <h3 style="color: #fff; font-weight: normal; font-size: 25px;">Modulo 1</h3>
                     </div>
     
                     <div class="modulosmodal" style="margin-bottom: 10px; border-radius: 15px;">
                             
-                        <div style="display: flex; margin: 10px;">
+                        <div style="display: flex; margin: 10px;color: #fff;">
                             <img style="margin-right: 10px;" src="../static/img/marketing-de-video.png" alt="">
                             <p>Apresentação do curso</p>
                             <img style="margin-left: 500px;" src="../static/img/setas.png" alt="">
                         </div>
                         </div>
 
-                        <div class="modulosmodal" style="margin-bottom: 10px;border-radius: 15px;">
+                        <div class="modulosmodal" style="margin-bottom: 10px;border-radius: 15px; color: #fff;">
                             
                             <div style="display: flex; margin: 10px;">
                                 <img style="margin-right: 10px;" src="../static/img/arquivo.png" alt="">
@@ -191,7 +192,7 @@
                             </div>
                             </div>
 
-                            <div class="modulosmodal" style="margin-bottom: 10px;border-radius: 15px;">
+                            <div class="modulosmodal" style="margin-bottom: 10px;border-radius: 15px;color: #fff;">
                             
                                 <div style="display: flex; margin: 10px;">
                                     <img style="margin-right: 20px;" src="../static/img/perguntando.png" alt="">
@@ -200,14 +201,40 @@
                                 </div>
                                 </div>
                                 
-                                <div style="display: flex; flex-direction: column; width: 30px; margin: 10px; background-color: #481A67;">
-                                    <img src="../static/img/marketing-de-video.png" alt="">
+                                <div style="padding: 10px;width: 55px; background-color: #33084F;color: #fff;">
+                                    <div style="display: flex; flex-direction: column; width: 20px; margin: 10px; background-color: #33084F;">
+                                        <img src="../static/img/marketing-de-video.png" alt="">  
+                                    </div>
+                                </div>
+                            
+                                <div style="background-color: #5B2182; padding: 2px; width: 50px;">
+                                
+                                <div style="display: flex; flex-direction: column; width: 30px; margin: 10px; background-color: #5B2182;">
                                     <img src="../static/img/arquivo.png" alt="">
+                                </div>     
+                                                          
+                                <div style="display: flex; flex-direction: column; width: 30px; margin: 10px; background-color: #5B2182;">
                                     <img src="../static/img/perguntando.png" alt="">
                                 </div>
+                                
+                            </div>
 
 
-                        <input id="altere_Senha" type="submit" name="" value="Adicionar ao bloco">
+                                <div style="border: 5px solid #33084F; width: 50rem; height: 9.7rem; transform: translate(50px, -99%);">                                    
+                                    <div style="display: flex;width: 600px; background-color: #fff; padding: 2%; border-radius: 50px;  transform: translate(50px, 80%);">
+                                    <label for="linkInput"></label>
+                                    <img src="../static/img/link.png" alt=""> 
+                                    <input type="text" id="linkInput" name="linkInput" placeholder="Insira o link da aula">
+                                </div>
+                                 </div>
+
+                                    <button class="adicionarLink" onclick="myFunction()">Adicionar ao Bloco</button> 
+
+
+
+
+
+                        <!-- <input id="altere_Senha" type="submit" name="" value="Adicionar ao bloco"> -->
     
                 </div>
               
@@ -237,6 +264,20 @@
             })
         });
     </script>
+
+<script>
+    function myFunction() {
+      var userInput = document.getElementById("linkInput").value;
+      if (userInput.trim() !== "") {
+        // Você pode usar o link fornecido pelo usuário como desejar
+        console.log("O link fornecido pelo usuário é: " + userInput);
+        // Ou você pode redirecionar para o link usando window.location.href
+        // window.location.href = userInput;
+      } else {
+        alert("Por favor, insira um link válido.");
+      }
+    }
+  </script>
 
 </body>
 </html>
