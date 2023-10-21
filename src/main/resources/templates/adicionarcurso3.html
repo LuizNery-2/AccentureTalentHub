@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="../static/css/curso.css">
     <link rel="stylesheet" type="text/css" href="../static/css/adicionarCurso.css">
     <link rel="stylesheet" href="../static/css/criar_sala.css">
+    <link rel="stylesheet" href="../static/css/adicionarCurso3.css">
 
     <!-- Importação dos arquivos CSS para barra de pesquisa -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
@@ -161,7 +162,7 @@
             </div>
         </section>
 
-        <section class="modal-modulo">
+        <section class="modal-modulo3">
             <div style="display: flex; justify-content: space-between;">
                 <div></div>
                 <img id="fechar_modal-modulo" style="width: 15px; cursor: pointer;" src="../static/img/icon_fechar.png">
@@ -201,34 +202,63 @@
                                 </div>
                                 </div>
                                 
-                                <div style="padding: 10px;width: 55px; background-color: #33084F;color: #fff;">
-                                    <div style="display: flex; flex-direction: column; width: 20px; margin: 10px; background-color: #33084F;">
+                                <div style="padding: 2px;width: 55px; background-color: #5B2182;color: #fff;">
+                                    <div style="display: flex; flex-direction: column; width: 20px; margin: 10px; background-color: #5B2182;">
                                         <img src="../static/img/marketing-de-video.png" alt="">  
                                     </div>
                                 </div>
                             
-                                <div style="background-color: #5B2182; padding: 2px; width: 50px;">
+                            <div id="adicionarcurso2" style="background-color: #5B2182; padding: 2px; width: 50px;">
                                 
-                          <a href="adicionarcurso2.html#adicionarcurso2"> <div style="display: flex; flex-direction: column; width: 30px; margin: 10px; background-color: #5B2182;">
+                                <div style="display: flex; flex-direction: column; width: 30px; margin: 10px; background-color: #5B2182;">
                                     <img src="../static/img/arquivo.png" alt="">
                                 </div>     
-                        </a>                  
-                                <div style="display: flex; flex-direction: column; width: 30px; margin: 10px; background-color: #5B2182;">
+                              
+                            </div>
+
+                            <div style="background-color: #33084F; padding: 2px; width: 50px;">
+
+                                <div style="display: flex; flex-direction: column; width: 30px; margin: 10px; background-color: #33084F;">
                                     <img src="../static/img/perguntando.png" alt="">
                                 </div>
                                 
                             </div>
 
 
-                                <div style="border: 5px solid #33084F; width: 50rem; height: 9.7rem; transform: translate(50px, -99%);">                                    
-                                    <div style="display: flex;width: 600px; background-color: #fff; padding: 2%; border-radius: 50px;  transform: translate(50px, 80%);">
-                                    <label for="linkInput"></label>
-                                    <img src="../static/img/link.png" alt=""> 
-                                    <input type="text" id="linkInput" name="linkInput" placeholder="Insira o link da aula">
-                                </div>
+                                <div style="border: 5px solid #33084F; width: 50rem; height: 20rem; transform: translate(50px, -48%);">   
+                                    <div style="display: flex; background-color: #fff; padding: 1%; width: 700px; margin-top: 10px; margin-left: 40px; border-radius: 20px;">
+                                        <p style="margin-left: 10px; color: #C7C6C6;">
+                                            Pergunta
+                                        </p>
+                                    </div>
+                                    <div style="display: flex; background-color: #fff; padding: 2%; width: 600px; margin-top: 10px; margin-left: 140px; border-radius: 20px;">
+                                        <p style="margin-left: 10px; color: #C7C6C6;">
+                                            Resposta
+                                            <div>
+                                                <label style="margin-left: 350px; color: #C7C6C6; font-size: 10px;" for="scales">resposta correta</label>
+                                                <input type="checkbox" id="scales" name="scales" checked />
+                                              </div>
+                                        </p>
+                                    </div>
+                                    <div style="display: flex; background-color: #fff; padding: 2%; width: 600px; margin-top: 10px; margin-left: 140px; border-radius: 20px;">
+                                        <p style="margin-left: 10px; color: #C7C6C6;">
+                                            Resposta
+                                            <div>
+                                                <label style="margin-left: 350px; color: #C7C6C6; font-size: 10px;" for="scales">resposta correta</label>
+                                                <input type="checkbox" id="scales" name="scales" checked />
+                                              </div>                                        </p>
+                                    </div>
+                                    <div style="display: flex; background-color: #fff; padding: 2%; width: 600px; margin-top: 10px; margin-left: 140px; border-radius: 20px;">
+                                        <p style="margin-left: 10px; color: #C7C6C6;">
+                                            Nova resposta
+                                        </p>
+                                    </div>
+                                    <div class="botao_pergunta">
+                                        <button> + ADICIONAR PERGUNTA </button>
+                                    </div>
                                  </div>
 
-                                    <button class="adicionarLink" onclick="myFunction()">Adicionar ao Bloco</button> 
+                                    <button class="adicionarLink3" onclick="myFunction()">Adicionar ao Bloco</button> 
 
 
 
@@ -254,12 +284,12 @@
     <script>
         $(document).ready(function(){
             $("#botao-criarModulo").click(function() {
-                $(".modal-modulo").css("display", "flex");
+                $(".modal-modulo3").css("display", "flex");
                 $("#box_CriarModulo").css("opacity", "0.5");
             });
             
             $("#fechar_modal-modulo").click(function() {
-                $(".modal-modulo").css("display", "none");
+                $(".modal-modulo3").css("display", "none");
                 $("#box_CriarModulo").css("opacity", "1");
             })
         });

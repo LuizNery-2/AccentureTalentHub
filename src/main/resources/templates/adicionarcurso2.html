@@ -201,18 +201,22 @@
                                 </div>
                                 </div>
                                 
-                                <div style="padding: 10px;width: 55px; background-color: #33084F;color: #fff;">
-                                    <div style="display: flex; flex-direction: column; width: 20px; margin: 10px; background-color: #33084F;">
+                                <div style="padding: 2px;width: 55px; background-color: #5B2182;color: #fff;">
+                                    <div style="display: flex; flex-direction: column; width: 20px; margin: 10px; background-color: #5B2182;">
                                         <img src="../static/img/marketing-de-video.png" alt="">  
                                     </div>
                                 </div>
                             
-                                <div style="background-color: #5B2182; padding: 2px; width: 50px;">
+                                <div id="adicionarcurso2" style="background-color: #33084F; padding: 2px; width: 50px;">
                                 
-                          <a href="adicionarcurso2.html#adicionarcurso2"> <div style="display: flex; flex-direction: column; width: 30px; margin: 10px; background-color: #5B2182;">
+                                <div style="display: flex; flex-direction: column; width: 30px; margin: 10px; background-color: #33084F;">
                                     <img src="../static/img/arquivo.png" alt="">
                                 </div>     
-                        </a>                  
+                              
+                            </div>
+
+                            <div style="background-color: #5B2182; padding: 2px; width: 50px;">
+
                                 <div style="display: flex; flex-direction: column; width: 30px; margin: 10px; background-color: #5B2182;">
                                     <img src="../static/img/perguntando.png" alt="">
                                 </div>
@@ -220,12 +224,14 @@
                             </div>
 
 
-                                <div style="border: 5px solid #33084F; width: 50rem; height: 9.7rem; transform: translate(50px, -99%);">                                    
-                                    <div style="display: flex;width: 600px; background-color: #fff; padding: 2%; border-radius: 50px;  transform: translate(50px, 80%);">
-                                    <label for="linkInput"></label>
-                                    <img src="../static/img/link.png" alt=""> 
-                                    <input type="text" id="linkInput" name="linkInput" placeholder="Insira o link da aula">
-                                </div>
+                                <div style="border: 5px solid #33084F; width: 50rem; height: 9.7rem; transform: translate(50px, -99%);">   
+                                    <p style="color: #fff; transform: translate(270px, 95%);">Faça o upload do arquivo</p>                                 
+                                    <div style="display: flex;width: 350px; background-color: #fff; padding: 1%; border-radius: 50px;  transform: translate(200px, 60%);">
+                                        <form action="/upload" method="post" enctype="multipart/form-data">
+                                            <input type="file" name="arquivo">
+                                          </form>
+                                        </div>
+                                        <p style="color: #fff; transform: translate(300px, 150%); font-size: 11px;">Ou arraste o elemento </p>
                                  </div>
 
                                     <button class="adicionarLink" onclick="myFunction()">Adicionar ao Bloco</button> 
