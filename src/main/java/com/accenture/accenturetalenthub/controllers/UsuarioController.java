@@ -9,6 +9,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -25,6 +26,7 @@ import com.accenture.accenturetalenthub.repositories.UsuarioRepository;
 
 
 @RestController
+@CrossOrigin("*")
 public class UsuarioController {
 
     @Autowired
@@ -76,6 +78,24 @@ public class UsuarioController {
 
         return ResponseEntity.status(HttpStatus.OK).body("Usuário deletado com sucesso!");
         
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity<?> validarLogin(@RequestBody UsuarioRecordDto usuarioRecordDto) {
+        // Obtenha os dados de usuário e senha do loginRequest
+        String nomeUsuario = usuarioRecordDto.getUsuario();
+        String senha = usuarioRecordDto.getSenha();
+
+        // Pesquise no banco de dados com base nos dados recebidos
+        Optional<UsuarioModel> usuario = usuarioRepository.findByUsuarioAndSenha(nomeUsuario, senha);
+
+        if (usuario.isPresent()) {
+            // Usuário encontrado, retorne os detalhes do usuário
+            return ResponseEntity.ok(usuario.get());
+        } else {
+            // Usuário não encontrado, retorne uma resposta apropriada
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Usuário não encontrado!");
+        }
     }
 
 }
