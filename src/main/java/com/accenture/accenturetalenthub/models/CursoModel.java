@@ -21,7 +21,8 @@ public class CursoModel implements Serializable {
     private UUID IdCurso;
     private String nome;
     private String descricao;
-    private Boolean concluido;
+    private Boolean concluido = false;
+    private int quantidadeHoras;
     private int pontuacaoGeral;
     @ManyToMany
     @JoinTable(
@@ -73,5 +74,13 @@ public class CursoModel implements Serializable {
 
     public void setInteresses(Set<InteresseModel> interesses) {
         this.interesses = interesses;
+    }
+
+    public int getQuantidadeHoras() {
+        return quantidadeHoras;
+    }
+
+    public void setQuantidadeHoras(int quantidadeHoras) {
+        this.quantidadeHoras = quantidadeHoras;
     }
 }

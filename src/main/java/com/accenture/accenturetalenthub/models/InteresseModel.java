@@ -19,7 +19,7 @@ public class InteresseModel implements Serializable {
     private String categoria;
     private int pontuacaoInteresse;
     @ManyToMany(mappedBy = "interesses")
-    private Set<CursoModel> curso = new HashSet<>();
+    private Set<CursoModel> cursos = new HashSet<>();
 
     public long getIdInteresse() {
         return IdInteresse;
