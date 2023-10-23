@@ -9,6 +9,9 @@ import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 import static jakarta.persistence.GenerationType.AUTO;
 
@@ -22,10 +25,23 @@ public class UsuarioModel implements Serializable {
     private UUID IdUsuario;
 
     @ElementCollection
-    private List<String> cursosConcluidos = new ArrayList<>();
+    @ManyToMany
+    @JoinTable(
+            name = "TB_USUARIO_CURSO",
+            joinColumns =   @JoinColumn(name = "usuario_id"),
+            inverseJoinColumns = @JoinColumn(name = "Curso_Id")
+    )
+    private List<CursoModel> cursosConcluidos = new ArrayList<>();
     
     @ElementCollection
-    private List<String> interesses = new ArrayList<>();
+    @ManyToMany
+    @JoinTable(
+            name = "TB_USUARIO_INTERESSES",
+            joinColumns =   @JoinColumn(name = "usuario_id"),
+            inverseJoinColumns = @JoinColumn(name = "Interesse_Id")
+    )
+    private List<InteresseModel> interesses = new ArrayList<>();
+    
 
     
     private String senha;
@@ -39,19 +55,19 @@ public class UsuarioModel implements Serializable {
     private int nivelInteresse;
     
     // getters e setters
-    public List<String> getInteresses() {
+    public List<InteresseModel> getInteresses() {
         return interesses;
     }
 
-    public void setInteresses(List<String> interesses) {
+    public void setInteresses(List<InteresseModel> interesses) {
         this.interesses = interesses;
     }
 
-    public List<String> getCursosConcluidos() {
+    public List<CursoModel> getCursosConcluidos() {
         return cursosConcluidos;
     }
 
-    public void setCursosConcluidos(List<String> cursosConcluidos) {
+    public void setCursosConcluidos(List<CursoModel> cursosConcluidos) {
         this.cursosConcluidos = cursosConcluidos;
     }
 
