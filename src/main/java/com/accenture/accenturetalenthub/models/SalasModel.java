@@ -1,10 +1,9 @@
 package com.accenture.accenturetalenthub.models;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDateTime;
 import java.util.UUID;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -14,6 +13,7 @@ import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 
 import static jakarta.persistence.GenerationType.AUTO;
+
 
 @Entity
 @Table(name = "TB_SALAS")
@@ -28,31 +28,28 @@ public class SalasModel implements Serializable {
     private String descricao;
 
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "dataCriacao")
-    private Date dataCriacao;
+    private LocalDateTime dataCriacao;
 
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "dataTermino")
-    private Date dataTermino;
+    private LocalDateTime dataTermino;
 
     @Lob
-    @Column(name = "banner", columnDefinition = "BLOB")
     private byte[] banner;
 
 
-    public Date getDataTermino() {
+    public LocalDateTime getDataTermino() {
         return dataTermino;
     }
 
-    public void setDataTermino(Date dataTermino) {
+    public void setDataTermino(LocalDateTime dataTermino) {
         this.dataTermino = dataTermino;
     }
 
-    public Date getDataCriacao() {
+    public LocalDateTime getDataCriacao() {
         return dataCriacao;
     }
 
-    public void setDataCriacao(Date dataCriacao) {
+    public void setDataCriacao(LocalDateTime dataCriacao) {
         this.dataCriacao = dataCriacao;
     }
 
