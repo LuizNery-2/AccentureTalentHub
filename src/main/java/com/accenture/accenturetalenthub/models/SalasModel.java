@@ -2,12 +2,17 @@ package com.accenture.accenturetalenthub.models;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.UUID;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
 import jakarta.persistence.Lob;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
@@ -23,6 +28,14 @@ public class SalasModel implements Serializable {
     @Id
     @GeneratedValue(strategy = AUTO)
     private UUID IdSala;
+
+    @ManyToMany
+    @JoinTable(
+            name = "TB_SALA_CURSO",
+            joinColumns =   @JoinColumn(name = "sala_id"),
+            inverseJoinColumns = @JoinColumn(name = "Curso_Id")
+    )
+    private Set<CursoModel> curso =new HashSet<>();
 
     private String nome;
     private String descricao;
