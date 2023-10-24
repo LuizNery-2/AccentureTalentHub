@@ -28,6 +28,9 @@ public class CursoModel implements Serializable {
     )
     private Set<InteresseModel> interesses =new HashSet<>();
 
+    @ManyToMany(mappedBy = "salas")
+    private Set<SalasModel> salas = new HashSet<>();
+
     public UUID getIdCurso() {
         return IdCurso;
     }
