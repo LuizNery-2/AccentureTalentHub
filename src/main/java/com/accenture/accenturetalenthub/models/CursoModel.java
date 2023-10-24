@@ -1,6 +1,8 @@
 package com.accenture.accenturetalenthub.models;
 
 import jakarta.persistence.*;
+import org.hibernate.mapping.Array;
+
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
@@ -27,9 +29,6 @@ public class CursoModel implements Serializable {
             inverseJoinColumns = @JoinColumn(name = "Interesse_Id")
     )
     private Set<InteresseModel> interesses =new HashSet<>();
-
-    // @ManyToMany(mappedBy = "salas")
-    // private Set<SalasModel> salas = new HashSet<>();
 
     public UUID getIdCurso() {
         return IdCurso;
