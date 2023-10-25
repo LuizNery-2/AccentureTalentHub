@@ -1,0 +1,29 @@
+*{
+    width: 100%;
+    max-width: 1366px;
+    margin: 0 auto;
+    /* background-image: url('../img/fundo_down.png'); */
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+#footer_login{
+    color: #969696;
+    text-align: center;
+    padding: 1% 0;
+    padding-top: 0;
+} 
+.line{
+    width: 40%;
+    font-size: 1px;
+    border-bottom: 1px solid #B05CEF;
+}
+
+#box_name_plataform{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 6%;
+    color: #B05CEF;
+}

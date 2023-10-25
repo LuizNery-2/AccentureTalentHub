@@ -21,25 +21,28 @@
 
                 <div id="center_txt">
                     <p>Bem-vindo a nossa plataforma!</p>
-                    <h1>Primeiro ACESSO</h1>
+
+                    <h1>Primeiro Acesso</h1>
                     <img src="../static/img/chave.png">
                 </div>
     
             </div>
     
             <div id="box_login">
-                <form id="form_login">
+
+                <form id="form_login" class="formNovaSenha">
                     <label>Insira sua nova senha</label>
-                    <input id="usuarioLogin" type="text" name="usuarioLogin" required>
+                    <input id="novaSenha" type="password" name="usuarioLogin" required>
                     <ul id="lista_primeiro_acesso">
-                        <li>* Mínimo de 8 caracteres</li>
-                        <li>* Letras minúsculas e maiúsculas</li>
-                        <li>* Caracteres especiais.</li>
-                        <li>* Lembre-se de criar uma senha diferente das que você já utiliza</li>
+                        <li id="validacao-minimo">* Mínimo de 8 caracteres</li>
+                        <li id="validacao-letras">* Letras minúsculas e maiúsculas</li>
+                        <li id="validacao-caracteres">* Caracteres especiais.</li>
+                        
                     </ul>
     
                     <label>Confirme sua senha</label>
-                    <input id="senhaLogin" type="password" name="senhaLogin" required>
+                    <input id="novaSenhaConfirmacao" type="password" name="senhaLogin" required>
+                    <p class="mensagem-erro" style="color: red;font-size: 12px;"></p>
                     <input id="validarLogin" type="submit" name="validarLogin" value="Cadastrar">
                 </form>
             </div>
@@ -68,13 +71,78 @@
             $("#box_center").fadeIn(2000);
             $("#box_center").css("display", "flex");
 
-            $("#validarLogin").click(function() {
-                window.location.href = 'areainteresse.html';
-            })
+            // $("#validarLogin").click(function() {
+            //     
+            // })
 
         });
+    </script>
+
+    <script>
+        const senhaInput = document.getElementById('novaSenha');
+        const senhaConfirmacaoInput = document.getElementById('novaSenhaConfirmacao');
+        const validacaoMinimo = document.getElementById('validacao-minimo');
+        const validacaoLetras = document.getElementById('validacao-letras');
+        const validacaoCaracteres = document.getElementById('validacao-caracteres');
+        const formNovaSenha = document.querySelector('.formNovaSenha');
+        const mensagemErro = document.querySelector('.mensagem-erro');
+
+        senhaInput.addEventListener('input', function () {
+            const senha = senhaInput.value;
+            const senhaConfirmacao = senhaConfirmacaoInput.value;
+
+            // Validação do tamanho mínimo
+            if (senha.length >= 8) {
+                validacaoMinimo.style.color = 'green';
+            }
+
+            // Validação de letras minúsculas e maiúsculas
+            if (/[a-z]/.test(senha) && /[A-Z]/.test(senha)) {
+                validacaoLetras.style.color = 'green';
+            }
+
+            // Validação de caracteres especiais (por exemplo, !, @, #, $, etc.)
+            if (/[!@#$%^&*]/.test(senha)) {
+                validacaoCaracteres.style.color = 'green';
+            }
+        });
+
+        formNovaSenha.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+            const senha = senhaInput.value;
+            const senhaConfirmacao = senhaConfirmacaoInput.value;
+
+            // Validação de confirmação de senha
+            if (senha === senhaConfirmacao) {
+
+                // const dadosNovaSenha = {
+                //     novaSenha: senhaConfirmacao
+                // };
+
+                //Use o Axios para enviar o objeto JSON para o backend
+
+                //Importe a biblioteca Axios
+                //const axios = require('axios');
+
+                // axios.post('/sua-rota-backend', dadosNovaSenha)
+                //     .then(response => {
+                //     // Lógica para lidar com a resposta do backend
+                //     console.log('Resposta do servidor:', response.data);
+                //     })
+                //     .catch(error => {
+                //     // Lógica para lidar com erros na solicitação
+                //     console.error('Erro na solicitação:', error);
+                // });
+
+                window.location.href = 'areainteresse.html';
+            } else {
+                const mensagem = 'As senhas não são correspondentes';
+                mensagemErro.textContent = mensagem;
+            }
 
 
+        });
 
     </script>
 </body>
