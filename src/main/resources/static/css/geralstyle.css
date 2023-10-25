@@ -289,7 +289,49 @@ html, body{
 }
 
 
-@media screen and (max-width: 1181px){
+/* RESPONSIVO COM MEDIA QUERIES */
+
+@media screen and (max-width: 1200px){
+    html, body{
+        font-size: 14px;
+    }
+
+    #txt_perfil h3{
+        font-size: 30px;
+    }
+
+    #info_perfil p{
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 1024px){
+    html, body{
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 768px){
+    html, body{
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 560px){
+    html, body{
+        font-size: 11px;
+    }
+}
+
+@media screen and (max-width: 480px){
+    html, body{
+        font-size: 11px;
+    }
+}
+
+
+
+/* @media screen and (max-width: 1181px){
     html, body{
         font-size: 15px;
     }
@@ -405,4 +447,4 @@ html, body{
     #box_info_perfil{
         width: 100%;
     }  
-}
+} */
