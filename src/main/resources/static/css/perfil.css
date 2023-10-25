@@ -166,3 +166,11 @@ input[type='submit']:hover{
 .alterar-senha-inputs{
     margin-top: 40px;
 }
+
+.input_cadastro{
+    width: 70%;
+    padding-left: 2%;
+    border: none;
+    color: #fff;
+    background-color: transparent;
+}

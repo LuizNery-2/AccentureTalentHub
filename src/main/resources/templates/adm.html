@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="">
+	<meta name="keywords" content="palavras,separadas,por,vírgulas">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+	<title>AccentureTalentHub | Cursos</title>
+	<link rel="shortcut icon" href="../static/img/logo_accenture.png" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="../static/css/geralstyle.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/perfil.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/curso.css">
+
+
+    <!-- Importação dos arquivos CSS para barra de pesquisa -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- Importação dos arquivos Jquary -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+<body id="">
+    <main>
+        <nav>
+            
+    
+            <ul style="margin-top: 10%;">
+                <li id="icon_usuario_menu" class="lista_dashboard" >
+                    <a href="#">
+                        <img class="icon_menu" src="../static/img/icon_perfil_action.png">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    
+        <section id="box_info_dashboard">
+
+            <header style="text-align: left; display: block;">
+                <h1 id="title_curso" style="text-align: left;">Admistrador</h1>
+            </header>
+
+        </section>
+
+            <div style="margin-left: 20%; margin-top: 0px; margin-bottom: 2%;" id="box_carreira">
+                <div style="display: flex;">
+                    <div style="width: 50%;"></div>
+                    <h2>Cadastrar novo usuário</h2>
+                </div>
+                <div id="box_info_metas">
+                    <p style="color: #E1BBFD;">Dados</p>
+                    <form>
+                        <div class="box_metas">
+                            <p>Nome: </p>
+                            <input class="input_cadastro" type="text">
+                        </div>
+                        <div class="box_metas">
+                            <p>Usuário: </p>
+                            <input class="input_cadastro" type="text">
+                        </div>
+                        <div class="box_metas">
+                            <p>E-mail: </p>
+                            <input class="input_cadastro" type="email">
+                        </div>
+                        <div class="box_metas">
+                            <p>Nível de Usuário : </p>
+                            <input class="input_cadastro" type="number" placeholder="(Adm = 0, Líder = 1, Líderado = 3)">
+                        </div>
+                    </form>
+                    
+                </div>
+
+                <div style="display: flex; flex-direction: column; align-items: center; margin-top: 5%;">
+                    <div class="button_carreira1">
+                        <img src="../static/img/interativo.png">
+                        <p style="color: #E1BBFD;">Cadastrar Usuário</p>
+                    </div>
+    
+                </div>
+            </div>
+    </main>
+
+    
+    
+    <footer class="footer_geral">
+        <p>© 2023 AccentureTalentHub.Inc | Todos os direitos reservados </p>
+    </footer>
+
+    <script>
+        $(document).ready(function(){
+            $(".button_carreira").click(function() {
+                $(".modal-senha").css("display", "flex");
+                $("#box_info_dashboard").css("opacity", "0.5");
+            });
+            
+            $("#fechar_modal-senha").click(function() {
+                $(".modal-senha").css("display", "none");
+                $("#box_info_dashboard").css("opacity", "1");
+            })
+        });
+    </script>
+
+</body>
+</html>
