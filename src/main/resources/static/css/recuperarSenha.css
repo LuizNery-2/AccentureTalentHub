@@ -31,3 +31,73 @@
         height: 220px;
     }
 }
+
+@media screen and (max-width: 398px){
+    
+    #box_recuperar_senha{
+        width: 100%;
+        height: 210px;
+        background-color: #fff;
+        border-radius: 15px;
+        margin-top: 80px;
+        padding: 1%;
+        position: relative !important;
+    }
+    
+    #box_name_plataform{
+        font-size: 8px;
+        margin-top: 250px;
+    }
+    
+    #footer_login{
+        font-size: 8px;
+    }
+}
+
+@media screen and (max-width: 280px){
+    #box_center{
+        width: 100%;
+        margin: auto;
+        margin-top: 15%;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 6%;
+    }
+    
+    #box_recuperar_senha{
+        height: 180px;
+        border-radius: 0px;
+    }
+    
+    #box_name_plataform{
+        font-size: 7px;
+        margin-top: 15px;
+    }
+    
+    #footer_login{
+        font-size: 7px;
+    }
+    
+    .fundo-pixel {
+        background-image: none !important;
+        width: 100%;
+        height: 0px;
+        margin-top: 0px;
+    }
+    
+    #form_login label{
+        margin-top: 8%;
+    }
+    
+    #form_login input[type='text'], #form_login input[type='password']{
+        height: 30px;
+    }
+    
+    #form_login input[type='submit']{
+        width: 60%;
+        height: 30px;
+        margin-top: 10%;
+    }
+    
+}

@@ -49,6 +49,8 @@ html, body{
 
 #icon_usuario_menu{
     margin-bottom: 10%;
+    margin-bottom: 1rem;
+    cursor:pointer;
 }
 
 /* css do menu lateral */
@@ -144,20 +146,22 @@ html, body{
     height: 32px;
 }
 
-/* css do menu lateral RESPONSIVO*/
 
-/*Botao suspenso do perfil
+/* Botao suspenso do perfil */
 
 #menu-suspenso {
-    position: absolute;
-    top: 30px; Ajuste conforme necessário para a posição do menu
-    right: 300px; Ajuste conforme necessário para a posição do menu
+    position: none;
+    bottom: 7rem; 
+    left: 1.5rem; 
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
-    background-color: #ffffff;
-    border: 1px solid #ccc;
-    padding: 0;
+    padding-right: 10px !important;
+    padding-left: 10px !important;
+    background-color: #280542b2;
+    border: 1px solid #B05CEF;
+    padding: 5px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
 }
 
 #menu-suspenso ul {
@@ -167,7 +171,12 @@ html, body{
 
 #menu-suspenso ul li a {
     text-decoration: none;
-    color:#C881FD;
+    color:#B05CEF;
+    font-weight: 600;
+    cursor: pointer;
+}
+#menu-suspenso ul li a:hover {
+    color:#7a09d0;
 }
 
 #menu-suspenso.active {
@@ -176,6 +185,8 @@ html, body{
 
 /*Botao suspenso do perfil*/
 
+
+/* css do menu lateral RESPONSIVO*/
 
 #box_info_dashboard{
     width: 100%;
@@ -303,62 +314,19 @@ html, body{
     #info_perfil p{
         font-size: 12px;
     }
+
+    .footer_geral p{
+        font-size: 14px;
+    }
+
+
 }
 
 @media screen and (max-width: 1024px){
     html, body{
         font-size: 13px;
     }
-}
 
-@media screen and (max-width: 768px){
-    html, body{
-        font-size: 12px;
-    }
-}
-
-@media screen and (max-width: 560px){
-    html, body{
-        font-size: 11px;
-    }
-}
-
-@media screen and (max-width: 480px){
-    html, body{
-        font-size: 11px;
-    }
-}
-
-
-
-/* @media screen and (max-width: 1181px){
-    html, body{
-        font-size: 15px;
-    }
-
-    #txt_perfil h3{
-        font-size: 30px;
-    }
-
-    #info_perfil p{
-        font-size: 12px;
-    }
-
-    .footer_geral p{
-        font-size: 15px;
-    }
-}
- 
-@media screen and (max-width: 1121px){
-    html, body{
-        font-size: 12px;
-    }
-    .footer_geral p{
-        font-size: 12px;
-    }
-}
-
-@media screen and (max-width: 1048px){
     #box_perfil{
         width: 85%;
         display: flex;
@@ -401,9 +369,16 @@ html, body{
         color: #fff;
     }
 
+
+
+
 }
 
-@media screen and (max-width: 880px){
+@media screen and (max-width: 768px){
+    html, body{
+        font-size: 12px;
+    }
+
     #box_perfil{
         flex-direction: column;
         align-items: center;
@@ -415,22 +390,13 @@ html, body{
         display: flex;
         align-items: center;
     }
-
-    
-
 }
- 
-@media screen and (max-width: 847px){
+
+@media screen and (max-width: 560px){
     html, body{
-        font-size: 10px;
+        font-size: 11px;
     }
-    .footer_geral p{
-        font-size: 10px;
-    }
-}
 
-@media screen and (max-width: 600px){
-    
     #menu-desktop{
         display: none;
     }
@@ -446,5 +412,19 @@ html, body{
 
     #box_info_perfil{
         width: 100%;
-    }  
-} */
+    }
+
+
+}
+
+@media screen and (max-width: 480px){
+    html, body{
+        font-size: 11px;
+    }
+}
+
+@media screen and (max-width: 280px){
+    html, body{
+        font-size: 10px;
+    }
+}
