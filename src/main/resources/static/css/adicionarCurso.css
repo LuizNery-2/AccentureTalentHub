@@ -135,11 +135,35 @@
 }
 
 .adicionarLink{
-display: flex;
-padding: 2%;
-background-color: #B05CEF;
-color: #fff;
-border-radius: 20px;
-transform: translate(680px, -150%);
-cursor: pointer;
+  display: flex;
+  padding: 2%;
+  background-color: #B05CEF;
+  color: #fff;
+  border-radius: 20px;
+  transform: translate(680px, -150%);
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1200px){
+
+}
+
+@media screen and (max-width: 1024px){
+    
+}
+
+@media screen and (max-width: 768px){
+    
+}
+
+/* @media screen and (max-width: 560px){
+    
+} */
+
+@media screen and (max-width: 480px){
+    
+}
+
+@media screen and (max-width: 280px){
+    
 }

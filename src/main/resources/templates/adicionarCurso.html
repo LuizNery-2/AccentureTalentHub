@@ -23,43 +23,102 @@
 </head>
 <body id="">
  <main>
-        <nav>
-            <ul class="lista_dashboard">
-                <li id="logo">
-                    <a href="home.html">
-                        <img src="../static/img/logo_menu.png">
-                    </a>
-                </li>
-                <li class="active">
-                    <a href="curso.html">
-                        <img class="icon_menu" src="../static/img/icon_cursos.png">
-                    </a>
-                </li>
-                <li>
-                    <a href="salas.html">
-                        <img class="icon_menu" src="../static/img/icon_trilhas.png">
-                    </a>
-                </li>
-                <li>
-                    <a href="desenvol_pessoal.html">
-                        <img class="icon_menu" src="../static/img/icon_dp.png">
-                    </a>
-                </li>
-                <li>
-                    <a href="curso_concluido.html">
-                        <img class="icon_menu" src="../static/img/icon_cursos_concluidos.png">
-                    </a>
-                </li>
-            </ul>
+    <nav id="menu-desktop">
+        <ul class="lista_dashboard">
+            <li id="logo">
+                <a href="home.html">
+                    <img src="../static/img/logo_menu.png">
+                </a>
+            </li>
+            <li class="active">
+                <a href="curso.html">
+                    <img class="icon_menu" src="../static/img/icon_cursos.png">
+                </a>
+            </li>
+            <li>
+                <a href="salas.html">
+                    <img class="icon_menu" src="../static/img/icon_trilhas.png">
+                </a>
+            </li>
+            <li>
+                <a href="desenvol_pessoal.html">
+                    <img class="icon_menu" src="../static/img/icon_dp.png">
+                </a>
+            </li>
+            <li>
+                <a href="curso_concluido.html">
+                    <img class="icon_menu" src="../static/img/icon_cursos_concluidos.png">
+                </a>
+            </li>
+        </ul>
+
+        <ul>
+            <li id="icon_usuario_menu" class="lista_dashboard">
+                <img class="icon_menu" src="../static/img/icon_perfil.png">
+            </li>
+        </ul>
+    </nav>
+
+    <!--  Este nav só será ativado quando as páginas estiverem no modo responsivo! -->
+    <!--  INICIO DO NAV RESPONSIVO -->
+    <div id="icon-menu-responsivo">
+        <img src="../static/img/menu-aberto.png">
+    </div>
     
-            <ul>
-                <li id="icon_usuario_menu" class="lista_dashboard">
-                    <a href="perfil.html">
-                        <img class="icon_menu" src="../static/img/icon_perfil.png">
-                    </a>
-                </li>
-            </ul>
-        </nav>
+    <nav class="nav-responsivo">
+        <ul class="lista_dashboard-responsivo">
+            <li id="icon_fechar-responsivo">
+                <img src="../static/img/icon_fechar.png">
+            </li>
+            <li>
+                <a id="logo-responsivo" href="home.html">
+                    <img src="../static/img/logo-responsivo.png">
+                    <p>AccentureTalentHub</p>
+                </a>
+            </li>
+            <li class="active-responsivo">
+                <a class="link-page-responsivo" href="curso.html">
+                    <img class="icon_menu-responsivo" src="../static/img/icon_cursos.png">
+                    <p>Cursos</p>
+                </a>         
+            </li>
+            <li>
+                <a class="link-page-responsivo" href="salas.html">
+                    <img class="icon_menu-responsivo" src="../static/img/icon_trilhas.png">
+                    <p>Salas</p>
+                </a>                
+            </li>
+            <li>
+                <a class="link-page-responsivo" href="desenvol_pessoal.html">
+                    <img class="icon_menu-responsivo" src="../static/img/icon_dp.png">
+                    <p>Mural DPS</p>
+                </a> 
+            </li>
+            <li>
+                <a class="link-page-responsivo" href="curso_concluido.html">
+                    <img class="icon_menu-responsivo" src="../static/img/icon_cursos_concluidos.png">
+                    <p>Cursos Concluídos</p>
+                </a>
+            </li>
+        </ul>
+        <ul class="lista_dashboard-responsivo">
+            <li id="icon_usuario_menu-responsivo" class="lista_dashboard-responsivo">
+                <div class="link-page-responsivo">
+                    <img class="icon_menu-responsivo" src="../static/img/icon_perfil.png">
+                    <p>Perfil</p>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <!--  FIM DO NAV RESPONSIVO -->
+
+    <div id="menu-suspenso">
+        <ul>
+            <li><a href="perfil.html">Perfil</a></li>
+            <li><a href="index.html">Sair</a></li>
+        </ul>
+    </div>
      
     </main>
     
