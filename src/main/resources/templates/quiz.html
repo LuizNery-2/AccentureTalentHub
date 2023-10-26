@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="">
+	<meta name="keywords" content="palavras,separadas,por,vírgulas">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+	<title>AccentureTalentHub | Quiz</title>
+	<link rel="shortcut icon" href="../static/img/logo_accenture.png" type="image/x-icon">
+	<link rel="stylesheet" type="text/css" href="../static/css/geralstyle.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/quiz.css">
+</head>
+    <body>
+            <h3 style="color: #E1BBFD; margin: 50px 50px 0;">TESTE  DE PERFIL</h2>
+            <h2 style="color: #fff; margin: 0px 50px;">soft skills</h2>
+
+           <center><section style="margin: 80px;">
+
+               <h1 style="color: #fff; margin: 10px;">
+                    Me sinto confortável ao redor das pessoas
+                </h1>
+                  <div id="container">
+                    <div id="line2">
+                      <div class="tick" style="left: 0%;"></div>
+                      <div class="tick" style="left: 50%;"></div>
+                      <div class="tick" style="left: 100%;"></div>
+                      <div class="label" style="right: -4%; bottom: 5px; font-size: 15px; color: #fff;">Discordo</div>
+                      <div class="label" style="right: 38%; bottom: 5px; font-size: 15px; color: #fff;">Nem concordo nem discordo</div>
+                      <div class="label" style="right: 95%; bottom: 5px; font-size: 15px; color: #fff;">Concordo</div>
+                    </div>
+                    <div id="ball"></div>
+                  </div>
+           </center> 
+           </section>
+
+           <center><section style="margin: 80px;">
+
+               <h1 style="color: #fff; margin: 10px;">
+                    Me sinto confortável ao redor das pessoas
+                </h1>
+                  <div id="container">
+                    <div id="line3">
+                      <div class="tick1" style="left: 0%;"></div>
+                      <div class="tick1" style="left: 50%;"></div>
+                      <div class="tick1" style="left: 100%;"></div>
+                      <div class="label1" style="right: -4%; bottom: 5px; font-size: 15px; color: #fff;">Discordo</div>
+                      <div class="label1" style="right: 38%; bottom: 5px; font-size: 15px; color: #fff;">Nem concordo nem discordo</div>
+                      <div class="label1" style="right: 95%; bottom: 5px; font-size: 15px; color: #fff;">Concordo</div>
+                    </div>
+                    <div id="ball2"></div>
+                  </div>
+           </section>
+        </center> 
+
+        <center><section style="margin: 80px;">
+
+            <h1 style="color: #fff; margin: 10px;">
+                 Me sinto confortável ao redor das pessoas
+             </h1>
+               <div id="container">
+                 <div id="line4">
+                   <div class="tick2" style="left: 0%;"></div>
+                   <div class="tick2" style="left: 50%;"></div>
+                   <div class="tick2" style="left: 100%;"></div>
+                   <div class="label2" style="right: -4%; bottom: 5px; font-size: 15px; color: #fff;">Discordo</div>
+                   <div class="label2" style="right: 38%; bottom: 5px; font-size: 15px; color: #fff;">Nem concordo nem discordo</div>
+                   <div class="label2" style="right: 95%; bottom: 5px; font-size: 15px; color: #fff;">Concordo</div>
+                 </div>
+                 <div id="ball3"></div>
+               </div>
+        </section>
+        </center> 
+
+        <center>
+            <section style="margin: 80px;">
+                <h1 style="color: #fff; margin: 10px;">
+                     Me sinto confortável ao redor das pessoas
+                 </h1>
+                   <div id="container">
+                     <div id="line5">
+                       <div class="tick3" style="left: 0%;"></div>
+                       <div class="tick3" style="left: 50%;"></div>
+                       <div class="tick3" style="left: 100%;"></div>
+                       <div class="label3" style="right: -4%; bottom: 5px; font-size: 15px; color: #fff;">Discordo</div>
+                       <div class="label3" style="right: 38%; bottom: 5px; font-size: 15px; color: #fff;">Nem concordo nem discordo</div>
+                       <div class="label3" style="right: 95%; bottom: 5px; font-size: 15px; color: #fff;">Concordo</div>
+                     </div>
+                     <div id="ball4"></div>
+                   </div>
+            </section>
+        </center> 
+
+        <div id="enviar_resposta">
+            <p>Enviar Resposta</p>
+            <img src="../static/img/seta_direita.png">
+        </div>
+           
+    </body>
+
+        <section id="box_name_plataform">
+            <div class="line"></div>
+            <p>AccentureTalentHub</p>
+            <div class="line"></div>
+        </section>
+
+        <footer id="footer_login">
+            <p>© 2023 AccentureTalentHub.Inc | Todos os direitos reservados </p>
+        </footer>
+    </section>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const lines = [document.getElementById('line2'), document.getElementById('line3'), document.getElementById('line4'), document.getElementById('line5')];
+            const balls = [document.getElementById('ball'), document.getElementById('ball2'), document.getElementById('ball3'), document.getElementById('ball4')];
+            const draggingStates = [false, false, false, false];
+
+            const handlePointerMove = (index, e) => {
+                if (draggingStates[index]) {
+                    let rect = lines[index].getBoundingClientRect();
+                    let newOffsetX = e.clientX - rect.left - balls[index].offsetWidth / 2;
+                    let minOffsetX = 0;
+                    let maxOffsetX = rect.width - balls[index].offsetWidth;
+
+                    if (newOffsetX >= minOffsetX && newOffsetX <= maxOffsetX) {
+                        balls[index].style.left = `${newOffsetX}px`;
+                    }
+                }
+            };
+
+            balls.forEach((ball, index) => {
+                ball.addEventListener('mousedown', function (e) {
+                    draggingStates[index] = true;
+                    handlePointerMove(index, e);
+                });
+
+                document.addEventListener('mouseup', function (e) {
+                    draggingStates[index] = false;
+                });
+
+                document.addEventListener('mousemove', (e) => handlePointerMove(index, e));
+
+                lines[index].addEventListener('mouseleave', function (e) {
+                    draggingStates[index] = false;
+                });
+            });
+        });
+    </script>
+      
+</body>
+</html>

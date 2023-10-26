@@ -1,0 +1,176 @@
+#poligono{
+    background-image: url("../img/Polygon.png") !important;
+    background-size: 100% 100%;
+    width: 62px;
+    height: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+#nome_perfil{
+    background-color: #5B2182;
+    color: #fff;
+    border-radius: 20px;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    width: 200px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#box_informacoes_perfil{
+    display: flex;
+    align-items: center;
+    position: relative;
+    top: 35px;
+}
+
+#box_center_perfil{
+    padding-left: 10%;
+    margin-top: -80px;
+    display: flex;
+}
+
+#box_detalhes_perfil{
+    background-color: #5B2182;
+    width: 350px;
+    height: 530px;
+    margin-bottom: 2%;
+    border-radius: 15px;
+}
+
+#info_perfil{
+    padding-left: 5%;
+}
+
+#box_carreira{
+    margin-top: 70px;
+    margin-left: 2%;
+    border: 2px solid #5B2182;
+    width: 60%;
+    height: 530px;
+    border-radius: 15px;
+}
+
+#box_carreira h2{
+    background-color: #5B2182;
+    width: 50%;
+    height: 50px;
+    text-align: center;
+    color: #fff;
+    font-weight: normal;
+    border-bottom-left-radius: 50px;
+}
+
+#box_info_metas{
+    margin-top: 5%;
+    padding: 0 5%;
+}
+
+.box_metas{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: #0E0E0E;
+    margin: 2% 0;
+    height: 30px;
+    padding: 0 2%;
+    border-radius: 15px;
+}
+
+.box_metas p{
+    color: #B05CEF;
+}
+
+.box_metas img{
+    cursor: pointer;
+}
+
+.button_carreira, .button_carreira1{
+    background-color: #40165D;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    height: 60px;
+    cursor: pointer;
+}
+
+.button_carreira p, .button_carreira1 p{
+    margin-left: 2%;
+}
+
+input[type='submit']{
+    display: block;
+    width: 80%;
+    height: 40px;
+    margin: 0 auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    border: none;
+    border-radius: 18px;
+    background-color: #5B2182;
+    cursor: pointer;
+    color: #fff;
+}
+
+input[type='submit']:hover{
+    background-color: #CD41FF;
+}
+
+#alterar-senha img{
+    width: 40px;
+    border-radius: 15px;   
+}
+
+#detalhe_senha{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40%;
+    font-size: 25px;
+}
+
+#detalhe_senha p {
+    /* font-size: 40px; */
+    padding: 0 5%;
+    text-align: justify;
+    margin: 30px
+}
+
+.modal-senha{
+    width: 500px;
+    height: 550px;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #3F115F;
+    border-radius: 15px;
+    padding: 1%;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+.txt_info_curso-senha{
+    color: #C881FD;
+}
+.alterar-senha-inputs{
+    margin-top: 40px;
+}
+
+.input_cadastro{
+    width: 70%;
+    padding-left: 2%;
+    border: none;
+    color: #fff;
+    background-color: transparent;
+}

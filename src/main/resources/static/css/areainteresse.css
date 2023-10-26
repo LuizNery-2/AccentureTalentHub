@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+#box_chamada{
+    display: flex;
+    width: 100%;
+    position: relative;
+    left: -20px;
+    color: #fff;
+    align-items: center;
+}
+
+#foguete{
+    width: 150px;
+    height: 150px;
+}
+
+#chamada_txt div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#faixa_chamada{
+    width: 50%;
+    border-bottom: 5px dashed #6404A3;
+}
+
+#chamada_txt h3{
+    font-size: 25px;
+    font-family: 'Poppins', sans-serif;
+}
+
+#chamada_txt h1{
+    font-size: 35px;
+    font-family: 'Poppins', sans-serif;
+}
+
+#box_tecnologias{
+    width: 55%;
+    border: 3px solid #B05CEF;
+    border-radius: 10px;
+    margin: auto;
+    padding: 1%;
+    color: #fff;
+}
+
+#box_tecnologias ul{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+#box_tecnologias ul li{
+    list-style: none;
+    font-family: 'Poppins', sans-serif;
+    padding: 1.2%;
+    background-size: 100% 100%;
+    text-align: center;
+    background-image: url('../img/borda.png');
+    cursor: pointer;
+}
+
+#enviar_resposta{
+    display: flex;
+    width: 200px;
+    margin: 2% auto;
+    justify-content: space-around;
+    align-items: center;
+    cursor: pointer;
+    color: #5B2182;
+    border-radius: 8px;
+    background-color: #E1BBFD;
+}
+
+#enviar_resposta img{
+    width: 30px;
+}
+
+.selected {
+    color: red;
+}
