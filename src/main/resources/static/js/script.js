@@ -21,7 +21,6 @@ $(document).ready(function() {
     $("#icon_fechar-responsivo").click(function() {
     });
 
-
     //Botão suspeso de sair
     $("#icon_usuario_menu").click(function() {
         if($("#menu-suspenso").css("display", "none")){
@@ -30,27 +29,21 @@ $(document).ready(function() {
         if($("#menu-suspenso").css("position", "fixed")){
             $("#menu-suspenso").css("position", "none");
         }
-
-        // if($(".nav-responsivo").css("display", "flex")){
-        //     $(".nav-responsivo").animate({ left: "0px" }, 500); 
-        // }
     });
 
+    // //Botão suspeso de sair
+    // const iconPerfil = document.getElementById('icon_usuario_menu-responsivo');
+    // const menuSuspenso = document.getElementById('menu-suspenso');
 
+    // iconPerfil.addEventListener('click', function() {
+    //     menuSuspenso.classList.toggle('active');
+    // });
 
-    //Botão suspeso de sair
-    const iconPerfil = document.getElementById('icon_usuario_menu-responsivo');
-    const menuSuspenso = document.getElementById('menu-suspenso');
-
-    iconPerfil.addEventListener('click', function() {
-        menuSuspenso.classList.toggle('active');
-    });
-
-    document.addEventListener('click', function(event) {
-        if (!menuSuspenso.contains(event.target) && event.target !== iconPerfil) {
-            menuSuspenso.classList.remove('active');
-        }
-    });
+    // document.addEventListener('click', function(event) {
+    //     if (!menuSuspenso.contains(event.target) && event.target !== iconPerfil) {
+    //         menuSuspenso.classList.remove('active');
+    //     }
+    // });
 
 
 

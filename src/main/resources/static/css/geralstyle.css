@@ -421,6 +421,10 @@ html, body{
     html, body{
         font-size: 11px;
     }
+
+    .fundo-pixel {
+        background-image: none !important;
+    }
 }
 
 @media screen and (max-width: 280px){
