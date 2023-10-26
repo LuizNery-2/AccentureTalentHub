@@ -9,6 +9,7 @@ html, body{
 
 #box_login{
     position: relative !important;
+    height: 480px !important;
 }
 
 #center_txt_responsivo{
@@ -94,6 +95,7 @@ html, body{
         width: 90px;
         height: 90px;
     }
+    
 }
 
 @media screen and (max-width: 1024px){
@@ -119,7 +121,7 @@ html, body{
 
     #box_login{
         width: 350px !important;
-        height: 340px !important;
+        height: 450px !important;
     }
 
     #box_name_plataform{
@@ -153,7 +155,7 @@ html, body{
 
     #box_login{
         width: 300px !important;
-        height: 280px !important;
+        height: 350px !important;
     }
 
     #box_name_plataform{
@@ -174,14 +176,11 @@ html, body{
 @media screen and (max-width: 740px){
     #box_login{
         margin-top: 0px !important;
+        height: 300px !important;
     }
     #center_txt_responsivo{
         display:flex;
         flex-direction: row;
-    }
-
-    #box_login{
-        height: 250px !important;
     }
 
     #center_txt_responsivo img{
@@ -210,15 +209,12 @@ html, body{
 }
 
 @media screen and (max-width: 480px){
-    #box_login{
-        margin-top: 0px !important;
-    }
+    
     #center_txt_responsivo{
         display:flex;
         flex-direction: row;
     }
     
-
     /* .box_center_txt{
         width: 100%;
         margin: 0 auto;
@@ -226,10 +222,6 @@ html, body{
         background-repeat: no-repeat;
         /* background-color: red !important;
     } */
-
-    #box_login{
-        height: 250px !important;
-    }
 
     #center_txt_responsivo img{
         padding: 0;
@@ -259,17 +251,10 @@ html, body{
 }
 
 @media screen and (max-width: 480px){
-    #box_login{
-        margin-top: 0px !important;
-    }
+    
     #center_txt_responsivo{
         display:flex;
         flex-direction: row;
-    }
-    
-
-    #box_login{
-        height: 250px !important;
     }
 
     #center_txt_responsivo img{
