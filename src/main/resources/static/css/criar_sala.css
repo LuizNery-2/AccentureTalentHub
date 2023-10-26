@@ -1,10 +1,10 @@
 .box_CriarSala{
     width: 60%;
-    height: 680px;
+    /* height: 680px; */
     background-color: #3B0B5A;
     border-radius: 5px;
     border: 1px solid #E1BBFD;
-    margin: 0;
+    /* margin: 0; */
     padding: 2%;
     transform: translate(320px, 2%);   
     color: #fff;
@@ -19,8 +19,9 @@
     margin-bottom: 50px;
 } 
 .banner_CriarSala{
-    width: 270px;
-    height: 120px;
+    padding: 20px;
+    padding-top: 50px;
+    padding-bottom: 50px;
     background-color:#5B2182;
     border-radius: 5px;
     margin-bottom: 30px;
