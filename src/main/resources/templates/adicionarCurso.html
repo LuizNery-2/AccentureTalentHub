@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<meta charset="utf-8">
-	<meta name="description" content="">
-	<meta name="keywords" content="palavras,separadas,por,vírgulas">
-	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
-	<title>AccentureTalentHub | Adicionar Curso</title>
-	<link rel="shortcut icon" href="../static/img/logo_accenture.png" type="image/x-icon">
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="palavras,separadas,por,vírgulas">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+    <title>AccentureTalentHub | Adicionar Curso</title>
+    <link rel="shortcut icon" href="../static/img/logo_accenture.png" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="../static/css/home.css">
     <link rel="stylesheet" type="text/css" href="../static/css/geralstyle.css">
     <link rel="stylesheet" type="text/css" href="../static/css/indexstyle.css">
@@ -21,322 +22,417 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 </head>
+
 <body id="">
- <main>
-    <nav id="menu-desktop">
-        <ul class="lista_dashboard">
-            <li id="logo">
-                <a href="home.html">
-                    <img src="../static/img/logo_menu.png">
-                </a>
-            </li>
-            <li class="active">
-                <a href="curso.html">
-                    <img class="icon_menu" src="../static/img/icon_cursos.png">
-                </a>
-            </li>
-            <li>
-                <a href="salas.html">
-                    <img class="icon_menu" src="../static/img/icon_trilhas.png">
-                </a>
-            </li>
-            <li>
-                <a href="desenvol_pessoal.html">
-                    <img class="icon_menu" src="../static/img/icon_dp.png">
-                </a>
-            </li>
-            <li>
-                <a href="curso_concluido.html">
-                    <img class="icon_menu" src="../static/img/icon_cursos_concluidos.png">
-                </a>
-            </li>
-        </ul>
+    <main>
+        <nav id="menu-desktop">
+            <ul class="lista_dashboard">
+                <li id="logo">
+                    <a href="home.html">
+                        <img src="../static/img/logo_menu.png">
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="curso.html">
+                        <img class="icon_menu" src="../static/img/icon_cursos.png">
+                    </a>
+                </li>
+                <li>
+                    <a href="salas.html">
+                        <img class="icon_menu" src="../static/img/icon_trilhas.png">
+                    </a>
+                </li>
+                <li>
+                    <a href="desenvol_pessoal.html">
+                        <img class="icon_menu" src="../static/img/icon_dp.png">
+                    </a>
+                </li>
+                <li>
+                    <a href="curso_concluido.html">
+                        <img class="icon_menu" src="../static/img/icon_cursos_concluidos.png">
+                    </a>
+                </li>
+            </ul>
 
-        <ul>
-            <li id="icon_usuario_menu" class="lista_dashboard">
-                <img class="icon_menu" src="../static/img/icon_perfil.png">
-            </li>
-        </ul>
-    </nav>
+            <ul>
+                <li id="icon_usuario_menu" class="lista_dashboard">
+                    <img class="icon_menu" src="../static/img/icon_perfil.png">
+                </li>
+            </ul>
+        </nav>
 
-    <!--  Este nav só será ativado quando as páginas estiverem no modo responsivo! -->
-    <!--  INICIO DO NAV RESPONSIVO -->
-    <div id="icon-menu-responsivo">
-        <img src="../static/img/menu-aberto.png">
-    </div>
-    
-    <nav class="nav-responsivo">
-        <ul class="lista_dashboard-responsivo">
-            <li id="icon_fechar-responsivo">
-                <img src="../static/img/icon_fechar.png">
-            </li>
-            <li>
-                <a id="logo-responsivo" href="home.html">
-                    <img src="../static/img/logo-responsivo.png">
-                    <p>AccentureTalentHub</p>
-                </a>
-            </li>
-            <li class="active-responsivo">
-                <a class="link-page-responsivo" href="curso.html">
-                    <img class="icon_menu-responsivo" src="../static/img/icon_cursos.png">
-                    <p>Cursos</p>
-                </a>         
-            </li>
-            <li>
-                <a class="link-page-responsivo" href="salas.html">
-                    <img class="icon_menu-responsivo" src="../static/img/icon_trilhas.png">
-                    <p>Salas</p>
-                </a>                
-            </li>
-            <li>
-                <a class="link-page-responsivo" href="desenvol_pessoal.html">
-                    <img class="icon_menu-responsivo" src="../static/img/icon_dp.png">
-                    <p>Mural DPS</p>
-                </a> 
-            </li>
-            <li>
-                <a class="link-page-responsivo" href="curso_concluido.html">
-                    <img class="icon_menu-responsivo" src="../static/img/icon_cursos_concluidos.png">
-                    <p>Cursos Concluídos</p>
-                </a>
-            </li>
-        </ul>
-        <ul class="lista_dashboard-responsivo">
-            <li id="icon_usuario_menu-responsivo" class="lista_dashboard-responsivo">
-                <div class="link-page-responsivo">
-                    <img class="icon_menu-responsivo" src="../static/img/icon_perfil.png">
-                    <p>Perfil</p>
-                </div>
-            </li>
-        </ul>
-    </nav>
-
-    <!--  FIM DO NAV RESPONSIVO -->
-
-    <div id="menu-suspenso">
-        <ul>
-            <li><a href="perfil.html">Perfil</a></li>
-            <li><a href="index.html">Sair</a></li>
-        </ul>
-    </div>
-     
-    </main>
-    
-    <div class="box_CriarModulo">
-        <h2>Adicione um Curso</h2>
-       <a href="perfilLider.html"> <img src="../static/img/icon_fechar.png" alt="" style="transform: translate(755px, -850%);">  </a> 
-
-        <section class="Criar_Modulo">
-            <p>Nome do curso</p>
-        <div style="width: 270px; height: 25px; background-color:#481A67;border-radius: 5px; margin-bottom: 30px; margin-top: 10px;">
-     </div>       
-    
-
-            <p>Adicione um banner ao curso</p>
-            <div class="banner_CriarModulo"></div>
-
-            <button id="botao-criarModulo">Criar Modulo</button>  
-
-            <div style="display: flex; flex-direction: row;">
-                <div>
-
-                    <div class="modulos">
-                        <p>
-                            Clique aqui para <br> adicionar vídeos, <br> materiais e quizes <br> ao módulo.
-                        </p>
-                    </div>
-
-                    <div style="display: flex; border-bottom: 1px dashed #B05CEF; height: 18px; width: 200px; transform: translate(30px, 50%);">
-                   <p style="margin-left: 70px; font-size: 10px; color: grey;">Modulo 1</p> </div>
-                </div>
-    
-                <div>
-
-                    <div class="modulos">
-                        <p>
-                            Clique aqui para <br> adicionar vídeos, <br> materiais e quizes <br> ao módulo.
-                        </p>
-                    </div>
-
-                    <div style="display: flex; border-bottom: 1px dashed #B05CEF; height: 18px; width: 200px; transform: translate(30px, 50%);">
-                   <p style="margin-left: 70px; font-size: 10px; color: grey;">Modulo 1</p> </div>
-                </div>
-            
-                <div>
-
-                    <div class="modulos">
-                        <p>
-                            Clique aqui para <br> adicionar vídeos, <br> materiais e quizes <br> ao módulo.
-                        </p>
-                    </div>
-
-                    <div style="display: flex; border-bottom: 1px dashed #B05CEF; height: 18px; width: 200px; transform: translate(30px, 50%);">
-                   <p style="margin-left: 70px; font-size: 10px; color: grey;">Modulo 1</p> </div>
-                </div>
+        <!--  Este nav só será ativado quando as páginas estiverem no modo responsivo! -->
+        <!--  INICIO DO NAV RESPONSIVO -->
+        <div id="icon-menu-responsivo">
+            <img src="../static/img/menu-aberto.png">
         </div>
-          
-            <p style="transform: translate(400px, -1980%);">Adicione uma descrição</p>
-            <div style="width: 270px; height: 100px; background-color:#481A67;border-radius: 5px; transform: translate(400px, -490%);"> <p style="display: flex; font-size: 8px; color: grey;float: right; transform: translate(-8px, 600%); ">0/500
-            </p>
+
+        <nav class="nav-responsivo">
+            <ul class="lista_dashboard-responsivo">
+                <li id="icon_fechar-responsivo">
+                    <img src="../static/img/icon_fechar.png">
+                </li>
+                <li>
+                    <a id="logo-responsivo" href="home.html">
+                        <img src="../static/img/logo-responsivo.png">
+                        <p>AccentureTalentHub</p>
+                    </a>
+                </li>
+                <li class="active-responsivo">
+                    <a class="link-page-responsivo" href="curso.html">
+                        <img class="icon_menu-responsivo" src="../static/img/icon_cursos.png">
+                        <p>Cursos</p>
+                    </a>
+                </li>
+                <li>
+                    <a class="link-page-responsivo" href="salas.html">
+                        <img class="icon_menu-responsivo" src="../static/img/icon_trilhas.png">
+                        <p>Salas</p>
+                    </a>
+                </li>
+                <li>
+                    <a class="link-page-responsivo" href="desenvol_pessoal.html">
+                        <img class="icon_menu-responsivo" src="../static/img/icon_dp.png">
+                        <p>Mural DPS</p>
+                    </a>
+                </li>
+                <li>
+                    <a class="link-page-responsivo" href="curso_concluido.html">
+                        <img class="icon_menu-responsivo" src="../static/img/icon_cursos_concluidos.png">
+                        <p>Cursos Concluídos</p>
+                    </a>
+                </li>
+            </ul>
+            <ul class="lista_dashboard-responsivo">
+                <li id="icon_usuario_menu-responsivo" class="lista_dashboard-responsivo">
+                    <div class="link-page-responsivo">
+                        <img class="icon_menu-responsivo" src="../static/img/icon_perfil.png">
+                        <p>Perfil</p>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+
+        <!--  FIM DO NAV RESPONSIVO -->
+
+        <div id="menu-suspenso">
+            <ul>
+                <li><a href="perfil.html">Perfil</a></li>
+                <li><a href="index.html">Sair</a></li>
+            </ul>
+        </div>
+
+
+        <!-- INÍCIO PÁGINA DE CRIAÇÃO DO CURSO -->
+        <section class="caixa_principalCriacao">
+
+            <div class="caixa_criacao">
+                <h2>Adicione um Curso</h2>
+                <a href="perfilLider.html"> <img src="../static/img/icon_fechar.png" alt="" style="transform: translate(740px, -640%);"> </a>
+
+                <forms class="forms_criarCurso">
+                    <div>
+                        <p>Nome do curso</p>
+                        <input type="text" class="nome_curso">
+
+                        <p>Adicione um banner ao curso</p>
+                        <input type="file" class="banner_curso">
+                    </div>
+                    
+                    <div>
+                        <p>Adicione uma descrição</p>
+                        <input type="text" class="descricao_curso">
+
+                        <p>Quais tecnologias seu curso aborda?</p>
+                        <div class="dropdown">
+                            <button class="dropbtn">Selecione a tecnologia <img style="width: 10px; margin-left: 5px;" src="../static/img/icon_expandir.png" alt=""> </button>
+                            <div class="dropdown-content">
+                                <a href="#">Java</a>
+                                <a href="#">Jquary</a>
+                                <a href="#">javascript</a>
+                                <a href="#">MySql</a>
+                                <a href="#">Spark</a>
+                                <a href="#">Docker</a>
+                            </div>
+                        </div>
+
+        
+                    </div>
+                </forms>
+
+                <button id="botao-criarModulo">Criar Modulo</button>
+                <div style="display: flex; flex-direction: row;">
+                    <div>
+
+                        <div class="modulos">
+                            <p>
+                                Clique aqui para <br> adicionar vídeos, <br> materiais e quizes <br> ao módulo.
+                            </p>
+                        </div>
+    
+                        <div style="display: flex; border-bottom: 1px dashed #B05CEF; height: 18px; width: 200px; transform: translate(30px, 50%);">
+                       <p style="margin-left: 70px; font-size: 10px; color: grey;">Modulo 1</p> </div>
+                    </div>
+        
+                    <div>
+    
+                        <div class="modulos">
+                            <p>
+                                Clique aqui para <br> adicionar vídeos, <br> materiais e quizes <br> ao módulo.
+                            </p>
+                        </div>
+    
+                        <div style="display: flex; border-bottom: 1px dashed #B05CEF; height: 18px; width: 200px; transform: translate(30px, 50%);">
+                       <p style="margin-left: 70px; font-size: 10px; color: grey;">Modulo 1</p> </div>
+                    </div>
+                
+                    <div>
+    
+                        <div class="modulos">
+                            <p>
+                                Clique aqui para <br> adicionar vídeos, <br> materiais e quizes <br> ao módulo.
+                            </p>
+                        </div>
+    
+                        <div style="display: flex; border-bottom: 1px dashed #B05CEF; height: 18px; width: 200px; transform: translate(30px, 50%);">
+                       <p style="margin-left: 70px; font-size: 10px; color: grey;">Modulo 1</p> </div>
+                    </div>
             </div>
-            
 
-            <div class="dropdown">
-                <p>Quais tecnologias seu curso aborda?</p>
-                <button class="dropbtn">Selecione a tecnologia <img style="width: 10px; margin-left: 5px;" src="../static/img/icon_expandir.png" alt=""> </button>
-                <div class="dropdown-content">
-                  <a href="#">Java</a>
-                  <a href="#">Jquary</a>
-                  <a href="#">javascript</a>
-                  <a href="#">MySql</a>
-                  <a href="#">Spark</a>
-                  <a href="#">Docker</a>
+
+            <section class="modal-modulo">
+                <div style="display: flex; justify-content: space-between;">
+                    <div></div>
+                    <img id="fechar_modal-modulo" style="width: 15px; cursor: pointer;"
+                        src="../static/img/icon_fechar.png">
                 </div>
-              </div>
 
+                <div id="detalhe_senha">
+                    <div id="alterar-senha">
+                        <div style="display: flex; flex-direction: row; margin-left: 350px;
+                    margin-bottom: 10px;">
+                            <h3 style="color: #fff; font-weight: normal; font-size: 25px;">Modulo 1</h3>
+                        </div>
 
-            <!-- <div style="transform: translate(400px, -300%);">
-                <p>Data de início</p>
-                <div style=" width: 150px; height: 40px; background-color:#481A67;border-radius: 5px;">
-            </div>     
+                        <div class="modulosmodal" style="margin-bottom: 10px; border-radius: 15px;">
 
-            </div> -->
+                            <div style="display: flex; margin: 10px;color: #fff;">
+                                <img style="margin-right: 10px;" src="../static/img/marketing-de-video.png" alt="">
+                                <p>Apresentação do curso</p>
+                                <img style="margin-left: 500px;" src="../static/img/setas.png" alt="">
+                            </div>
+                        </div>
 
+                       <div class="modulosmodal" style="margin-bottom: 10px;border-radius: 15px; color: #fff;">
 
-            <div style="border: 1px solid white; border-radius: 10px; display: flex; width: 70px; padding: 5px; transform: translate(400px, -1450%);font-size: 10px;" >
-                <p>Java</p>
-                <div style="margin-left: 10px;">
-                    <img class="icon_fechar" src="../static/img/icon_fechar.png">
-                </div>
-            </div>
+                            <div style="display: flex; margin: 10px;">
+                                <img style="margin-right: 10px;" src="../static/img/arquivo.png" alt="">
+                                <p>Material de apoio</p>
+                                <img style="margin-left: 550px;" src="../static/img/setas.png" alt="">
+                            </div>
+                        </div>
 
-            <div style="display: flex; background-color: #B05CEF; padding: 15px; border-radius: 10px; transform: translate(620px, -280%); width: 140px; cursor: pointer;">
+                        <div class="modulosmodal" style="margin-bottom: 10px;border-radius: 15px;color: #fff;">
+
+                            <div style="display: flex; margin: 10px;">
+                                <img style="margin-right: 20px;" src="../static/img/perguntando.png" alt="">
+                                <p>Quiz</p>
+                                <img style="margin-left: 649px;" src="../static/img/setas.png" alt="">
+                            </div>
+                        </div>
+
+                        <div style="padding: 10px;width: 55px; background-color: #33084F;color: #fff;">
+                            <a class="botaoApresentacaoCurso" style="cursor: pointer;">
+                                <div
+                                    style="display: flex; flex-direction: column; width: 20px; margin: 10px; ">
+                                    <img src="../static/img/marketing-de-video.png" alt="">
+                                </div>
+                            </a>
+                        </div>
+
+                        <div style="background-color: #5B2182; padding: 2px; width: 50px;">
+
+                            <a class="botaoMaterialCurso" style="cursor: pointer;">
+                                <div
+                                    style="display: flex; flex-direction: column; width: 30px; margin: 10px; ">
+                                    <img src="../static/img/arquivo.png" alt="">
+                                </div>
+                            </a>
+                            <a class="botaoQuizCurso" style="cursor: pointer;">
+                                <div
+                                style="display: flex; flex-direction: column; width: 30px; margin: 10px;">
+                                    <img src="../static/img/perguntando.png" alt="">
+                                </div>
+                            </a>
+                        </div>
+
+                        <div
+                            style="border: 5px solid #33084F; width: 50rem; height: 9.7rem; transform: translate(50px, -99%);" class="caixaDosInputs">
+                            <!-- DIV INPUT DA APRESENTAÇÃO DO CURSO -->
+                            <div
+                                style="display: flex;width: 600px; background-color: #fff; padding: 2%; border-radius: 50px;  transform: translate(50px, 80%);" class="inputApresentacaoCurso">
+                                <label for="linkInput"></label>
+                                <img src="../static/img/link.png" alt="">
+                                <input type="text" id="linkInput" name="linkInput" placeholder="Insira o link da aula" >
+                            </div>
+
+                            <!-- DIV INPUT DOS MATERIAIS  -->
+                            <div style="display: none;" class="inputMaterialCurso">
+                                <p style="color: #fff; transform: translate(270px, 95%);">Faça o upload do arquivo</p>                                 
+                                    <div style="display: flex;width: 350px; background-color: #fff; padding: 1%; border-radius: 50px;  transform: translate(200px, 60%); color: #000">
+                                        <form action="/upload" method="post" enctype="multipart/form-data">
+                                            <input type="file" name="arquivo">
+                                          </form>
+                                        </div>
+                                <p style="color: #fff; transform: translate(300px, 150%); font-size: 11px;">Ou arraste o elemento </p>
+                            </div>
+
+                            <!-- DIV INPUT DOS QUIZ -->
+                            <div class="inputQuizCurso" style="display: none;">
+                                <div style="display: flex; background-color: #fff; padding: 1%; width: 700px; margin-top: 10px; margin-left: 40px; border-radius: 20px;">
+                                    <p style="margin-left: 10px; color: #C7C6C6;">
+                                        Pergunta
+                                    </p>
+                                </div>
+                                <div style="display: flex; background-color: #fff; padding: 2%; width: 600px; margin-top: 10px; margin-left: 140px; border-radius: 20px;">
+                                    <p style="margin-left: 10px; color: #C7C6C6;">
+                                        Resposta
+                                        <div>
+                                            <label style="margin-left: 350px; color: #C7C6C6; font-size: 10px;" for="scales">resposta correta</label>
+                                            <input type="checkbox" id="scales" name="scales" checked />
+                                          </div>
+                                    </p>
+                                </div>
+                                <div style="display: flex; background-color: #fff; padding: 2%; width: 600px; margin-top: 10px; margin-left: 140px; border-radius: 20px;">
+                                    <p style="margin-left: 10px; color: #C7C6C6;">
+                                        Resposta
+                                        <div>
+                                            <label style="margin-left: 350px; color: #C7C6C6; font-size: 10px;" for="scales">resposta correta</label>
+                                            <input type="checkbox" id="scales" name="scales" checked />
+                                          </div>                                        </p>
+                                </div>
+                                <div style="display: flex; background-color: #fff; padding: 2%; width: 600px; margin-top: 10px; margin-left: 140px; border-radius: 20px;">
+                                    <p style="margin-left: 10px; color: #C7C6C6;">
+                                        Nova resposta
+                                    </p>
+                                </div>
+                                <div class="botao_pergunta">
+                                    <button> + ADICIONAR PERGUNTA </button>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <button class="adicionarLink" onclick="myFunction()">Adicionar ao Bloco</button>
+
+                    </div>
+
+                  
+                </div> 
+            </section>
+
+            <div style="display: flex; background-color: #B05CEF; padding: 15px; border-radius: 10px; width: 140px; cursor: pointer; float:right; margin-right: 20px;margin-top: 25px;">
                 <p>
                     CRIAR SALA
                 </p>
             </div>
 
 
-            </div>
         </section>
 
-        <section class="modal-modulo">
-            <div style="display: flex; justify-content: space-between;">
-                <div></div>
-                <img id="fechar_modal-modulo" style="width: 15px; cursor: pointer;" src="../static/img/icon_fechar.png">
-            </div>
-            
-            <div id="detalhe_senha">
-                <div id="alterar-senha">
-                    <div style="display: flex; flex-direction: row; margin-left: 350px;
-                    margin-bottom: 10px;">
-                        <h3 style="color: #fff; font-weight: normal; font-size: 25px;">Modulo 1</h3>
-                    </div>
-    
-                    <div class="modulosmodal" style="margin-bottom: 10px; border-radius: 15px;">
-                            
-                        <div style="display: flex; margin: 10px;color: #fff;">
-                            <img style="margin-right: 10px;" src="../static/img/marketing-de-video.png" alt="">
-                            <p>Apresentação do curso</p>
-                            <img style="margin-left: 500px;" src="../static/img/setas.png" alt="">
-                        </div>
-                        </div>
-
-                        <div class="modulosmodal" style="margin-bottom: 10px;border-radius: 15px; color: #fff;">
-                            
-                            <div style="display: flex; margin: 10px;">
-                                <img style="margin-right: 10px;" src="../static/img/arquivo.png" alt="">
-                                <p>Material de apoio</p>
-                                <img style="margin-left: 550px;" src="../static/img/setas.png" alt="">
-                            </div>
-                            </div>
-
-                            <div class="modulosmodal" style="margin-bottom: 10px;border-radius: 15px;color: #fff;">
-                            
-                                <div style="display: flex; margin: 10px;">
-                                    <img style="margin-right: 20px;" src="../static/img/perguntando.png" alt="">
-                                    <p>Quiz</p>
-                                    <img style="margin-left: 649px;" src="../static/img/setas.png" alt="">
-                                </div>
-                                </div>
-                                
-                                <div style="padding: 10px;width: 55px; background-color: #33084F;color: #fff;">
-                                    <div style="display: flex; flex-direction: column; width: 20px; margin: 10px; background-color: #33084F;">
-                                        <img src="../static/img/marketing-de-video.png" alt="">  
-                                    </div>
-                                </div>
-                            
-                                <div style="background-color: #5B2182; padding: 2px; width: 50px;">
-                                
-                          <a href="adicionarcurso2.html#adicionarcurso2"> <div style="display: flex; flex-direction: column; width: 30px; margin: 10px; background-color: #5B2182;">
-                                    <img src="../static/img/arquivo.png" alt="">
-                                </div>     
-                        </a>                  
-                                <div style="display: flex; flex-direction: column; width: 30px; margin: 10px; background-color: #5B2182;">
-                                    <img src="../static/img/perguntando.png" alt="">
-                                </div>
-                                
-                            </div>
-
-
-                                <div style="border: 5px solid #33084F; width: 50rem; height: 9.7rem; transform: translate(50px, -99%);">                                    
-                                    <div style="display: flex;width: 600px; background-color: #fff; padding: 2%; border-radius: 50px;  transform: translate(50px, 80%);">
-                                    <label for="linkInput"></label>
-                                    <img src="../static/img/link.png" alt=""> 
-                                    <input type="text" id="linkInput" name="linkInput" placeholder="Insira o link da aula">
-                                </div>
-                                 </div>
-
-                                    <button class="adicionarLink" onclick="myFunction()">Adicionar ao Bloco</button> 
-
-
-
-
-
-                        <!-- <input id="altere_Senha" type="submit" name="" value="Adicionar ao bloco"> -->
-    
-                </div>
-              
-                
-            </div>
-        </section>  
         
-    </div>   
-    
-    
+    </main>
 
+    <div class="fundoPagCursos">
+        
+    </div>
 
     <footer class="footer_geral">
         <p>© 2023 AccentureTalentHub.Inc | Todos os direitos reservados </p>
     </footer>
 
     <script>
-        $(document).ready(function(){
-            $("#botao-criarModulo").click(function() {
+        $(document).ready(function () {
+            $("#botao-criarModulo").click(function () {
                 $(".modal-modulo").css("display", "flex");
                 $("#box_CriarModulo").css("opacity", "0.5");
             });
-            
-            $("#fechar_modal-modulo").click(function() {
+
+            $("#fechar_modal-modulo").click(function () {
                 $(".modal-modulo").css("display", "none");
                 $("#box_CriarModulo").css("opacity", "1");
             })
         });
     </script>
 
-<script>
-    function myFunction() {
-      var userInput = document.getElementById("linkInput").value;
-      if (userInput.trim() !== "") {
-        // Você pode usar o link fornecido pelo usuário como desejar
-        console.log("O link fornecido pelo usuário é: " + userInput);
-        // Ou você pode redirecionar para o link usando window.location.href
-        // window.location.href = userInput;
-      } else {
-        alert("Por favor, insira um link válido.");
-      }
-    }
-  </script>
+    <script>
+        function myFunction() {
+            var userInput = document.getElementById("linkInput").value;
+            if (userInput.trim() !== "") {
+                // Você pode usar o link fornecido pelo usuário como desejar
+                console.log("O link fornecido pelo usuário é: " + userInput);
+                // Ou você pode redirecionar para o link usando window.location.href
+                // window.location.href = userInput;
+            } else {
+                alert("Por favor, insira um link válido.");
+            }
+        }
+    </script>
+
+    <script>
+
+        var botaoApresentacaoCurso = document.querySelector(".botaoApresentacaoCurso");
+        var inputApresentacaoCurso = document.querySelector(".inputApresentacaoCurso");
+        var botaoMaterialCurso = document.querySelector(".botaoMaterialCurso");
+        var inputMaterialCurso = document.querySelector(".inputMaterialCurso");
+        var botaoQuizCurso = document.querySelector(".botaoQuizCurso");
+        var inputQuizCurso = document.querySelector(".inputQuizCurso");
+
+        var modal_modulo = document.querySelector(".modal-modulo");
+        var caixaDosInputs = document.querySelector(".caixaDosInputs");
+        var botaoAdicionarLink = document.querySelector(".adicionarLink");
+
+        botaoApresentacaoCurso.addEventListener ("click", function() {
+            inputMaterialCurso.style.display = 'none';
+            inputQuizCurso.style.display = 'none';
+            inputApresentacaoCurso.style.display = 'flex';
+            //Detalhes do modal
+            modal_modulo.style.height = '550px';
+            botaoAdicionarLink.style.transform = 'translate(680px, -150%)';
+            caixaDosInputs.style.transform = 'translate(50px, -99%)';
+            caixaDosInputs.style.height = '9.7rem';
+
+        })
+
+        botaoMaterialCurso.addEventListener ("click", function() {
+            inputApresentacaoCurso.style.display = 'none';
+            inputQuizCurso.style.display = 'none';
+            inputMaterialCurso.style.display = 'block';
+            //Detalhes do modal
+            modal_modulo.style.height = '550px';
+            botaoAdicionarLink.style.transform = 'translate(680px, -150%)';
+            caixaDosInputs.style.transform = 'translate(50px, -99%)';
+            caixaDosInputs.style.height = '9.7rem';
+
+        })
+
+        botaoQuizCurso.addEventListener ("click", function() {
+            inputApresentacaoCurso.style.display = 'none';
+            inputMaterialCurso.style.display = 'none';
+            inputQuizCurso.style.display = 'block';
+            //Detalhes do modal
+            modal_modulo.style.height = '700px';
+            botaoAdicionarLink.style.transform = 'translate(680px, -200%)';
+            caixaDosInputs.style.transform = 'translate(50px, -48%)';
+            caixaDosInputs.style.height = '20rem';
+
+
+        })
+
+
+        
+    </script>
 
 </body>
+
 </html>
