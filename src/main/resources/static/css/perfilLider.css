@@ -127,15 +127,6 @@
     border-bottom-right-radius: 50px;
 }
 
-.button_equipe{
-    background-color: #40165D;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 30px;
-    height: 60px;
-    cursor: pointer;
-}
 .button_criar{
     margin-left: 50px;
     margin-top: 80px;
@@ -163,6 +154,21 @@
 .seta-foto{
     display: flex;
     margin-left: 50px;
+}
+
+.inputAvaliacaoLider {
+    color: #fff;
+    background-color: #40165D;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    height: 60px;
+    
+    width: 90%; 
+    border: none;
+    padding-left: 20px;
+
 }
 
 @media screen and (max-width: 1200px){
