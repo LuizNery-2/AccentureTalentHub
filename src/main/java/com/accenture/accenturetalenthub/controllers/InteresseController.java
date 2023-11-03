@@ -36,7 +36,7 @@ public class InteresseController {
     public ResponseEntity<Object> getInteresse(@PathVariable(value = "id") Long id) {
         Optional<InteresseModel> interesseO = interesseRepository.findById(id);
         if (interesseO.isEmpty()){
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Curso não encontrado");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Interesse não encontrado");
         }
         return ResponseEntity.status(HttpStatus.OK).body(interesseO.get());
     }
@@ -44,7 +44,7 @@ public class InteresseController {
     public ResponseEntity<Object> updateInteresse(@PathVariable(value = "id") Long id, @RequestBody @Valid InteresseRecordDto interesseRecordDto) {
         Optional<InteresseModel> interesseO = interesseRepository.findById(id);
         if (interesseO.isEmpty()){
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Curso não encontrado");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("interesse não encontrado");
         }
         var interesseModel = interesseO.get();
         BeanUtils.copyProperties(interesseRecordDto, interesseModel);
