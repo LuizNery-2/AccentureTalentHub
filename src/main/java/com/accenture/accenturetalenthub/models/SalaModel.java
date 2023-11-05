@@ -23,7 +23,7 @@ import static jakarta.persistence.GenerationType.AUTO;
 @Entity
 @Table(name = "TB_SALAS")
 public class SalaModel implements Serializable {
-    private static final long serialVersionUID = 1l;
+    private static final long serialVersionUID = 6l;
 
     @Id
     @GeneratedValue(strategy = AUTO)

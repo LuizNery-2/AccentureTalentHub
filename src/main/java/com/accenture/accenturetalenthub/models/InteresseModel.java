@@ -10,7 +10,7 @@ import java.util.Set;
 @Entity
 @Table(name = "TB_INTERESSES")
 public class InteresseModel implements Serializable {
-    private static final long serialVersionUID = 2l;
+    private static final long serialVersionUID = 4l;
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)

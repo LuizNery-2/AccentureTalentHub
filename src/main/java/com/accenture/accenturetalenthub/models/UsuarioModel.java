@@ -19,7 +19,7 @@ import static jakarta.persistence.GenerationType.AUTO;
 @Entity
 @Table(name = "TB_USUARIOS")
 public class UsuarioModel implements Serializable {
-    private static final long serialVersionUID = 1l;
+    private static final long serialVersionUID = 7l;
     @Id
     @GeneratedValue(strategy = AUTO)
     private UUID IdUsuario;
@@ -31,8 +31,8 @@ public class UsuarioModel implements Serializable {
             joinColumns =   @JoinColumn(name = "usuario_id"),
             inverseJoinColumns = @JoinColumn(name = "Curso_Id")
     )
-    private List<CursoModel> cursosConcluidos = new ArrayList<>();
-    
+    private List<CursoModel> cursos = new ArrayList<>();
+
     @ElementCollection
     @ManyToMany
     @JoinTable(
@@ -63,12 +63,12 @@ public class UsuarioModel implements Serializable {
         this.interesses = interesses;
     }
 
-    public List<CursoModel> getCursosConcluidos() {
-        return cursosConcluidos;
+    public List<CursoModel> getCursos() {
+        return cursos;
     }
 
-    public void setCursosConcluidos(List<CursoModel> cursosConcluidos) {
-        this.cursosConcluidos = cursosConcluidos;
+    public void setCursos(List<CursoModel> cursos) {
+        this.cursos = cursos;
     }
 
     public String getUsuario() {
@@ -143,5 +143,6 @@ public class UsuarioModel implements Serializable {
     public void setNivelInteresse(int nivelInteresse) {
         this.nivelInteresse = nivelInteresse;
     }
-    
+
+
 }

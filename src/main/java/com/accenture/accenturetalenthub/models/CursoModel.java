@@ -2,16 +2,14 @@ package com.accenture.accenturetalenthub.models;
 
 import jakarta.persistence.*;
 import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
-import java.util.UUID;
+import java.util.*;
 
 import static jakarta.persistence.GenerationType.AUTO;
 
 @Entity
 @Table(name = "TB_CURSOS")
 public class CursoModel implements Serializable {
-    private static final long serialVersionUID = 1l;
+    private static final long serialVersionUID = 2l;
 
     @Id
     @GeneratedValue(strategy = AUTO)
@@ -28,6 +26,27 @@ public class CursoModel implements Serializable {
             inverseJoinColumns = @JoinColumn(name = "Interesse_Id")
     )
     private Set<InteresseModel> interesses =new HashSet<>();
+
+    @ManyToMany(mappedBy = "cursos")
+    private List<UsuarioModel> usuarios = new ArrayList<>();
+    @ManyToMany(mappedBy = "curso")
+    private Set<SalaModel> salas = new HashSet<>();
+
+    public List<UsuarioModel> getUsuarios() {
+        return usuarios;
+    }
+
+    public void setUsuarios(List<UsuarioModel> usuarios) {
+        this.usuarios = usuarios;
+    }
+
+    public Set<SalaModel> getSalas() {
+        return salas;
+    }
+
+    public void setSalas(Set<SalaModel> salas) {
+        this.salas = salas;
+    }
 
     public UUID getIdCurso() {
         return IdCurso;

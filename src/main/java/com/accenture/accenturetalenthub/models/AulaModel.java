@@ -1,12 +1,10 @@
 package com.accenture.accenturetalenthub.models;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.UUID;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import static jakarta.persistence.GenerationType.AUTO;
 
@@ -21,6 +19,8 @@ public class AulaModel implements Serializable{
     @GeneratedValue(strategy = AUTO)
     private UUID IdAula;
 
+    @ManyToMany(mappedBy = "aulas")
+    private ArrayList<ModuloModel> modulos;
     private String nomeAula;
 
     private String linkAula;
