@@ -21,14 +21,19 @@
 
                 <div id="center_txt">
                     <p>Bem-vindo a nossa plataforma!</p>
-                    <h1>Primeiro Acesso</h1>
-                    <img src="../static/img/chave.png">
+                    <div id="center_txt_responsivo">
+                        <h1>Primeiro Acesso</h1>
+                        <img src="../static/img/chave.png">
+                    </div>
                 </div>
     
             </div>
     
             <div id="box_login">
+
                 <form id="form_login" class="formNovaSenha">
+                    <label>Insira o código de verificação</label>
+                    <input id="codigoVerificacao" type="text" name="codigoVerificacao" required>
                     <label>Insira sua nova senha</label>
                     <input id="novaSenha" type="password" name="usuarioLogin" required>
                     <ul id="lista_primeiro_acesso">

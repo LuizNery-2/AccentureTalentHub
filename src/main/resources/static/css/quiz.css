@@ -67,3 +67,27 @@ html, body{
 #enviar_resposta img{
     width: 30px;
 }
+
+@media screen and (max-width: 1200px){
+
+}
+
+@media screen and (max-width: 1024px){
+    
+}
+
+@media screen and (max-width: 768px){
+    
+}
+
+/* @media screen and (max-width: 560px){
+    
+} */
+
+@media screen and (max-width: 480px){
+    
+}
+
+@media screen and (max-width: 280px){
+    
+}

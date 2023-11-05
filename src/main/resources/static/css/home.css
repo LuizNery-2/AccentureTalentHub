@@ -95,3 +95,111 @@ main{
     margin-right: 2% !important;
 }
 
+
+
+@media screen and (max-width: 1181px){
+    html, body{
+        font-size: 15px;
+    }
+
+    #txt_perfil h3{
+        font-size: 30px;
+    }
+
+    #info_perfil p{
+        font-size: 12px;
+    }
+
+    .footer_geral p{
+        font-size: 15px;
+    }
+}
+ 
+@media screen and (max-width: 1121px){
+    html, body{
+        font-size: 12px;
+    }
+    .footer_geral p{
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 1048px){
+    .multiple-items img{
+        width: 350px !important;
+        border-radius: 10px;
+    }
+    .box_trilhas{
+        width: 85%;
+    }
+
+    
+}
+ 
+@media screen and (max-width: 847px){
+    #logo-descrita{
+        width: 450px !important;
+    }
+
+}
+
+
+
+@media screen and (max-width: 705px){
+    .multiple-items img{
+        width: 300px !important;
+        border-radius: 10px;
+    }
+    .box_trilhas{
+        width: 75%;
+    }
+    #logo-descrita{
+        width: 350px !important;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .box_trilhas{
+        width: 100%;
+        margin: 5% auto;
+        padding-left: 5%;
+    }
+
+    #logo-descrita{
+        width: 300px !important;
+    }
+
+    #box_info_perfil img{
+        width: 90px !important;
+    }
+
+    #box_info_perfil p{
+        font-size: 10px;
+    }
+    
+    #barra_progresso{
+        width: 100% !important;
+        height: 15px !important;
+    }
+
+    #info_perfil{
+        width: 150px !important;
+    }
+    
+    #info_perfil p{
+        
+        font-size: 8px !important;
+    }
+
+    #txt_perfil h3{
+        font-size: 18px !important;
+    }
+
+    #txt_perfil p{
+        background-color: #9200FF;
+        width: 60px !important;
+        height: 12px !important;
+        text-align: center;
+    }
+
+}
