@@ -17,7 +17,7 @@ import static jakarta.persistence.GenerationType.AUTO;
 
 @Entity
 @Table(name = "TB_MODULOS")
-public class ModulosModel implements Serializable{
+public class ModuloModel implements Serializable{
     private static final long serialVersionUID = 1l;
 
     @Id

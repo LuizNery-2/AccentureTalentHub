@@ -5,6 +5,6 @@ import java.util.UUID;
 
 import com.accenture.accenturetalenthub.models.AulasModel;
 
-public record ModulosRecordDto(UUID IdModulo, String nomeModulo, ArrayList<AulasModel> aulas) {
+public record ModuloRecordDto(UUID IdModulo, String nomeModulo, ArrayList<AulasModel> aulas) {
     
 }

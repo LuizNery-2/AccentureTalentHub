@@ -5,10 +5,9 @@ import java.util.UUID;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.accenture.accenturetalenthub.models.SalasModel;
-
+import com.accenture.accenturetalenthub.models.ModuloModel;
 
 @Repository
-public interface SalasRepository extends JpaRepository<SalasModel, UUID>{
+public interface ModuloRepository extends JpaRepository<ModuloModel, UUID> {
     
 }
