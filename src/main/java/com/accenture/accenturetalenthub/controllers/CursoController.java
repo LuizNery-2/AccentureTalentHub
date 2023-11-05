@@ -59,7 +59,7 @@ public class CursoController{
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Curso não encontrado");
         }
         cursoRepository.delete(curso0.get());
-        return ResponseEntity.status(HttpStatus.OK).body("Produto deletado com sucesso");
+        return ResponseEntity.status(HttpStatus.OK).body("Curso deletado com sucesso");
     }
 
 

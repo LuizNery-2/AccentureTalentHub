@@ -33,7 +33,7 @@ public class ModuloModel implements Serializable{
             joinColumns =   @JoinColumn(name = "modulo_id"),
             inverseJoinColumns = @JoinColumn(name = "Aula_Id")
     )
-    private ArrayList<AulasModel> aulas;
+    private ArrayList<AulaModel> aulas;
 
 
     //Get and Setters
@@ -54,11 +54,11 @@ public class ModuloModel implements Serializable{
         this.nomeModulo = nomeModulo;
     }
 
-    public ArrayList<AulasModel> getAulas() {
+    public ArrayList<AulaModel> getAulas() {
         return aulas;
     }
 
-    public void setAulas(ArrayList<AulasModel> aulas) {
+    public void setAulas(ArrayList<AulaModel> aulas) {
         this.aulas = aulas;
     }
 }

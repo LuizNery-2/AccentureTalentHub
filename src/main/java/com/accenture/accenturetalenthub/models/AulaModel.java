@@ -13,13 +13,13 @@ import static jakarta.persistence.GenerationType.AUTO;
 
 @Entity
 @Table(name = "TB_AULAS")
-public class AulasModel implements Serializable{
+public class AulaModel implements Serializable{
     private static final long serialVersionUID = 1l;
 
 
     @Id
     @GeneratedValue(strategy = AUTO)
-    private UUID IdModulo;
+    private UUID IdAula;
 
     private String nomeAula;
 
@@ -29,11 +29,11 @@ public class AulasModel implements Serializable{
     //Get and Setters
 
     public UUID getIdModulo() {
-        return IdModulo;
+        return IdAula;
     }
 
     public void setIdModulo(UUID idModulo) {
-        IdModulo = idModulo;
+        IdAula = idModulo;
     }
 
     public String getNomeAula() {
