@@ -78,9 +78,13 @@
                         if (data.senha === "Mudar@123") {
                             // Senha é "Mudar@123", redirecione para a página de primeiro acesso
                             window.location.href = 'primeiroacesso.html';
-                        } else {
+                        } else if(data.nivelUsuario === 0){
                             // Senha não é "Mudar@123", redirecione para a página home
-                            window.location.href = 'home.html';
+                            window.location.href = 'adm.html';
+                        }else if(data.nivelUsuario === 1){
+                            window.location.href = 'perfilLider.html';
+                        }else{
+                            window.location.href = 'perfil.html';
                         }
                     });
                 } else {
