@@ -9,7 +9,7 @@
 	<link rel="shortcut icon" href="../static/img/logo_accenture.png" type="image/x-icon">
 	<link rel="stylesheet" type="text/css" href="../static/css/geralstyle.css">
     <link rel="stylesheet" type="text/css" href="../static/css/indexstyle.css">
-    <script type="text/javascript" src="../static/js/script.js"></script>
+    
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body id="body_login">
@@ -21,7 +21,7 @@
                 <label>Usuário</label>
                 <input id="usuarioLogin" type="text" name="usuarioLogin" required>
                 <label>Senha</label>
-                <input id="senhaLogin" type="password" name="senhaLogin" required>
+                <input id="senhaLogin" type="password" name="senhaLogin" >
                 <p class="mensagem-erro" style="color: red;font-size: 12px;"></p>
                 <input id="validarLogin" type="submit" name="validarLogin" value="Entrar">
                 <a href="recuperar_senha.html">Esqueci minha senha</a>
@@ -73,24 +73,29 @@
             })
             .then(function (res) {
                 if (res.ok) {
-                    window.location.href = 'home.html';
+                    // Verifica se a senha é "Mudar@123"
+                    return res.json().then(function(data) {
+                        if (data.senha === "Mudar@123") {
+                            // Senha é "Mudar@123", redirecione para a página de primeiro acesso
+                            window.location.href = 'primeiroacesso.html';
+                        } else {
+                            // Senha não é "Mudar@123", redirecione para a página home
+                            window.location.href = 'home.html';
+                        }
+                    });
                 } else {
                     const mensagem = 'Usuário ou senha incorreta';
                     mensagemErro.textContent = mensagem;
                 }
             })
             .catch(function (error) {
-                
                 console.error("Erro na solicitação: " + error);
             });
         }
 
-
         form_login.addEventListener('submit', function (e) {
-        e.preventDefault();
-    
+            e.preventDefault();
             validarLogin();
-        
         });
         
     </script>

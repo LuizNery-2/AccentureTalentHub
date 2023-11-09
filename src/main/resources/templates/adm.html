@@ -62,6 +62,10 @@
                             <input id="email" class="input_cadastro" type="email">
                         </div>
                         <div class="box_metas">
+                            <p>Senha: </p>
+                            <input id="senha" class="input_cadastro" type="password" placeholder="Senha padrão: Mudar@123">
+                        </div>
+                        <div class="box_metas">
                             <p>Nível de Usuário : </p>
                             <input id="nivelUsuario" class="input_cadastro" type="number" placeholder="(Adm = 0, Líder = 1, Líderado = 3)">
                         </div>
@@ -106,13 +110,14 @@
             const usuario = document.querySelector('#usuario').value;
             const email = document.querySelector('#email').value;
             const nivelUsuario = document.querySelector('#nivelUsuario').value;
-
+            const senha = document.querySelector('#senha').value;
             // Construa o objeto de dados a ser enviado para a API
             const data = {
                 nome: nome,
                 usuario: usuario,
                 email: email,
-                nivelUsuario: nivelUsuario
+                nivelUsuario: nivelUsuario,
+                senha: senha
             };
 
             fetch('http://localhost:8080/usuario', {
