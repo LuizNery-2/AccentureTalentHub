@@ -6,6 +6,7 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -29,13 +30,16 @@ public class SalaModel implements Serializable {
     @GeneratedValue(strategy = AUTO)
     private UUID IdSala;
 
+    @ManyToMany(mappedBy = "salas")
+    private Set<UsuarioModel> usuarios = new HashSet<>();
     @ManyToMany
     @JoinTable(
             name = "TB_SALA_CURSO",
             joinColumns =   @JoinColumn(name = "sala_id"),
             inverseJoinColumns = @JoinColumn(name = "Curso_Id")
     )
-    private Set<CursoModel> curso =new HashSet<>();
+    @JsonIgnoreProperties("salas")
+    private Set<CursoModel> cursos =new HashSet<>();
 
     private String nome;
     private String descricao;
@@ -97,6 +101,13 @@ public class SalaModel implements Serializable {
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
-    
+
+    public Set<CursoModel> getCurso() {
+        return cursos;
+    }
+
+    public void setCurso(Set<CursoModel> curso) {
+        this.cursos = curso;
+    }
 }
 

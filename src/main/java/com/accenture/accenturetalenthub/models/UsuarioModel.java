@@ -1,10 +1,9 @@
 package com.accenture.accenturetalenthub.models;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -23,27 +22,6 @@ public class UsuarioModel implements Serializable {
     @Id
     @GeneratedValue(strategy = AUTO)
     private UUID IdUsuario;
-
-    @ElementCollection
-    @ManyToMany
-    @JoinTable(
-            name = "TB_USUARIO_CURSO",
-            joinColumns =   @JoinColumn(name = "usuario_id"),
-            inverseJoinColumns = @JoinColumn(name = "Curso_Id")
-    )
-    private List<CursoModel> cursos = new ArrayList<>();
-
-    @ElementCollection
-    @ManyToMany
-    @JoinTable(
-            name = "TB_USUARIO_INTERESSES",
-            joinColumns =   @JoinColumn(name = "usuario_id"),
-            inverseJoinColumns = @JoinColumn(name = "Interesse_Id")
-    )
-    private List<InteresseModel> interesses = new ArrayList<>();
-    
-
-    
     private String senha;
     private String usuario;
     private String nome; 
@@ -53,21 +31,44 @@ public class UsuarioModel implements Serializable {
     private int pontuacaoGeral;
     private int nivel;
     private int nivelInteresse;
-    
+    @ManyToMany
+    @JoinTable(
+            name = "TB_USUARIO_CURSO",
+            joinColumns =   @JoinColumn(name = "usuario_id"),
+            inverseJoinColumns = @JoinColumn(name = "Curso_Id")
+    )
+    @JsonIgnoreProperties({"usuarios","salas"})
+    private Set<CursoModel> cursos = new HashSet<>();
+
+    @ManyToMany
+    @JoinTable(
+            name = "TB_USUARIO_INTERESSES",
+            joinColumns =   @JoinColumn(name = "usuario_id"),
+            inverseJoinColumns = @JoinColumn(name = "Interesse_Id")
+    )
+    @JsonIgnoreProperties("usuarios")
+    private Set<InteresseModel> interesses = new HashSet<>();
+    @ManyToMany
+    @JoinTable(
+            name = "TB_USUARIOS_SALAS",
+            joinColumns = @JoinColumn(name = "usuario_id"),
+            inverseJoinColumns = @JoinColumn(name = "Interesse_id")
+    )
+    private  Set<SalaModel> salas = new HashSet<>();
     // getters e setters
-    public List<InteresseModel> getInteresses() {
+    public Set<InteresseModel> getInteresses() {
         return interesses;
     }
 
-    public void setInteresses(List<InteresseModel> interesses) {
+    public void setInteresses(Set<InteresseModel> interesses) {
         this.interesses = interesses;
     }
 
-    public List<CursoModel> getCursos() {
+    public Set<CursoModel> getCursos() {
         return cursos;
     }
 
-    public void setCursos(List<CursoModel> cursos) {
+    public void setCursos(Set<CursoModel> cursos) {
         this.cursos = cursos;
     }
 

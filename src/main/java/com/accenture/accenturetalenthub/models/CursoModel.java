@@ -1,5 +1,6 @@
 package com.accenture.accenturetalenthub.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import java.io.Serializable;
 import java.util.*;
@@ -25,11 +26,12 @@ public class CursoModel implements Serializable {
             joinColumns =   @JoinColumn(name = "curso_id"),
             inverseJoinColumns = @JoinColumn(name = "Interesse_Id")
     )
+    @JsonIgnoreProperties({"cursos","usuarios"})
     private Set<InteresseModel> interesses =new HashSet<>();
 
     @ManyToMany(mappedBy = "cursos")
     private List<UsuarioModel> usuarios = new ArrayList<>();
-    @ManyToMany(mappedBy = "curso")
+    @ManyToMany(mappedBy = "cursos")
     private Set<SalaModel> salas = new HashSet<>();
 
     public List<UsuarioModel> getUsuarios() {

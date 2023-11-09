@@ -38,7 +38,9 @@ public class InteresseController {
         if (interesseO.isEmpty()){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Interesse não encontrado");
         }
-        return ResponseEntity.status(HttpStatus.OK).body(interesseO.get());
+        var interesseModel = interesseO.get();
+
+        return ResponseEntity.status(HttpStatus.OK).body(interesseModel);
     }
     @PutMapping("/interesses/{id}")
     public ResponseEntity<Object> updateInteresse(@PathVariable(value = "id") Long id, @RequestBody @Valid InteresseRecordDto interesseRecordDto) {
