@@ -48,34 +48,29 @@
                 </div>
                 <div id="box_info_metas">
                     <p style="color: #E1BBFD;">Dados</p>
-                    <form>
+                    <form id="formCadastro">
                         <div class="box_metas">
                             <p>Nome: </p>
-                            <input class="input_cadastro" type="text">
+                            <input id="nome" class="input_cadastro" type="text">
                         </div>
                         <div class="box_metas">
                             <p>Usuário: </p>
-                            <input class="input_cadastro" type="text">
+                            <input id="usuario" class="input_cadastro" type="text">
                         </div>
                         <div class="box_metas">
                             <p>E-mail: </p>
-                            <input class="input_cadastro" type="email">
+                            <input id="email" class="input_cadastro" type="email">
                         </div>
                         <div class="box_metas">
                             <p>Nível de Usuário : </p>
-                            <input class="input_cadastro" type="number" placeholder="(Adm = 0, Líder = 1, Líderado = 3)">
+                            <input id="nivelUsuario" class="input_cadastro" type="number" placeholder="(Adm = 0, Líder = 1, Líderado = 3)">
                         </div>
+                        <input type="submit">
                     </form>
                     
                 </div>
 
-                <div style="display: flex; flex-direction: column; align-items: center; margin-top: 5%;">
-                    <div class="button_carreira1">
-                        <img src="../static/img/interativo.png">
-                        <p style="color: #E1BBFD;">Cadastrar Usuário</p>
-                    </div>
-    
-                </div>
+                
             </div>
     </main>
 
@@ -98,6 +93,48 @@
             })
         });
     </script>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        
+        formCadastro.addEventListener('submit', function(event) {
+            event.preventDefault(); // Evita o comportamento padrão do formulário
+
+            
+            const nome = document.querySelector('#nome').value;
+            const usuario = document.querySelector('#usuario').value;
+            const email = document.querySelector('#email').value;
+            const nivelUsuario = document.querySelector('#nivelUsuario').value;
+
+            // Construa o objeto de dados a ser enviado para a API
+            const data = {
+                nome: nome,
+                usuario: usuario,
+                email: email,
+                nivelUsuario: nivelUsuario
+            };
+
+            fetch('http://localhost:8080/usuario', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Cadastro realizado com sucesso:', data);
+                alert('Cadastro realizado com sucesso');
+                window.location = 'adm.html';
+            })
+            .catch(error => {
+                console.error('Erro ao cadastrar usuário:', error);
+                // Faça algo aqui em caso de erro
+            });
+        });
+    });
+</script>
 
 </body>
 </html>
