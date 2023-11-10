@@ -84,7 +84,7 @@
         const validacaoCaracteres = document.getElementById('validacao-caracteres');
         const formNovaSenha = document.querySelector('.formNovaSenha');
         const mensagemErro = document.querySelector('.mensagem-erro');
-
+        const codigoVerificacao = document.getElementById('codigoVerificacao');
 
 
 
@@ -150,6 +150,7 @@
         senhaInput.addEventListener('input', function () {
             const senha = senhaInput.value;
             const senhaConfirmacao = senhaConfirmacaoInput.value;
+            
 
             // Validação do tamanho mínimo
             if (senha.length >= 8) {
@@ -172,9 +173,10 @@
 
             const senha = senhaInput.value;
             const senhaConfirmacao = senhaConfirmacaoInput.value;
+            const verificacao = codigoVerificacao.value;
 
             // Validação de confirmação de senha
-            if (senha === senhaConfirmacao) {
+            if (senha === senhaConfirmacao && verificacao === localStorage.getItem('codigoAleatorio')) {
 
                 // const dadosNovaSenha = {
                 //     novaSenha: senhaConfirmacao
@@ -196,8 +198,9 @@
                 // });
 
                 window.location.href = 'areainteresse.html';
+                // alert('igual');
             } else {
-                const mensagem = 'As senhas não são correspondentes';
+                const mensagem = 'As senhas ou código não são correspondentes';
                 mensagemErro.textContent = mensagem;
             }
 
