@@ -85,6 +85,68 @@
         const formNovaSenha = document.querySelector('.formNovaSenha');
         const mensagemErro = document.querySelector('.mensagem-erro');
 
+
+
+
+        function gerarCodigoAleatorio(tamanho) {
+            const caracteres = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            let codigo = '';
+
+            for (let i = 0; i < tamanho; i++) {
+                const indice = Math.floor(Math.random() * caracteres.length);
+                codigo += caracteres.charAt(indice);
+            }
+
+            return codigo;
+        }
+
+        function enviarCodigoPorEmail() {
+            fetch("http://localhost:8080/sending-email", {
+                method: "POST",
+                headers: {
+                    "Accept": "application/json",
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    ownerRef: "Suporte",
+                    emailFrom: "accenturetalenthub@gmail.com",
+                    emailTo: localStorage.getItem('emailUsuario'),
+                    subject: "Código de Verificação",
+                    text: "Seu código de verificação é: " + localStorage.getItem('codigoAleatorio')
+                })
+            })
+            .then(function (res) {
+                if (res.ok) {
+                    console.log("E-mail enviado com sucesso!");
+                } else {
+                    console.error("Falha ao enviar o e-mail.");
+                }
+            })
+            .catch(function (error) {
+                console.error("Erro na solicitação: " + error);
+            });
+        }
+
+
+
+        document.addEventListener("DOMContentLoaded", function() {
+
+            // Gera o código aleatório
+            const codigoAleatorio = gerarCodigoAleatorio(8);
+
+            // Armazena o código aleatório no localStorage
+            localStorage.setItem('codigoAleatorio', codigoAleatorio);
+
+            // Envia o código por e-mail para o backend
+            enviarCodigoPorEmail();
+        });
+
+
+
+
+
+
+
         senhaInput.addEventListener('input', function () {
             const senha = senhaInput.value;
             const senhaConfirmacao = senhaConfirmacaoInput.value;

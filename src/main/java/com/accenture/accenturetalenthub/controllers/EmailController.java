@@ -20,7 +20,9 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Optional;
 import java.util.UUID;
 
+
 @RestController
+@CrossOrigin("*")
 public class EmailController {
 
     @Autowired
