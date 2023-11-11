@@ -12,6 +12,7 @@
     <link rel="stylesheet" type="text/css" href="../static/css/geralstyle.css">
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
 </head>
 <body id="body_primeiro_acesso">
     <section id="box_center">
@@ -141,72 +142,9 @@
             enviarCodigoPorEmail();
         });
 
-
-
-
-
-
-
-        senhaInput.addEventListener('input', function () {
-            const senha = senhaInput.value;
-            const senhaConfirmacao = senhaConfirmacaoInput.value;
-            
-
-            // Validação do tamanho mínimo
-            if (senha.length >= 8) {
-                validacaoMinimo.style.color = 'green';
-            }
-
-            // Validação de letras minúsculas e maiúsculas
-            if (/[a-z]/.test(senha) && /[A-Z]/.test(senha)) {
-                validacaoLetras.style.color = 'green';
-            }
-
-            // Validação de caracteres especiais (por exemplo, !, @, #, $, etc.)
-            if (/[!@#$%^&*]/.test(senha)) {
-                validacaoCaracteres.style.color = 'green';
-            }
-        });
-
-        formNovaSenha.addEventListener('submit', function (e) {
-        e.preventDefault();
-
-            const senha = senhaInput.value;
-            const senhaConfirmacao = senhaConfirmacaoInput.value;
-            const verificacao = codigoVerificacao.value;
-
-            // Validação de confirmação de senha
-            if (senha === senhaConfirmacao && verificacao === localStorage.getItem('codigoAleatorio')) {
-
-                // const dadosNovaSenha = {
-                //     novaSenha: senhaConfirmacao
-                // };
-
-                //Use o Axios para enviar o objeto JSON para o backend
-
-                //Importe a biblioteca Axios
-                //const axios = require('axios');
-
-                // axios.post('/sua-rota-backend', dadosNovaSenha)
-                //     .then(response => {
-                //     // Lógica para lidar com a resposta do backend
-                //     console.log('Resposta do servidor:', response.data);
-                //     })
-                //     .catch(error => {
-                //     // Lógica para lidar com erros na solicitação
-                //     console.error('Erro na solicitação:', error);
-                // });
-
-                window.location.href = 'areainteresse.html';
-                // alert('igual');
-            } else {
-                const mensagem = 'As senhas ou código não são correspondentes';
-                mensagemErro.textContent = mensagem;
-            }
-
-
-        });
+        
 
     </script>
+    <script type="text/javascript" src="../static/js/mudarSenha.js"></script>
 </body>
 </html>
