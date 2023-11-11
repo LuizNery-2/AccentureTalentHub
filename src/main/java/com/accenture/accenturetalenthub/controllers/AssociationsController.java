@@ -26,10 +26,16 @@ public class AssociationsController {
     CursoRepository cursoRepository;
     @Autowired
     InteresseRepository interesseRepository;
+
+   
+
     @Autowired
     UsuarioRepository usuarioRepository;
+    private AssociatesEntitiesService associatesEntitiesService;
 
-    AssociatesEntitiesService associatesEntitiesService =  new AssociatesEntitiesService();
+    public AssociationsController(AssociatesEntitiesService associatesEntitiesService) {
+        this.associatesEntitiesService = associatesEntitiesService;
+    }
 
     @PostMapping("/cursosInteresses/{idCurso}")
     public ResponseEntity<String> saveCursoInteresses(@PathVariable(value = "idCurso") UUID idCurso, @RequestBody List<Long> idsInteresses) {

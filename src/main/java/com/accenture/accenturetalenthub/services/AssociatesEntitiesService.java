@@ -17,10 +17,15 @@ public class AssociatesEntitiesService {
 
     @Autowired
     CursoRepository cursoRepository;
-    @Autowired
-    InteresseRepository interesseRepository;
-    @Autowired
-    UsuarioRepository usuarioRepository;
+    
+    private final UsuarioRepository usuarioRepository;
+    private final InteresseRepository interesseRepository;
+
+    public AssociatesEntitiesService(UsuarioRepository usuarioRepository, InteresseRepository interesseRepository) {
+        this.usuarioRepository = usuarioRepository;
+        this.interesseRepository = interesseRepository;
+    }
+
     @Autowired
     SalaRepository salaRepository;
 
