@@ -24,6 +24,7 @@ public class InteresseModel implements Serializable {
     private Set<CursoModel> cursos = new HashSet<>();
 
     @ManyToMany(mappedBy = "interesses")
+    @JsonIgnoreProperties("interesses")
     private Set<UsuarioModel> usuarios = new HashSet<>();
 
     public long getIdInteresse() {

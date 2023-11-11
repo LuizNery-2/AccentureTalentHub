@@ -28,11 +28,21 @@ public class CursoModel implements Serializable {
     )
     @JsonIgnoreProperties({"cursos","usuarios"})
     private Set<InteresseModel> interesses =new HashSet<>();
-
+    @ManyToMany
+    @JoinTable(
+            name = "TB_CURSOS_SALAS",
+            joinColumns = @JoinColumn(name = "curso_id"),
+            inverseJoinColumns = @JoinColumn(name = "modulo_id")
+    )
+    @JsonIgnoreProperties("cursos")
+    private Set<ModuloModel> modulos = new HashSet<>();
     @ManyToMany(mappedBy = "cursos")
+    @JsonIgnoreProperties("cursos")
     private List<UsuarioModel> usuarios = new ArrayList<>();
     @ManyToMany(mappedBy = "cursos")
+    @JsonIgnoreProperties("cursos")
     private Set<SalaModel> salas = new HashSet<>();
+
 
     public List<UsuarioModel> getUsuarios() {
         return usuarios;
@@ -100,5 +110,13 @@ public class CursoModel implements Serializable {
 
     public void setQuantidadeHoras(int quantidadeHoras) {
         this.quantidadeHoras = quantidadeHoras;
+    }
+
+    public Set<ModuloModel> getModulos() {
+        return modulos;
+    }
+
+    public void setModulos(Set<ModuloModel> modulos) {
+        this.modulos = modulos;
     }
 }

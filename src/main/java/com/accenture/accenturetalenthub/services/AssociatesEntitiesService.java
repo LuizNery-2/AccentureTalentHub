@@ -39,7 +39,7 @@ public class AssociatesEntitiesService {
     public void associarCursoSalas(CursoModel curso, SalaModel sala)
     {
         curso.getSalas().add(sala);
-        sala.getCurso().add(curso);
+        sala.getCursos().add(curso);
         cursoRepository.save(curso);
         salaRepository.save(sala);
     }

@@ -37,7 +37,7 @@ public class UsuarioModel implements Serializable {
             joinColumns =   @JoinColumn(name = "usuario_id"),
             inverseJoinColumns = @JoinColumn(name = "Curso_Id")
     )
-    @JsonIgnoreProperties({"usuarios","salas"})
+    @JsonIgnoreProperties("usuarios")
     private Set<CursoModel> cursos = new HashSet<>();
 
     @ManyToMany
@@ -54,6 +54,7 @@ public class UsuarioModel implements Serializable {
             joinColumns = @JoinColumn(name = "usuario_id"),
             inverseJoinColumns = @JoinColumn(name = "Interesse_id")
     )
+    @JsonIgnoreProperties("usuarios")
     private  Set<SalaModel> salas = new HashSet<>();
     // getters e setters
     public Set<InteresseModel> getInteresses() {
@@ -145,5 +146,11 @@ public class UsuarioModel implements Serializable {
         this.nivelInteresse = nivelInteresse;
     }
 
+    public Set<SalaModel> getSalas() {
+        return salas;
+    }
 
+    public void setSalas(Set<SalaModel> salas) {
+        this.salas = salas;
+    }
 }

@@ -31,6 +31,7 @@ public class SalaModel implements Serializable {
     private UUID IdSala;
 
     @ManyToMany(mappedBy = "salas")
+    @JsonIgnoreProperties("salas")
     private Set<UsuarioModel> usuarios = new HashSet<>();
     @ManyToMany
     @JoinTable(
@@ -102,12 +103,20 @@ public class SalaModel implements Serializable {
         this.descricao = descricao;
     }
 
-    public Set<CursoModel> getCurso() {
+    public Set<CursoModel> getCursos() {
         return cursos;
     }
 
-    public void setCurso(Set<CursoModel> curso) {
-        this.cursos = curso;
+    public void setCursos(Set<CursoModel> cursos) {
+        this.cursos = cursos;
+    }
+
+    public Set<UsuarioModel> getUsuarios() {
+        return usuarios;
+    }
+
+    public void setUsuarios(Set<UsuarioModel> usuarios) {
+        this.usuarios = usuarios;
     }
 }
 

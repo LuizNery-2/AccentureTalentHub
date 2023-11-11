@@ -1,9 +1,12 @@
 package com.accenture.accenturetalenthub.models;
 
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.UUID;
 import java.io.Serializable;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -33,7 +36,11 @@ public class ModuloModel implements Serializable{
             joinColumns =   @JoinColumn(name = "modulo_id"),
             inverseJoinColumns = @JoinColumn(name = "Aula_Id")
     )
+    @JsonIgnoreProperties("modulos")
     private ArrayList<AulaModel> aulas;
+    @ManyToMany(mappedBy = "modulos")
+    @JsonIgnoreProperties("modulos")
+    private Set<CursoModel> cursos = new HashSet<>();
 
 
     //Get and Setters
@@ -60,5 +67,13 @@ public class ModuloModel implements Serializable{
 
     public void setAulas(ArrayList<AulaModel> aulas) {
         this.aulas = aulas;
+    }
+
+    public Set<CursoModel> getCursos() {
+        return cursos;
+    }
+
+    public void setCursos(Set<CursoModel> cursos) {
+        this.cursos = cursos;
     }
 }

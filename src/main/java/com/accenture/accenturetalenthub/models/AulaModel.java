@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.UUID;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
 import static jakarta.persistence.GenerationType.AUTO;
@@ -20,6 +21,7 @@ public class AulaModel implements Serializable{
     private UUID IdAula;
 
     @ManyToMany(mappedBy = "aulas")
+    @JsonIgnoreProperties("aulas")
     private ArrayList<ModuloModel> modulos;
     private String nomeAula;
 
@@ -50,5 +52,13 @@ public class AulaModel implements Serializable{
 
     public void setLinkAula(String linkAula) {
         this.linkAula = linkAula;
+    }
+
+    public ArrayList<ModuloModel> getModulos() {
+        return modulos;
+    }
+
+    public void setModulos(ArrayList<ModuloModel> modulos) {
+        this.modulos = modulos;
     }
 }
