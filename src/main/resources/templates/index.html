@@ -9,7 +9,7 @@
 	<link rel="shortcut icon" href="../static/img/logo_accenture.png" type="image/x-icon">
 	<link rel="stylesheet" type="text/css" href="../static/css/geralstyle.css">
     <link rel="stylesheet" type="text/css" href="../static/css/indexstyle.css">
-    <script type="text/javascript" src="../static/js/script.js"></script>
+    
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body id="body_login">
@@ -21,7 +21,7 @@
                 <label>Usuário</label>
                 <input id="usuarioLogin" type="text" name="usuarioLogin" required>
                 <label>Senha</label>
-                <input id="senhaLogin" type="password" name="senhaLogin" required>
+                <input id="senhaLogin" type="password" name="senhaLogin" >
                 <p class="mensagem-erro" style="color: red;font-size: 12px;"></p>
                 <input id="validarLogin" type="submit" name="validarLogin" value="Entrar">
                 <a href="recuperar_senha.html">Esqueci minha senha</a>
@@ -73,24 +73,60 @@
             })
             .then(function (res) {
                 if (res.ok) {
-                    window.location.href = 'home.html';
+                    // Verifica se a senha é "Mudar@123"
+                    return res.json().then(function(data) {
+                        if (data.senha === "Mudar@123") {
+                            const email = data.email;
+                            const id = data.idUsuario;
+                            const cursosConcluidos = data.cursosConcluidos;
+                            const interesses = data.interesses;
+                            const usuario = data.usuario;
+                            const nome = data.nome;
+                            const cargo = data.cargo;
+                            const foto = data.foto;
+                            const pontuacaoGeral = data.pontuacaoGeral;
+                            const nivel = data.nivel;
+                            const nivelInteresse = data.nivelInteresse;
+                            const nivelUsuario = data.nivelUsuario;
+
+   
+                            localStorage.setItem('emailUsuario', email);
+                            localStorage.setItem('idUsuario', id);
+                            localStorage.setItem('cursosConcluidos', cursosConcluidos);
+                            localStorage.setItem('interesses', interesses);
+                            localStorage.setItem('usuario', usuario);
+                            localStorage.setItem('nome', nome);
+                            localStorage.setItem('cargo', cargo);
+                            localStorage.setItem('foto', foto);
+                            localStorage.setItem('pontuacaoGeral', pontuacaoGeral);
+                            localStorage.setItem('nivel', nivel);
+                            localStorage.setItem('nivelInteresse', nivelInteresse);
+                            localStorage.setItem('nivelUsuario', nivelUsuario);
+
+                            // console.log(id, email, cursosConcluidos, interesses, usuario, nome, cargo, foto, pontuacaoGeral, nivel, nivelInteresse, nivelUsuario);
+                            window.location.href = 'primeiroacesso.html';
+                        } else if(data.nivelUsuario === 0){
+                            // Senha não é "Mudar@123", redirecione para a página home
+                            window.location.href = 'adm.html';
+                        }else if(data.nivelUsuario === 1){
+                            window.location.href = 'perfilLider.html';
+                        }else{
+                            window.location.href = 'perfil.html';
+                        }
+                    });
                 } else {
                     const mensagem = 'Usuário ou senha incorreta';
                     mensagemErro.textContent = mensagem;
                 }
             })
             .catch(function (error) {
-                
                 console.error("Erro na solicitação: " + error);
             });
         }
 
-
         form_login.addEventListener('submit', function (e) {
-        e.preventDefault();
-    
+            e.preventDefault();
             validarLogin();
-        
         });
         
     </script>

@@ -156,13 +156,49 @@
             });
         });
 
+        const url = "http://localhost:8080/usuario/" + localStorage.getItem('idUsuario');
+        function atualizarInteresses() {
+            fetch(url, {
+                method: "PUT",
+                headers: {
+                    "Accept": "application/json",
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    interesses: localStorage.getItem('novosInteresses'),
+                    senha: localStorage.getItem('novaSenha'),
+                    usuario: localStorage.getItem('usuario'),
+                    nome: localStorage.getItem('nome'),
+                    cargo: localStorage.getItem('cargo'),
+                    foto: localStorage.getItem('foto'),
+                    pontuacaoGeral: localStorage.getItem('pontuacaoGeral'),
+                    nivel: localStorage.getItem('nivel'),
+                    nivelInteresse: localStorage.getItem('nivelInteresse'),
+                    email: localStorage.getItem('email'),
+                    nivelUsuario: localStorage.getItem('nivelUsuario')
+                })
+            })
+            .then(function (res) {
+                if (res.ok) {
+                    console.log("Interesses atualizados com sucesso!");
+                } else {
+                    console.error("Falha ao atualizar interesses.");
+                }
+            })
+            .catch(function (error) {
+                console.error("Erro na solicitação: " + error);
+            });
+        }
+
         // Evento de clique no botão "Enviar Dados"
         const enviarDadosBtn = document.getElementById("enviarDados");
         enviarDadosBtn.addEventListener("click", function() {
 
             if(selecionados!=''){
-                alert("Tecnologias selecionadas: " + selecionados);
-                window.location.href = 'home.html';
+
+                localStorage.setItem('novosInteresses', selecionados)
+                atualizarInteresses();
+                // window.location.href = 'home.html';
             }else{
                 alert("Selecione pelo menos uma tecnologia para continuar!");
             }
