@@ -30,6 +30,9 @@ public class UsuarioModel implements Serializable {
     private int pontuacaoGeral;
     private int nivel;
     private int nivelInteresse;
+    private int nivelUsuario;
+   
+
     @ManyToMany
     @JoinTable(
             name = "TB_USUARIO_CURSO",
@@ -55,6 +58,15 @@ public class UsuarioModel implements Serializable {
     )
     private  Set<SalaModel> salas = new HashSet<>();
     // getters e setters
+
+     public int getNivelUsuario() {
+        return nivelUsuario;
+    }
+
+    public void setNivelUsuario(int nivelUsuario) {
+        this.nivelUsuario = nivelUsuario;
+    }
+    
     public Set<InteresseModel> getInteresses() {
         return interesses;
     }
