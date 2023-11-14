@@ -39,14 +39,14 @@
 
                 <div id="exemplo_tecnologias">
                     <ul>
-                        <li id="">JavaScript</li>
+                        <li id="11">JavaScript</li>
                         <li id="">Data Science</li>
                         <li id="">Java</li>
                         <li id="">Docker</li>
                         <li id="">HTML</li>
                         <li id="">CSS</li>
                         <li id="">Python</li>
-                        <li id="">PHP</li>
+                        <li id="1">PHP</li>
                         <li id="">Salesforce</li>
                         <li id="">SAP ABAP</li>
                         <li id="">TypeScript</li>
@@ -127,10 +127,10 @@
         // Seleciona todos os elementos li nas listas dentro da div com id "exemplo_tecnologias"
         const elementosLista = document.querySelectorAll("#exemplo_tecnologias li");
 
-        // Itera sobre os elementos e define o valor do atributo id como o texto do elemento
-        elementosLista.forEach(function(elemento) {
-        elemento.id = elemento.textContent.trim(); // Remove espaços em branco do início e do fim
-        });
+        // // Itera sobre os elementos e define o valor do atributo id como o texto do elemento
+        // elementosLista.forEach(function(elemento) {
+        // elemento.id = elemento.textContent.trim(); // Remove espaços em branco do início e do fim
+        // });
 
         // Array para armazenar os IDs selecionados
         const selecionados = [];
@@ -164,9 +164,7 @@
                     "Accept": "application/json",
                     "Content-Type": "application/json"
                 },
-                body: JSON.stringify({
-                    teste
-                })
+                body: JSON.stringify(localStorage.getItem('novosInteresses'))
             })
             .then(function (res) {
                 if (res.ok) {
