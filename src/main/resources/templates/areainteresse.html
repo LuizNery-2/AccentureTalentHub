@@ -39,14 +39,14 @@
 
                 <div id="exemplo_tecnologias">
                     <ul>
-                        <li id="11">JavaScript</li>
+                        <li id="">JavaScript</li>
                         <li id="">Data Science</li>
                         <li id="">Java</li>
                         <li id="">Docker</li>
                         <li id="">HTML</li>
                         <li id="">CSS</li>
                         <li id="">Python</li>
-                        <li id="1">PHP</li>
+                        <li id="">PHP</li>
                         <li id="">Salesforce</li>
                         <li id="">SAP ABAP</li>
                         <li id="">TypeScript</li>
@@ -124,13 +124,13 @@
 
     <script>
 
-        // Seleciona todos os elementos li nas listas dentro da div com id "exemplo_tecnologias"
-        const elementosLista = document.querySelectorAll("#exemplo_tecnologias li");
+         // Seleciona todos os elementos li nas listas dentro da div com id "exemplo_tecnologias"
+         const elementosLista = document.querySelectorAll("#exemplo_tecnologias li");
 
-        // // Itera sobre os elementos e define o valor do atributo id como o texto do elemento
-        // elementosLista.forEach(function(elemento) {
-        // elemento.id = elemento.textContent.trim(); // Remove espaços em branco do início e do fim
-        // });
+        // Itera sobre os elementos e define o valor do atributo id como o texto do elemento
+        elementosLista.forEach(function(elemento) {
+        elemento.id = elemento.textContent.trim(); // Remove espaços em branco do início e do fim
+        });
 
         // Array para armazenar os IDs selecionados
         const selecionados = [];
@@ -157,14 +157,15 @@
         });
 
         const url = "http://localhost:8080/usuariosInteresses/" + localStorage.getItem('idUsuario');
-        function atualizarInteresses() {
+        function atualizarInteresses(id) {
             fetch(url, {
                 method: "POST",
                 headers: {
                     "Accept": "application/json",
                     "Content-Type": "application/json"
                 },
-                body: JSON.stringify(localStorage.getItem('novosInteresses'))
+                
+                body: JSON.stringify(localStorage.getItem('novosInteressesObj'))
             })
             .then(function (res) {
                 if (res.ok) {
@@ -183,39 +184,33 @@
         enviarDadosBtn.addEventListener("click", function() {
 
             if(selecionados!=''){
+                // localStorage.setItem('novosInteresses', selecionados);
+                // const novosInteressesObj = localStorage.getItem('novosInteresses');
+                // // console.log(novosInteressesObj);  // Certifique-se de que seja uma string "1, 2"
+                // const arrayResult = novosInteressesObj.split(',').map(String);
+                // console.log(arrayResult);
 
-                localStorage.setItem('novosInteresses', selecionados)
+                localStorage.setItem('novosInteresses', selecionados);
+                localStorage.setItem('novosInteresses', selecionados);
+const novosInteressesObj = localStorage.getItem('novosInteresses');
+
+// Certifique-se de que seja uma string "1, 2"
+console.log(novosInteressesObj);
+
+// Split na string, adicione aspas duplas e remova aspas simples de cada elemento
+const arrayResult = novosInteressesObj.split(',').map(item => `"${item.trim()}"`).map(item => item.replace(/'/g, ''));
+const teste = "[" + arrayResult + "]";
+
+console.log(teste);
+                
+                localStorage.setItem('novosInteressesObj', teste);
+                alert(localStorage.getItem('novosInteressesObj'));
+                
                 atualizarInteresses();
                 // window.location.href = 'home.html';
             }else{
                 alert("Selecione pelo menos uma tecnologia para continuar!");
             }
-
-            // const dadosParaEnviar = {
-            //     tecnologiasSelecionadas: selecionados
-            // };
-
-            // solicitação AJAX para enviar os dados para o servidor
-
-            // fetch('/seu-endpoint-no-backend', {
-            //     method: 'POST',
-            //     headers: {
-            //         'Content-Type': 'application/json',
-            //     },
-            //     body: JSON.stringify(dadosParaEnviar),
-            // })
-            // .then(response => {
-            //     if (response.ok) {
-            //         return response.json(); // Se desejar tratar uma resposta JSON do servidor
-            //     }
-            // })
-            // .then(data => {
-            //     // Lidar com a resposta do servidor, se necessário
-            // })
-            // .catch(error => {
-            //     console.error('Erro ao enviar dados para o servidor:', error);
-            // });
-
             
         });
     </script>

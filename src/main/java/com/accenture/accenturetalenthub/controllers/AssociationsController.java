@@ -60,25 +60,49 @@ public class AssociationsController {
         return ResponseEntity.status(HttpStatus.OK).body("Interesses adicionados ao Curso com sucesso");
     }
 
+    // @PostMapping("usuariosInteresses/{idUsuario}")
+    // public ResponseEntity<String> saveUsuarioInteresse(@PathVariable(value = "idUsuario") UUID idUsuario, @RequestBody List<Long> idsInteresses)
+    // {
+    //     Optional<UsuarioModel> usuarioO = usuarioRepository.findById(idUsuario);
+    //     if (usuarioO.isEmpty())
+    //     {
+    //         return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Usuário não encontrado");
+    //     }
+    //     var usuarioModel = usuarioO.get();
+    //     for (long idInteresse : idsInteresses)
+    //     {
+    //         Optional<InteresseModel> interesseO = interesseRepository.findById(idInteresse);
+    //         if (interesseO.isEmpty()) {
+    //             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Interesse com ID " + idInteresse + " não encontrado");
+    //         }
+    //         var interesseModel = interesseO.get();
+    //         associatesEntitiesService.associarUsuarioInteresses(usuarioModel, interesseModel);
+    //     }
+    //     return ResponseEntity.status(HttpStatus.OK).body("Interesses adcionados ao usuário com sucesso");
+    // }
     @PostMapping("usuariosInteresses/{idUsuario}")
-    public ResponseEntity<String> saveUsuarioInteresse(@PathVariable(value = "idUsuario") UUID idUsuario, @RequestBody List<Long> idsInteresses)
-    {
+    public ResponseEntity<String> saveUsuarioInteresse(
+        @PathVariable(value = "idUsuario") UUID idUsuario,
+        @RequestBody List<String> nomesInteresses) {
+
         Optional<UsuarioModel> usuarioO = usuarioRepository.findById(idUsuario);
-        if (usuarioO.isEmpty())
-        {
+        if (usuarioO.isEmpty()) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Usuário não encontrado");
         }
+
         var usuarioModel = usuarioO.get();
-        for (long idInteresse : idsInteresses)
-        {
-            Optional<InteresseModel> interesseO = interesseRepository.findById(idInteresse);
+        
+        for (String nomeInteresse : nomesInteresses) {
+            Optional<InteresseModel> interesseO = interesseRepository.findByNome(nomeInteresse);
             if (interesseO.isEmpty()) {
-                return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Interesse com ID " + idInteresse + " não encontrado");
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Interesse com nome '" + nomeInteresse + "' não encontrado");
             }
+
             var interesseModel = interesseO.get();
             associatesEntitiesService.associarUsuarioInteresses(usuarioModel, interesseModel);
         }
-        return ResponseEntity.status(HttpStatus.OK).body("Interesses adcionados ao usuário com sucesso");
+
+        return ResponseEntity.status(HttpStatus.OK).body("Interesses adicionados ao usuário com sucesso");
     }
 
 
