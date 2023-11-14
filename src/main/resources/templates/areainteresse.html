@@ -156,26 +156,16 @@
             });
         });
 
-        const url = "http://localhost:8080/usuario/" + localStorage.getItem('idUsuario');
+        const url = "http://localhost:8080/usuariosInteresses/" + localStorage.getItem('idUsuario');
         function atualizarInteresses() {
             fetch(url, {
-                method: "PUT",
+                method: "POST",
                 headers: {
                     "Accept": "application/json",
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify({
-                    interesses: localStorage.getItem('novosInteresses'),
-                    senha: localStorage.getItem('novaSenha'),
-                    usuario: localStorage.getItem('usuario'),
-                    nome: localStorage.getItem('nome'),
-                    cargo: localStorage.getItem('cargo'),
-                    foto: localStorage.getItem('foto'),
-                    pontuacaoGeral: localStorage.getItem('pontuacaoGeral'),
-                    nivel: localStorage.getItem('nivel'),
-                    nivelInteresse: localStorage.getItem('nivelInteresse'),
-                    email: localStorage.getItem('email'),
-                    nivelUsuario: localStorage.getItem('nivelUsuario')
+                    teste
                 })
             })
             .then(function (res) {
