@@ -2,9 +2,11 @@ package com.accenture.accenturetalenthub.controllers;
 
 import com.accenture.accenturetalenthub.models.CursoModel;
 import com.accenture.accenturetalenthub.models.InteresseModel;
+import com.accenture.accenturetalenthub.models.SalaModel;
 import com.accenture.accenturetalenthub.models.UsuarioModel;
 import com.accenture.accenturetalenthub.repositories.CursoRepository;
 import com.accenture.accenturetalenthub.repositories.InteresseRepository;
+import com.accenture.accenturetalenthub.repositories.SalaRepository;
 import com.accenture.accenturetalenthub.repositories.UsuarioRepository;
 import com.accenture.accenturetalenthub.services.AssociatesEntitiesService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +30,8 @@ public class AssociationsController {
     InteresseRepository interesseRepository;
     @Autowired
     UsuarioRepository usuarioRepository;
+    @Autowired
+    SalaRepository salaRepository;
 
     AssociatesEntitiesService associatesEntitiesService =  new AssociatesEntitiesService();
 
@@ -49,6 +53,28 @@ public class AssociationsController {
             }
             var interesseModel = interesseO.get();
             associatesEntitiesService.associarCursoInteresse(cursoModel, interesseModel);
+        }
+
+        return ResponseEntity.status(HttpStatus.OK).body("Interesses adicionados ao Curso com sucesso");
+    }
+    @PostMapping("cursosSalas/idSalas")
+    public ResponseEntity saveCursosSalas(@PathVariable(value = "idSalas") UUID idSala,@RequestBody List<UUID> idCursos)
+    {
+        Optional<SalaModel> salaO = salaRepository.findById(idSala);
+
+        if (salaO.isEmpty()) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Sala não encontrado");
+        }
+
+        var salaModel = salaO.get();
+
+        for (UUID idCurso : idCursos) {
+            Optional<CursoModel> cursoO = cursoRepository.findById(idCurso);
+            if (cursoO.isEmpty()) {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Curso com ID " + idCurso + " não encontrado");
+            }
+            var cursoModel = cursoO.get();
+            associatesEntitiesService.associarCursoSalas(cursoModel,salaModel);
         }
 
         return ResponseEntity.status(HttpStatus.OK).body("Interesses adicionados ao Curso com sucesso");
