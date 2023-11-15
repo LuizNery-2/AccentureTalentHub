@@ -17,6 +17,7 @@
 
     <!-- Importação dos arquivos Jquary -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../static/js/script.js"></script>
 
 </head>
 <body id="">
@@ -58,46 +59,111 @@
                 </li>
             </ul>
         </nav>
+
+        <!--  Este nav só será ativado quando as páginas estiverem no modo responsivo! -->
+        <!--  INICIO DO NAV RESPONSIVO -->
+        <div id="icon-menu-responsivo">
+            <img src="../static/img/menu-aberto.png">
+        </div>
+        
+        <nav class="nav-responsivo">
+            <ul class="lista_dashboard-responsivo">
+                <li id="icon_fechar-responsivo">
+                    <img src="../static/img/icon_fechar.png">
+                </li>
+                <li>
+                    <a id="logo-responsivo" href="home.html">
+                        <img src="../static/img/logo-responsivo.png">
+                        <p>AccentureTalentHub</p>
+                    </a>
+                </li>
+                <li class="active-responsivo">
+                    <a class="link-page-responsivo" href="curso.html">
+                        <img class="icon_menu-responsivo" src="../static/img/icon_cursos.png">
+                        <p>Cursos</p>
+                    </a>         
+                </li>
+                <li>
+                    <a class="link-page-responsivo" href="salas.html">
+                        <img class="icon_menu-responsivo" src="../static/img/icon_trilhas.png">
+                        <p>Salas</p>
+                    </a>                
+                </li>
+                <li>
+                    <a class="link-page-responsivo" href="desenvol_pessoal.html">
+                        <img class="icon_menu-responsivo" src="../static/img/icon_dp.png">
+                        <p>Mural DPS</p>
+                    </a> 
+                </li>
+                <li>
+                    <a class="link-page-responsivo" href="curso_concluido.html">
+                        <img class="icon_menu-responsivo" src="../static/img/icon_cursos_concluidos.png">
+                        <p>Cursos Concluídos</p>
+                    </a>
+                </li>
+            </ul>
+            <ul class="lista_dashboard-responsivo">
+                <li id="icon_usuario_menu-responsivo" class="lista_dashboard-responsivo">
+                    <a class="link-page-responsivo" href="perfil.html">
+                        <img class="icon_menu-responsivo" src="../static/img/icon_perfil.png">
+                        <p>Perfil</p>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!--  FIM DO NAV RESPONSIVO -->
+
+        <!-- <div id="menu-suspenso">
+            <ul> 
+                <li><a href="perfil.html">Perfil</a></li>
+                <li><a href="index.html">Sair</a></li>
+            </ul>
+        </div>
+     -->
+
+
     
         <section id="box_info_dashboard">
 
             <header style="text-align: left; display: block;">
                 <h1 id="title_curso" style="text-align: left;">Cursos</h1>
                 <br>
-                <div id="box_perfil">
-                    <div id="box_info_perfil">
+                <!-- <div id="box_perfil">
+                    <div id="box_info_perfil"> -->
                         
-                        <div style="width: 100%;">
-                            <div class="box_filtro">
-                                <img id="Icon_filtrar" src="../static/img/Icon_filtrar.png">
-                                <ul class="lista_filtro">
-                                    <li>
-                                        <p>HTML</p>
-                                        <img class="icon_fechar" src="../static/img/icon_fechar.png">
-                                    </li>
-                                    <li>
-                                        <p>CSS</p>
-                                        <img class="icon_fechar" src="../static/img/icon_fechar.png">
-                                    </li>
-                                    <li>
-                                        <p>JavaScript</p>
-                                        <img class="icon_fechar" src="../static/img/icon_fechar.png">
-                                    </li>
-                                </ul>
-    
-                                <div style="left: 15%;" class="search-container">
+                        <!-- <div style="width: 100%;"> -->
+                            <div class="box_filtro_search">
+                                <div class="box_filtro">
+                                    <img id="Icon_filtrar" src="../static/img/Icon_filtrar.png">
+                                    <ul class="lista_filtro">
+                                        <li>
+                                            <p>HTML</p>
+                                            <img class="icon_fechar" src="../static/img/icon_fechar.png">
+                                        </li>
+                                        <li>
+                                            <p>CSS</p>
+                                            <img class="icon_fechar" src="../static/img/icon_fechar.png">
+                                        </li>
+                                        <li>
+                                            <p>JavaScript</p>
+                                            <img class="icon_fechar" src="../static/img/icon_fechar.png">
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div  class="search-container">
                                     <input type="search">
                                     <i class="fas fa-search"></i>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
+                        <!-- </div> -->
+                    <!-- </div>
+                </div> -->
             </header>
             
-            <div class="box_trilhas">
+            <!-- <div class="box_trilhas">
 
-                <div class="box_escolha_cusos">
+                <div class="box_escolha_cusos"> -->
                     <div class="center_cursos"> <!--Aqui só pode ter três divs de cursos. -->
                         <div class="box_curso">
                             <div class="info_curso">
@@ -179,8 +245,8 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
+                <!-- </div>
+            </div> -->
 
            
 
