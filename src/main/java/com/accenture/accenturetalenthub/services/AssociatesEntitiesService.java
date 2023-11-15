@@ -11,10 +11,12 @@ public class AssociatesEntitiesService {
 
     @Autowired
     CursoRepository cursoRepository;
-    @Autowired
-    InteresseRepository interesseRepository;
+
     @Autowired
     UsuarioRepository usuarioRepository;
+    @Autowired
+    InteresseRepository interesseRepository;
+
     @Autowired
     SalaRepository salaRepository;
     @Autowired

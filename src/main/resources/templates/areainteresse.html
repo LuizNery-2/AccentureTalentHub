@@ -39,46 +39,46 @@
 
                 <div id="exemplo_tecnologias">
                     <ul>
-                        <li id="">JavaScript</li>
-                        <li id="">Data Science</li>
-                        <li id="">Java</li>
-                        <li id="">Docker</li>
-                        <li id="">HTML</li>
-                        <li id="">CSS</li>
-                        <li id="">Python</li>
-                        <li id="">PHP</li>
-                        <li id="">Salesforce</li>
-                        <li id="">SAP ABAP</li>
-                        <li id="">TypeScript</li>
-                        <li id="">MySQL</li>
-                        <li id="">Kubernetes</li>
-                        <li id="">Cloud Computing</li>
-                        <li id="">Azure </li>
-                        <li id="">Hadoop</li>
-                        <li id="">Spark</li>
-                        <li id="">Machine Learning</li>
-                        <li id="">TensorFlow</li>
-                        <li id="">DevOps </li>
-                        <li id="">Jenkins</li>
-                        <li id="">Blockchain</li>
-                        <li id="">Cibersegurança</li>
-                        <li id="">Virtualização</li>
-                        <li id="">Angular</li>
-                        <li id="">React </li>
-                        <li id="">Vue.js</li>
-                        <li id="">IoT </li>
-                        <li id="">Flutter </li>
-                        <li id="">Big Data</li>
-                        <li id="">Analytics</li>
-                        <li id="">Inteligência Artificial</li>
-                        <li id="">PyTorch</li>
-                        <li id="">React Native</li>
-                        <li id="">MongoDB</li>
-                        <li id="">Cassandra</li>
-                        <li id="">PostgreSQL</li>
-                        <li id="">Oracle</li>
-                        <li id="">AWS </li>
-    
+                        <li id="11">JavaScript</li>
+                        <li id="35">Data Science</li>
+                        <li id="12">Java</li>
+                        <li id="2">.net</li>
+                        <li id="16">HTML</li>
+                        <li id="17">CSS</li>
+                        <li id="14">Python</li>
+                        <li id="1">PHP</li>
+                        <li id="3">C#</li>
+                        <li id="15">SAP ABAP</li>
+                        <li id="13">TypeScript</li>
+                        <li id="23">MySQL</li>
+                        <li id="10">rabbitmq</li>
+                        <li id="27">Cloud Computing</li>
+                        <li id="5">Azure </li>
+                        <li id="29">Hadoop</li>
+                        <li id="30">Spark</li>
+                        <li id="36">Machine Learning</li>
+                        <li id="37">TensorFlow</li>
+                        <li id="33">DevOps </li>
+                        <li id="34">Jenkins</li>
+                        <li id="40">Blockchain</li>
+                        <li id="39">Cibersegurança</li>
+                        <li id="8">auth0</li>
+                        <li id="18">Angular</li>
+                        <li id="19">React </li>
+                        <li id="20">Vue.js</li>
+                        <li id="6">Apim </li>
+                        <li id="22">Flutter </li>
+                        <li id="31">Big Data</li>
+                        <li id="32">Analytics</li>
+                        <li id="7">apigee</li>
+                        <li id="38">PyTorch</li>
+                        <li id="21">React Native</li>
+                        <li id="4">MongoDB</li>
+                        <li id="24">Cassandra</li>
+                        <li id="25">PostgreSQL</li>
+                        <li id="26">Oracle</li>
+                        <li id="28">AWS </li>
+                        <li id="9">kafka </li>
                     </ul>
             </div>
             
@@ -115,22 +115,13 @@
             $("#box_center").fadeIn(2000);
             $("#box_center").css("display", "flex");
 
-            // $("#enviar_resposta").click(function() {
-            //     
-            // })
-
         });
     </script>
 
     <script>
 
-        // Seleciona todos os elementos li nas listas dentro da div com id "exemplo_tecnologias"
-        const elementosLista = document.querySelectorAll("#exemplo_tecnologias li");
-
-        // Itera sobre os elementos e define o valor do atributo id como o texto do elemento
-        elementosLista.forEach(function(elemento) {
-        elemento.id = elemento.textContent.trim(); // Remove espaços em branco do início e do fim
-        });
+         // Seleciona todos os elementos li nas listas dentro da div com id "exemplo_tecnologias"
+         const elementosLista = document.querySelectorAll("#exemplo_tecnologias li");
 
         // Array para armazenar os IDs selecionados
         const selecionados = [];
@@ -156,27 +147,19 @@
             });
         });
 
-        const url = "http://localhost:8080/usuario/" + localStorage.getItem('idUsuario');
-        function atualizarInteresses() {
+        const url = "http://localhost:8080/usuariosInteresses/" + localStorage.getItem('idUsuario');
+        function atualizarInteresses(id) {
             fetch(url, {
-                method: "PUT",
+                method: "POST",
                 headers: {
                     "Accept": "application/json",
                     "Content-Type": "application/json"
                 },
-                body: JSON.stringify({
-                    interesses: localStorage.getItem('novosInteresses'),
-                    senha: localStorage.getItem('novaSenha'),
-                    usuario: localStorage.getItem('usuario'),
-                    nome: localStorage.getItem('nome'),
-                    cargo: localStorage.getItem('cargo'),
-                    foto: localStorage.getItem('foto'),
-                    pontuacaoGeral: localStorage.getItem('pontuacaoGeral'),
-                    nivel: localStorage.getItem('nivel'),
-                    nivelInteresse: localStorage.getItem('nivelInteresse'),
-                    email: localStorage.getItem('email'),
-                    nivelUsuario: localStorage.getItem('nivelUsuario')
+                body: JSON.stringify({ 
+
+                    idsInteresses: localStorage.getItem('novosInteresses') 
                 })
+                
             })
             .then(function (res) {
                 if (res.ok) {
@@ -195,39 +178,17 @@
         enviarDadosBtn.addEventListener("click", function() {
 
             if(selecionados!=''){
+                const numerosArray = selecionados.map(elemento => parseInt(elemento.replace(/"/g, ''), 10));
 
-                localStorage.setItem('novosInteresses', selecionados)
+                const numeros = numerosArray.map(Number);
+                localStorage.setItem('novosInteresses', numeros);
+                
                 atualizarInteresses();
-                // window.location.href = 'home.html';
+                alert("Interesses adicionados ao usuário com sucesso!");
+                window.location.href = 'home.html';
             }else{
                 alert("Selecione pelo menos uma tecnologia para continuar!");
             }
-
-            // const dadosParaEnviar = {
-            //     tecnologiasSelecionadas: selecionados
-            // };
-
-            // solicitação AJAX para enviar os dados para o servidor
-
-            // fetch('/seu-endpoint-no-backend', {
-            //     method: 'POST',
-            //     headers: {
-            //         'Content-Type': 'application/json',
-            //     },
-            //     body: JSON.stringify(dadosParaEnviar),
-            // })
-            // .then(response => {
-            //     if (response.ok) {
-            //         return response.json(); // Se desejar tratar uma resposta JSON do servidor
-            //     }
-            // })
-            // .then(data => {
-            //     // Lidar com a resposta do servidor, se necessário
-            // })
-            // .catch(error => {
-            //     console.error('Erro ao enviar dados para o servidor:', error);
-            // });
-
             
         });
     </script>

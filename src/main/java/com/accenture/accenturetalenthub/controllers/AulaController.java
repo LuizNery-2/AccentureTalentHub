@@ -2,7 +2,6 @@ package com.accenture.accenturetalenthub.controllers;
 
 import com.accenture.accenturetalenthub.dtos.AulasRecordDto;
 import com.accenture.accenturetalenthub.models.AulaModel;
-import com.accenture.accenturetalenthub.models.SalaModel;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

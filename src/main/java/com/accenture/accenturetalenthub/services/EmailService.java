@@ -51,4 +51,5 @@ public class EmailService {
     public Optional<EmailModel> findById(UUID emailId) {
         return emailRepository.findById(emailId);
     }
+
 }

@@ -2,8 +2,6 @@ package com.accenture.accenturetalenthub.controllers;
 
 import com.accenture.accenturetalenthub.dtos.ModuloRecordDto;
 import com.accenture.accenturetalenthub.models.ModuloModel;
-import com.accenture.accenturetalenthub.models.SalaModel;
-import com.accenture.accenturetalenthub.repositories.SalaRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

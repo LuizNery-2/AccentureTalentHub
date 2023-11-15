@@ -68,6 +68,6 @@ public class InteresseModel implements Serializable {
     }
 
     public void setUsuarios(Set<UsuarioModel> usuario) {
-        this.usuarios = usuarios;
+        this.usuarios = usuario;
     }
 }

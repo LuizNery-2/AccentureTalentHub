@@ -27,9 +27,15 @@ public class UsuarioModel implements Serializable {
     private String cargo;
     // A representação de 'foto' depende do seu aplicativo; pode ser uma URL ou um Blob.
     private String foto;
+    private String email;
+   
+
     private int pontuacaoGeral;
     private int nivel;
     private int nivelInteresse;
+    private int nivelUsuario;
+   
+
     @ManyToMany
     @JoinTable(
             name = "TB_USUARIO_CURSO",
@@ -56,6 +62,22 @@ public class UsuarioModel implements Serializable {
     @JsonIgnoreProperties("usuarios")
     private  Set<SalaModel> salas = new HashSet<>();
     // getters e setters
+     public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+     public int getNivelUsuario() {
+        return nivelUsuario;
+    }
+
+    public void setNivelUsuario(int nivelUsuario) {
+        this.nivelUsuario = nivelUsuario;
+    }
+    
     public Set<InteresseModel> getInteresses() {
         return interesses;
     }
