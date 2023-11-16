@@ -137,7 +137,7 @@
                 if (selecionados.includes(id)) {
                     // Se já estiver selecionado, remova-o do array e restaure a cor
                     const index = selecionados.indexOf(id);
-                    selecionados.splice(index, 1);
+                    selecionados.pop(index);
                     elemento.classList.remove("selected");
                 } else {
                     // Se não estiver selecionado, adicione ao array e mude a cor
@@ -148,18 +148,14 @@
         });
 
         const url = "http://localhost:8080/usuariosInteresses/" + localStorage.getItem('idUsuario');
-        function atualizarInteresses(id) {
+        function atualizarInteresses(IDs) {
             fetch(url, {
                 method: "POST",
                 headers: {
                     "Accept": "application/json",
                     "Content-Type": "application/json"
                 },
-                body: JSON.stringify({ 
-
-                    idsInteresses: localStorage.getItem('novosInteresses') 
-                })
-                
+                body: JSON.stringify(IDs)
             })
             .then(function (res) {
                 if (res.ok) {
@@ -178,12 +174,10 @@
         enviarDadosBtn.addEventListener("click", function() {
 
             if(selecionados!=''){
-                const numerosArray = selecionados.map(elemento => parseInt(elemento.replace(/"/g, ''), 10));
-
-                const numeros = numerosArray.map(Number);
-                localStorage.setItem('novosInteresses', numeros);
-                
-                atualizarInteresses();
+                console.log(selecionados);
+                var IDs = selecionados.map(function(string) {return Number(string);});
+                atualizarInteresses(IDs)   
+               
                 alert("Interesses adicionados ao usuário com sucesso!");
                 window.location.href = 'home.html';
             }else{

@@ -9,19 +9,13 @@ import com.accenture.accenturetalenthub.repositories.InteresseRepository;
 import com.accenture.accenturetalenthub.repositories.SalaRepository;
 import com.accenture.accenturetalenthub.repositories.UsuarioRepository;
 import com.accenture.accenturetalenthub.services.AssociatesEntitiesService;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
-import java.util.UUID;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @RestController
@@ -38,7 +32,8 @@ public class AssociationsController {
     @Autowired
     SalaRepository salaRepository;
 
-    private AssociatesEntitiesService associatesEntitiesService = new AssociatesEntitiesService();
+    @Autowired
+    AssociatesEntitiesService associatesEntitiesService;
 
 
 
@@ -65,8 +60,8 @@ public class AssociationsController {
 
         return ResponseEntity.status(HttpStatus.OK).body("Interesses adicionados ao Curso com sucesso");
     }
-    @PostMapping("cursosSalas/idSalas")
-    public ResponseEntity saveCursosSalas(@PathVariable(value = "idSalas") UUID idSala,@RequestBody List<UUID> idCursos)
+    @PostMapping("cursosSalas/{idSalas}")
+    public ResponseEntity<String> saveCursosSalas(@PathVariable(value = "idSalas") UUID idSala,@RequestBody List<UUID> idCursos)
     {
         Optional<SalaModel> salaO = salaRepository.findById(idSala);
 
@@ -90,42 +85,59 @@ public class AssociationsController {
 
 
 
+
     @PostMapping("usuariosInteresses/{idUsuario}")
-    public ResponseEntity<String> saveUsuarioInteresse(
-            @PathVariable(value = "idUsuario") UUID idUsuario,
-            @RequestBody Map<String, String> requestBody) {
-
-        // Certifique-se de que a chave "idsInteresses" está presente no corpo da solicitação
-        if (!requestBody.containsKey("idsInteresses")) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("A chave 'idsInteresses' é obrigatória no corpo da solicitação");
-        }
-
-        // Obtenha a string de IDs de interesse a partir do corpo da solicitação
-        String idsInteressesString = requestBody.get("idsInteresses");
-
-        // Converta a string em uma lista de IDs de interesse
-        List<Long> idsInteresses = Arrays.stream(idsInteressesString.split(","))
-                .map(Long::valueOf)
-                .collect(Collectors.toList());
-
+    public ResponseEntity<String> saveUsuarioInteresse(@PathVariable(value = "idUsuario") UUID idUsuario,@RequestBody List<Long> idsInteresses)
+    {
         Optional<UsuarioModel> usuarioO = usuarioRepository.findById(idUsuario);
-        if (usuarioO.isEmpty()) {
+        if (usuarioO.isEmpty())
+        {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Usuário não encontrado");
         }
-
         var usuarioModel = usuarioO.get();
-
-        for (long idInteresse : idsInteresses) {
+        for (long idInteresse : idsInteresses)
+        {
             Optional<InteresseModel> interesseO = interesseRepository.findById(idInteresse);
             if (interesseO.isEmpty()) {
                 return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Interesse com ID " + idInteresse + " não encontrado");
             }
-
             var interesseModel = interesseO.get();
             associatesEntitiesService.associarUsuarioInteresses(usuarioModel, interesseModel);
         }
+        return ResponseEntity.status(HttpStatus.OK).body("Interesses adcionados ao usuário com sucesso");
+    }
 
-        return ResponseEntity.status(HttpStatus.OK).body("Interesses adicionados ao usuário com sucesso");
+    @DeleteMapping("usuariosInteresses/{idUsuario}")
+    public ResponseEntity<String> deleteUsuarioInteresse(@PathVariable(value = "idUsuario") UUID idUsuario,@RequestBody List<Long> idsInteresses)
+    {
+        Optional<UsuarioModel> usuarioO = usuarioRepository.findById(idUsuario);
+        List<InteresseModel> interessesAssociados = new ArrayList<>();
+        if (usuarioO.isEmpty())
+        {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Usuário não encontrado");
+        }
+        var usuarioModel = usuarioO.get();
+        for (long idInteresse : idsInteresses)
+        {
+            Optional<InteresseModel> interesseO = interesseRepository.findById(idInteresse);
+            if (interesseO.isEmpty()) {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Interesse com ID " + idInteresse + " não encontrado");
+            }
+            var interesseModel = interesseO.get();
+            if (!interesseModel.getUsuarios().contains(usuarioModel))
+            {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Interesse com ID " + interesseModel.getIdInteresse() + " não encontrado no usuario com ID " + usuarioModel.getIdUsuario());
+            }
+            interessesAssociados.add(interesseModel);
+
+
+        }
+        for (InteresseModel interesseModel : interessesAssociados)
+        {
+            associatesEntitiesService.removerAssociacaoUsuarioInteresses(usuarioModel, interesseModel);
+        }
+
+        return ResponseEntity.status(HttpStatus.OK).body("Interesses deletados do usuário com sucesso");
     }
 
 
