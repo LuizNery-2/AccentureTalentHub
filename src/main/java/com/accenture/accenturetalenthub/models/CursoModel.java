@@ -14,7 +14,7 @@ public class CursoModel implements Serializable {
 
     @Id
     @GeneratedValue(strategy = AUTO)
-    private long IdCurso;
+    private UUID IdCurso;
     private String nome;
     private String descricao;
     private Boolean concluido = false;
@@ -60,7 +60,7 @@ public class CursoModel implements Serializable {
         this.salas = salas;
     }
 
-    public long getIdCurso() {
+    public UUID getIdCurso() {
         return IdCurso;
     }
 

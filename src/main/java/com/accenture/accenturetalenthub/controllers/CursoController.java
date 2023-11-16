@@ -11,6 +11,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
+
 import org.springframework.web.bind.annotation.RestController;
 
 
@@ -33,7 +35,7 @@ public class CursoController{
         return ResponseEntity.status(HttpStatus.OK).body(cursoRepository.findAll());
     }
     @GetMapping("/cursos/{id}")
-    public ResponseEntity<Object> getCursos(@PathVariable(value = "id") long id) {
+    public ResponseEntity<Object> getCursos(@PathVariable(value = "id") UUID id) {
         Optional<CursoModel> cursoO = cursoRepository.findById(id);
         if (cursoO.isEmpty()){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Curso não encontrado");
@@ -41,7 +43,7 @@ public class CursoController{
         return ResponseEntity.status(HttpStatus.OK).body(cursoO.get());
     }
     @PutMapping("/cursos/{id}")
-    public ResponseEntity<Object> updateCurso(@PathVariable(value = "id") long id, @RequestBody @Valid CursoRecordDto cursoRecordDto){
+    public ResponseEntity<Object> updateCurso(@PathVariable(value = "id") UUID id, @RequestBody @Valid CursoRecordDto cursoRecordDto){
         Optional<CursoModel> cursoO = cursoRepository.findById(id);
         if (cursoO.isEmpty()){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Curso não encontrado");
@@ -51,7 +53,7 @@ public class CursoController{
         return ResponseEntity.status(HttpStatus.OK).body(cursoRepository.save(cursoModel));
     }
     @DeleteMapping("/cursos/{id}")
-    public ResponseEntity<Object> deleteCurso(@PathVariable(value = "id") long id){
+    public ResponseEntity<Object> deleteCurso(@PathVariable(value = "id") UUID id){
         Optional<CursoModel> curso0 = cursoRepository.findById(id);
         if (curso0.isEmpty())
         {
