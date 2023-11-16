@@ -75,38 +75,36 @@
                 if (res.ok) {
                     // Verifica se a senha é "Mudar@123"
                     return res.json().then(function(data) {
-                        if (data.senha === "Mudar@123") {
-                            const email = data.email;
-                            const id = data.idUsuario;
-                            const cursosConcluidos = data.cursosConcluidos;
-                            const interesses = data.interesses;
-                            const usuario = data.usuario;
-                            const nome = data.nome;
-                            const cargo = data.cargo;
-                            const foto = data.foto;
-                            const pontuacaoGeral = data.pontuacaoGeral;
-                            const nivel = data.nivel;
-                            const nivelInteresse = data.nivelInteresse;
-                            const nivelUsuario = data.nivelUsuario;
+                        const email = data.email;
+                        const id = data.idUsuario;
+                        const cursosConcluidos = data.cursosConcluidos;
+                        const interesses = data.interesses;
+                        const usuario = data.usuario;
+                        const nome = data.nome;
+                        const cargo = data.cargo;
+                        const foto = data.foto;
+                        const pontuacaoGeral = data.pontuacaoGeral;
+                        const nivel = data.nivel;
+                        const nivelInteresse = data.nivelInteresse;
+                        const nivelUsuario = data.nivelUsuario;
 
    
-                            localStorage.setItem('emailUsuario', email);
-                            localStorage.setItem('idUsuario', id);
-                            localStorage.setItem('cursosConcluidos', cursosConcluidos);
-                            localStorage.setItem('interesses', interesses);
-                            localStorage.setItem('usuario', usuario);
-                            localStorage.setItem('nome', nome);
-                            localStorage.setItem('cargo', cargo);
-                            localStorage.setItem('foto', foto);
-                            localStorage.setItem('pontuacaoGeral', pontuacaoGeral);
-                            localStorage.setItem('nivel', nivel);
-                            localStorage.setItem('nivelInteresse', nivelInteresse);
-                            localStorage.setItem('nivelUsuario', nivelUsuario);
-
-                            // console.log(id, email, cursosConcluidos, interesses, usuario, nome, cargo, foto, pontuacaoGeral, nivel, nivelInteresse, nivelUsuario);
+                        localStorage.setItem('emailUsuario', email);
+                        localStorage.setItem('idUsuario', id);
+                        localStorage.setItem('cursosConcluidos', cursosConcluidos);
+                        localStorage.setItem('interesses', interesses);
+                        localStorage.setItem('usuario', usuario);
+                        localStorage.setItem('nome', nome);
+                        localStorage.setItem('cargo', cargo);
+                        localStorage.setItem('foto', foto);
+                        localStorage.setItem('pontuacaoGeral', pontuacaoGeral);
+                        localStorage.setItem('nivel', nivel);
+                        localStorage.setItem('nivelInteresse', nivelInteresse);
+                        localStorage.setItem('nivelUsuario', nivelUsuario);
+                        
+                        if (data.senha === "Mudar@123") {
                             window.location.href = 'primeiroacesso.html';
                         } else if(data.nivelUsuario === 0){
-                            // Senha não é "Mudar@123", redirecione para a página home
                             window.location.href = 'adm.html';
                         }else if(data.nivelUsuario === 1){
                             window.location.href = 'perfilLider.html';

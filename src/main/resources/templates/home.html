@@ -131,18 +131,18 @@
 
                     <div>
                         <img src="../static/img/avatar.png">
-                        <p style="color: #B05CEF; text-align: center;">Cargo Atual</p>
+                        <p id="cargoUsuario" style="color: #B05CEF; text-align: center;"></p>
                     </div>
 
                     <div id="info_perfil">
                         
                         <div id="txt_perfil">
-                            <h3>Débora Calasans</h3>
-                            <p>Nível 1</p>
+                            <h3 id="nomeUsuario"></h3>
+                            <p id="nivel"></p>
                         </div>
         
                         <div id="barra_progresso"></div>
-                        <p>950/1000</p>
+                        <p id="numeroBarra"></p>
                     </div>
 
                 </div>
@@ -251,6 +251,18 @@
     <footer class="footer_geral">
         <p>© 2023 AccentureTalentHub.Inc | Todos os direitos reservados </p>
     </footer>
+
+    <script>
+        const nomeUsuario = document.getElementById('nomeUsuario');
+        const nivel = document.getElementById('nivel');
+        // const numeroBarra = document.getElementById('numeroBarra');
+        const cargo = document.getElementById('cargoUsuario');
+
+        nomeUsuario.textContent = localStorage.getItem('nome');
+        nivel.textContent = "Nível " + localStorage.getItem('nivel');
+        // numeroBarra.textContent = localStorage.getItem('nome');
+        cargo.textContent = localStorage.getItem('cargo');
+    </script>
 
 </body>
 </html>
