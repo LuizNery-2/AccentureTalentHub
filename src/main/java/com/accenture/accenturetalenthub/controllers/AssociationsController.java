@@ -41,7 +41,7 @@ public class AssociationsController {
     }
 
     @PostMapping("/cursosInteresses/{idCurso}")
-    public ResponseEntity<String> saveCursoInteresses(@PathVariable(value = "idCurso") UUID idCurso, @RequestBody List<Long> idsInteresses) {
+    public ResponseEntity<String> saveCursoInteresses(@PathVariable(value = "idCurso") long idCurso, @RequestBody List<Long> idsInteresses) {
 
         Optional<CursoModel> cursoO = cursoRepository.findById(idCurso);
 
@@ -98,6 +98,45 @@ public class AssociationsController {
 
             var interesseModel = interesseO.get();
             associatesEntitiesService.associarUsuarioInteresses(usuarioModel, interesseModel);
+        }
+
+        return ResponseEntity.status(HttpStatus.OK).body("Interesses adicionados ao usuário com sucesso");
+    }
+
+
+     @PostMapping("usuariosCursos/{idUsuario}")
+    public ResponseEntity<String> saveUsuarioCursos(
+            @PathVariable(value = "idUsuario") UUID idUsuario,
+            @RequestBody Map<String, String> requestBody) {
+
+        // Certifique-se de que a chave "idsInteresses" está presente no corpo da solicitação
+        if (!requestBody.containsKey("idsCursos")) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("A chave 'idsCursos' é obrigatória no corpo da solicitação");
+        }
+
+        // Obtenha a string de IDs de interesse a partir do corpo da solicitação
+        String idsCursosString = requestBody.get("idsCursos");
+
+        // Converta a string em uma lista de IDs de interesse
+        List<Long> idsCursos = Arrays.stream(idsCursosString.split(","))
+                .map(Long::valueOf)
+                .collect(Collectors.toList());
+
+        Optional<UsuarioModel> usuarioO = usuarioRepository.findById(idUsuario);
+        if (usuarioO.isEmpty()) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Usuário não encontrado");
+        }
+
+        var usuarioModel = usuarioO.get();
+
+        for (long idCurso : idsCursos) {
+            Optional<CursoModel> cursoO = cursoRepository.findById(idCurso);
+            if (cursoO.isEmpty()) {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Interesse com ID " + idCurso + " não encontrado");
+            }
+
+            var CursoModel = cursoO.get();
+            associatesEntitiesService.associarUsuarioCurso(usuarioModel, CursoModel);
         }
 
         return ResponseEntity.status(HttpStatus.OK).body("Interesses adicionados ao usuário com sucesso");
