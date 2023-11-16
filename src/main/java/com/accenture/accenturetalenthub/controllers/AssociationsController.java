@@ -133,7 +133,7 @@ public class AssociationsController {
         }
         for (InteresseModel interesseModel : interessesAssociados)
         {
-            associatesEntitiesService.removerAssociacaoUsuarioInteresses(usuarioModel, interesseModel);
+            associatesEntitiesService.associarUsuarioInteresses(usuarioModel, interesseModel);
         }
 
         return ResponseEntity.status(HttpStatus.OK).body("Interesses deletados do usuário com sucesso");
