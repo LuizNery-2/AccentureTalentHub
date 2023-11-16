@@ -96,7 +96,6 @@
             </header>
             
              <div class="box_trilhas">
-
                
                 
             </div>
@@ -161,10 +160,13 @@
                     // Adicione as informações do curso à div do curso
                     const imgCurso = document.createElement('img');
                     imgCurso.classList.add('img_curso');
-                    imgCurso.src = curso.imagem; // Substitua 'imagem' pelo campo real em seus dados de curso
-                    imgCurso.alt = curso.nome; // Substitua 'nome' pelo campo real em seus dados de curso
+
+                    // Decodifica a URL antes de atribuí-la ao src
+                    const decodedUrl = decodeURIComponent(curso.imagem);
+                    imgCurso.src = decodedUrl;
+
                     infoCursoDiv.appendChild(imgCurso);
-                
+                    console.log(curso.imagem);
                     const h2 = document.createElement('h2');
                     h2.textContent = curso.nome; // Substitua 'nome' pelo campo real em seus dados de curso
                     infoCursoDiv.appendChild(h2);

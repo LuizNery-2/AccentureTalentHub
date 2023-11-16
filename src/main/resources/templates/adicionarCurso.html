@@ -130,18 +130,18 @@
                 <h2>Adicione um Curso</h2>
                 <a href="perfilLider.html"> <img src="../static/img/icon_fechar.png" alt="" style="transform: translate(740px, -640%);"> </a>
 
-                <forms class="forms_criarCurso">
+                <form id="formCriarCurso" class="forms_criarCurso">
                     <div>
                         <p>Nome do curso</p>
-                        <input type="text" class="nome_curso">
+                        <input id="nomeCurso" type="text" class="nome_curso">
 
                         <p>Adicione um banner ao curso</p>
-                        <input type="file" class="banner_curso">
+                        <input id="imagemCurso" type="file" class="banner_curso">
                     </div>
                     
                     <div>
                         <p>Adicione uma descrição</p>
-                        <input type="text" class="descricao_curso">
+                        <input id="descricaoCurso" type="text" class="descricao_curso">
 
                         <p>Quais tecnologias seu curso aborda?</p>
                         <div class="dropdown">
@@ -158,7 +158,7 @@
 
         
                     </div>
-                </forms>
+                </form>
 
                 <button id="botao-criarModulo">Criar Modulo</button>
                 <div style="display: flex; flex-direction: row;">
@@ -331,12 +331,7 @@
                 </div> 
             </section>
 
-            <div style="display: flex; background-color: #B05CEF; padding: 15px; border-radius: 10px; width: 140px; cursor: pointer; float:right; margin-right: 20px;margin-top: 25px;">
-                <p>
-                    CRIAR SALA
-                </p>
-            </div>
-
+            <input id="criarSala" type="submit" value="Criar Sala">
 
         </section>
 
@@ -430,6 +425,19 @@
         })
 
 
+        
+    </script>
+
+    <script>
+        const nomeCurso = document.getElementById('nomeCurso').value;
+        const imagemCurso = document.getElementById('imagemCurso').value;
+        const descricaoCurso = document.getElementById('descricaoCurso').value;
+        const criarSala = document.getElementById('criarSala');
+
+        criarSala.addEventListener("submit", function(){
+            console.log(nomeCurso, imagemCurso, descricaoCurso);
+        })
+        
         
     </script>
 

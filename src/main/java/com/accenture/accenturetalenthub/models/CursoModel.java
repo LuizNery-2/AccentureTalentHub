@@ -16,6 +16,8 @@ public class CursoModel implements Serializable {
     @GeneratedValue(strategy = AUTO)
     private long IdCurso;
     private String nome;
+    @Column(columnDefinition = "TEXT")
+    private String imagem;
     private String descricao;
     private Boolean concluido = false;
     private int quantidadeHoras;
@@ -100,5 +102,12 @@ public class CursoModel implements Serializable {
 
     public void setQuantidadeHoras(int quantidadeHoras) {
         this.quantidadeHoras = quantidadeHoras;
+    }
+     public String getImagem() {
+        return imagem;
+    }
+
+    public void setImagem(String imagem) {
+        this.imagem = imagem;
     }
 }

@@ -89,6 +89,7 @@ header h1{
 
 .info_curso img{
     width: 250px !important;
+    height: 150px;
     border-radius: 10px;
 }
 

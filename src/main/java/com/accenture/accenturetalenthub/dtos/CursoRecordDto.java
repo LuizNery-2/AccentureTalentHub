@@ -5,5 +5,5 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import java.util.Set;
 
-public record CursoRecordDto(@NotBlank String nome, @NotBlank String descricao, @NotNull int pontuacaoGeral, int quantidadeHoras, Set<InteresseModel> interesses) {
+public record CursoRecordDto(@NotBlank String nome, @NotBlank String descricao, String imagem, @NotNull int pontuacaoGeral, int quantidadeHoras, Set<InteresseModel> interesses) {
 }
