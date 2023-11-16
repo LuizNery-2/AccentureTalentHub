@@ -66,6 +66,7 @@ header h1{
     display: flex;
     justify-content: space-between;
     margin: 2% 0;
+    width: 1000px;
 }
 
 .box_curso{
@@ -74,6 +75,10 @@ header h1{
     border-radius: 10px;
     height: 280px;
     width: 300px;
+
+}
+.box_curso:nth-child(1){
+    margin-left: 0;
 }
 
 .info_curso{
