@@ -95,10 +95,10 @@
                 </div>
             </header>
             
-            <div class="box_trilhas">
+            <!-- <div class="box_trilhas">
 
                 <div class="box_escolha_cusos">
-                    <div class="center_cursos"> <!--Aqui só pode ter três divs de cursos. -->
+                    <div class="center_cursos"> <!--Aqui só pode ter três divs de cursos. 
                         <div class="box_curso">
                             <div class="info_curso">
                                 <img class="img_curso" src="../static/img/curso_js.png" alt="">
@@ -139,7 +139,7 @@
                         </div>
                     </div>
 
-                    <div class="center_cursos"> <!--Aqui só pode ter três divs de cursos. -->
+                    <div class="center_cursos"> <!--Aqui só pode ter três divs de cursos. 
                         <div class="box_curso">
                             <div class="info_curso">
                                 <img src="../static/img/curso_js.png" alt="">
@@ -180,7 +180,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
            
 
@@ -239,6 +239,59 @@
             })
         });
     </script>
+
+<div id="cursos-container" class="center_cursos"></div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+            // Ao carregar a página, faça uma solicitação fetch para obter os cursos
+            fetch('http://127.0.0.1:8080/cursos',{
+                method: "GET",
+                headers: {
+                        "Accept": "application/json",
+                        "Content-Type": "application/json"
+                    }
+            })
+            .then(response => response.json())
+            .then(cursos => {
+                // Manipule os dados dos cursos recebidos
+                const cursosContainer = document.getElementById('cursos-container');
+
+                cursosContainer.forEach(curso => {
+                    const boxCurso = document.createElement('div');
+                    boxCurso.className = 'box_curso';
+
+                    const infoCurso = document.createElement('div');
+                    infoCurso.className = 'info_curso';
+
+                    const imgCurso = document.createElement('img');
+                    imgCurso.src = curso.imagem; // Substitua 'imagem' pelo campo real em seu modelo.
+
+                    const h2 = document.createElement('h2');
+                    h2.textContent = curso.nome; // Substitua 'nome' pelo campo real em seu modelo.
+
+                    const ul = document.createElement('ul');
+                    curso.topicos.forEach(topico => {
+                        const li = document.createElement('li');
+                        li.textContent = topico; // Substitua 'topicos' pelo campo real em seu modelo.
+                        ul.appendChild(li);
+                    });
+
+                    const button = document.createElement('button');
+                    button.textContent = 'Saiba mais';
+
+                    infoCurso.appendChild(imgCurso);
+                    infoCurso.appendChild(h2);
+                    infoCurso.appendChild(ul);
+                    infoCurso.appendChild(button);
+
+                    boxCurso.appendChild(infoCurso);
+                    cursosContainer.appendChild(boxCurso);
+                });
+            })
+            .catch(error => console.error('Erro ao obter cursos:', error));
+    });
+</script>
 
 </body>
 </html>
