@@ -100,6 +100,7 @@ header h1{
 .info_curso h2{
     font-weight: 500;
     margin: 2% 0;
+    font-size: 20px;
 }
 
 .info_curso ul li{

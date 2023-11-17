@@ -131,33 +131,38 @@
                 <a href="perfilLider.html"> <img src="../static/img/icon_fechar.png" alt="" style="transform: translate(740px, -640%);"> </a>
 
                 <form id="formCriarCurso" class="forms_criarCurso">
-                    <div>
-                        <p>Nome do curso</p>
-                        <input id="nomeCurso" type="text" class="nome_curso">
-
-                        <p>Adicione um banner ao curso</p>
-                        <input id="imagemCurso" type="file" class="banner_curso">
+                    <div style="display: flex; justify-content: space-around;">
+                        <div>
+                            <p>Nome do curso</p>
+                            <input id="nomeCurso" type="text" class="nome_curso">
+    
+                            <p>Adicione um banner ao curso</p>
+                            <input id="imagemCurso" type="text" class="banner_curso">
+                        </div>
+                        
+                        <div>
+                            <p>Adicione uma descrição</p>
+                            <textarea id="descricaoCurso"  class="descricao_curso" cols="30" rows="10"></textarea>
+                            
+    
+                            <!-- <p>Quais tecnologias seu curso aborda?</p>
+                            <div class="dropdown">
+                                <button class="dropbtn">Selecione a tecnologia <img style="width: 10px; margin-left: 5px;" src="../static/img/icon_expandir.png" alt=""> </button>
+                                <div class="dropdown-content">
+                                    <a href="#">Java</a>
+                                    <a href="#">Jquary</a>
+                                    <a href="#">javascript</a>
+                                    <a href="#">MySql</a>
+                                    <a href="#">Spark</a>
+                                    <a href="#">Docker</a>
+                                </div>
+                            </div> -->
+    
+            
+                        </div>
                     </div>
                     
-                    <div>
-                        <p>Adicione uma descrição</p>
-                        <input id="descricaoCurso" type="text" class="descricao_curso">
-
-                        <p>Quais tecnologias seu curso aborda?</p>
-                        <div class="dropdown">
-                            <button class="dropbtn">Selecione a tecnologia <img style="width: 10px; margin-left: 5px;" src="../static/img/icon_expandir.png" alt=""> </button>
-                            <div class="dropdown-content">
-                                <a href="#">Java</a>
-                                <a href="#">Jquary</a>
-                                <a href="#">javascript</a>
-                                <a href="#">MySql</a>
-                                <a href="#">Spark</a>
-                                <a href="#">Docker</a>
-                            </div>
-                        </div>
-
-        
-                    </div>
+                    <input id="criarCurso" type="submit" value="Criar Curso">
                 </form>
 
                 <button id="botao-criarModulo">Criar Modulo</button>
@@ -331,7 +336,7 @@
                 </div> 
             </section>
 
-            <input id="criarSala" type="submit" value="Criar Sala">
+            
 
         </section>
 
@@ -429,14 +434,44 @@
     </script>
 
     <script>
-        const nomeCurso = document.getElementById('nomeCurso').value;
-        const imagemCurso = document.getElementById('imagemCurso').value;
-        const descricaoCurso = document.getElementById('descricaoCurso').value;
-        const criarSala = document.getElementById('criarSala');
+       
+       document.addEventListener('DOMContentLoaded', function() {
+        const criarCurso = document.getElementById('formCriarCurso');
 
-        criarSala.addEventListener("submit", function(){
-            console.log(nomeCurso, imagemCurso, descricaoCurso);
+        criarCurso.addEventListener('submit', function(e) {
+    e.preventDefault(); // Evita o comportamento padrão de envio do formulário
+
+    const nomeCurso = document.getElementById('nomeCurso').value;
+    const imagemCurso = document.getElementById('imagemCurso').value;
+    const descricaoCurso = document.getElementById('descricaoCurso').value;
+
+    fetch("http://localhost:8080/cursos", {
+        method: "POST",
+        headers: {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            descricao: descricaoCurso,
+            nome: nomeCurso,
+            imagem: imagemCurso,
+            pontuacaoGeral: 100,
+            concluido: false
         })
+    })
+    .then(function (res) {
+        if (res.ok){
+            alert("Curso cadastrado com sucesso!");
+        } else {
+            alert("Erro ao cadastrar curso. Por favor, tente novamente.");
+        }
+    })
+    .catch(function (error) {
+        console.error("Erro na solicitação: " + error);
+    });
+});
+    });
+    
         
         
     </script>
