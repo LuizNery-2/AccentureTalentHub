@@ -394,6 +394,7 @@ html, body{
     .search-container {
         width: 300px;
     }
+
     
     .search-container input[type="search"] {
         width: 300px;
@@ -452,8 +453,13 @@ html, body{
 
     }
 
+    margin-left: 0px;
+
+
     #barra_progresso{
         height: 14px;
+        height: 9px;
+
     }
 
 }
@@ -469,6 +475,7 @@ html, body{
 
     #icon-menu-responsivo{
         display: flex;
+        position: absolute;
     }
 
     #box_info_dashboard{
@@ -518,6 +525,11 @@ html, body{
 
     #barra_progresso{
         height: 14px;
+    }
+
+
+    #box_info_dashboard{
+        margin-left: 0px;   
     }
 
 }
