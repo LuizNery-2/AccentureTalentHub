@@ -103,6 +103,7 @@ main{
         margin: 5% auto;
         padding-left: 5%;
     }
+    
 
     #logo-descrita{
         width: 500px !important;
@@ -190,6 +191,7 @@ main{
 @media screen and (max-width: 560px){
     #logo-descrita{
         width: 300px !important;
+        margin-top: 50px;
     }
 
     .box_trilhas{
@@ -210,16 +212,39 @@ main{
 
     .box_trilhas{
         width: 80%;
+        width: 100%;
+        margin: 5px;
+        margin-top: 10px;
+    }
+
+    .footer_geral{
+        margin-top: 25px !important;
+    }
+    #box_perfil{
+        margin-bottom: 18px;
+    }
+
+    #icon_trilha{
+        width: 15px !important;
+        margin-left: 5px;
+    }
+
+    .box_trilhas h2{
+        font-size: 12px;
+        font-weight: 500;
     }
 
     .multiple-items img{
-        width: 200px !important;
-        border-radius: 10px;
+        width: 150px !important;
+        border-radius: 8px;
     }
 
     .multiple-items-cursos img{
-        width: 150px !important;
+        width: 120px !important;
+        border-radius: 8px;
     }
+
+
 }
 
 @media screen and (max-width: 280px){
