@@ -175,12 +175,71 @@ input[type='submit']:hover{
     background-color: transparent;
 }
 
-@media screen and (max-width: 1200px){
+.input_metas{
+    background-color: transparent;
+    border-style: none;
+    width: 90%;
+}
 
+#button_atualizar_plano{
+    background-color:#5B2182;
+    color:#fff;
+    border-style: none;
+    padding: 2%;
+    border-radius: 30px;
+    width: 30%;
+    align-self: flex-end;
+}
+
+
+
+@media screen and (max-width: 1100px){
+    #box_detalhes_perfil img{
+        width: 300px;
+    }
+    #box_detalhes_perfil{
+        width: 300px;
+        height: 470px;
+    }
+
+    #box_center_perfil{
+        gap:20px;
+        margin-left: 50px;
+        margin-bottom: 50px;
+    }
+
+    #box_carreira{
+        height:475px;
+    }
 }
 
 @media screen and (max-width: 1024px){
-    
+    #box_detalhes_perfil img{
+        width: 200px;
+    }
+    #box_detalhes_perfil{
+        width: 200px;
+        height: 330px;
+        background-color: red;
+    }
+
+    .button_carreira img, .button_carreira1 img{
+        width: 25px !important;
+    }
+    .box_metas img {
+        width: 20px;
+
+    }
+
+    #box_center_perfil{
+        gap:20px;
+        margin-left: 50px;
+        margin-bottom: 50px;
+    }
+
+    #box_carreira{
+        height:475px;
+    }
 }
 
 @media screen and (max-width: 768px){
