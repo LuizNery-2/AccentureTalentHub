@@ -92,7 +92,7 @@
     cursor: pointer;
 }
 
-.button_carreira, .button_carreira1{
+#button_area_interesse, #button_alterar_senha{
     background-color: #40165D;
     width: 50%;
     display: flex;
@@ -101,9 +101,14 @@
     border-radius: 30px;
     height: 60px;
     cursor: pointer;
+    border-style: none;
 }
 
-.button_carreira p, .button_carreira1 p{
+#button_alterar_senha{
+    width: 35%;
+}
+
+#button_area_interesse p, #button_alterar_senha p{
     margin-left: 2%;
 }
 
@@ -191,7 +196,17 @@ input[type='submit']:hover{
     align-self: flex-end;
 }
 
+#botoes_atualizar_perfil{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
 
+#poligono{
+    width: 42px;
+    height: 50px;
+}
 
 @media screen and (max-width: 1100px){
     #box_detalhes_perfil img{
@@ -220,10 +235,9 @@ input[type='submit']:hover{
     #box_detalhes_perfil{
         width: 200px;
         height: 330px;
-        background-color: red;
     }
 
-    .button_carreira img, .button_carreira1 img{
+    #button_area_interesse img, #button_alterar_senha img{
         width: 25px !important;
     }
     .box_metas img {
@@ -240,10 +254,28 @@ input[type='submit']:hover{
     #box_carreira{
         height:475px;
     }
+    #nome_perfil{
+        width: 150px;
+        height: 30px;
+    }
+
+    #barra_progresso{
+        width: 85% !important;
+    }
+
+    #info_perfil p{
+        margin-right: 30px;
+    }
+
 }
 
 @media screen and (max-width: 768px){
-    
+    #poligono p{
+        font-size: 15px;
+    }
+    #box_informacoes_perfil p{
+        font-size: 12px !important;
+    }
 }
 
 /* @media screen and (max-width: 560px){

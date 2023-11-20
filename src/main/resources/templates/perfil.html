@@ -129,9 +129,9 @@
                         <p>Nível</p>
                         <p style="font-size: 20px;">1</p>
                     </div>
-                    <div id="nome_perfil">
-                        <P style="font-size: 15px; text-align: center;">Keylane Cardoso</P>
-                    </div>
+                    <!-- <div id="nome_perfil"> -->
+                        <p id="nome_perfil" style="font-size: 15px; text-align: center;">Keylane Cardoso</p>
+                    <!-- </div> -->
                 </div>
                 <div id="box_detalhes_perfil">
                     <img src="../static/img/img_key.png">
@@ -169,7 +169,7 @@
                         <input class="input_metas" type="text" placeholder="Meta 3">
                         <img src="../static/img/lapis.png">
                     </div>
-                    <button type="submit" id="button_atualizar_plano">Atualizar Plano</button>
+                    <input type="submit" id="button_atualizar_plano" name="enviarPlanoCarreira" value="Atualizar Plano">
                 </form>
 
 
@@ -188,8 +188,18 @@
                         <img src="../static/img/lapis.png">
                     </div>
                 </div> -->
-
-                <div style="display: flex; flex-direction: column; align-items: center; margin-top: 5%;">
+                <div id="botoes_atualizar_perfil">
+                    <button type="button" id="button_area_interesse">
+                        <img src="../static/img/interativo.png">
+                            <p style="color: #E1BBFD;">Atualizar Áreas de Interesse</p>
+                    </button>
+                    <button type="button" id="button_alterar_senha">
+                        <img src="../static/img/interativo.png">
+                            <p style="color: #E1BBFD;">Alterar Senha</p>
+                    </button>
+                </div>
+                
+                <!-- <div style="display: flex; flex-direction: column; align-items: center; margin-top: 5%;">
                     <div class="button_carreira1">
                         <img src="../static/img/interativo.png">
                         <p style="color: #E1BBFD;">Atualizar Áreas de Interesse</p>
@@ -199,7 +209,7 @@
                         <img src="../static/img/redefinir-senha.png">
                         <p style="color: #E1BBFD;">Alterar Senha</p>
                     </div>
-                </div>
+                </div> -->
 
                
             </div>
