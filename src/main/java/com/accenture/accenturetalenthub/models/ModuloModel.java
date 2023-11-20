@@ -7,13 +7,7 @@ import java.util.UUID;
 import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinTable;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import static jakarta.persistence.GenerationType.AUTO;
 
@@ -38,9 +32,10 @@ public class ModuloModel implements Serializable{
     )
     @JsonIgnoreProperties("modulos")
     private ArrayList<AulaModel> aulas;
-    @ManyToMany(mappedBy = "modulos")
+
+    @ManyToOne
     @JsonIgnoreProperties("modulos")
-    private Set<CursoModel> cursos = new HashSet<>();
+    private CursoModel curso;
 
 
     //Get and Setters
@@ -69,11 +64,11 @@ public class ModuloModel implements Serializable{
         this.aulas = aulas;
     }
 
-    public Set<CursoModel> getCursos() {
-        return cursos;
+    public CursoModel getCurso() {
+        return curso;
     }
 
-    public void setCursos(Set<CursoModel> cursos) {
-        this.cursos = cursos;
+    public void setCurso(CursoModel curso) {
+        this.curso = curso;
     }
 }

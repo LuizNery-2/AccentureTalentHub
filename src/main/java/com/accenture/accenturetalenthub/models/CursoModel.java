@@ -28,13 +28,10 @@ public class CursoModel implements Serializable {
     )
     @JsonIgnoreProperties({"cursos","usuarios"})
     private Set<InteresseModel> interesses =new HashSet<>();
-    @ManyToMany
-    @JoinTable(
-            name = "TB_CURSOS_SALAS",
-            joinColumns = @JoinColumn(name = "curso_id"),
-            inverseJoinColumns = @JoinColumn(name = "modulo_id")
-    )
-    @JsonIgnoreProperties("cursos")
+
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "curso_id")
+    @JsonIgnoreProperties("curso")
     private Set<ModuloModel> modulos = new HashSet<>();
     @ManyToMany(mappedBy = "cursos")
     @JsonIgnoreProperties("cursos")
