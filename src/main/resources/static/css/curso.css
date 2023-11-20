@@ -72,9 +72,11 @@ header h1{
 }
 
 .center_cursos{
-    display: flex;
-    justify-content: space-between !important;
-    margin: 2% 0;
+    display: flex !important;
+    flex-direction: row;
+     /*justify-content: space-between !important;*/
+    margin: 2% 0; 
+    gap: 20px;
 }
 
 .box_curso{
@@ -185,6 +187,7 @@ input[type='submit']{
 input[type='submit']:hover{
     background-color: #CD41FF;
 }
+
 
 
 @media screen and (max-width: 1200px){
@@ -383,11 +386,12 @@ input[type='submit']:hover{
         width: 11px !important;
     }
     
-    /* .center_cursos{
-        
-        margin-top: 0 !important;
-    } */
-
+    .box_escolha_cursos{
+        margin-top: 10% !important;
+        margin-bottom: 10% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
     
     
     .box_curso{
@@ -459,7 +463,11 @@ input[type='submit']:hover{
         height: 30px;
         font-size: 10px;
     }
-
+    #title_curso{
+        margin-left: 50px !important;
+        font-size: 30px !important;
+        font-weight: 400;
+    }
 }
 
 @media screen and (max-width: 560px){
@@ -583,8 +591,23 @@ input[type='submit']:hover{
 
 }
 
-@media screen and (max-width: 480px){
-    
+@media screen and (max-width: 380px){
+    .info_curso{
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .center_cursos{
+        flex-direction: column;
+
+    }
+
+    .box_curso{
+        width: 250px !important;
+        margin: 0;
+        height: 10%;
+    }
 }
 
 @media screen and (max-width: 280px){
