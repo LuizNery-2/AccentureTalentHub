@@ -14,6 +14,8 @@
 
     <!-- Importação dos arquivos Jquary -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../static/js/script.js"></script>
+
 </head>
 <body id="">
     <main>
@@ -110,7 +112,6 @@
         <!--  FIM DO NAV RESPONSIVO -->
 
         <section id="box_info_dashboard">
-            <header></header>
 
             <div class="info_sala">
                 <div class="info_sala_txt">
@@ -119,13 +120,11 @@
                 </div>
 
                 <div class="info_sala_caracteristicas">
-                    <div>
-                        <p style="font-size: 10px;">Criado em 00/00/0000 por Keylane Cardoso</p>
-                    </div>
+                    <p style="font-size: 10px;">Criado em 00/00/0000 por Keylane Cardoso</p>
                     <br>
                     <br>
-                    <div>
-                        <p style="font-size: 20px;">SEU PROGRESSO</p>
+                    <div id="info_barra_progresso">
+                        <p style="font-size: 20px; font-weight: 500;">SEU PROGRESSO</p>
                         <div style="width: 60%; margin-left: 40%;" id="barra_progresso"></div>
                         <p style="font-size: 14px;">Esta sala possui 100H</p>
                     </div>
@@ -157,88 +156,114 @@
                 <div class="txt_trilhas_cursos">
                     <h2 style="font-size: 20px; color: #fff;">Meus Cursos</h2>
                 </div>
-                <div class="box_escolha_cusos">
+                <div class="box_escolha_cursos">
                     <div class="center_cursos"> <!--Aqui só pode ter três divs de cursos. -->
                         <div class="box_curso">
                             <div class="info_curso">
-                                <img class="img_curso" src="../static/img/curso_js.png" alt="">
-                                <h2>Curso JavaScript</h2>
-                                <ul>
-                                    <li>P.O.O</li>
-                                    <li>CSS</li>
-                                    <li>JavaScript-puro</li>
-                                </ul>
-                                <button class="button_curso">Assistir aula</button>
+                                <div>
+                                    <img class="img_curso" src="../static/img/curso_js.png" alt="">
+                                    <h2>Curso JavaScript</h2>
+                                </div>
+                                <div>
+                                    <ul>
+                                        <li>P.O.O</li>
+                                        <li>CSS</li>
+                                        <li>JavaScript-puro</li>
+                                    </ul>
+                                    <button class="button_curso">Saiba mais</button>
+                                </div>
                             </div>
                         </div>
 
                         <div class="box_curso">
                             <div class="info_curso">
-                                <img src="../static/img/curso_js.png" alt="">
-                                <h2>Curso JavaScript</h2>
-                                <ul>
-                                    <li>P.O.O</li>
-                                    <li>CSS</li>
-                                    <li>JavaScript-puro</li>
-                                </ul>
-                                <button>Assistir aula</button>
+                                <div>
+                                    <img class="img_curso" src="../static/img/curso_js.png" alt="">
+                                    <h2>Curso JavaScript</h2>
+                                </div>
+                                <div>
+                                    <ul>
+                                        <li>P.O.O</li>
+                                        <li>CSS</li>
+                                        <li>JavaScript-puro</li>
+                                        <button>Saiba mais</button>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
 
                         <div class="box_curso">
                             <div class="info_curso">
-                                <img src="../static/img/curso_js.png" alt="">
-                                <h2>Curso JavaScript</h2>
-                                <ul>
-                                    <li>P.O.O</li>
-                                    <li>CSS</li>
-                                    <li>JavaScript-puro</li>
-                                </ul>
-                                <button>Assistir aula</button>
+                                <div>
+                                    <img class="img_curso" src="../static/img/curso_js.png" alt="">
+                                    <h2>Curso JavaScript</h2>
+                                </div>
+                                <div>
+                                    <ul>
+                                        <li>P.O.O</li>
+                                        <li>CSS</li>
+                                        <li>JavaScript-puro</li>
+                                        <button>Saiba mais</button>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
 
+
                     <div class="center_cursos"> <!--Aqui só pode ter três divs de cursos. -->
                         <div class="box_curso">
                             <div class="info_curso">
-                                <img src="../static/img/curso_js.png" alt="">
-                                <h2>Curso JavaScript</h2>
-                                <ul>
-                                    <li>P.O.O</li>
-                                    <li>CSS</li>
-                                    <li>JavaScript-puro</li>
-                                </ul>
-                                <button>Assistir aula</button>
+                                <div>
+                                    <img class="img_curso" src="../static/img/curso_js.png" alt="">
+                                    <h2>Curso JavaScript</h2>
+                                </div>
+                                <div>
+                                    <ul>
+                                        <li>P.O.O</li>
+                                        <li>CSS</li>
+                                        <li>JavaScript-puro</li>
+                                    </ul>
+                                    <button class="button_curso">Saiba mais</button>
+                                </div>
                             </div>
                         </div>
 
                         <div class="box_curso">
                             <div class="info_curso">
-                                <img src="../static/img/curso_js.png" alt="">
-                                <h2>Curso JavaScript</h2>
-                                <ul>
-                                    <li>P.O.O</li>
-                                    <li>CSS</li>
-                                    <li>JavaScript-puro</li>
-                                </ul>
-                                <button>Assistir aula</button>
+                                <div>
+                                    <img class="img_curso" src="../static/img/curso_js.png" alt="">
+                                    <h2>Curso JavaScript</h2>
+                                </div>
+                                <div>
+                                    <ul>
+                                        <li>P.O.O</li>
+                                        <li>CSS</li>
+                                        <li>JavaScript-puro</li>
+                                        <button>Saiba mais</button>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
 
                         <div class="box_curso">
                             <div class="info_curso">
-                                <img src="../static/img/curso_js.png" alt="">
-                                <h2>Curso JavaScript</h2>
-                                <ul>
-                                    <li>P.O.O</li>
-                                    <li>CSS</li>
-                                    <li>JavaScript-puro</li>
-                                </ul>
-                                <button>Assistir aula</button>
+                                <div>
+                                    <img class="img_curso" src="../static/img/curso_js.png" alt="">
+                                    <h2>Curso JavaScript</h2>
+                                </div>
+                                <div>
+                                    <ul>
+                                        <li>P.O.O</li>
+                                        <li>CSS</li>
+                                        <li>JavaScript-puro</li>
+                                        <button>Saiba mais</button>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </section>
