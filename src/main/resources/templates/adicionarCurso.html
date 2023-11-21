@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="../static/css/indexstyle.css">
     <link rel="stylesheet" type="text/css" href="../static/css/curso.css">
     <link rel="stylesheet" type="text/css" href="../static/css/adicionarCurso.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/areainteresse.css">
     <link rel="stylesheet" href="../static/css/criar_sala.css">
 
     <!-- Importação dos arquivos CSS para barra de pesquisa -->
@@ -143,27 +144,18 @@
                         <div>
                             <p>Adicione uma descrição</p>
                             <textarea id="descricaoCurso"  class="descricao_curso" cols="30" rows="10"></textarea>
-                            
-    
-                            <!-- <p>Quais tecnologias seu curso aborda?</p>
-                            <div class="dropdown">
-                                <button class="dropbtn">Selecione a tecnologia <img style="width: 10px; margin-left: 5px;" src="../static/img/icon_expandir.png" alt=""> </button>
-                                <div class="dropdown-content">
-                                    <a href="#">Java</a>
-                                    <a href="#">Jquary</a>
-                                    <a href="#">javascript</a>
-                                    <a href="#">MySql</a>
-                                    <a href="#">Spark</a>
-                                    <a href="#">Docker</a>
-                                </div>
-                            </div> -->
-    
-            
                         </div>
                     </div>
                     
                     <input id="criarCurso" type="submit" value="Criar Curso">
                 </form>
+                <div style="width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                    <p>Quais tecnologias seu curso aborda?</p>
+                    <div id="abrir_modal_tecnologias">
+                        <button class="dropbtn">Selecione a(s) tecnologia(s)</button>
+                    </div> 
+                </div>
+                         
 
                 <button id="botao-criarModulo">Criar Modulo</button>
                 <div style="display: flex; flex-direction: row;">
@@ -336,9 +328,74 @@
                 </div> 
             </section>
 
-            
+            <section id="modal_tecnologias" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); display: none;">
+
+                <div id="box_tecnologias">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 1%;">
+                        <div></div>
+                        <img id="fechar_modal-tecnologias" src="../static/img/icon_fechar.png" style="cursor: pointer;">
+                    </div>
+                    
+                    <div id="exemplo_tecnologias">
+                        
+        
+                        <div id="exemplo_tecnologias">
+                            <ul>
+                                <li id="11">JavaScript</li>
+                                <li id="35">Data Science</li>
+                                <li id="12">Java</li>
+                                <li id="2">.net</li>
+                                <li id="16">HTML</li>
+                                <li id="17">CSS</li>
+                                <li id="14">Python</li>
+                                <li id="1">PHP</li>
+                                <li id="3">C#</li>
+                                <li id="15">SAP ABAP</li>
+                                <li id="13">TypeScript</li>
+                                <li id="23">MySQL</li>
+                                <li id="10">rabbitmq</li>
+                                <li id="27">Cloud Computing</li>
+                                <li id="5">Azure </li>
+                                <li id="29">Hadoop</li>
+                                <li id="30">Spark</li>
+                                <li id="36">Machine Learning</li>
+                                <li id="37">TensorFlow</li>
+                                <li id="33">DevOps </li>
+                                <li id="34">Jenkins</li>
+                                <li id="40">Blockchain</li>
+                                <li id="39">Cibersegurança</li>
+                                <li id="8">auth0</li>
+                                <li id="18">Angular</li>
+                                <li id="19">React </li>
+                                <li id="20">Vue.js</li>
+                                <li id="6">Apim </li>
+                                <li id="22">Flutter </li>
+                                <li id="31">Big Data</li>
+                                <li id="32">Analytics</li>
+                                <li id="7">apigee</li>
+                                <li id="38">PyTorch</li>
+                                <li id="21">React Native</li>
+                                <li id="4">MongoDB</li>
+                                <li id="24">Cassandra</li>
+                                <li id="25">PostgreSQL</li>
+                                <li id="26">Oracle</li>
+                                <li id="28">AWS </li>
+                                <li id="9">kafka </li>
+                            </ul>
+                    </div>
+                    
+        
+                    <div id="enviar_resposta">
+        
+                        <p id="enviarDados">Adicionar ao curso</p>
+                        <img src="../static/img/seta_direita.png">
+                    </div>
+                </div>
+            </section>
 
         </section>
+
+        
 
         
     </main>
@@ -362,10 +419,20 @@
                 $(".modal-modulo").css("display", "none");
                 $("#box_CriarModulo").css("opacity", "1");
             })
+
+            $("#fechar_modal-tecnologias").click(function () {
+                $("#modal_tecnologias").css("display", "none");
+            })
+
+            $("#abrir_modal_tecnologias").click(function () {
+                $("#modal_tecnologias").css("display", "block");
+            })
+
+
         });
     </script>
 
-    <script>
+    <!-- <script>
         function myFunction() {
             var userInput = document.getElementById("linkInput").value;
             if (userInput.trim() !== "") {
@@ -377,104 +444,137 @@
                 alert("Por favor, insira um link válido.");
             }
         }
-    </script>
+    </script> -->
 
     <script>
 
-        var botaoApresentacaoCurso = document.querySelector(".botaoApresentacaoCurso");
-        var inputApresentacaoCurso = document.querySelector(".inputApresentacaoCurso");
-        var botaoMaterialCurso = document.querySelector(".botaoMaterialCurso");
-        var inputMaterialCurso = document.querySelector(".inputMaterialCurso");
-        var botaoQuizCurso = document.querySelector(".botaoQuizCurso");
-        var inputQuizCurso = document.querySelector(".inputQuizCurso");
+        // var botaoApresentacaoCurso = document.querySelector(".botaoApresentacaoCurso");
+        // var inputApresentacaoCurso = document.querySelector(".inputApresentacaoCurso");
+        // var botaoMaterialCurso = document.querySelector(".botaoMaterialCurso");
+        // var inputMaterialCurso = document.querySelector(".inputMaterialCurso");
+        // var botaoQuizCurso = document.querySelector(".botaoQuizCurso");
+        // var inputQuizCurso = document.querySelector(".inputQuizCurso");
 
-        var modal_modulo = document.querySelector(".modal-modulo");
-        var caixaDosInputs = document.querySelector(".caixaDosInputs");
-        var botaoAdicionarLink = document.querySelector(".adicionarLink");
+        // var modal_modulo = document.querySelector(".modal-modulo");
+        // var caixaDosInputs = document.querySelector(".caixaDosInputs");
+        // var botaoAdicionarLink = document.querySelector(".adicionarLink");
 
-        botaoApresentacaoCurso.addEventListener ("click", function() {
-            inputMaterialCurso.style.display = 'none';
-            inputQuizCurso.style.display = 'none';
-            inputApresentacaoCurso.style.display = 'flex';
-            //Detalhes do modal
-            modal_modulo.style.height = '550px';
-            botaoAdicionarLink.style.transform = 'translate(680px, -150%)';
-            caixaDosInputs.style.transform = 'translate(50px, -99%)';
-            caixaDosInputs.style.height = '9.7rem';
+        // botaoApresentacaoCurso.addEventListener ("click", function() {
+        //     inputMaterialCurso.style.display = 'none';
+        //     inputQuizCurso.style.display = 'none';
+        //     inputApresentacaoCurso.style.display = 'flex';
+        //     //Detalhes do modal
+        //     modal_modulo.style.height = '550px';
+        //     botaoAdicionarLink.style.transform = 'translate(680px, -150%)';
+        //     caixaDosInputs.style.transform = 'translate(50px, -99%)';
+        //     caixaDosInputs.style.height = '9.7rem';
 
-        })
+        // })
 
-        botaoMaterialCurso.addEventListener ("click", function() {
-            inputApresentacaoCurso.style.display = 'none';
-            inputQuizCurso.style.display = 'none';
-            inputMaterialCurso.style.display = 'block';
-            //Detalhes do modal
-            modal_modulo.style.height = '550px';
-            botaoAdicionarLink.style.transform = 'translate(680px, -150%)';
-            caixaDosInputs.style.transform = 'translate(50px, -99%)';
-            caixaDosInputs.style.height = '9.7rem';
+        // botaoMaterialCurso.addEventListener ("click", function() {
+        //     inputApresentacaoCurso.style.display = 'none';
+        //     inputQuizCurso.style.display = 'none';
+        //     inputMaterialCurso.style.display = 'block';
+        //     //Detalhes do modal
+        //     modal_modulo.style.height = '550px';
+        //     botaoAdicionarLink.style.transform = 'translate(680px, -150%)';
+        //     caixaDosInputs.style.transform = 'translate(50px, -99%)';
+        //     caixaDosInputs.style.height = '9.7rem';
 
-        })
+        // })
 
-        botaoQuizCurso.addEventListener ("click", function() {
-            inputApresentacaoCurso.style.display = 'none';
-            inputMaterialCurso.style.display = 'none';
-            inputQuizCurso.style.display = 'block';
-            //Detalhes do modal
-            modal_modulo.style.height = '700px';
-            botaoAdicionarLink.style.transform = 'translate(680px, -200%)';
-            caixaDosInputs.style.transform = 'translate(50px, -48%)';
-            caixaDosInputs.style.height = '20rem';
+        // botaoQuizCurso.addEventListener ("click", function() {
+        //     inputApresentacaoCurso.style.display = 'none';
+        //     inputMaterialCurso.style.display = 'none';
+        //     inputQuizCurso.style.display = 'block';
+        //     //Detalhes do modal
+        //     modal_modulo.style.height = '700px';
+        //     botaoAdicionarLink.style.transform = 'translate(680px, -200%)';
+        //     caixaDosInputs.style.transform = 'translate(50px, -48%)';
+        //     caixaDosInputs.style.height = '20rem';
 
 
-        })
+        // })
 
 
         
     </script>
 
     <script>
-       
-       document.addEventListener('DOMContentLoaded', function() {
-        const criarCurso = document.getElementById('formCriarCurso');
 
-        criarCurso.addEventListener('submit', function(e) {
-    e.preventDefault(); // Evita o comportamento padrão de envio do formulário
+        // Seleciona todos os elementos li nas listas dentro da div com id "exemplo_tecnologias"
+        const elementosLista = document.querySelectorAll("#exemplo_tecnologias li");
 
-    const nomeCurso = document.getElementById('nomeCurso').value;
-    const imagemCurso = document.getElementById('imagemCurso').value;
-    const descricaoCurso = document.getElementById('descricaoCurso').value;
+        // Array para armazenar os IDs selecionados
+        const selecionados = [];
 
-    fetch("http://localhost:8080/cursos", {
-        method: "POST",
-        headers: {
-            "Accept": "application/json",
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            descricao: descricaoCurso,
-            nome: nomeCurso,
-            imagem: imagemCurso,
-            pontuacaoGeral: 100,
-            concluido: false
+        // Seleciona todos os elementos li nas listas dentro da div com id "exemplo_tecnologias"
+        const elementosLi = document.querySelectorAll("#exemplo_tecnologias li");
+
+        elementosLi.forEach(function(elemento) {
+            elemento.addEventListener("click", function() {
+                const id = elemento.id;
+
+                // Verifica se o elemento já foi selecionado
+                if (selecionados.includes(id)) {
+                    // Se já estiver selecionado, remova-o do array e restaure a cor
+                    const index = selecionados.indexOf(id);
+                    selecionados.pop(index);
+                    elemento.classList.remove("selected");
+                } else {
+                    // Se não estiver selecionado, adicione ao array e mude a cor
+                    selecionados.push(id);
+                    elemento.classList.add("selected");
+                }
+            });
+        });
+        localStorage.setItem('selecionados', selecionados);
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const criarCurso = document.getElementById('formCriarCurso');
+
+    criarCurso.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const nomeCurso = document.getElementById('nomeCurso').value;
+        const imagemCurso = document.getElementById('imagemCurso').value;
+        const descricaoCurso = document.getElementById('descricaoCurso').value;
+
+        fetch("http://localhost:8080/cursos", {
+            method: "POST",
+            headers: {
+                "Accept": "application/json",
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                descricao: descricaoCurso,
+                nome: nomeCurso,
+                imagem: imagemCurso,
+                pontuacaoGeral: 100,
+                concluido: false,
+            })
         })
-    })
-    .then(function (res) {
-        if (res.ok){
-            alert("Curso cadastrado com sucesso!");
-        } else {
-            alert("Erro ao cadastrar curso. Por favor, tente novamente.");
-        }
-    })
-    .catch(function (error) {
-        console.error("Erro na solicitação: " + error);
+            .then(function (res) {
+                if (res.ok) {
+                    alert("Curso cadastrado com sucesso!");
+                    setTimeout(buscarUltimoId, 5000);
+                    return res.json(); // Retorna o corpo da resposta como JSON
+                } else {
+                    throw new Error("Erro ao cadastrar curso. Por favor, tente novamente.");
+                }
+            })
+            .catch(function (error) {
+                console.error("Erro na solicitação: " + error);
+            });
     });
 });
-    });
-    
-        
+
+
         
     </script>
+    <script src="../static/js/insereInteressesCursos.js"></script>
 
 </body>
 

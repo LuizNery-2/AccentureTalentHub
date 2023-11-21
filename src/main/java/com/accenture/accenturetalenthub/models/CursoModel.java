@@ -110,4 +110,8 @@ public class CursoModel implements Serializable {
     public void setImagem(String imagem) {
         this.imagem = imagem;
     }
+
+    public Object getId() {
+        return null;
+    }
 }

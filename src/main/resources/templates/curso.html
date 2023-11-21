@@ -172,11 +172,11 @@
                     infoCursoDiv.appendChild(h2);
                 
                     const ul = document.createElement('ul');
-                    // curso.habilidades.forEach(habilidade => {
-                    //     const li = document.createElement('li');
-                    //     li.textContent = habilidade; // Substitua 'habilidade' pelo campo real em seus dados de curso
-                    //     ul.appendChild(li);
-                    // });
+                    curso.interesses.forEach(interesses => {
+                        const li = document.createElement('li');
+                        li.textContent = interesses; // Substitua 'habilidade' pelo campo real em seus dados de curso
+                        ul.appendChild(li);
+                    });
                     infoCursoDiv.appendChild(ul);
                 
                     const button = document.createElement('button');
