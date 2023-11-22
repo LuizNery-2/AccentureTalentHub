@@ -24,14 +24,9 @@ public class ModuloModel implements Serializable{
     private String nomeModulo;
 
 
-    @ManyToMany
-    @JoinTable(
-            name = "TB_MODULOS_AULAS",
-            joinColumns =   @JoinColumn(name = "modulo_id"),
-            inverseJoinColumns = @JoinColumn(name = "Aula_Id")
-    )
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonIgnoreProperties("modulos")
-    private ArrayList<AulaModel> aulas;
+    private Set<AulaModel> aulas = new HashSet<>();
 
     @ManyToOne
     @JsonIgnoreProperties("modulos")
@@ -56,11 +51,11 @@ public class ModuloModel implements Serializable{
         this.nomeModulo = nomeModulo;
     }
 
-    public ArrayList<AulaModel> getAulas() {
+    public Set<AulaModel> getAulas() {
         return aulas;
     }
 
-    public void setAulas(ArrayList<AulaModel> aulas) {
+    public void setAulas(Set<AulaModel> aulas) {
         this.aulas = aulas;
     }
 

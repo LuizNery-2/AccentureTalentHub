@@ -1,13 +1,7 @@
 package com.accenture.accenturetalenthub.controllers;
 
-import com.accenture.accenturetalenthub.models.CursoModel;
-import com.accenture.accenturetalenthub.models.InteresseModel;
-import com.accenture.accenturetalenthub.models.SalaModel;
-import com.accenture.accenturetalenthub.models.UsuarioModel;
-import com.accenture.accenturetalenthub.repositories.CursoRepository;
-import com.accenture.accenturetalenthub.repositories.InteresseRepository;
-import com.accenture.accenturetalenthub.repositories.SalaRepository;
-import com.accenture.accenturetalenthub.repositories.UsuarioRepository;
+import com.accenture.accenturetalenthub.models.*;
+import com.accenture.accenturetalenthub.repositories.*;
 import com.accenture.accenturetalenthub.services.AssociatesEntitiesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -30,9 +24,13 @@ public class AssociationsController {
 
     @Autowired
     SalaRepository salaRepository;
+    @Autowired
+    ModuloRepository moduloRepository;
 
     @Autowired
     AssociatesEntitiesService associatesEntitiesService;
+    @Autowired
+    AulasRepository aulasRepository;
 
 
 
@@ -185,11 +183,11 @@ public class AssociationsController {
     }
 
     @PostMapping("/salasCursos/{idSala}")
-    public ResponseEntity<String> cadastrarCursosSalas(@PathVariable(value = "idSala") UUID idSala, List<UUID> idCursos){
+    public ResponseEntity<String> cadastrarCursosSalas(@PathVariable(value = "idSala") UUID idSala,@RequestBody List<UUID> idCursos){
         Optional<SalaModel> salaO = salaRepository.findById(idSala);
         if (salaO.isEmpty())
         {
-           return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Curso não encontrado");
+           return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Sala não encontrado");
         }
         var salaModel = salaO.get();
         for (UUID idCurso : idCursos)
@@ -204,6 +202,43 @@ public class AssociationsController {
         }
         return ResponseEntity.status(HttpStatus.OK).body("Curso cadastrado com sucesso");
     }
+    @PostMapping("/cursosmodulos/{idCurso}")
+    public ResponseEntity<String> cadastrarCursoModulo(@PathVariable(value = "idCurso")UUID idCurso,@RequestBody List<UUID> idsModulos) {
+        Optional<CursoModel> cursoO = cursoRepository.findById(idCurso);
 
+        if (cursoO.isEmpty()) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Curso não encontrado");
+        }
+        var cursoModel = cursoO.get();
+        for (UUID idModulo : idsModulos) {
+            Optional<ModuloModel> modelO = moduloRepository.findById(idModulo);
+            if (modelO.isEmpty()) {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Modulo com o ID: " + idModulo + " não encontrado");
+            }
+            var moduloModel = modelO.get();
+            associatesEntitiesService.associarCursoModulos(cursoModel, moduloModel);
+        }
+        return ResponseEntity.status(HttpStatus.OK).body("Modulo cadastrado com sucesso");
+    }
+    @PostMapping("/modulosaulas/{idModulo}")
+    public ResponseEntity<Object> castrarAulasModulos(@PathVariable(value = "idModulo") UUID idModulo, List<UUID> idsAulas)
+    {
+        Optional<ModuloModel> moduloO = moduloRepository.findById(idModulo);
+        if (moduloO.isEmpty())
+        {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Modulo não encontrado");
+        }
+        var moduloModel = moduloO.get();
+        for (UUID idAula: idsAulas) {
+            Optional<AulaModel> aulaO = aulasRepository.findById(idAula);
+            if (aulaO.isEmpty())
+            {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Aula com ID: " + idAula + " não encontrada");
+            }
+            var aulaModel = aulaO.get();
+            associatesEntitiesService.associarModulosAulas(moduloModel, aulaModel);
+        }
+        return ResponseEntity.status(HttpStatus.OK).body("Aula cadastrada com sucesso");
+    }
 
 }

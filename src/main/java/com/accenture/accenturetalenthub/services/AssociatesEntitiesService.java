@@ -63,7 +63,7 @@ public class AssociatesEntitiesService {
     public void associarModulosAulas(ModuloModel modulo, AulaModel aula)
     {
         modulo.getAulas().add(aula);
-        aula.getModulos().add(modulo);
+        aula.setModulo(modulo);
         moduloRepository.save(modulo);
         aulasRepository.save(aula);
     }
@@ -71,7 +71,7 @@ public class AssociatesEntitiesService {
     public void removerAssociacaoModulosAulas(ModuloModel modulo, AulaModel aula)
     {
         modulo.getAulas().remove(aula);
-        aula.getModulos().remove(modulo);
+        aula.setModulo(modulo);
         moduloRepository.save(modulo);
         aulasRepository.save(aula);
     }
@@ -131,5 +131,12 @@ public class AssociatesEntitiesService {
         salaRepository.save(sala);
     }
 
+    public void associarCursoModulos(CursoModel curso, ModuloModel modulo){
+        curso.getModulos().add(modulo);
+        modulo.setCurso(curso);
+        cursoRepository.save(curso);
+        moduloRepository.save(modulo);
+
+    }
 
 }

@@ -30,7 +30,6 @@ public class CursoModel implements Serializable {
     private Set<InteresseModel> interesses =new HashSet<>();
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "curso_id")
     @JsonIgnoreProperties("curso")
     private Set<ModuloModel> modulos = new HashSet<>();
     @ManyToMany(mappedBy = "cursos")
