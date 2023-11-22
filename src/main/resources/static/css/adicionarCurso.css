@@ -3,11 +3,12 @@
     display: flex;
     justify-content: center;
     margin-top: 20px;
+    
 }
 
 .caixa_criacao {
     width: 780px;
-    height: 800px;
+    height: 850px;
     background-color: #3B0B5A;
     border-radius: 5px;
     border: 1px solid #E1BBFD;

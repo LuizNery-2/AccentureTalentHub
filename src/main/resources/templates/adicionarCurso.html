@@ -147,7 +147,7 @@
                         </div>
                     </div>
                     
-                    <input id="criarCurso" type="submit" value="Criar Curso">
+                    <input id="criarCurso" type="submit" value="Criar Template">
                 </form>
                 <div style="width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center;">
                     <p>Quais tecnologias seu curso aborda?</p>
@@ -162,40 +162,18 @@
                     <div>
 
                         <div class="modulos">
-                            <p>
-                                Clique aqui para <br> adicionar vídeos, <br> materiais e quizes <br> ao módulo.
-                            </p>
+                            
                         </div>
     
-                        <div style="display: flex; border-bottom: 1px dashed #B05CEF; height: 18px; width: 200px; transform: translate(30px, 50%);">
-                       <p style="margin-left: 70px; font-size: 10px; color: grey;">Modulo 1</p> </div>
-                    </div>
-        
-                    <div>
-    
-                        <div class="modulos">
-                            <p>
-                                Clique aqui para <br> adicionar vídeos, <br> materiais e quizes <br> ao módulo.
-                            </p>
-                        </div>
+                        
     
                         <div style="display: flex; border-bottom: 1px dashed #B05CEF; height: 18px; width: 200px; transform: translate(30px, 50%);">
-                       <p style="margin-left: 70px; font-size: 10px; color: grey;">Modulo 1</p> </div>
-                    </div>
+                        <p style="margin-left: 70px; font-size: 10px; color: grey;">Modulo</p> </div>
+                </div>
                 
-                    <div>
-    
-                        <div class="modulos">
-                            <p>
-                                Clique aqui para <br> adicionar vídeos, <br> materiais e quizes <br> ao módulo.
-                            </p>
-                        </div>
-    
-                        <div style="display: flex; border-bottom: 1px dashed #B05CEF; height: 18px; width: 200px; transform: translate(30px, 50%);">
-                       <p style="margin-left: 70px; font-size: 10px; color: grey;">Modulo 1</p> </div>
-                    </div>
+                   
             </div>
-
+            <input type="submit" value="Finalizar curso">
 
             <section class="modal-modulo">
                 <div style="display: flex; justify-content: space-between;">
@@ -206,12 +184,11 @@
 
                 <div id="detalhe_senha">
                     <div id="alterar-senha">
-                        <div style="display: flex; flex-direction: row; margin-left: 350px;
-                    margin-bottom: 10px;">
-                            <h3 style="color: #fff; font-weight: normal; font-size: 25px;">Modulo 1</h3>
+                        <div style="display: flex; flex-direction: row; margin-left: 350px; margin-bottom: 10px;">
+                            <h3 style="color: #fff; font-weight: normal; font-size: 25px;">Modulo</h3>
                         </div>
 
-                        <div class="modulosmodal" style="margin-bottom: 10px; border-radius: 15px;">
+                        <!-- <div class="modulosmodal" style="margin-bottom: 10px; border-radius: 15px;">
 
                             <div style="display: flex; margin: 10px;color: #fff;">
                                 <img style="margin-right: 10px;" src="../static/img/marketing-de-video.png" alt="">
@@ -227,16 +204,16 @@
                                 <p>Material de apoio</p>
                                 <img style="margin-left: 550px;" src="../static/img/setas.png" alt="">
                             </div>
-                        </div>
+                        </div> -->
 
-                        <div class="modulosmodal" style="margin-bottom: 10px;border-radius: 15px;color: #fff;">
+                        <!-- <div class="modulosmodal" style="margin-bottom: 10px;border-radius: 15px;color: #fff;">
 
                             <div style="display: flex; margin: 10px;">
                                 <img style="margin-right: 20px;" src="../static/img/perguntando.png" alt="">
                                 <p>Quiz</p>
                                 <img style="margin-left: 649px;" src="../static/img/setas.png" alt="">
                             </div>
-                        </div>
+                        </div> -->
 
                         <div style="padding: 10px;width: 55px; background-color: #33084F;color: #fff;">
                             <a class="botaoApresentacaoCurso" style="cursor: pointer;">
@@ -267,11 +244,21 @@
                             style="border: 5px solid #33084F; width: 50rem; height: 9.7rem; transform: translate(50px, -99%);" class="caixaDosInputs">
                             <!-- DIV INPUT DA APRESENTAÇÃO DO CURSO -->
                             <div
-                                style="display: flex;width: 600px; background-color: #fff; padding: 2%; border-radius: 50px;  transform: translate(50px, 80%);" class="inputApresentacaoCurso">
+                                style="display: flex;flex-direction: column; width: 80%; margin: 0 auto;" class="inputApresentacaoCurso">
                                 <label for="linkInput"></label>
-                                <img src="../static/img/link.png" alt="">
+                                <div style="display: flex; align-items: center; margin-top: 2%;">
+                                    <img style="width: 20px; margin-right: 1%;" src="../static/img/marketing-de-video.png" alt="">
+                                    <label>Nome da aula</label>
+                                </div>
+                                <input style="margin: 1% 0;" type="text" placeholder="Digite o nome da aula">
+                                <div style="display: flex; align-items: center;">
+                                    <img style="width: 20px;  margin-right: 1%;" src="../static/img/link.png" alt="">
+                                    <label>Link da aula</label>
+                                </div>
                                 <input type="text" id="linkInput" name="linkInput" placeholder="Insira o link da aula" >
+                                <input type="submit" value="Adicionar aula">
                             </div>
+                            
 
                             <!-- DIV INPUT DOS MATERIAIS  -->
                             <div style="display: none;" class="inputMaterialCurso">
@@ -279,14 +266,14 @@
                                     <div style="display: flex;width: 350px; background-color: #fff; padding: 1%; border-radius: 50px;  transform: translate(200px, 60%); color: #000">
                                         <form action="/upload" method="post" enctype="multipart/form-data">
                                             <input type="file" name="arquivo">
-                                          </form>
-                                        </div>
-                                <p style="color: #fff; transform: translate(300px, 150%); font-size: 11px;">Ou arraste o elemento </p>
+                                        </form>
+                                    </div>
+                                
                             </div>
 
                             <!-- DIV INPUT DOS QUIZ -->
                             <div class="inputQuizCurso" style="display: none;">
-                                <div style="display: flex; background-color: #fff; padding: 1%; width: 700px; margin-top: 10px; margin-left: 40px; border-radius: 20px;">
+                                <!-- <div style="display: flex; background-color: #fff; padding: 1%; width: 700px; margin-top: 10px; margin-left: 40px; border-radius: 20px;">
                                     <p style="margin-left: 10px; color: #C7C6C6;">
                                         Pergunta
                                     </p>
@@ -312,15 +299,20 @@
                                     <p style="margin-left: 10px; color: #C7C6C6;">
                                         Nova resposta
                                     </p>
-                                </div>
-                                <div class="botao_pergunta">
+                                </div> -->
+                                <!-- <div class="botao_pergunta">
                                     <button> + ADICIONAR PERGUNTA </button>
-                                </div>
+                                </div> -->
                             </div>
 
                         </div>
 
-                        <button class="adicionarLink" onclick="myFunction()">Adicionar ao Bloco</button>
+                        
+                            <button  class="adicionarLink" onclick="myFunction()">Adicionar ao Bloco</button>
+                            <!-- <button  class="adicionarLink" onclick="myFunction()">Concluir Modulo</button> -->
+                        
+
+                        
 
                     </div>
 
@@ -448,53 +440,53 @@
 
     <script>
 
-        // var botaoApresentacaoCurso = document.querySelector(".botaoApresentacaoCurso");
-        // var inputApresentacaoCurso = document.querySelector(".inputApresentacaoCurso");
-        // var botaoMaterialCurso = document.querySelector(".botaoMaterialCurso");
-        // var inputMaterialCurso = document.querySelector(".inputMaterialCurso");
-        // var botaoQuizCurso = document.querySelector(".botaoQuizCurso");
-        // var inputQuizCurso = document.querySelector(".inputQuizCurso");
+        var botaoApresentacaoCurso = document.querySelector(".botaoApresentacaoCurso");
+        var inputApresentacaoCurso = document.querySelector(".inputApresentacaoCurso");
+        var botaoMaterialCurso = document.querySelector(".botaoMaterialCurso");
+        var inputMaterialCurso = document.querySelector(".inputMaterialCurso");
+        var botaoQuizCurso = document.querySelector(".botaoQuizCurso");
+        var inputQuizCurso = document.querySelector(".inputQuizCurso");
 
-        // var modal_modulo = document.querySelector(".modal-modulo");
-        // var caixaDosInputs = document.querySelector(".caixaDosInputs");
-        // var botaoAdicionarLink = document.querySelector(".adicionarLink");
+        var modal_modulo = document.querySelector(".modal-modulo");
+        var caixaDosInputs = document.querySelector(".caixaDosInputs");
+        var botaoAdicionarLink = document.querySelector(".adicionarLink");
 
-        // botaoApresentacaoCurso.addEventListener ("click", function() {
-        //     inputMaterialCurso.style.display = 'none';
-        //     inputQuizCurso.style.display = 'none';
-        //     inputApresentacaoCurso.style.display = 'flex';
-        //     //Detalhes do modal
-        //     modal_modulo.style.height = '550px';
-        //     botaoAdicionarLink.style.transform = 'translate(680px, -150%)';
-        //     caixaDosInputs.style.transform = 'translate(50px, -99%)';
-        //     caixaDosInputs.style.height = '9.7rem';
+        botaoApresentacaoCurso.addEventListener ("click", function() {
+            inputMaterialCurso.style.display = 'none';
+            inputQuizCurso.style.display = 'none';
+            inputApresentacaoCurso.style.display = 'flex';
+            //Detalhes do modal
+            modal_modulo.style.height = '550px';
+            botaoAdicionarLink.style.transform = 'translate(680px, -150%)';
+            caixaDosInputs.style.transform = 'translate(50px, -99%)';
+            caixaDosInputs.style.height = '9.7rem';
 
-        // })
+        })
 
-        // botaoMaterialCurso.addEventListener ("click", function() {
-        //     inputApresentacaoCurso.style.display = 'none';
-        //     inputQuizCurso.style.display = 'none';
-        //     inputMaterialCurso.style.display = 'block';
-        //     //Detalhes do modal
-        //     modal_modulo.style.height = '550px';
-        //     botaoAdicionarLink.style.transform = 'translate(680px, -150%)';
-        //     caixaDosInputs.style.transform = 'translate(50px, -99%)';
-        //     caixaDosInputs.style.height = '9.7rem';
+        botaoMaterialCurso.addEventListener ("click", function() {
+            inputApresentacaoCurso.style.display = 'none';
+            inputQuizCurso.style.display = 'none';
+            inputMaterialCurso.style.display = 'block';
+            //Detalhes do modal
+            modal_modulo.style.height = '550px';
+            botaoAdicionarLink.style.transform = 'translate(680px, -150%)';
+            caixaDosInputs.style.transform = 'translate(50px, -99%)';
+            caixaDosInputs.style.height = '9.7rem';
 
-        // })
+        })
 
-        // botaoQuizCurso.addEventListener ("click", function() {
-        //     inputApresentacaoCurso.style.display = 'none';
-        //     inputMaterialCurso.style.display = 'none';
-        //     inputQuizCurso.style.display = 'block';
-        //     //Detalhes do modal
-        //     modal_modulo.style.height = '700px';
-        //     botaoAdicionarLink.style.transform = 'translate(680px, -200%)';
-        //     caixaDosInputs.style.transform = 'translate(50px, -48%)';
-        //     caixaDosInputs.style.height = '20rem';
+        botaoQuizCurso.addEventListener ("click", function() {
+            inputApresentacaoCurso.style.display = 'none';
+            inputMaterialCurso.style.display = 'none';
+            inputQuizCurso.style.display = 'block';
+            //Detalhes do modal
+            modal_modulo.style.height = '700px';
+            botaoAdicionarLink.style.transform = 'translate(680px, -200%)';
+            caixaDosInputs.style.transform = 'translate(50px, -48%)';
+            caixaDosInputs.style.height = '20rem';
 
 
-        // })
+        })
 
 
         
