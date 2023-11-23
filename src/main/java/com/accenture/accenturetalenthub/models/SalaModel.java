@@ -1,23 +1,21 @@
 package com.accenture.accenturetalenthub.models;
 
 import java.io.Serializable;
-import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
-import jakarta.persistence.Lob;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
-import jakarta.persistence.Temporal;
-import jakarta.persistence.TemporalType;
-
 import static jakarta.persistence.GenerationType.AUTO;
 
 
@@ -31,6 +29,7 @@ public class SalaModel implements Serializable {
     private UUID IdSala;
 
     @ManyToMany(mappedBy = "salas")
+    @Column(nullable = true)
     private Set<UsuarioModel> usuarios = new HashSet<>();
     @ManyToMany
     @JoinTable(
@@ -39,42 +38,43 @@ public class SalaModel implements Serializable {
             inverseJoinColumns = @JoinColumn(name = "Curso_Id")
     )
     @JsonIgnoreProperties("salas")
+    @Column(nullable = true)
     private Set<CursoModel> cursos =new HashSet<>();
 
     private String nome;
     private String descricao;
 
-    @Temporal(TemporalType.TIMESTAMP)
-    private LocalDateTime dataCriacao;
+    
+    private Date dataCriacao;
 
-    @Temporal(TemporalType.TIMESTAMP)
-    private LocalDateTime dataTermino;
+    
+    private Date dataTermino;
 
-    @Lob
-    private byte[] banner;
+    @Column(columnDefinition = "TEXT")
+    private String banner;
 
 
-    public LocalDateTime getDataTermino() {
+    public Date getDataTermino() {
         return dataTermino;
     }
 
-    public void setDataTermino(LocalDateTime dataTermino) {
+    public void setDataTermino(Date dataTermino) {
         this.dataTermino = dataTermino;
     }
 
-    public LocalDateTime getDataCriacao() {
+    public Date getDataCriacao() {
         return dataCriacao;
     }
 
-    public void setDataCriacao(LocalDateTime dataCriacao) {
+    public void setDataCriacao(Date dataCriacao) {
         this.dataCriacao = dataCriacao;
     }
 
-    public byte[] getBanner() {
+    public String getBanner() {
         return banner;
     }
 
-    public void setBanner(byte[] banner) {
+    public void setBanner(String banner) {
         this.banner = banner;
     }
 

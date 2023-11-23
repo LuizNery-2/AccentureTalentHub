@@ -1,9 +1,17 @@
 package com.accenture.accenturetalenthub.dtos;
 
-import java.time.LocalDateTime;
+import java.util.Date;
+import java.util.Set;
 import java.util.UUID;
 
-public record SalaRecordDto(UUID IdSala, String nome, String descricao, LocalDateTime dataCriacao,
-                            LocalDateTime dataTermino, byte[] banner){
+import com.accenture.accenturetalenthub.models.CursoModel;
+import com.accenture.accenturetalenthub.models.UsuarioModel;
+
+
+public record SalaRecordDto(UUID IdSala, String nome, String descricao, Date dataCriacao,
+                            Date dataTermino, String banner, Set<UsuarioModel> usuarios,
+                            Set<CursoModel> cursos){
+
+   
     
 }

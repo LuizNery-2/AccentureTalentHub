@@ -1,7 +1,10 @@
 package com.accenture.accenturetalenthub.controllers;
 
 import com.accenture.accenturetalenthub.dtos.SalaRecordDto;
+import com.accenture.accenturetalenthub.dtos.UsuarioRecordDto;
 import com.accenture.accenturetalenthub.models.SalaModel;
+import com.accenture.accenturetalenthub.models.UsuarioModel;
+
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -23,9 +26,11 @@ public class SalaCrontroller {
 
     @PostMapping("/salas")
     public ResponseEntity<SalaModel> saveSala(@RequestBody SalaRecordDto salaRecordDto){
-        var salaModel = new SalaModel();
-        BeanUtils.copyProperties(salaModel, salaRecordDto);
-        return ResponseEntity.status(HttpStatus.CREATED).body(salaRepository.save(salaModel));
+        var SalaModel = new SalaModel();
+        BeanUtils.copyProperties(salaRecordDto, SalaModel);
+
+        return ResponseEntity.status(HttpStatus.CREATED).body(salaRepository.save(SalaModel));
+
     }
 
     @GetMapping("/salas")
