@@ -1,13 +1,18 @@
 package com.accenture.accenturetalenthub.models;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Set;
-import java.util.UUID;
+
+
+import java.util.*;
 import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
 
 import static jakarta.persistence.GenerationType.AUTO;
 
@@ -22,6 +27,7 @@ public class ModuloModel implements Serializable{
     private UUID IdModulo;
 
     private String nomeModulo;
+
 
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
@@ -59,6 +65,7 @@ public class ModuloModel implements Serializable{
         this.aulas = aulas;
     }
 
+
     public CursoModel getCurso() {
         return curso;
     }
@@ -66,4 +73,6 @@ public class ModuloModel implements Serializable{
     public void setCurso(CursoModel curso) {
         this.curso = curso;
     }
+
+
 }

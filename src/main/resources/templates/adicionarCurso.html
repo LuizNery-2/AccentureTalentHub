@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="../static/css/indexstyle.css">
     <link rel="stylesheet" type="text/css" href="../static/css/curso.css">
     <link rel="stylesheet" type="text/css" href="../static/css/adicionarCurso.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/areainteresse.css">
     <link rel="stylesheet" href="../static/css/criar_sala.css">
 
     <!-- Importação dos arquivos CSS para barra de pesquisa -->
@@ -56,9 +57,7 @@
 
             <ul>
                 <li id="icon_usuario_menu" class="lista_dashboard">
-                    <a href="perfil.html">
-                        <img class="icon_menu" src="../static/img/icon_perfil.png">
-                    </a>
+                    <img class="icon_menu" src="../static/img/icon_perfil.png">
                 </li>
             </ul>
         </nav>
@@ -107,22 +106,22 @@
             </ul>
             <ul class="lista_dashboard-responsivo">
                 <li id="icon_usuario_menu-responsivo" class="lista_dashboard-responsivo">
-                    <a class="link-page-responsivo" href="perfil.html">
+                    <div class="link-page-responsivo">
                         <img class="icon_menu-responsivo" src="../static/img/icon_perfil.png">
                         <p>Perfil</p>
-                    </a>
+                    </div>
                 </li>
             </ul>
         </nav>
 
         <!--  FIM DO NAV RESPONSIVO -->
 
-        <!-- <div id="menu-suspenso">
+        <div id="menu-suspenso">
             <ul>
                 <li><a href="perfil.html">Perfil</a></li>
                 <li><a href="index.html">Sair</a></li>
             </ul>
-        </div> -->
+        </div>
 
 
         <!-- INÍCIO PÁGINA DE CRIAÇÃO DO CURSO -->
@@ -132,75 +131,49 @@
                 <h2>Adicione um Curso</h2>
                 <a href="perfilLider.html"> <img src="../static/img/icon_fechar.png" alt="" style="transform: translate(740px, -640%);"> </a>
 
-                <forms class="forms_criarCurso">
-                    <div>
-                        <p>Nome do curso</p>
-                        <input type="text" class="nome_curso">
-
-                        <p>Adicione um banner ao curso</p>
-                        <input type="file" class="banner_curso">
+                <form id="formCriarCurso" class="forms_criarCurso">
+                    <div style="display: flex; justify-content: space-around;">
+                        <div>
+                            <p>Nome do curso</p>
+                            <input id="nomeCurso" type="text" class="nome_curso">
+    
+                            <p>Adicione um banner ao curso</p>
+                            <input id="imagemCurso" type="text" class="banner_curso">
+                        </div>
+                        
+                        <div>
+                            <p>Adicione uma descrição</p>
+                            <textarea id="descricaoCurso"  class="descricao_curso" cols="30" rows="10"></textarea>
+                        </div>
                     </div>
                     
-                    <div>
-                        <p>Adicione uma descrição</p>
-                        <input type="text" class="descricao_curso">
-
-                        <p>Quais tecnologias seu curso aborda?</p>
-                        <div class="dropdown">
-                            <button class="dropbtn">Selecione a tecnologia <img style="width: 10px; margin-left: 5px;" src="../static/img/icon_expandir.png" alt=""> </button>
-                            <div class="dropdown-content">
-                                <a href="#">Java</a>
-                                <a href="#">Jquary</a>
-                                <a href="#">javascript</a>
-                                <a href="#">MySql</a>
-                                <a href="#">Spark</a>
-                                <a href="#">Docker</a>
-                            </div>
-                        </div>
-
-        
-                    </div>
-                </forms>
+                    <input id="criarCurso" type="submit" value="Criar Template">
+                </form>
+                <div style="width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                    <p>Quais tecnologias seu curso aborda?</p>
+                    <div id="abrir_modal_tecnologias">
+                        <button class="dropbtn">Selecione a(s) tecnologia(s)</button>
+                    </div> 
+                </div>
+                         
 
                 <button id="botao-criarModulo">Criar Modulo</button>
                 <div style="display: flex; flex-direction: row;">
                     <div>
 
                         <div class="modulos">
-                            <p>
-                                Clique aqui para <br> adicionar vídeos, <br> materiais e quizes <br> ao módulo.
-                            </p>
+                            
                         </div>
     
-                        <div style="display: flex; border-bottom: 1px dashed #B05CEF; height: 18px; width: 200px; transform: translate(30px, 50%);">
-                       <p style="margin-left: 70px; font-size: 10px; color: grey;">Modulo 1</p> </div>
-                    </div>
-        
-                    <div>
-    
-                        <div class="modulos">
-                            <p>
-                                Clique aqui para <br> adicionar vídeos, <br> materiais e quizes <br> ao módulo.
-                            </p>
-                        </div>
+                        
     
                         <div style="display: flex; border-bottom: 1px dashed #B05CEF; height: 18px; width: 200px; transform: translate(30px, 50%);">
-                       <p style="margin-left: 70px; font-size: 10px; color: grey;">Modulo 1</p> </div>
-                    </div>
+                        <p style="margin-left: 70px; font-size: 10px; color: grey;">Modulo</p> </div>
+                </div>
                 
-                    <div>
-    
-                        <div class="modulos">
-                            <p>
-                                Clique aqui para <br> adicionar vídeos, <br> materiais e quizes <br> ao módulo.
-                            </p>
-                        </div>
-    
-                        <div style="display: flex; border-bottom: 1px dashed #B05CEF; height: 18px; width: 200px; transform: translate(30px, 50%);">
-                       <p style="margin-left: 70px; font-size: 10px; color: grey;">Modulo 1</p> </div>
-                    </div>
+                   
             </div>
-
+            <input type="submit" value="Finalizar curso">
 
             <section class="modal-modulo">
                 <div style="display: flex; justify-content: space-between;">
@@ -211,12 +184,11 @@
 
                 <div id="detalhe_senha">
                     <div id="alterar-senha">
-                        <div style="display: flex; flex-direction: row; margin-left: 350px;
-                    margin-bottom: 10px;">
-                            <h3 style="color: #fff; font-weight: normal; font-size: 25px;">Modulo 1</h3>
+                        <div style="display: flex; flex-direction: row; margin-left: 350px; margin-bottom: 10px;">
+                            <h3 style="color: #fff; font-weight: normal; font-size: 25px;">Modulo</h3>
                         </div>
 
-                        <div class="modulosmodal" style="margin-bottom: 10px; border-radius: 15px;">
+                        <!-- <div class="modulosmodal" style="margin-bottom: 10px; border-radius: 15px;">
 
                             <div style="display: flex; margin: 10px;color: #fff;">
                                 <img style="margin-right: 10px;" src="../static/img/marketing-de-video.png" alt="">
@@ -232,16 +204,16 @@
                                 <p>Material de apoio</p>
                                 <img style="margin-left: 550px;" src="../static/img/setas.png" alt="">
                             </div>
-                        </div>
+                        </div> -->
 
-                        <div class="modulosmodal" style="margin-bottom: 10px;border-radius: 15px;color: #fff;">
+                        <!-- <div class="modulosmodal" style="margin-bottom: 10px;border-radius: 15px;color: #fff;">
 
                             <div style="display: flex; margin: 10px;">
                                 <img style="margin-right: 20px;" src="../static/img/perguntando.png" alt="">
                                 <p>Quiz</p>
                                 <img style="margin-left: 649px;" src="../static/img/setas.png" alt="">
                             </div>
-                        </div>
+                        </div> -->
 
                         <div style="padding: 10px;width: 55px; background-color: #33084F;color: #fff;">
                             <a class="botaoApresentacaoCurso" style="cursor: pointer;">
@@ -272,11 +244,21 @@
                             style="border: 5px solid #33084F; width: 50rem; height: 9.7rem; transform: translate(50px, -99%);" class="caixaDosInputs">
                             <!-- DIV INPUT DA APRESENTAÇÃO DO CURSO -->
                             <div
-                                style="display: flex;width: 600px; background-color: #fff; padding: 2%; border-radius: 50px;  transform: translate(50px, 80%);" class="inputApresentacaoCurso">
+                                style="display: flex;flex-direction: column; width: 80%; margin: 0 auto;" class="inputApresentacaoCurso">
                                 <label for="linkInput"></label>
-                                <img src="../static/img/link.png" alt="">
+                                <div style="display: flex; align-items: center; margin-top: 2%;">
+                                    <img style="width: 20px; margin-right: 1%;" src="../static/img/marketing-de-video.png" alt="">
+                                    <label>Nome da aula</label>
+                                </div>
+                                <input style="margin: 1% 0;" type="text" placeholder="Digite o nome da aula">
+                                <div style="display: flex; align-items: center;">
+                                    <img style="width: 20px;  margin-right: 1%;" src="../static/img/link.png" alt="">
+                                    <label>Link da aula</label>
+                                </div>
                                 <input type="text" id="linkInput" name="linkInput" placeholder="Insira o link da aula" >
+                                <input type="submit" value="Adicionar aula">
                             </div>
+                            
 
                             <!-- DIV INPUT DOS MATERIAIS  -->
                             <div style="display: none;" class="inputMaterialCurso">
@@ -284,14 +266,14 @@
                                     <div style="display: flex;width: 350px; background-color: #fff; padding: 1%; border-radius: 50px;  transform: translate(200px, 60%); color: #000">
                                         <form action="/upload" method="post" enctype="multipart/form-data">
                                             <input type="file" name="arquivo">
-                                          </form>
-                                        </div>
-                                <p style="color: #fff; transform: translate(300px, 150%); font-size: 11px;">Ou arraste o elemento </p>
+                                        </form>
+                                    </div>
+                                
                             </div>
 
                             <!-- DIV INPUT DOS QUIZ -->
                             <div class="inputQuizCurso" style="display: none;">
-                                <div style="display: flex; background-color: #fff; padding: 1%; width: 700px; margin-top: 10px; margin-left: 40px; border-radius: 20px;">
+                                <!-- <div style="display: flex; background-color: #fff; padding: 1%; width: 700px; margin-top: 10px; margin-left: 40px; border-radius: 20px;">
                                     <p style="margin-left: 10px; color: #C7C6C6;">
                                         Pergunta
                                     </p>
@@ -317,15 +299,20 @@
                                     <p style="margin-left: 10px; color: #C7C6C6;">
                                         Nova resposta
                                     </p>
-                                </div>
-                                <div class="botao_pergunta">
+                                </div> -->
+                                <!-- <div class="botao_pergunta">
                                     <button> + ADICIONAR PERGUNTA </button>
-                                </div>
+                                </div> -->
                             </div>
 
                         </div>
 
-                        <button class="adicionarLink" onclick="myFunction()">Adicionar ao Bloco</button>
+                        
+                            <button  class="adicionarLink" onclick="myFunction()">Adicionar ao Bloco</button>
+                            <!-- <button  class="adicionarLink" onclick="myFunction()">Concluir Modulo</button> -->
+                        
+
+                        
 
                     </div>
 
@@ -333,14 +320,74 @@
                 </div> 
             </section>
 
-            <div style="display: flex; background-color: #B05CEF; padding: 15px; border-radius: 10px; width: 140px; cursor: pointer; float:right; margin-right: 20px;margin-top: 25px;">
-                <p>
-                    CRIAR SALA
-                </p>
-            </div>
+            <section id="modal_tecnologias" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); display: none;">
 
+                <div id="box_tecnologias">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 1%;">
+                        <div></div>
+                        <img id="fechar_modal-tecnologias" src="../static/img/icon_fechar.png" style="cursor: pointer;">
+                    </div>
+                    
+                    <div id="exemplo_tecnologias">
+                        
+        
+                        <div id="exemplo_tecnologias">
+                            <ul>
+                                <li id="11">JavaScript</li>
+                                <li id="35">Data Science</li>
+                                <li id="12">Java</li>
+                                <li id="2">.net</li>
+                                <li id="16">HTML</li>
+                                <li id="17">CSS</li>
+                                <li id="14">Python</li>
+                                <li id="1">PHP</li>
+                                <li id="3">C#</li>
+                                <li id="15">SAP ABAP</li>
+                                <li id="13">TypeScript</li>
+                                <li id="23">MySQL</li>
+                                <li id="10">rabbitmq</li>
+                                <li id="27">Cloud Computing</li>
+                                <li id="5">Azure </li>
+                                <li id="29">Hadoop</li>
+                                <li id="30">Spark</li>
+                                <li id="36">Machine Learning</li>
+                                <li id="37">TensorFlow</li>
+                                <li id="33">DevOps </li>
+                                <li id="34">Jenkins</li>
+                                <li id="40">Blockchain</li>
+                                <li id="39">Cibersegurança</li>
+                                <li id="8">auth0</li>
+                                <li id="18">Angular</li>
+                                <li id="19">React </li>
+                                <li id="20">Vue.js</li>
+                                <li id="6">Apim </li>
+                                <li id="22">Flutter </li>
+                                <li id="31">Big Data</li>
+                                <li id="32">Analytics</li>
+                                <li id="7">apigee</li>
+                                <li id="38">PyTorch</li>
+                                <li id="21">React Native</li>
+                                <li id="4">MongoDB</li>
+                                <li id="24">Cassandra</li>
+                                <li id="25">PostgreSQL</li>
+                                <li id="26">Oracle</li>
+                                <li id="28">AWS </li>
+                                <li id="9">kafka </li>
+                            </ul>
+                    </div>
+                    
+        
+                    <div id="enviar_resposta">
+        
+                        <p id="enviarDados">Adicionar ao curso</p>
+                        <img src="../static/img/seta_direita.png">
+                    </div>
+                </div>
+            </section>
 
         </section>
+
+        
 
         
     </main>
@@ -364,10 +411,20 @@
                 $(".modal-modulo").css("display", "none");
                 $("#box_CriarModulo").css("opacity", "1");
             })
+
+            $("#fechar_modal-tecnologias").click(function () {
+                $("#modal_tecnologias").css("display", "none");
+            })
+
+            $("#abrir_modal_tecnologias").click(function () {
+                $("#modal_tecnologias").css("display", "block");
+            })
+
+
         });
     </script>
 
-    <script>
+    <!-- <script>
         function myFunction() {
             var userInput = document.getElementById("linkInput").value;
             if (userInput.trim() !== "") {
@@ -379,7 +436,7 @@
                 alert("Por favor, insira um link válido.");
             }
         }
-    </script>
+    </script> -->
 
     <script>
 
@@ -434,6 +491,79 @@
 
         
     </script>
+
+    <script>
+
+        // Seleciona todos os elementos li nas listas dentro da div com id "exemplo_tecnologias"
+        const elementosLista = document.querySelectorAll("#exemplo_tecnologias li");
+
+        // Array para armazenar os IDs selecionados
+        const selecionados = [];
+
+        // Seleciona todos os elementos li nas listas dentro da div com id "exemplo_tecnologias"
+        const elementosLi = document.querySelectorAll("#exemplo_tecnologias li");
+
+        elementosLi.forEach(function(elemento) {
+            elemento.addEventListener("click", function() {
+                const id = elemento.id;
+
+                // Verifica se o elemento já foi selecionado
+                if (selecionados.includes(id)) {
+                    // Se já estiver selecionado, remova-o do array e restaure a cor
+                    const index = selecionados.indexOf(id);
+                    selecionados.pop(index);
+                    elemento.classList.remove("selected");
+                } else {
+                    // Se não estiver selecionado, adicione ao array e mude a cor
+                    selecionados.push(id);
+                    elemento.classList.add("selected");
+                }
+            });
+        });
+        localStorage.setItem('selecionados', selecionados);
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const criarCurso = document.getElementById('formCriarCurso');
+    let respostaCurso;
+    criarCurso.addEventListener('submit',async function (e) {
+        e.preventDefault();
+
+        const nomeCurso = document.getElementById('nomeCurso').value;
+        const imagemCurso = document.getElementById('imagemCurso').value;
+        const descricaoCurso = document.getElementById('descricaoCurso').value;
+        
+
+       await fetch("http://localhost:8080/cursos", {
+            method: "POST",
+            headers: {
+                "Accept": "application/json",
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                descricao: descricaoCurso,
+                nome: nomeCurso,
+                imagem: imagemCurso,
+                pontuacaoGeral: 100,
+                concluido: false,
+            })
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                localStorage.setItem('idCurso',data.idCurso);
+            })
+            .catch(function (error) {
+                console.error("Erro na solicitação: " + error);
+            });
+    });
+});
+
+
+        
+    </script>
+     <script src="../static/js/insereInteressesCursos.js"></script> 
 
 </body>
 

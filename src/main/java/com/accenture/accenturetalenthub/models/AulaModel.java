@@ -20,9 +20,11 @@ public class AulaModel implements Serializable{
     @GeneratedValue(strategy = AUTO)
     private UUID IdAula;
 
-    @ManyToOne()
+
+    @ManyToOne
     @JsonIgnoreProperties("aulas")
-    private ModuloModel modulos;
+    private ModuloModel modulo;
+
     private String nomeAula;
 
     private String linkAula;
@@ -54,11 +56,13 @@ public class AulaModel implements Serializable{
         this.linkAula = linkAula;
     }
 
+
     public ModuloModel getModulo() {
-        return modulos;
+        return modulo;
     }
 
     public void setModulo(ModuloModel modulo) {
-        this.modulos = modulos;
+        this.modulo = modulo;
     }
+
 }

@@ -16,6 +16,8 @@ public class CursoModel implements Serializable {
     @GeneratedValue(strategy = AUTO)
     private UUID IdCurso;
     private String nome;
+    @Column(columnDefinition = "TEXT")
+    private String imagem;
     private String descricao;
     private Boolean concluido = false;
     private int quantidadeHoras;
@@ -29,16 +31,15 @@ public class CursoModel implements Serializable {
     @JsonIgnoreProperties({"cursos","usuarios"})
     private Set<InteresseModel> interesses =new HashSet<>();
 
+
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonIgnoreProperties("curso")
     private Set<ModuloModel> modulos = new HashSet<>();
+
     @ManyToMany(mappedBy = "cursos")
-    @JsonIgnoreProperties("cursos")
     private List<UsuarioModel> usuarios = new ArrayList<>();
     @ManyToMany(mappedBy = "cursos")
-    @JsonIgnoreProperties("cursos")
     private Set<SalaModel> salas = new HashSet<>();
-
 
     public List<UsuarioModel> getUsuarios() {
         return usuarios;
@@ -107,6 +108,13 @@ public class CursoModel implements Serializable {
     public void setQuantidadeHoras(int quantidadeHoras) {
         this.quantidadeHoras = quantidadeHoras;
     }
+     public String getImagem() {
+        return imagem;
+    }
+
+    public void setImagem(String imagem) {
+        this.imagem = imagem;
+    }
 
     public Set<ModuloModel> getModulos() {
         return modulos;
@@ -114,5 +122,9 @@ public class CursoModel implements Serializable {
 
     public void setModulos(Set<ModuloModel> modulos) {
         this.modulos = modulos;
+    }
+
+    public Object getId() {
+        return null;
     }
 }

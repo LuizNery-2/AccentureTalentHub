@@ -23,13 +23,12 @@ $(document).ready(function() {
 
     //Botão suspeso de sair
     $("#icon_usuario_menu").click(function() {
-        if($("#menu-suspenso").css("position", "fixed")){
-            $("#menu-suspenso").css("position", "none");
-        }
         if($("#menu-suspenso").css("display", "none")){
             $("#menu-suspenso").css("position", "fixed");
         }
-        
+        if($("#menu-suspenso").css("position", "fixed")){
+            $("#menu-suspenso").css("position", "none");
+        }
     });
 
     // //Botão suspeso de sair

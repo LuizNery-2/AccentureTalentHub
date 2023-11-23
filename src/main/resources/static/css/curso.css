@@ -18,8 +18,8 @@ header h1{
 }
 
 #Icon_filtrar{
-    width: 50px !important;
-    height: 38px;
+    width: 60px !important;
+    height: 48px;
     cursor: pointer;
 }
 
@@ -34,18 +34,9 @@ header h1{
 
 .box_filtro{
     display: flex;
-    /* justify-content: space-between;
-    align-items: center;
-    width: 100%; */
-    justify-content: flex-start !important;
-}
-
-.box_filtro_search{
-    display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    flex-wrap: wrap-reverse;
 }
 
 .lista_filtro{
@@ -73,8 +64,9 @@ header h1{
 
 .center_cursos{
     display: flex;
-    justify-content: space-between !important;
+    justify-content: space-between;
     margin: 2% 0;
+    width: 1000px;
 }
 
 .box_curso{
@@ -83,6 +75,10 @@ header h1{
     border-radius: 10px;
     height: 280px;
     width: 300px;
+
+}
+.box_curso:nth-child(1){
+    margin-left: 0;
 }
 
 .info_curso{
@@ -93,6 +89,7 @@ header h1{
 
 .info_curso img{
     width: 250px !important;
+    height: 150px;
     border-radius: 10px;
 }
 
@@ -103,6 +100,7 @@ header h1{
 .info_curso h2{
     font-weight: 500;
     margin: 2% 0;
+    font-size: 20px;
 }
 
 .info_curso ul li{
@@ -188,401 +186,20 @@ input[type='submit']:hover{
 
 
 @media screen and (max-width: 1200px){
-    
 
-    #title_curso{
-        color: #a90000;
-        text-align: left !important;
-        font-size: 48px;
-        font-family: 'Poppins', sans-serif;
-        font-weight: 500;
-        margin-top: 5%;
-    }
-    
-    .box_filtro{
-        display: flex;
-        justify-content: flex-start !important;
-    }
-    
-    .center_cursos{
-        margin-right: 3%;
-    }
-    
-    .box_curso{
-        padding: 2%;
-        height: 260px;
-        width: 280px;
-    }
-    
-    .info_curso img{
-        width: 240px !important;
-        border-radius: 10px;
-    }
-    
-    .info_curso h2{
-        font-size: 18px;
-    }
-    
-    .info_curso ul li{
-        font-size: 11px;
-    }
-    
-    .info_curso button{
-        height: 26px;
-        font-size: 11px;
-    }
 }
 
 @media screen and (max-width: 1024px){
-    header{
-        height: 170px;
-        padding-left: 8%;
-    }
-    /* .search-container {
-        left: 12% !important;
-    
-    } */
-
-
-    
-    #Icon_filtrar{
-        width: 45px !important;
-        height: 32px;
-    }
-    
-    #title_curso{
-        color: rgb(255, 255, 255);
-        font-size: 46px;
-        margin-top: 5%;
-    }
-    
-    .box_filtro{
-        display: flex;
-        justify-content: flex-start !important;
-    }
-    
-    .lista_filtro li{
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        padding: 0;
-        font-size: 12px;
-        width: 120px;
-        margin-left: 2%;
-    }
-    
-    .center_cursos{
-        margin-right: 2%;
-    }
-    
-    .box_curso{
-        padding: 2%;
-        height: 230px;
-        width: 250px;
-    }
-    
-    .info_curso img{
-        width: 210px !important;
-        border-radius: 10px;
-    }
-    
-    .info_curso h2{
-        font-size: 17px;
-    }
-    
-    .info_curso ul li{
-        font-size: 10px;
-    }
-    
-    .info_curso button{
-        height: 24px;
-        font-size: 10px;
-    }
-    
-    
-}
-
-@media screen and (max-width: 968px){
-    
-    header{
-        height: 170px;
-        padding-left: 8%;
-    }
-
-    #title_curso{
-        color: rgb(255, 255, 255);
-        font-size: 46px;
-        margin-top: 5%;
-    }
-    
-    .lista_filtro li{
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        padding: 0;
-        font-size: 11px;
-        width: 105px;
-        margin-left: 2%;
-    }
-    
-    .icon_fechar{
-        width: 12px !important;
-    }
-    
-    .center_cursos{
-        margin-right: 1%;
-    }
-    
-    .box_curso{
-        height: 15.5rem;
-        width: 16.75rem !important;
-    }
-    
-    .info_curso img{
-        width: 190px !important;
-        border-radius: 10px;
-    }
-    
-    .info_curso h2{
-        font-size: 16px;
-    }
-    
-    .info_curso ul li{
-        font-size: 9px;
-    }
-    
-    .info_curso button{
-        height: 18px;
-        font-size: 9px;
-    }
     
 }
 
 @media screen and (max-width: 768px){
-    header{
-        height: 160px;
-        padding-left: 10%;
-    }
-
-    #title_curso{
-        color: rgb(255, 255, 255);
-        font-size: 40px;
-        margin-top: 5%;
-    }
     
-    .lista_filtro li{
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        padding: 0;
-        font-size: 10px;
-        width: 100px;
-        margin-left: 2%;
-    }
-    
-    .icon_fechar{
-        width: 11px !important;
-    }
-    
-    /* .center_cursos{
-        
-        margin-top: 0 !important;
-    } */
-
-    
-    
-    .box_curso{
-        height: 17rem;
-        width: 16.75rem !important;
-    }
-    
-    .info_curso img{
-        width: 160px !important;
-        border-radius: 10px;
-    }
-    
-    .info_curso h2{
-        font-size: 15px;
-    }
-    
-    .info_curso ul li{
-        font-size: 9px;
-    }
-    
-    .info_curso button{
-        height: 18px;
-        font-size: 9px;
-    }
-    
-    .modal{
-        width: 450px;
-        height: 400px;
-    }
-    
-    /* .modal{
-        width: 350px;
-        height: 365px;
-        top: 40%;
-        left: 50%;
-    } */
-    
-    #detalhe_curso{
-        margin-bottom: 10%;
-        flex-direction: column;
-        gap: 10px;
-    }
-    
-    #detalhe_curso p {
-        font-size: 10px;
-        
-    }
-
-    #detalhe_curso h3 {
-        font-size: 15px;
-    }
-    
-    .txt_info_curso{
-        color: #C881FD;
-        padding: 0 1% !important;
-    }
-    
-    #capa_curso p{
-        font-size: 8px;   
-    }
-
-    #capa_curso img{
-        width: 400px;
-        height: 180px;
-        border-radius: 15px;   
-    }
-    
-    input[type='submit']{
-        height: 30px;
-        font-size: 10px;
-    }
-
 }
 
-@media screen and (max-width: 560px){
-    header{
-        background-image: none;
-        width: 100%;
-        height: 100% !important;
-        padding-left: 3% !important;
-        margin-bottom: 3%;
-    }
-
-    html, body{
-        width: 100%;
-        max-width: 1366px;
-        margin: 0 !important;
-        background: linear-gradient(to bottom, #24033a,  #1D0D28) !important;
-    }
-
-    #title_curso{
-        color: rgb(255, 255, 255);
-        font-size: 38px;
-        margin-top: 5%;
-    }
+/* @media screen and (max-width: 560px){
     
-    .lista_filtro li{
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        padding: 0;
-        font-size: 9px;
-        width: 90px;
-        height: 25px;
-        margin-left: 2%;
-    }
-    
-    .icon_fechar{
-        width: 10px !important;
-    }
-    
-    .center_cursos{
-        margin-right: 0 !important;
-        margin-top: 2% !important;
-        margin-bottom: 2% !important;
-        margin-left: 0 !important;
-        gap: 20px !important;
-        display: flex;
-    } 
-    
-    
-    .box_curso{
-        height: 16.5rem;
-        width: 11rem !important;
-    }
-    
-    .info_curso img{
-        width: 95px !important;
-        border-radius: 10px;
-    }
-    
-    .info_curso h2{
-        font-size: 12px;
-    }
-    .info_curso ul{
-        display:flex;
-        flex-direction: column;
-        margin-bottom: 5px;
-    }
-
-    .info_curso ul li{
-        font-size: 7px;
-        color:#E1BBFD;
-    }
-    
-    .info_curso button{
-        height: 14px;
-        font-size: 8px;
-    }
-    
-    .modal{
-        width: 350px;
-        height: 365px;
-        top: 40%;
-        left: 50%;
-    }
-    
-    #detalhe_curso{
-        margin-bottom: 10%;
-        flex-direction: column;
-        gap: 10px;
-    }
-    
-    #detalhe_curso p {
-        font-size: 10px;
-        
-    }
-
-    #detalhe_curso h3 {
-        font-size: 15px;
-    }
-    
-    .txt_info_curso{
-        color: #C881FD;
-        padding: 0 1% !important;
-    }
-    
-    #capa_curso p{
-        font-size: 8px;   
-    }
-
-    #capa_curso img{
-        width: 300px;
-        height: 100px;
-        border-radius: 15px;   
-    }
-    
-    input[type='submit']{
-        height: 30px;
-        font-size: 10px;
-    }
-
-
-}
+} */
 
 @media screen and (max-width: 480px){
     
