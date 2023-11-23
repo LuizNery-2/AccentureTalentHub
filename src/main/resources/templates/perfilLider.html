@@ -9,7 +9,9 @@
 	<link rel="shortcut icon" href="../static/img/logo_accenture.png" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="../static/css/geralstyle.css">
     <link rel="stylesheet" type="text/css" href="../static/css/perfilLider.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/perfil.css">   
     <link rel="stylesheet" type="text/css" href="../static/css/curso.css">
+    <!-- <link rel="stylesheet" type="text/css" href="../static/css/home.css"> -->
 
 
     <!-- Importação dos arquivos CSS para barra de pesquisa -->
@@ -17,6 +19,7 @@
 
     <!-- Importação dos arquivos Jquary -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../static/js/script.js"></script>
 
 </head>
 <body id="">
@@ -145,56 +148,94 @@
                 </div>
             </div>
 
-
-            <div id="box_carreira">
-                <div style="display: flex;">
-                    <div style="width: 50%;"></div>
-                    <h2>Atualize seus Dados</h2>
+            <section id="box_alterar_criar">
+                <div id="box_carreira">
+                    <div style="display: flex;">
+                        <div style="width: 50%;"></div>
+                        <h2>Atualize seus Dados</h2>
+                    </div>
+                    <form id="box_info_metas">
+                        <p style="color: #E1BBFD;">Plano de Carreira</p>
+                        <div class="box_metas">
+                            <p>1.</p>
+                            <input class="input_metas" type="text" placeholder="Meta 1">
+                            <img src="../static/img/lapis.png">
+                        </div>
+                        <div class="box_metas">
+                            <p>2.</p>
+                            <input class="input_metas" type="text" placeholder="Meta 2">
+                            <img src="../static/img/lapis.png">
+                        </div>
+                        <div class="box_metas">
+                            <p>3.</p>
+                            <input class="input_metas" type="text" placeholder="Meta 3">
+                            <img src="../static/img/lapis.png">
+                        </div>
+                        <input type="submit" id="button_atualizar_plano" name="enviarPlanoCarreira" value="Atualizar Plano">
+                    </form>
+                
+                    <!-- <div style="display: flex; flex-direction: row; align-items: center; margin: 5%">
+                        <div class="button_carreira" style="margin-right: 50px;">
+                            <img src="../static/img/interativo.png">
+                            <p style="color: #E1BBFD;">Atualizar Áreas de Interesse</p>
+                        </div>
+                        <br>
+                        <div class="button_carreira">
+                            <img src="../static/img/redefinir-senha.png">
+                            <p style="color: #E1BBFD;">Alterar Senha</p>
+                        </div>
+                    </div> -->
+                    
+                    <div id="botoes_atualizar_perfil">
+                        <button type="button" id="button_area_interesse" onclick="window.location.href='../templates/areainteresse.html'">
+                            <img src="../static/img/interativo.png">
+                            <p style="color: #E1BBFD;">Atualizar Áreas de Interesse</p>
+                        </button>
+                        <button type="button" id="button_alterar_senha" >
+                            <img src="../static/img/interativo.png">
+                            <p style="color: #E1BBFD;">Alterar Senha</p>
+                        </button>
+                    </div>
                 </div>
-                <div id="box_info_metas">
-                    <p style="color: #E1BBFD;">Plano de Carreira</p>
-                    <div class="box_metas">
-                        <p>1. Meta 1</p>
-                        <img src="../static/img/lapis.png">
-                    </div>
-                    <div class="box_metas">
-                        <p>2. Meta 2</p>
-                        <img src="../static/img/lapis.png">
-                    </div>
-                    <div class="box_metas">
-                        <p>3. Meta 3</p>
-                        <img src="../static/img/lapis.png">
-                    </div>
+
+                <!-- <div style="display: flex; flex-direction: row; align-items: center;">
+                            <div class="button_criar" style="margin-right: 10px;">
+                                <img style="margin: 10px;" src="../static/img/botao-criar-sala.png">
+                                <a href="../templates/criar_sala.html"><p style="color: #3C2245;">Criar Sala</p> </a> 
+                            </div>
+                            <br>
+                            <div class="button_criar">
+                                <img style="margin: 10px;" src="../static/img/botao-adicionar-curso.png">
+
+                            <a href="../templates/adicionarCurso.html"> <p style="color: #3C2245;">Adicionar Curso</p></a>
+                            </div>
+                        </div> -->
+
+                        <!-- <div id="botoes_atualizar_perfil">
+                            <button type="button" id="button_criar">
+                                <img src="../static/img/botao-criar-sala.png" onclick="window.location.href='../templates/criar_sala.html'">
+                                <p style="color: #3C2245;">Criar Sala</p>
+                            </button>
+                            <button type="button" id="button_add_Curso" onclick="window.location.href='../templates/adicionarCurso.html'">
+                                <img src="../static/img/botao-adicionar-curso.png">
+                                <p style="color: #3C2245;">Adicionar Curso</p>
+                            </button>
+                        </div> -->
+
+                <div id="botoes_criar">
+                    <button type="button" id="button_criar_sala">
+                        <img src="../static/img/botao-criar-sala.png" onclick="window.location.href='../templates/criar_sala.html'">
+                        <p style="color: #3C2245;">Criar Sala</p>
+                    </button>
+                    <button type="button" id="button_add_curso" onclick="window.location.href='../templates/adicionarCurso.html'">
+                        <img src="../static/img/botao-adicionar-curso.png">
+                        <p style="color: #3C2245;">Adicionar Curso</p>
+                    </button>
                 </div>
+            </section>
+            
 
-                <div style="display: flex; flex-direction: row; align-items: center; margin: 5%">
-                    <div class="button_carreira" style="margin-right: 50px;">
-                        <img src="../static/img/interativo.png">
-                        <p style="color: #E1BBFD;">Atualizar Áreas de Interesse</p>
-                    </div>
-                    <br>
-                    <div class="button_carreira">
-                        <img src="../static/img/redefinir-senha.png">
-                        <p style="color: #E1BBFD;">Alterar Senha</p>
-                    </div>
-                </div>
-
-                <div style="display: flex; flex-direction: row; align-items: center;">
-                    <div class="button_criar" style="margin-right: 10px;">
-                        <img style="margin: 10px;" src="../static/img/botao-criar-sala.png">
-
-                       <a href="../templates/criar_sala.html"><p style="color: #3C2245;">Criar Sala</p> </a> 
-                    </div>
-                    <br>
-                    <div class="button_criar">
-                        <img style="margin: 10px;" src="../static/img/botao-adicionar-curso.png">
-
-                       <a href="../templates/adicionarCurso.html"> <p style="color: #3C2245;">Adicionar Curso</p></a>
-                    </div>
-                </div>
-            </div>
-
-        </div>
+        </div> 
 
 
         <div id="box_equipe" >
@@ -210,7 +251,7 @@
                 <li><img src="../static/img/kevi.png" style="width: 80px; border-radius: 100%;"> <p style="color: #E1BBFD;">Levi <br> Gila </p> </li>
                 <li><img src="../static/img/analu.png" style="width: 80px; border-radius: 100%;"> <p style="color: #E1BBFD;">Luisa <br> Ferreira </p> </li>
                 <li><img src="../static/img/luiz.png" style="width: 80px; border-radius: 100%;"> <p style="color: #E1BBFD;">Luiz <br> Nery </p> </li>
-                <img src="../static/img/seta ver mais.png" style=" width: 50px; height: 50px; margin-top: 40px; cursor: pointer;">
+                <!-- <img src="../static/img/seta ver mais.png" style=" width: 50px; height: 50px; margin-top: 40px; cursor: pointer;"> -->
 
             </ul>
 
@@ -220,18 +261,55 @@
                 <p style="color: #E1BBFD;">Digite uma avaliação...</p>
                 
             </div> -->
-            <forms style="display: flex; margin-top: 20px;  margin-left: 10px; align-items: center;">
+            <forms style="display: flex; margin-top: 20px;  margin-left: 10px; align-items: center; margin-bottom: 20px;">
                 <input type="text" class="inputAvaliacaoLider" placeholder="Digite uma avaliação...">
                 <button style="background-color: transparent; cursor: pointer; border: none; transform: translate(-50px, 2%); margin-top: 5px;">
-                    <img src="../static/img/botao-enviar.png">
+                    <img id="botao_avaliacao" src="../static/img/botao-enviar.png">
                 </button>
             </forms>
-
-            
-
-
-           
         </div>
+
+        <section class="modal-senha">
+            <div style="display: flex; justify-content: space-between;">
+                <div></div>
+                <img id="fechar_modal-senha" style="width: 15px; cursor: pointer;" src="../static/img/icon_fechar.png">
+            </div>
+            
+            <div id="detalhe_senha">
+                <div id="alterar-senha">
+                    <div style="display: flex; flex-direction: row; margin-left: 50px;">
+                        <img src="../static/img/redefinir-senha.png">
+                        <h3 style="color: #fff; font-weight: normal; font-size: 25px;">Alterar Senha</h3>
+                    </div>
+    
+                    <div class="alterar-senha-inputs">
+    
+                        <h4 style="color: #E1BBFD; font-size: 20px;">Insira sua senha mais recente</h4>
+                        <input type="text" style="border-radius: 10px; width: 100%;">
+                        
+                        <h4 style="color: #E1BBFD; font-size: 20px;">Insira sua nova senha</h4>
+                    <input type="text" style="border-radius: 10px; width: 100%;" >
+                    <p class="txt_info_curso-senha" style="font-size: 10px;">
+                        *Mínimo de 8 caracteres <br>
+                        *Letras minúsculas e maiúsculas <br>
+                        *Caracteres especiais. <br>
+                        *Lembre-se de criar uma senha diferente das que  você já utiliza.</p>
+                        
+                    <h4 style="color: #E1BBFD; font-size: 20px;">Confirme sua senha</h4>
+                    <input type="text" style="border-radius: 10px; width: 100%;">
+    
+                </div>
+                    
+                    
+                        <input id="altere_Senha" type="submit" name="" value="Cadastrar">
+    
+                </div>
+              
+                
+            </div>
+        </section>
+
+
     </main>
 
     
@@ -239,6 +317,21 @@
     <footer class="footer_geral">
         <p>© 2023 AccentureTalentHub.Inc | Todos os direitos reservados </p>
     </footer>
+
+    <script>
+        $(document).ready(function(){
+            $("#button_alterar_senha").click(function() {
+                $(".modal-senha").css("display", "flex");
+                $("#box_info_dashboard").css("opacity", "0.5");
+            });
+            
+            $("#fechar_modal-senha").click(function() {
+                $(".modal-senha").css("display", "none");
+                $("#box_info_dashboard").css("opacity", "1");
+            })
+        });
+    </script>
+
 
 </body>
 </html>

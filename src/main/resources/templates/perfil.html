@@ -189,12 +189,12 @@
                     </div>
                 </div> -->
                 <div id="botoes_atualizar_perfil">
-                    <button type="button" id="button_area_interesse">
+                    <button type="button" id="button_area_interesse" onclick="window.location.href='../templates/areainteresse.html'">
                         <img src="../static/img/interativo.png">
                             <p style="color: #E1BBFD;">Atualizar Áreas de Interesse</p>
                     </button>
                     <button type="button" id="button_alterar_senha">
-                        <img src="../static/img/interativo.png">
+                        <img src="../static/img/redefinir-senha.png">
                             <p style="color: #E1BBFD;">Alterar Senha</p>
                     </button>
                 </div>
@@ -267,7 +267,7 @@
 
     <script>
         $(document).ready(function(){
-            $(".button_carreira").click(function() {
+            $("#button_alterar_senha").click(function() {
                 $(".modal-senha").css("display", "flex");
                 $("#box_info_dashboard").css("opacity", "0.5");
             });
