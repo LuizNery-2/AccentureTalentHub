@@ -65,6 +65,7 @@ header{
     /* width: 95%;
     margin: auto; */
     overflow-x: scroll;
+    gap: 50px
 }
 
 .icon_participantes_sala::-webkit-scrollbar{
@@ -162,25 +163,115 @@ header{
 }
 
 @media screen and (max-width: 1200px){
+    .info_sala_txt h1{
+        font-size: 40px;
+    }
+
+    .info_sala_txt p, .info_sala_caracteristicas p {
+        font-size: 15px !important;
+    }
+
+    #data_criacao, #qtd_horas {
+        font-size: 10px !important;
+
+    }
+
+    #titulo_chat span {
+        font-size: 18px !important;
+    }
+
+    .border_dashed{
+        width: 250px;
+    }
 
 }
 
-@media screen and (max-width: 1024px){
-    
+@media screen and (max-width: 920px){
+    .txt_mensagem, .mensagens_chat p, .info_participante p{
+        font-size: 12px !important;
+        font-weight: 300 !important;
+    }
+
+    .chat h1 {
+        font-size: 16px !important;
+    }
+
+    .chat img {
+        width: 20px !important;
+        height: 20px !important;
+    }
+
+    .info_participante img {
+        width: 60px !important;
+        height: 60px !important;
+    }
+
+    .mensagens_chat img {
+        width: 40px !important;
+        height: 40px !important;
+        align-self: flex-start;
+        margin-top: 10px;
+    }
+
+    .info_sala_txt h1{
+        font-size: 35px;
+    }
+
+    .info_sala_txt p, .info_sala_caracteristicas p {
+        font-size: 12px !important;
+    }
+
+    #data_criacao, #qtd_horas {
+        font-size: 8px !important;
+
+    }
+
+    #titulo_chat span {
+        font-size: 16px !important;
+    }
+
+    .border_dashed{
+        width: 200px;
+    }
+
+    #barra_progresso {
+        height: 12px;
+    }
 }
 
 @media screen and (max-width: 768px){
-    .info_sala_txt h1{
-        font-size: 40px;
-        margin-top: 15px;
-    }
     .info_sala{
-        width: 78%;
+        width: 80%;
+    }
+
+    .info_sala_txt h1{
+        font-size: 30px;
+    }
+
+    .info_sala_txt p, .info_sala_caracteristicas p,  .txt_mensagem, .mensagens_chat p, .chat input{
+        font-size: 10px !important;
+    }
+
+    #titulo_chat span {
+        font-size: 14px !important;
+    }
+
+    .border_dashed{
+        width: 150px;
+    }
+
+    .txt_trilhas_cursos h2 {
+        font-size: 15px !important;
+    }
+
+    .icon_participantes_sala{
+        width: 90%;
+        margin-left: 30px;
     }
 }
 
 @media screen and (max-width: 560px){
-    .info_sala{
+    /* .info_sala{
         margin-left: 50px !important;
     }
     #box_info_dashboard{
@@ -194,13 +285,13 @@ header{
     }
     .info_sala{
         margin-top: 10px;
-        /* flex-direction: column; */
+        flex-direction: column;
     }
 
-    /* .info_sala_txt{
+    .info_sala_txt{
         display:flex;
 
-    } */
+    }
 
     .info_sala p, .info_barra_progresso p {
         font-size: 12px !important;
@@ -209,12 +300,70 @@ header{
     .txt_trilhas_cursos h2{
         font-size: 15px !important;
         font-weight: 400;
+    } */
+
+    #box_info_dashboard {
+        margin: 0 !important;
+        padding: 0 !important;
     }
 
+    .info_sala{
+        margin: 0 !important;
+        padding: 0 !important;
+        flex-wrap: wrap-reverse;
+    }
+
+    .info_sala_txt {
+        width: 488px !important;
+    }
+
+    .info_sala_caracteristicas{
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        width: 100%;
+        margin-top: 8px;
+        margin-bottom: 10px;
+    }
+
+    header {
+        margin: 0 !important;
+        padding: 0 !important;
+        height: 100px;
+    }
+
+    .box_trilhas {
+        margin: 0 !important;
+        margin-top: 15px !important;
+        padding: 1rem !important;
+    }
+
+    .multiple-items-cursos img {
+        width: 160px !important;
+    }
+
+    #titulo_chat span {
+        font-size: 12px !important;
+        font-weight: 700 !important;
+        margin-top: 20px;
+    }
+
+    .border_dashed{
+        width: 80px;
+        margin-top: 20px;
+
+    }
 }
 
 @media screen and (max-width: 480px){
-    
+    .info_sala{
+        margin: 0 !important;
+        padding: 0 !important;
+        flex-wrap: wrap-reverse;
+    }
+
+    .info_sala_txt {
+        width: 488px !important;
+    }
 }
 
 @media screen and (max-width: 350px){
