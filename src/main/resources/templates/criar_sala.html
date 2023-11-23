@@ -174,31 +174,24 @@
             </div>
             <!-- <input type="submit" value="Finalizar curso"> -->
 
-            <section class="modal-modulo">
+            <section style="height: 450px;" class="modal-modulo">
                 <div style="display: flex; justify-content: space-between;">
                     <div></div>
-                    <img id="fechar_modal-modulo" style="width: 15px; cursor: pointer;"
+                    <img id="fechar_modal-modulo" style="width: 15px; cursor: pointer; "
                         src="../static/img/icon_fechar.png">
                 </div>
 
                 <div id="detalhe_senha">
-                    <div id="alterar-senha">
-                        <div
-                            style="border: 5px solid #33084F; width: 50rem; height: 9.7rem; transform: translate(50px, -99%);" class="caixaDosInputs">
-                            <!-- DIV INPUT DA APRESENTAÇÃO DO CURSO -->
-                            <div
-                                style="display: flex;flex-direction: column; width: 80%; margin: 0 auto;" class="inputApresentacaoCurso">
-                                <label for="linkInput"></label>
-                                <div style="display: flex; align-items: center; margin-top: 2%;">
-                                    <img style="width: 20px; margin-right: 1%;" src="../static/img/icon_perfil.png" alt="">
-                                    <label>Usuários</label>
-                                </div>
-
-                                <input type="submit" value="Adicionar a sala">
-                            </div>
-
+                    <div id="alterar-senha"  style="border: 5px solid #33084F;">
+                        <div style="display: flex; align-items: center !important; justify-content: center; padding-top: 1%;">
+                            <img style="width: 35px; margin-right: 1%;" src="../static/img/icon_perfil.png" alt="">
+                            <h2 style="margin: 0; font-weight: normal;">Usuários cadastrados</h2>
                         </div>
-
+                       
+                        <div id="checkboxContainer" style="width: 80%; margin: 0 auto;">
+                            <!-- Checkboxes serão adicionados dinamicamente aqui -->
+                        </div>
+                        <input type="submit" value="Adicionar a sala">
                     </div>
                 </div> 
             </section>
@@ -227,7 +220,44 @@
         });
     </script>
 
-    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Função para buscar usuários do servidor
+            function getUsuarios() {
+                fetch("http://localhost:8080/usuario")
+                    .then(response => response.json())
+                    .then(data => createCheckboxes(data))
+                    .catch(error => console.error('Erro ao buscar usuários:', error));
+            }
+
+            // Função para criar checkboxes com base nos usuários
+            function createCheckboxes(usuarios) {
+                const checkboxContainer = document.getElementById("checkboxContainer");
+
+                usuarios.forEach(usuario => {
+                    const checkboxDiv = document.createElement("div");
+                    checkboxDiv.className = "checkbox-item";
+
+                    const checkbox = document.createElement("input");
+                    checkbox.type = "checkbox";
+                    checkbox.id = `usuario_${usuario.id}`;
+                    checkbox.value = usuario.id;
+
+                    const label = document.createElement("label");
+                    label.htmlFor = `usuario_${usuario.id}`;
+                    label.appendChild(document.createTextNode(usuario.nome));
+
+                    checkboxDiv.appendChild(checkbox);
+                    checkboxDiv.appendChild(label);
+
+                    checkboxContainer.appendChild(checkboxDiv);
+                });
+            }
+
+            // Chamar a função para buscar usuários ao carregar a página
+            getUsuarios();
+        });
+    </script>
 
     
 
