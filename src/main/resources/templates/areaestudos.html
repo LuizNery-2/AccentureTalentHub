@@ -116,7 +116,7 @@
         <!--  FIM DO NAV RESPONSIVO -->
 
         
-        <section style="padding-left: 8%; padding-top: 1%; display: flex;">
+        <section style="padding-left: 8%; padding-top: 1%; display: flex; justify-content: space-around;">
             <div id="box_info_curso">
                 <iframe width="853" height="480" src="https://www.youtube.com/embed/cadVHEq_8B0" frameborder="0"></iframe>
                 <div id="box_info_header">
@@ -130,7 +130,7 @@
                             <li class="lista_descricao lista_action">Descrição</li>
                             <li class="lista_sobre">Sobre o Instrutor</li>
                             <li class="lista_forum">Fórum</li>
-                            <li style="color: #B05CEF;">Horas Totais: 5H</li>
+                            <li class="elemento_lista" style="color: #B05CEF;">Horas Totais: 5H</li>
                         </ul>
                     </div>
                     <p style="color: #B05CEF;">Mussum Ipsum, cacilds vidis litro abertis.  In elementis mé pra quem é 
@@ -145,7 +145,7 @@
                             <li class="lista_descricao">Descrição</li>
                             <li class="lista_sobre lista_action">Sobre o Instrutor</li>
                             <li class="lista_forum">Fórum</li>
-                            <li style="color: #B05CEF;">Horas Totais: 5H</li>
+                            <li class="elemento_lista" style="color: #B05CEF;">Horas Totais: 5H</li>
                         </ul>
                     </div>
                     <div id="info_instrutor">
@@ -154,12 +154,12 @@
                             <span>Nome: </span> <span class="txt_bold">Alisson Barbosa</span>
                             <br>
                             <span>Cargo: </span> <span>Cargo atual</span>
-                            <br>
+                            <!-- <br>
                             <p style="color: #B05CEF; margin-left: 2%;">Mussum Ipsum, cacilds vidis litro abertis.  In elementis mé pra quem é 
                                 amistosis quis leo. Mauris nec dolor in eros commodo tempor. Aenean aliquam
                                 molestie leo, vitae iaculis nisl. Si u mundo tá muito paradis? Toma um mé 
                                 que o mundo vai girarzis! Per aumento de cachacis, eu reclamis.
-                             </p>
+                             </p> -->
                         </div>
                     </div>
                 </div>
@@ -170,14 +170,14 @@
                             <li class="lista_descricao">Descrição</li>
                             <li class="lista_sobre">Sobre o Instrutor</li>
                             <li class="lista_forum lista_action">Fórum</li>
-                            <li style="color: #B05CEF;">Horas Totais: 5H</li>
+                            <li class="elemento_lista" style="color: #B05CEF;">Horas Totais: 5H</li>
                         </ul>
                     </div>
                     <div class="chat" style="border: 3px solid #fff;">
                         
                         <div class="area_mensagens">
                             <div class="mensagens_chat">
-                                <img src="../static/img/img_jhonnatas.png">
+                                <img id="foto_chat" src="../static/img/img_jhonnatas.png">
                                 <div style="margin-left: 1%;">
                                     <p style="color: #fff;">Jhonnatas</p>
                                     <p class="txt_mensagem">Mussum Ipsum, cacilds vidis litro abertis.  In elementis mé pra quem 
@@ -191,7 +191,7 @@
                             </div>
     
                             <div class="mensagens_chat">
-                                <img src="../static/img/img_jhonnatas.png">
+                                <img id="foto_chat" src="../static/img/img_jhonnatas.png">
                                 <div style="margin-left: 1%;">
                                     <p style="color: #fff;">Jhonnatas</p>
                                     <p class="txt_mensagem">Mussum Ipsum, cacilds vidis litro abertis.  In elementis mé pra quem 
@@ -205,7 +205,7 @@
                             </div>
     
                             <div class="mensagens_chat">
-                                <img src="../static/img/img_jhonnatas.png">
+                                <img id="foto_chat" src="../static/img/img_jhonnatas.png">
                                 <div style="margin-left: 1%;">
                                     <p style="color: #fff;">Jhonnatas</p>
                                     <p class="txt_mensagem">Mussum Ipsum, cacilds vidis litro abertis.  In elementis mé pra quem 
@@ -219,7 +219,7 @@
                             </div>
     
                             <div class="mensagens_chat">
-                                <img src="../static/img/img_jhonnatas.png">
+                                <img id="foto_chat" src="../static/img/img_jhonnatas.png">
                                 <div style="margin-left: 1%;">
                                     <p style="color: #fff;">Jhonnatas</p>
                                     <p class="txt_mensagem">Mussum Ipsum, cacilds vidis litro abertis.  In elementis mé pra quem 
@@ -241,12 +241,15 @@
                 </div>
             </div>
             <div id="box_modulos_curso">
-                <h1 style="text-align: center; font-size: 35px;">Javascript Puro</h1>
-                <br>
-                <div>
-                    <p style="font-size: 15px; text-align: right;">SEU PROGRESSO</p>
-                    <div style="width: 90%; margin-left: 10%;" id="barra_progresso"></div>
+                <div id="box_nome_progresso">
+                    <h1 style="text-align: center; font-size: 35px;">Javascript Puro</h1>
+                    <br>
+                    <div style="display: flex; flex-direction: column; align-items: flex-end; margin-right: 1rem;">
+                        <p style="font-size: 15px; text-align: right;">SEU PROGRESSO</p>
+                        <div style="width: 90%; margin-left: 10%;" id="barra_progresso"></div>
+                    </div>
                 </div>
+                    
                 <div class="modulos_curso">
                     <div class="titulo_modulo">
                         <h4>Módulo 1</h4>
