@@ -10,7 +10,7 @@ function buscarUltimoId(){
     })
     .then(data => {
         // O data conterá o último ID de curso, ou null se não houver cursos cadastrados
-        alert('Último ID de curso:' + data);
+        // alert('Último ID de curso:' + data);
         localStorage.setItem('ultimoIdCurso', data);
     })
     .catch(error => {
