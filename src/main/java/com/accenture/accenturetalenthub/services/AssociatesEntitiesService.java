@@ -68,5 +68,18 @@ public class AssociatesEntitiesService {
 
     }
 
+    public void associarUsuarioSala(UsuarioModel usuarioModel, SalaModel salaModel) {
+        usuarioModel.getSalas().add(salaModel);
+        salaModel.getUsuarios().add(usuarioModel);
+        salaRepository.save(salaModel);
+        usuarioRepository.save(usuarioModel);
+    }
+
+   
+
+    
+
+    
+
 
 }

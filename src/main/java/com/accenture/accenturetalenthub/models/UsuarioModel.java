@@ -57,7 +57,7 @@ public class UsuarioModel implements Serializable {
     @JoinTable(
             name = "TB_USUARIOS_SALAS",
             joinColumns = @JoinColumn(name = "usuario_id"),
-            inverseJoinColumns = @JoinColumn(name = "Interesse_id")
+            inverseJoinColumns = @JoinColumn(name = "salas_id")
     )
     @JsonIgnoreProperties("usuarios")
     private  Set<SalaModel> salas = new HashSet<>();
