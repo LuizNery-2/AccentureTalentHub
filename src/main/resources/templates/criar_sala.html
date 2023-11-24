@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<meta charset="utf-8">
-	<meta name="description" content="">
-	<meta name="keywords" content="palavras,separadas,por,vírgulas">
-	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
-	<title>AccentureTalentHub | Home</title>
-	<link rel="shortcut icon" href="../static/img/logo_accenture.png" type="image/x-icon">
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="palavras,separadas,por,vírgulas">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+    <title>AccentureTalentHub | Adicionar Curso</title>
+    <link rel="shortcut icon" href="../static/img/logo_accenture.png" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="../static/css/home.css">
     <link rel="stylesheet" type="text/css" href="../static/css/geralstyle.css">
     <link rel="stylesheet" type="text/css" href="../static/css/indexstyle.css">
-    <!-- <link rel="stylesheet" type="text/css" href="../static/css/curso.css"> -->
-    <link rel="stylesheet" type="text/css" href="../static/css/criar_sala.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/curso.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/adicionarCurso.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/areainteresse.css">
+    <link rel="stylesheet" href="../static/css/criar_sala.css">
 
     <!-- Importação dos arquivos CSS para barra de pesquisa -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
@@ -20,166 +23,288 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 </head>
+
 <body id="">
- <main>
-    <nav id="menu-desktop">
-        <ul class="lista_dashboard">
-            <li id="logo">
-                <a href="home.html">
-                    <img src="../static/img/logo_menu.png">
-                </a>
-            </li>
-            <li class="active">
-                <a href="curso.html">
-                    <img class="icon_menu" src="../static/img/icon_cursos.png">
-                </a>
-            </li>
-            <li>
-                <a href="salas.html">
-                    <img class="icon_menu" src="../static/img/icon_trilhas.png">
-                </a>
-            </li>
-            <li>
-                <a href="desenvol_pessoal.html">
-                    <img class="icon_menu" src="../static/img/icon_dp.png">
-                </a>
-            </li>
-            <li>
-                <a href="curso_concluido.html">
-                    <img class="icon_menu" src="../static/img/icon_cursos_concluidos.png">
-                </a>
-            </li>
-        </ul>
+    <main>
+        <nav id="menu-desktop">
+            <ul class="lista_dashboard">
+                <li id="logo">
+                    <a href="home.html">
+                        <img src="../static/img/logo_menu.png">
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="curso.html">
+                        <img class="icon_menu" src="../static/img/icon_cursos.png">
+                    </a>
+                </li>
+                <li>
+                    <a href="salas.html">
+                        <img class="icon_menu" src="../static/img/icon_trilhas.png">
+                    </a>
+                </li>
+                <li>
+                    <a href="desenvol_pessoal.html">
+                        <img class="icon_menu" src="../static/img/icon_dp.png">
+                    </a>
+                </li>
+                <li>
+                    <a href="curso_concluido.html">
+                        <img class="icon_menu" src="../static/img/icon_cursos_concluidos.png">
+                    </a>
+                </li>
+            </ul>
 
-        <ul>
-            <li id="icon_usuario_menu" class="lista_dashboard">
-                <img class="icon_menu" src="../static/img/icon_perfil.png">
-            </li>
-        </ul>
-    </nav>
+            <ul>
+                <li id="icon_usuario_menu" class="lista_dashboard">
+                    <img class="icon_menu" src="../static/img/icon_perfil.png">
+                </li>
+            </ul>
+        </nav>
 
-    <!--  Este nav só será ativado quando as páginas estiverem no modo responsivo! -->
-    <!--  INICIO DO NAV RESPONSIVO -->
-    <div id="icon-menu-responsivo">
-        <img src="../static/img/menu-aberto.png">
-    </div>
+        <!--  Este nav só será ativado quando as páginas estiverem no modo responsivo! -->
+        <!--  INICIO DO NAV RESPONSIVO -->
+        <div id="icon-menu-responsivo">
+            <img src="../static/img/menu-aberto.png">
+        </div>
+
+        <nav class="nav-responsivo">
+            <ul class="lista_dashboard-responsivo">
+                <li id="icon_fechar-responsivo">
+                    <img src="../static/img/icon_fechar.png">
+                </li>
+                <li>
+                    <a id="logo-responsivo" href="home.html">
+                        <img src="../static/img/logo-responsivo.png">
+                        <p>AccentureTalentHub</p>
+                    </a>
+                </li>
+                <li class="active-responsivo">
+                    <a class="link-page-responsivo" href="curso.html">
+                        <img class="icon_menu-responsivo" src="../static/img/icon_cursos.png">
+                        <p>Cursos</p>
+                    </a>
+                </li>
+                <li>
+                    <a class="link-page-responsivo" href="salas.html">
+                        <img class="icon_menu-responsivo" src="../static/img/icon_trilhas.png">
+                        <p>Salas</p>
+                    </a>
+                </li>
+                <li>
+                    <a class="link-page-responsivo" href="desenvol_pessoal.html">
+                        <img class="icon_menu-responsivo" src="../static/img/icon_dp.png">
+                        <p>Mural DPS</p>
+                    </a>
+                </li>
+                <li>
+                    <a class="link-page-responsivo" href="curso_concluido.html">
+                        <img class="icon_menu-responsivo" src="../static/img/icon_cursos_concluidos.png">
+                        <p>Cursos Concluídos</p>
+                    </a>
+                </li>
+            </ul>
+            <ul class="lista_dashboard-responsivo">
+                <li id="icon_usuario_menu-responsivo" class="lista_dashboard-responsivo">
+                    <div class="link-page-responsivo">
+                        <img class="icon_menu-responsivo" src="../static/img/icon_perfil.png">
+                        <p>Perfil</p>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+
+        <!--  FIM DO NAV RESPONSIVO -->
+
+        <div id="menu-suspenso">
+            <ul>
+                <li><a href="perfil.html">Perfil</a></li>
+                <li><a href="index.html">Sair</a></li>
+            </ul>
+        </div>
+
+
+        <!-- INÍCIO PÁGINA DE CRIAÇÃO DO CURSO -->
+        <section class="caixa_principalCriacao">
+
+            <div class="caixa_criacao">
+                <h2>Crie uma sala de aula</h2>
+                <a href="perfilLider.html"> <img src="../static/img/icon_fechar.png" alt="" style="transform: translate(740px, -640%);"> </a>
+
+                <form id="formCriarSala" class="forms_criarCurso">
+                    <div style="display: flex; justify-content: space-around;">
+                        <div>
+                            <p>Nome da sala</p>
+                            <input id="nomeSala" type="text" class="nome_curso">
     
-    <nav class="nav-responsivo">
-        <ul class="lista_dashboard-responsivo">
-            <li id="icon_fechar-responsivo">
-                <img src="../static/img/icon_fechar.png">
-            </li>
-            <li>
-                <a id="logo-responsivo" href="home.html">
-                    <img src="../static/img/logo-responsivo.png">
-                    <p>AccentureTalentHub</p>
-                </a>
-            </li>
-            <li class="active-responsivo">
-                <a class="link-page-responsivo" href="curso.html">
-                    <img class="icon_menu-responsivo" src="../static/img/icon_cursos.png">
-                    <p>Cursos</p>
-                </a>         
-            </li>
-            <li>
-                <a class="link-page-responsivo" href="salas.html">
-                    <img class="icon_menu-responsivo" src="../static/img/icon_trilhas.png">
-                    <p>Salas</p>
-                </a>                
-            </li>
-            <li>
-                <a class="link-page-responsivo" href="desenvol_pessoal.html">
-                    <img class="icon_menu-responsivo" src="../static/img/icon_dp.png">
-                    <p>Mural DPS</p>
-                </a> 
-            </li>
-            <li>
-                <a class="link-page-responsivo" href="curso_concluido.html">
-                    <img class="icon_menu-responsivo" src="../static/img/icon_cursos_concluidos.png">
-                    <p>Cursos Concluídos</p>
-                </a>
-            </li>
-        </ul>
-        <ul class="lista_dashboard-responsivo">
-            <li id="icon_usuario_menu-responsivo" class="lista_dashboard-responsivo">
-                <div class="link-page-responsivo">
-                    <img class="icon_menu-responsivo" src="../static/img/icon_perfil.png">
-                    <p>Perfil</p>
+                            <p>Adicione um banner a sua sala</p>
+                            <input id="imagemSala" type="text" class="banner_curso">
+                        </div>
+                        
+                        <div>
+                            <p>Adicione uma descrição</p>
+                            <textarea id="descricaoSala"  class="descricao_curso" cols="30" rows="10"></textarea>
+                        </div>
+
+                        
+                    </div>
+                                    
+                    <div style="width: 100%; display: flex; flex-direction: column;  justify-content: space-around; margin-left: 8%;">
+                        <div style="width: 50%;">
+                            <p>Data de Início</p>
+                            <input id="dataCriacao" type="date" style="color: #fff;width: 100%; height: 30px; background-color:#481A67;border-radius: 10px; border: none; cursor: pointer;">
+                        </div>
+                        <br>
+                        <div style="width: 50%;">
+                            <p>Data de Término</p>
+                            <input id="dataTermino" type="date" style="color: #fff;width: 100%; height: 30px; background-color:#481A67;border-radius: 10px; border: none; cursor: pointer;">
+                        </div>
+                        
+                        
+                    </div>
+                    <br>
+                    <input id="criarSala" type="submit" value="Criar Template"> 
+                </form>
+                <button id="botao-criarModulo">Adicionar Pessoas</button>
+                <button id="botao-criarModulo">Adicionar Cursos</button>
+                <div style="display: flex; flex-direction: row;">
+                    
+                
+                   
+            </div>
+            <!-- <input type="submit" value="Finalizar curso"> -->
+
+            <section style="height: 450px;" class="modal-modulo">
+                <div style="display: flex; justify-content: space-between;">
+                    <div></div>
+                    <img id="fechar_modal-modulo" style="width: 15px; cursor: pointer; "
+                        src="../static/img/icon_fechar.png">
                 </div>
-            </li>
-        </ul>
-    </nav>
 
-    <!--  FIM DO NAV RESPONSIVO -->
+                <div id="detalhe_senha">
+                    <div id="alterar-senha"  style="border: 5px solid #33084F;">
+                        <div style="display: flex; align-items: center !important; justify-content: center; padding-top: 1%;">
+                            <img style="width: 35px; margin-right: 1%;" src="../static/img/icon_perfil.png" alt="">
+                            <h2 style="margin: 0; font-weight: normal;">Usuários cadastrados</h2>
+                        </div>
+                       
+                        <div id="checkboxContainer" style="width: 80%; margin: 0 auto;">
+                            <!-- Checkboxes serão adicionados dinamicamente aqui -->
+                        </div>
+                        <input type="submit" value="Adicionar a sala">
+                    </div>
+                </div> 
+            </section>
 
-    <div id="menu-suspenso">
-        <ul>
-            <li><a href="perfil.html">Perfil</a></li>
-            <li><a href="index.html">Sair</a></li>
-        </ul>
-    </div>
-     
     </main>
-    
-    <div class="box_CriarSala">
-        <h2>Crie uma Sala </h2>
-       <a href="perfilLider.html"> <img src="../static/img/icon_fechar.png" alt="" style="transform: translate(755px, -850%);">  </a> 
 
-        <section class="Criar_Sala">
-            <p>Nome da sala</p>
-        <input type="text" style="color:#fff; width: 270px; background-color:#481A67;border-radius: 5px; margin-bottom: 30px; margin-top: 10px;">
-     </input>       
-    
-
-            <p>Adicione um banner a sala</p>
-            <input type="file" class="banner_CriarSala"></input>
-
-            <p>Adicione pessoas na sua sala</p>
-            <input type="search" style="color:#fff; width: 190px;background-color:#481A67;border-radius: 40px; border: 2px solid #B05CEF; padding: 5px;">
-             <img src="../static/img/botao-procurar.png" style="height: 25px; width: 20px; display: flex;transform: translate(150px, -130%);" >
-            </input>    
-
-            <p style="margin-top: 30px;">Adicione cursos a sua sala</p>
-            <input type="search" style="color:#fff; width: 190px; background-color:#481A67;border-radius: 40px; border: 1px solid #B05CEF; padding: 5px;">
-            <img src="../static/img/botao-procurar.png" style="height: 25px; width: 20px; ;transform: translate(-50px, 30%);" >
-            </input>
-
-            <p style="transform: translate(400px, -1650%);">Adicione uma descrição</p>
-            <input style="color:#fff;padding: 50px; background-color:#481A67;border-radius: 5px; transform: translate(400px, -320%);">
-        </input>
-
-            <div style="transform: translate(400px, -300%);">
-                <p>Data de início</p>
-                <input type="date" style="color: #fff; width: 150px; height: 40px; background-color:#481A67;border-radius: 5px;">
-            </input>    
-                <div style="transform: translate(200px, -100%);">
-                    <p>Data final</p>
-                    <input type="date" style="color:#fff; width: 150px; height: 40px; background-color:#481A67;border-radius: 5px;">
-                </input> 
-                </div>   
-
-            </div>
-
-            <div style="display: flex; background-color: #B05CEF; padding: 15px; border-radius: 10px; transform: translate(600px, -500%); width: 140px; cursor: pointer;">
-                <p>
-                    CRIAR SALA
-                </p>
-            </div>
-
-
-            </div>
-        </section>
-
-
+    <div class="fundoPagCursos">
         
-    </div>   
-    
-    
-
+    </div>
 
     <footer class="footer_geral">
         <p>© 2023 AccentureTalentHub.Inc | Todos os direitos reservados </p>
     </footer>
 
+    <script>
+        $(document).ready(function () {
+            $("#botao-criarModulo").click(function () {
+                $(".modal-modulo").css("display", "flex");
+                $("#box_CriarModulo").css("opacity", "0.5");
+            });
+
+            $("#fechar_modal-modulo").click(function () {
+                $(".modal-modulo").css("display", "none");
+                $("#box_CriarModulo").css("opacity", "1");
+            })
+        });
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Função para buscar usuários do servidor
+            function getUsuarios() {
+                fetch("http://localhost:8080/usuario")
+                    .then(response => response.json())
+                    .then(data => createCheckboxes(data))
+                    .catch(error => console.error('Erro ao buscar usuários:', error));
+            }
+
+            // Função para criar checkboxes com base nos usuários
+            function createCheckboxes(usuarios) {
+                const checkboxContainer = document.getElementById("checkboxContainer");
+
+                usuarios.forEach(usuario => {
+                    const checkboxDiv = document.createElement("div");
+                    checkboxDiv.className = "checkbox-item";
+
+                    const checkbox = document.createElement("input");
+                    checkbox.type = "checkbox";
+                    checkbox.id = `usuario_${usuario.id}`;
+                    checkbox.value = usuario.id;
+
+                    const label = document.createElement("label");
+                    label.htmlFor = `usuario_${usuario.id}`;
+                    label.appendChild(document.createTextNode(usuario.nome));
+
+                    checkboxDiv.appendChild(checkbox);
+                    checkboxDiv.appendChild(label);
+
+                    checkboxContainer.appendChild(checkboxDiv);
+                });
+            }
+
+            // Chamar a função para buscar usuários ao carregar a página
+            getUsuarios();
+        });
+    </script>
+
+    
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const criarSala = document.getElementById('formCriarSala');
+
+            criarSala.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                const nomeSala = document.getElementById('nomeSala').value;
+                const imagemSala = document.getElementById('imagemSala').value;
+                const descricaoSala = document.getElementById('descricaoSala').value;
+                const dataCriacao = document.getElementById('dataCriacao').value;
+                const dataTermino = document.getElementById('dataTermino').value;
+
+                fetch("http://localhost:8080/salas", {
+                    method: "POST",
+                    headers: {
+                        "Accept": "application/json",
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        descricao: descricaoSala,
+                        nome: nomeSala,
+                        banner: imagemSala,
+                        dataCriacao: dataCriacao,
+                        dataTermino: dataTermino
+                    })
+                })
+                    .then(function (res) {
+                        if (res.ok) {
+                            alert("Sala criada com sucesso!");
+                            // setTimeout(buscarUltimoId, 5000);
+                            return res.json(); // Retorna o corpo da resposta como JSON
+                        } else {
+                            throw new Error("Erro ao criar sala. Por favor, tente novamente.");
+                        }
+                    })
+                    .catch(function (error) {
+                        console.error("Erro na solicitação: " + error);
+                    });
+            });
+        });
+    </script>
+    <!-- <script src="../static/js/insereInteressesCursos.js"></script> -->
+
 </body>
+
 </html>

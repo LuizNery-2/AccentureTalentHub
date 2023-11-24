@@ -128,7 +128,7 @@
         <section class="caixa_principalCriacao">
 
             <div class="caixa_criacao">
-                <h2>Adicione um Curso</h2>
+                <h2>Crie seu Curso</h2>
                 <a href="perfilLider.html"> <img src="../static/img/icon_fechar.png" alt="" style="transform: translate(740px, -640%);"> </a>
 
                 <form id="formCriarCurso" class="forms_criarCurso">
@@ -526,16 +526,15 @@
 
 document.addEventListener('DOMContentLoaded', function () {
     const criarCurso = document.getElementById('formCriarCurso');
-    let respostaCurso;
-    criarCurso.addEventListener('submit',async function (e) {
+
+    criarCurso.addEventListener('submit', function (e) {
         e.preventDefault();
 
         const nomeCurso = document.getElementById('nomeCurso').value;
         const imagemCurso = document.getElementById('imagemCurso').value;
         const descricaoCurso = document.getElementById('descricaoCurso').value;
-        
 
-       await fetch("http://localhost:8080/cursos", {
+        fetch("http://localhost:8080/cursos", {
             method: "POST",
             headers: {
                 "Accept": "application/json",
@@ -549,10 +548,14 @@ document.addEventListener('DOMContentLoaded', function () {
                 concluido: false,
             })
         })
-            .then(response => response.json())
-            .then(data => {
-                console.log(data);
-                localStorage.setItem('idCurso',data.idCurso);
+            .then(function (res) {
+                if (res.ok) {
+                    alert("Curso cadastrado com sucesso!");
+                    setTimeout(buscarUltimoId, 5000);
+                    return res.json(); // Retorna o corpo da resposta como JSON
+                } else {
+                    throw new Error("Erro ao cadastrar curso. Por favor, tente novamente.");
+                }
             })
             .catch(function (error) {
                 console.error("Erro na solicitação: " + error);
@@ -563,7 +566,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         
     </script>
-     <script src="../static/js/insereInteressesCursos.js"></script> 
+    <script src="../static/js/insereInteressesCursos.js"></script>
 
 </body>
 

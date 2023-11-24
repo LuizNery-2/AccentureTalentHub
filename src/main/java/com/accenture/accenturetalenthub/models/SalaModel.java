@@ -7,16 +7,7 @@ import java.util.Set;
 import java.util.UUID;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinTable;
-import jakarta.persistence.Lob;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.Table;
-import jakarta.persistence.Temporal;
-import jakarta.persistence.TemporalType;
+import jakarta.persistence.*;
 
 import static jakarta.persistence.GenerationType.AUTO;
 
@@ -50,8 +41,8 @@ public class SalaModel implements Serializable {
     @Temporal(TemporalType.TIMESTAMP)
     private LocalDateTime dataTermino;
 
-    @Lob
-    private byte[] banner;
+    @Column(columnDefinition = "Text")
+    private String banner;
 
 
     public LocalDateTime getDataTermino() {
@@ -70,11 +61,11 @@ public class SalaModel implements Serializable {
         this.dataCriacao = dataCriacao;
     }
 
-    public byte[] getBanner() {
+    public String getBanner() {
         return banner;
     }
 
-    public void setBanner(byte[] banner) {
+    public void setBanner(String banner) {
         this.banner = banner;
     }
 

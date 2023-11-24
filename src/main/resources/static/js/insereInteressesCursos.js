@@ -1,3 +1,23 @@
+function buscarUltimoId(){
+    const url = 'http://localhost:8080/cursos/last-id';
+
+    fetch(url)
+    .then(response => {
+        if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(data => {
+        // O data conterá o último ID de curso, ou null se não houver cursos cadastrados
+        // alert('Último ID de curso:' + data);
+        localStorage.setItem('ultimoIdCurso', data);
+    })
+    .catch(error => {
+        console.error('Erro ao obter o último ID de curso:', error);
+    });
+}
+
 
 const enviarDadosBtn = document.getElementById("enviarDados");
 
@@ -10,7 +30,8 @@ enviarDadosBtn.addEventListener("click", function() {
             return Number(string);
         });
 
-            const url = "http://localhost:8080/cursosInteresses/" + localStorage.getItem('idCurso');
+            const idCurso = localStorage.getItem('idCurso');
+            const url = "http://localhost:8080/cursosInteresses/" + localStorage.getItem('ultimoIdCurso');
 
             atualizarInteresses(url, IDs);
 
@@ -21,8 +42,8 @@ enviarDadosBtn.addEventListener("click", function() {
     }
 });
 
-async function atualizarInteresses(url, IDs) {
-   await fetch(url, {
+function atualizarInteresses(url, IDs) {
+    fetch(url, {
         method: "POST",
         headers: {
             "Accept": "application/json",

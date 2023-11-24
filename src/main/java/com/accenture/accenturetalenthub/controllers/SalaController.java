@@ -17,14 +17,14 @@ import java.util.UUID;
 
 @RestController
 @CrossOrigin("*")
-public class SalaCrontroller {
+public class SalaController {
     @Autowired
     SalaRepository salaRepository;
 
     @PostMapping("/salas")
     public ResponseEntity<SalaModel> saveSala(@RequestBody SalaRecordDto salaRecordDto){
         var salaModel = new SalaModel();
-        BeanUtils.copyProperties(salaModel, salaRecordDto);
+        BeanUtils.copyProperties(salaRecordDto,salaModel);
         return ResponseEntity.status(HttpStatus.CREATED).body(salaRepository.save(salaModel));
     }
 

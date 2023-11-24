@@ -24,6 +24,7 @@
 
 .info_curso img{
     width: 450px !important;
+    height: 200px;
     border-radius: 10px;
 }
 

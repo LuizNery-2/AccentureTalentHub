@@ -155,67 +155,9 @@
             
             <div class="box_trilhas">
 
-                <div class="box_escolha_cusos">
-                    <div class="center_cursos">
-                        <div class="box_curso">
-                            <div class="info_curso">
-                                <img src="../static/img/curso_js.png" alt="">
-                                <div class="info_curso_txt">
-                                    <h2>Sua sala Pessoal</h2>
-                                    <p>Criada por você no dia 00/00/0000</p>
-                                    <button id="minha_sala">Entrar</button>
-                                </div>  
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="center_cursos">
-                        <div class="box_curso">
-                            <div class="info_curso">
-                                <img src="../static/img/Sala2.png" alt="">
-                                <div class="info_curso_txt">
-                                    <h2>Nome da Sala</h2>
-                                    <p>Criada por xxxxxx no dia 00/00/0000</p>
-                                    <p>Mussum Ipsum, cacilds vidis litro abertis. 
-                                    In elementis mé pra quem é amistosis quis leo. 
-                                    Negão é teu passadis, eu sou faxa pretis. </p>
-                                    <button class="sala_de_aula">Entrar</button>
-                                </div>  
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="center_cursos">
-                        <div class="box_curso">
-                            <div class="info_curso">
-                                <img src="../static/img/curso_js.png" alt="">
-                                <div class="info_curso_txt">
-                                    <h2>Nome da Sala</h2>
-                                    <p>Criada por xxxxxx no dia 00/00/0000</p>
-                                    <p>Mussum Ipsum, cacilds vidis litro abertis. 
-                                    In elementis mé pra quem é amistosis quis leo. 
-                                    Negão é teu passadis, eu sou faxa pretis. </p>
-                                    <button>Entrar</button>
-                                </div>  
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="center_cursos">
-                        <div class="box_curso">
-                            <div class="info_curso">
-                                <img src="../static/img/curso_js.png" alt="">
-                                <div class="info_curso_txt">
-                                    <h2>Nome da Sala</h2>
-                                    <p>Criada por xxxxxx no dia 00/00/0000</p>
-                                    <p>Mussum Ipsum, cacilds vidis litro abertis. 
-                                    In elementis mé pra quem é amistosis quis leo. 
-                                    Negão é teu passadis, eu sou faxa pretis. </p>
-                                    <button>Entrar</button>
-                                </div>  
-                            </div>
-                        </div>
-                    </div>
+                
+                <div class="box_escolha_cusos" id="salasContainer">
+                    <!-- O conteúdo será preenchido dinamicamente aqui -->
                 </div>
             </div>
         </section>
@@ -237,6 +179,58 @@
             })
 
         });
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Função para buscar salas do servidor
+            function getSalas() {
+                fetch("http://localhost:8080/salas")
+                    .then(response => response.json())
+                    .then(data => showSalas(data))
+                    .catch(error => console.error('Erro ao buscar salas:', error));
+            }
+
+            // Função para exibir as salas na página
+            function showSalas(salas) {
+                const salasContainer = document.getElementById("salasContainer");
+                salasContainer.innerHTML = ""; // Limpar conteúdo existente
+
+                salas.forEach(sala => {
+                const centerCursoDiv = document.createElement("div");
+                centerCursoDiv.className = "center_cursos";
+
+                const salaDiv = document.createElement("div");
+                salaDiv.className = "box_curso";
+
+                salaDiv.innerHTML = `
+                    <div class="info_curso">
+                        <img src="${sala.banner}" alt="Imagem do Curso">
+                        <div class="info_curso_txt">
+                            <h2>${sala.nome}</h2>
+                            <p>Criada por ${sala.criador} no dia ${formatDate(sala.dataCriacao)}</p>
+                            <p>${sala.descricao}</p>
+                            
+                            <button id="minha_sala"><a style="text-decoration: none; color: black;" href="/entrar-sala/${sala.id}" class="btn btn-primary">Entrar</a></button>
+                        </div>
+                    </div>
+                `;
+
+                centerCursoDiv.appendChild(salaDiv);
+                salasContainer.appendChild(centerCursoDiv);
+                });
+            }
+
+            // Função para formatar a data (você pode ajustar conforme necessário)
+            function formatDate(dateString) {
+                const options = { year: 'numeric', month: 'numeric', day: 'numeric' };
+                return new Date(dateString).toLocaleDateString(undefined, options);
+            }
+
+            // Chamar a função para buscar salas ao carregar a página
+            getSalas();
+        });
+
     </script>
 
 </body>

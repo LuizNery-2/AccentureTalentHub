@@ -162,7 +162,7 @@ public class AssociationsController {
 
     }
     @PostMapping("usuariosSalas/{idSala}")
-    public ResponseEntity<String> cadastrarUsuariosSalas(@PathVariable(value= "idSalas")UUID idSala, @RequestBody List<UUID> idsUsuarios ){
+    public ResponseEntity<String> cadastrarUsuariosSalas(@PathVariable(value= "idSala")UUID idSala, @RequestBody List<UUID> idsUsuarios ){
         Optional<SalaModel> salaO = salaRepository.findById(idSala);
         if (salaO.isEmpty())
         {

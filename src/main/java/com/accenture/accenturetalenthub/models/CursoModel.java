@@ -41,6 +41,8 @@ public class CursoModel implements Serializable {
     @ManyToMany(mappedBy = "cursos")
     private Set<SalaModel> salas = new HashSet<>();
 
+
+
     public List<UsuarioModel> getUsuarios() {
         return usuarios;
     }
