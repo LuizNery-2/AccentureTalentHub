@@ -9,7 +9,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 @RestController
 public class AssociationsController {
@@ -142,7 +141,6 @@ public class AssociationsController {
     public ResponseEntity<String> saveUsuarioCursos(@PathVariable(value = "idUsuario") UUID idUsuario, @RequestBody List<UUID> idsCursos ) {
 
          Optional<UsuarioModel> usuarioO = usuarioRepository.findById(idUsuario);
-         List<InteresseModel> interessesAssociados = new ArrayList<>();
          if (usuarioO.isEmpty())
          {
              return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Usuário não encontrado");

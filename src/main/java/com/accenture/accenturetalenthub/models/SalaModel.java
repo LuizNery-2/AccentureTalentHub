@@ -1,7 +1,7 @@
 package com.accenture.accenturetalenthub.models;
 
 import java.io.Serializable;
-import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
@@ -35,29 +35,29 @@ public class SalaModel implements Serializable {
     private String nome;
     private String descricao;
 
-    @Temporal(TemporalType.TIMESTAMP)
-    private LocalDateTime dataCriacao;
+    
+    private Date dataCriacao;
 
-    @Temporal(TemporalType.TIMESTAMP)
-    private LocalDateTime dataTermino;
+    
+    private Date dataTermino;
 
     @Column(columnDefinition = "Text")
     private String banner;
 
 
-    public LocalDateTime getDataTermino() {
+    public Date getDataTermino() {
         return dataTermino;
     }
 
-    public void setDataTermino(LocalDateTime dataTermino) {
+    public void setDataTermino(Date dataTermino) {
         this.dataTermino = dataTermino;
     }
 
-    public LocalDateTime getDataCriacao() {
+    public Date getDataCriacao() {
         return dataCriacao;
     }
 
-    public void setDataCriacao(LocalDateTime dataCriacao) {
+    public void setDataCriacao(Date dataCriacao) {
         this.dataCriacao = dataCriacao;
     }
 

@@ -1,7 +1,6 @@
 package com.accenture.accenturetalenthub.models;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.UUID;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
