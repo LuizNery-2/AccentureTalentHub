@@ -191,7 +191,7 @@
                         <div id="checkboxContainer" style="width: 80%; margin: 0 auto;">
                             <!-- Checkboxes serão adicionados dinamicamente aqui -->
                         </div>
-                        <input type="submit" value="Adicionar a sala">
+                        <input id="enviarButton" type="submit" value="Adicionar a sala">
                     </div>
                 </div> 
             </section>
@@ -221,42 +221,110 @@
     </script>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            // Função para buscar usuários do servidor
-            function getUsuarios() {
-                fetch("http://localhost:8080/usuario")
-                    .then(response => response.json())
-                    .then(data => createCheckboxes(data))
-                    .catch(error => console.error('Erro ao buscar usuários:', error));
-            }
+        // document.addEventListener("DOMContentLoaded", function () {
+        //     // Função para buscar usuários do servidor
+        //     function getUsuarios() {
+        //         fetch("http://localhost:8080/usuario")
+        //             .then(response => response.json())
+        //             .then(data => createCheckboxes(data))
+        //             .catch(error => console.error('Erro ao buscar usuários:', error));
+        //     }
 
             // Função para criar checkboxes com base nos usuários
-            function createCheckboxes(usuarios) {
-                const checkboxContainer = document.getElementById("checkboxContainer");
+        //     function createCheckboxes(usuarios) {
+        //         const checkboxContainer = document.getElementById("checkboxContainer");
 
-                usuarios.forEach(usuario => {
-                    const checkboxDiv = document.createElement("div");
-                    checkboxDiv.className = "checkbox-item";
+        //         usuarios.forEach(usuario => {
+        //             const checkboxDiv = document.createElement("div");
+        //             checkboxDiv.className = "checkbox-item";
 
-                    const checkbox = document.createElement("input");
-                    checkbox.type = "checkbox";
-                    checkbox.id = `usuario_${usuario.id}`;
-                    checkbox.value = usuario.id;
+        //             const checkbox = document.createElement("input");
+        //             checkbox.type = "checkbox";
+        //             checkbox.id = `usuario_${usuario.id}`;
+        //             checkbox.value = usuario.id;
 
-                    const label = document.createElement("label");
-                    label.htmlFor = `usuario_${usuario.id}`;
-                    label.appendChild(document.createTextNode(usuario.nome));
+        //             const label = document.createElement("label");
+        //             label.htmlFor = `usuario_${usuario.id}`;
+        //             label.appendChild(document.createTextNode(usuario.nome));
 
-                    checkboxDiv.appendChild(checkbox);
-                    checkboxDiv.appendChild(label);
+        //             checkboxDiv.appendChild(checkbox);
+        //             checkboxDiv.appendChild(label);
 
-                    checkboxContainer.appendChild(checkboxDiv);
-                });
-            }
+        //             checkboxContainer.appendChild(checkboxDiv);
+        //         });
+        //     }
 
-            // Chamar a função para buscar usuários ao carregar a página
-            getUsuarios();
+        //     // Chamar a função para buscar usuários ao carregar a página
+        //     getUsuarios();
+        // });
+
+        document.addEventListener("DOMContentLoaded", function () {
+    // Função para buscar usuários do servidor
+    function getUsuarios() {
+        fetch("http://localhost:8080/usuario")
+            .then(response => response.json())
+            .then(data => createCheckboxes(data))
+            .catch(error => console.error('Erro ao buscar usuários:', error));
+    }
+
+    // Função para criar checkboxes com base nos usuários
+    function createCheckboxes(usuarios) {
+
+        const checkboxContainer = document.getElementById("checkboxContainer");
+
+        usuarios.forEach(usuario => {
+            const checkboxDiv = document.createElement("div");
+            checkboxDiv.className = "checkbox-item";
+
+            const checkbox = document.createElement("input");
+            checkbox.type = "checkbox";
+            checkbox.id = `usuario_${usuario.idUsuario}`;
+            checkbox.value = usuario.idUsuario;
+
+            const label = document.createElement("label");
+            label.htmlFor = `usuario_${usuario.idUsuario}`;
+            label.appendChild(document.createTextNode(usuario.nome));
+
+            checkboxDiv.appendChild(checkbox);
+            checkboxDiv.appendChild(label);
+
+            checkboxContainer.appendChild(checkboxDiv);
         });
+    }
+
+    // Função para obter valores selecionados e enviar para o servidor
+    function enviarUsuariosSelecionados() {
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+        const idsUsuarios = Array.from(checkboxes).map(checkbox => checkbox.value);
+
+        const idSala = localStorage.getItem('idSala');
+
+        // Remover aspas duplas se presentes
+        const IdSala = idSala.replace(/"/g, '');
+
+        const url = "http://localhost:8080/usuariosSalas/" + IdSala;
+
+        // Enviar os IDs dos usuários selecionados para o servidor
+        fetch(url,{
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(idsUsuarios),
+        })
+        .then(response => response.text())
+        .then(data => alert(data))
+        .catch(error => console.error('Erro ao enviar usuários selecionados:', error));
+    }
+
+    // Chamar a função para buscar usuários ao carregar a página
+    getUsuarios();
+
+    // Adicionar um evento de clique para o botão de enviar
+    const enviarButton = document.getElementById("enviarButton");
+    enviarButton.addEventListener("click", enviarUsuariosSelecionados);
+});
+
     </script>
 
     
@@ -288,18 +356,21 @@
                         dataTermino: dataTermino
                     })
                 })
-                    .then(function (res) {
-                        if (res.ok) {
-                            alert("Sala criada com sucesso!");
-                            // setTimeout(buscarUltimoId, 5000);
-                            return res.json(); // Retorna o corpo da resposta como JSON
-                        } else {
-                            throw new Error("Erro ao criar sala. Por favor, tente novamente.");
-                        }
-                    })
-                    .catch(function (error) {
-                        console.error("Erro na solicitação: " + error);
-                    });
+                .then(function (res) {
+                    if (res.ok) {
+                        return res.text(); // Retorna o corpo da resposta como texto
+                    } else {
+                        throw new Error("Erro ao criar sala. Por favor, tente novamente.");
+                    }
+                })
+                .then(function (idSala) {
+                    console.log("Sala criada com sucesso! ID da sala: " + idSala);
+                    localStorage.setItem('idSala', idSala);
+                    // Aqui você pode fazer algo com o ID da sala, se necessário
+                })
+                .catch(function (error) {
+                    console.error("Erro na solicitação: " + error);
+                });
             });
         });
     </script>

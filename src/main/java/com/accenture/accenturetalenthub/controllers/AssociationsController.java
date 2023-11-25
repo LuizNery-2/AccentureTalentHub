@@ -167,17 +167,22 @@ public class AssociationsController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Sala não encontrada");
         }
         var salaModel = salaO.get();
-        for (UUID idUsuario : idsUsuarios)
-        {
+        for (UUID idUsuario : idsUsuarios) {
             Optional<UsuarioModel> usuarioO = usuarioRepository.findById(idUsuario);
-            if (usuarioO.isEmpty())
-            {
-                return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Usuario com ID" + idUsuario + "não encontrado");
+            if (usuarioO.isEmpty()) {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Usuario com ID " + idUsuario + " não encontrado");
             }
             var usuarioModel = usuarioO.get();
-            associatesEntitiesService.associarUsuariosSalas(usuarioModel,salaModel);
+        
+            // Certifique-se de que salaModel tem um valor antes de chamar associarUsuariosSalas
+            if (salaModel != null) {
+                associatesEntitiesService.associarUsuariosSalas(usuarioModel, salaModel);
+            } else {
+                
+                return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Erro interno do servidor");
+            }
         }
-        return ResponseEntity.status(HttpStatus.OK).body("Usuarios cadastrados com sucesso");
+        return ResponseEntity.status(HttpStatus.OK).body("Usuarios adicionados a sala com sucesso");
     }
 
     @PostMapping("/salasCursos/{idSala}")

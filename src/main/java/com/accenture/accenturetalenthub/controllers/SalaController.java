@@ -22,11 +22,13 @@ public class SalaController {
     SalaRepository salaRepository;
 
     @PostMapping("/salas")
-    public ResponseEntity<SalaModel> saveSala(@RequestBody SalaRecordDto salaRecordDto){
+    public ResponseEntity<UUID> saveSala(@RequestBody SalaRecordDto salaRecordDto) {
         var salaModel = new SalaModel();
-        BeanUtils.copyProperties(salaRecordDto,salaModel);
-        return ResponseEntity.status(HttpStatus.CREATED).body(salaRepository.save(salaModel));
-    }
+        BeanUtils.copyProperties(salaRecordDto, salaModel);
+        SalaModel salaCriada = salaRepository.save(salaModel);
+        return ResponseEntity.status(HttpStatus.CREATED).body(salaCriada.getIdSala());
+    } 
+        
 
     @GetMapping("/salas")
     public ResponseEntity<List<SalaModel>> getAllSalas()
