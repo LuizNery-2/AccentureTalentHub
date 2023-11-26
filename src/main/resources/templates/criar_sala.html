@@ -166,7 +166,7 @@
                     <input id="criarSala" type="submit" value="Criar Template"> 
                 </form>
                 <button id="botao-criarModulo">Adicionar Pessoas</button>
-                <button id="botao-criarModulo">Adicionar Cursos</button>
+                <button id="botao-criarModulo" class="adicionarCurso">Adicionar Cursos</button>
                 <div style="display: flex; flex-direction: row;">
                     
                 
@@ -174,7 +174,7 @@
             </div>
             <!-- <input type="submit" value="Finalizar curso"> -->
 
-            <section style="height: 450px;" class="modal-modulo">
+            <section id="modal-usuarios" style="height: 450px;" class="modal-modulo">
                 <div style="display: flex; justify-content: space-between;">
                     <div></div>
                     <img id="fechar_modal-modulo" style="width: 15px; cursor: pointer; "
@@ -196,6 +196,28 @@
                 </div> 
             </section>
 
+            <section id="modal-cursos" style="height: 450px;" class="modal-modulo">
+                <div style="display: flex; justify-content: space-between;">
+                    <div></div>
+                    <img id="fechar_modal-modulo-cursos" style="width: 15px; cursor: pointer; "
+                        src="../static/img/icon_fechar.png">
+                </div>
+
+                <div id="detalhe_senha">
+                    <div id="alterar-senha"  style="border: 5px solid #33084F;">
+                        <div style="display: flex; align-items: center !important; justify-content: center; padding-top: 1%;">
+                            <img style="width: 35px; margin-right: 1%;" src="../static/img/icon_cursos.png" alt="">
+                            <h2 style="margin: 0; font-weight: normal;">Cursos cadastrados</h2>
+                        </div>
+                       
+                        <div id="checkboxContainerCursos" style="width: 80%; margin: 0 auto;">
+                            <!-- Checkboxes serão adicionados dinamicamente aqui -->
+                        </div>
+                        <input id="enviarCursosButton" type="submit" value="Adicionar a sala">
+                    </div>
+                </div> 
+            </section>
+
     </main>
 
     <div class="fundoPagCursos">
@@ -209,121 +231,95 @@
     <script>
         $(document).ready(function () {
             $("#botao-criarModulo").click(function () {
-                $(".modal-modulo").css("display", "flex");
+                $("#modal-usuarios").css("display", "flex");
+                $("#box_CriarModulo").css("opacity", "0.5");
+            });
+
+            $(".adicionarCurso").click(function () {
+                $("#modal-cursos").css("display", "flex");
                 $("#box_CriarModulo").css("opacity", "0.5");
             });
 
             $("#fechar_modal-modulo").click(function () {
-                $(".modal-modulo").css("display", "none");
+                $("#modal-usuarios").css("display", "none");
+                $("#box_CriarModulo").css("opacity", "1");
+            })
+
+            $("#fechar_modal-modulo-cursos").click(function () {
+                $("#modal-cursos").css("display", "none");
                 $("#box_CriarModulo").css("opacity", "1");
             })
         });
     </script>
 
     <script>
-        // document.addEventListener("DOMContentLoaded", function () {
-        //     // Função para buscar usuários do servidor
-        //     function getUsuarios() {
-        //         fetch("http://localhost:8080/usuario")
-        //             .then(response => response.json())
-        //             .then(data => createCheckboxes(data))
-        //             .catch(error => console.error('Erro ao buscar usuários:', error));
-        //     }
+        
+        document.addEventListener("DOMContentLoaded", function () {
+            // Função para buscar usuários do servidor
+            function getUsuarios() {
+                fetch("http://localhost:8080/usuario")
+                    .then(response => response.json())
+                    .then(data => createCheckboxes(data))
+                    .catch(error => console.error('Erro ao buscar usuários:', error));
+            }
 
             // Função para criar checkboxes com base nos usuários
-        //     function createCheckboxes(usuarios) {
-        //         const checkboxContainer = document.getElementById("checkboxContainer");
+            function createCheckboxes(usuarios) {
 
-        //         usuarios.forEach(usuario => {
-        //             const checkboxDiv = document.createElement("div");
-        //             checkboxDiv.className = "checkbox-item";
+                const checkboxContainer = document.getElementById("checkboxContainer");
 
-        //             const checkbox = document.createElement("input");
-        //             checkbox.type = "checkbox";
-        //             checkbox.id = `usuario_${usuario.id}`;
-        //             checkbox.value = usuario.id;
+                usuarios.forEach(usuario => {
+                    const checkboxDiv = document.createElement("div");
+                    checkboxDiv.className = "checkbox-item";
 
-        //             const label = document.createElement("label");
-        //             label.htmlFor = `usuario_${usuario.id}`;
-        //             label.appendChild(document.createTextNode(usuario.nome));
+                    const checkbox = document.createElement("input");
+                    checkbox.type = "checkbox";
+                    checkbox.id = `usuario_${usuario.idUsuario}`;
+                    checkbox.value = usuario.idUsuario;
 
-        //             checkboxDiv.appendChild(checkbox);
-        //             checkboxDiv.appendChild(label);
+                    const label = document.createElement("label");
+                    label.htmlFor = `usuario_${usuario.idUsuario}`;
+                    label.appendChild(document.createTextNode(usuario.nome));
 
-        //             checkboxContainer.appendChild(checkboxDiv);
-        //         });
-        //     }
+                    checkboxDiv.appendChild(checkbox);
+                    checkboxDiv.appendChild(label);
 
-        //     // Chamar a função para buscar usuários ao carregar a página
-        //     getUsuarios();
-        // });
+                    checkboxContainer.appendChild(checkboxDiv);
+                });
+            }
 
-        document.addEventListener("DOMContentLoaded", function () {
-    // Função para buscar usuários do servidor
-    function getUsuarios() {
-        fetch("http://localhost:8080/usuario")
-            .then(response => response.json())
-            .then(data => createCheckboxes(data))
-            .catch(error => console.error('Erro ao buscar usuários:', error));
-    }
+            // Função para obter valores selecionados e enviar para o servidor
+            function enviarUsuariosSelecionados() {
+                const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+                const idsUsuarios = Array.from(checkboxes).map(checkbox => checkbox.value);
 
-    // Função para criar checkboxes com base nos usuários
-    function createCheckboxes(usuarios) {
+                const idSala = localStorage.getItem('idSala');
 
-        const checkboxContainer = document.getElementById("checkboxContainer");
+                // Remover aspas duplas se presentes
+                const IdSala = idSala.replace(/"/g, '');
 
-        usuarios.forEach(usuario => {
-            const checkboxDiv = document.createElement("div");
-            checkboxDiv.className = "checkbox-item";
+                const url = "http://localhost:8080/usuariosSalas/" + IdSala;
 
-            const checkbox = document.createElement("input");
-            checkbox.type = "checkbox";
-            checkbox.id = `usuario_${usuario.idUsuario}`;
-            checkbox.value = usuario.idUsuario;
+                // Enviar os IDs dos usuários selecionados para o servidor
+                fetch(url,{
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(idsUsuarios),
+                })
+                .then(response => response.text())
+                .then(data => alert(data))
+                .catch(error => console.error('Erro ao enviar usuários selecionados:', error));
+            }
 
-            const label = document.createElement("label");
-            label.htmlFor = `usuario_${usuario.idUsuario}`;
-            label.appendChild(document.createTextNode(usuario.nome));
+            // Chamar a função para buscar usuários ao carregar a página
+            getUsuarios();
 
-            checkboxDiv.appendChild(checkbox);
-            checkboxDiv.appendChild(label);
-
-            checkboxContainer.appendChild(checkboxDiv);
+            // Adicionar um evento de clique para o botão de enviar
+            const enviarButton = document.getElementById("enviarButton");
+            enviarButton.addEventListener("click", enviarUsuariosSelecionados);
         });
-    }
-
-    // Função para obter valores selecionados e enviar para o servidor
-    function enviarUsuariosSelecionados() {
-        const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
-        const idsUsuarios = Array.from(checkboxes).map(checkbox => checkbox.value);
-
-        const idSala = localStorage.getItem('idSala');
-
-        // Remover aspas duplas se presentes
-        const IdSala = idSala.replace(/"/g, '');
-
-        const url = "http://localhost:8080/usuariosSalas/" + IdSala;
-
-        // Enviar os IDs dos usuários selecionados para o servidor
-        fetch(url,{
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(idsUsuarios),
-        })
-        .then(response => response.text())
-        .then(data => alert(data))
-        .catch(error => console.error('Erro ao enviar usuários selecionados:', error));
-    }
-
-    // Chamar a função para buscar usuários ao carregar a página
-    getUsuarios();
-
-    // Adicionar um evento de clique para o botão de enviar
-    const enviarButton = document.getElementById("enviarButton");
-    enviarButton.addEventListener("click", enviarUsuariosSelecionados);
-});
 
     </script>
 
@@ -374,7 +370,76 @@
             });
         });
     </script>
-    <!-- <script src="../static/js/insereInteressesCursos.js"></script> -->
+    
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Função para buscar usuários do servidor
+            function getCursos() {
+                fetch("http://localhost:8080/cursos")
+                    .then(response => response.json())
+                    .then(data => createCheckboxes(data))
+                    .catch(error => console.error('Erro ao buscar usuários:', error));
+            }
+
+            // Função para criar checkboxes com base nos usuários
+            function createCheckboxes(cursos) {
+
+                const checkboxContainer = document.getElementById("checkboxContainerCursos");
+
+                cursos.forEach(curso => {
+                    const checkboxDiv = document.createElement("div");
+                    checkboxDiv.className = "checkbox-item";
+
+                    const checkbox = document.createElement("input");
+                    checkbox.type = "checkbox";
+                    checkbox.id = `curso${curso.IdCurso}`;
+                    checkbox.value = curso.IdCurso;
+
+                    const label = document.createElement("label");
+                    label.htmlFor = `curso${curso.IdCurso}`;
+                    label.appendChild(document.createTextNode(curso.nome));
+
+                    checkboxDiv.appendChild(checkbox);
+                    checkboxDiv.appendChild(label);
+
+                    checkboxContainer.appendChild(checkboxDiv);
+                });
+            }
+
+            // Função para obter valores selecionados e enviar para o servidor
+            function enviarCursosSelecionados() {
+                const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+                const idsCursos = Array.from(checkboxes).map(checkbox => checkbox.value);
+
+                const idSala = localStorage.getItem('idSala');
+
+                // Remover aspas duplas se presentes
+                const IdSala = idSala.replace(/"/g, '');
+
+                const url = "http://localhost:8080/salasCursos/" + IdSala;
+
+                // Enviar os IDs dos usuários selecionados para o servidor
+                fetch(url,{
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(idsCursos),
+                })
+                .then(response => response.text())
+                .then(data => alert(data))
+                .catch(error => console.error('Erro ao enviar usuários selecionados:', error));
+            }
+
+            // Chamar a função para buscar cursos ao carregar a página
+            getCursos();
+
+            // Adicionar um evento de clique para o botão de enviar
+            const enviarButton = document.getElementById("enviarCursosButton");
+            enviarButton.addEventListener("click", enviarCursosSelecionados);
+        });
+    </script>
 
 </body>
 
