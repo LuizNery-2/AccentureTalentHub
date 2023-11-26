@@ -23,7 +23,7 @@ public class ModuloController {
     public ResponseEntity<ModuloModel> saveModulo(@RequestBody ModuloRecordDto modulosRecordDto)
     {
         var modulosModel = new ModuloModel();
-        BeanUtils.copyProperties(modulosModel,modulosRecordDto);
+        BeanUtils.copyProperties(modulosRecordDto, modulosModel);
         return ResponseEntity.status(HttpStatus.CREATED).body(moduloRepository.save(modulosModel));
     }
 

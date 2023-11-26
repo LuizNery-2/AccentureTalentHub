@@ -309,7 +309,7 @@
                         </div>
 
                         
-                            <button  class="adicionarLink" onclick="criarModulo()">Adicionar ao Bloco</button>
+                            <button  class="adicionarLink" id="criarModulo">Adicionar ao Bloco</button>
                             <!-- <button  class="adicionarLink" onclick="myFunction()">Concluir Modulo</button> -->
                         
 
@@ -531,8 +531,10 @@
 document.addEventListener('DOMContentLoaded', function () {
     const criarCurso = document.getElementById('finalizarCadastroCurso');
     const criarAula = document.getElementById('adicionarAula')
+    const criarModulo = document.getElementById('criarModulo')
     let respostaCurso;
     let idsAulas = [];
+    let idsModulos = [];
     async function atualizarInteresses(url, IDs) {
         await fetch(url, {
             method: "POST",
@@ -594,11 +596,32 @@ document.addEventListener('DOMContentLoaded', function () {
 
             atualizarInteresses(url, IDs);
 
-            alert("Interesses adicionados ao curso com sucesso!");
+            
             
     } else {
         alert("Selecione pelo menos uma tecnologia para continuar!");
-    }
+        }
+        if (idsModulos.length > 0) {
+            await fetch("http://localhost:8080/cursosmodulos/" + localStorage.getItem("idCurso"),
+            {   method:"POST",
+                headers:{
+                    "Accept": "application/json",
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(idsModulos)
+            })
+            .then(function (res) {
+                if (res.ok) {
+                    console.log("Curso criado com sucesso!");
+                // window.location.href = 'home.html';
+                } else {
+                    console.error("Falha ao Criar curso.");
+                }
+        })
+            .catch(function (error) {
+                console.error("Erro na solicitação: " + error);
+        });
+        }
       
     });
 
@@ -621,7 +644,7 @@ document.addEventListener('DOMContentLoaded', function () {
             })
             .then(response => response.json())
             .then(data => {
-                idsAulas.push(data.IdAula);
+                idsAulas.push(data.idAula);
                 console.log(idsAulas);
                 console.log(data);
             })
@@ -636,23 +659,48 @@ document.addEventListener('DOMContentLoaded', function () {
     
     })
 
-    async function criarModulo()
-    {   const nomeModulo = document.getElementById("nomeModulo").value
-        await fetch("http://localhost:8080/modulos",{
+    criarModulo.addEventListener('click',async()=>{
+        const nomeModulo = document.getElementById("nomeModulo").value
+        console.log(nomeModulo)
+        if(idsAulas.length > 0 && nomeModulo != ""){
+            //Cria um modulo
+            await fetch("http://localhost:8080/modulos",{
             method: "POST",
             headers: {
                 "Accept": "application/json",
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                nomeModulo:nomeModulo
+                nomeModulo: nomeModulo
             })
-            
-            
-
-        })
-    }
-
+            })  
+            .then(response => response.json())
+            .then( data => {
+                 idsModulos.push(data.idModulo);
+                 console.log(data)
+        
+            })
+            .catch(function (error) {
+                console.error("Erro na solicitação: " + error);
+            })
+            console.log(idsAulas);
+            //Associar modulos as aulas 
+            await fetch("http://localhost:8080/modulosaulas/" + idsModulos[idsModulos.length - 1],{
+                method: "POST",
+                headers: {
+                    "Accept": "application/json",
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(idsAulas)
+            })
+            .catch(function (error) {
+                console.error("Erro na solicitação: " + error);
+            })
+        }
+        else{
+            console.log("adicione pele menos uma aula para continuar")
+        }
+    })
 
 });
 

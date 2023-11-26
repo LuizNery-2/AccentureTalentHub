@@ -53,7 +53,7 @@ public class ModuloModel implements Serializable{
         return nomeModulo;
     }
 
-    public void setNomeModuo(String nomeModulo) {
+    public void setNomeModulo(String nomeModulo) {
         this.nomeModulo = nomeModulo;
     }
 
