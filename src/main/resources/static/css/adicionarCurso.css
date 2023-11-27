@@ -196,6 +196,20 @@
   cursor: pointer;
 }
 
+#nomeModulo
+{
+  color: white;
+  background-color:  #3F115F;
+  border: none;
+  font-size:1.5rem;
+  margin-bottom: 1rem;
+  width: 35%;
+}
+#nomeModulo:focus
+{
+  outline: none;
+}
+
 @media screen and (max-width: 1200px){
 
 }

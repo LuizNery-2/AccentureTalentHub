@@ -31,12 +31,9 @@ public class AulaModel implements Serializable{
 
     //Get and Setters
 
-    public UUID getIdModulo() {
-        return IdAula;
-    }
 
-    public void setIdModulo(UUID idModulo) {
-        IdAula = idModulo;
+    public UUID getIdAula() {
+        return IdAula;
     }
 
     public String getNomeAula() {

@@ -224,7 +224,7 @@ public class AssociationsController {
         return ResponseEntity.status(HttpStatus.OK).body("Modulo cadastrado com sucesso");
     }
     @PostMapping("/modulosaulas/{idModulo}")
-    public ResponseEntity<Object> castrarAulasModulos(@PathVariable(value = "idModulo") UUID idModulo, List<UUID> idsAulas)
+    public ResponseEntity<Object> castrarAulasModulos(@PathVariable(value = "idModulo") UUID idModulo,@RequestBody List<UUID> idsAulas)
     {
         Optional<ModuloModel> moduloO = moduloRepository.findById(idModulo);
         if (moduloO.isEmpty())

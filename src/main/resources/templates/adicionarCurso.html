@@ -128,7 +128,7 @@
         <section class="caixa_principalCriacao">
 
             <div class="caixa_criacao">
-                <h2>Crie seu Curso</h2>
+                <h2>Adicione um Curso</h2>
                 <a href="perfilLider.html"> <img src="../static/img/icon_fechar.png" alt="" style="transform: translate(740px, -640%);"> </a>
 
                 <form id="formCriarCurso" class="forms_criarCurso">
@@ -147,7 +147,7 @@
                         </div>
                     </div>
                     
-                    <input id="criarCurso" type="submit" value="Criar Template">
+                    <!-- <input id="criarCurso" type="submit" value="Criar Template"> -->
                 </form>
                 <div style="width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center;">
                     <p>Quais tecnologias seu curso aborda?</p>
@@ -173,7 +173,7 @@
                 
                    
             </div>
-            <input type="submit" value="Finalizar curso">
+            <input id="finalizarCadastroCurso" type="submit" value="Finalizar curso">
 
             <section class="modal-modulo">
                 <div style="display: flex; justify-content: space-between;">
@@ -184,8 +184,9 @@
 
                 <div id="detalhe_senha">
                     <div id="alterar-senha">
-                        <div style="display: flex; flex-direction: row; margin-left: 350px; margin-bottom: 10px;">
-                            <h3 style="color: #fff; font-weight: normal; font-size: 25px;">Modulo</h3>
+                        <div style="display: flex; flex-direction: row; align-items: center;
+                        justify-content: center;">
+                            <input id="nomeModulo" type="text"placeholder="Digite o nome do modulo" ></input>
                         </div>
 
                         <!-- <div class="modulosmodal" style="margin-bottom: 10px; border-radius: 15px;">
@@ -250,13 +251,13 @@
                                     <img style="width: 20px; margin-right: 1%;" src="../static/img/marketing-de-video.png" alt="">
                                     <label>Nome da aula</label>
                                 </div>
-                                <input style="margin: 1% 0;" type="text" placeholder="Digite o nome da aula">
+                                <input id="nomeDaAula" style="margin: 1% 0;" type="text" placeholder="Digite o nome da aula">
                                 <div style="display: flex; align-items: center;">
                                     <img style="width: 20px;  margin-right: 1%;" src="../static/img/link.png" alt="">
                                     <label>Link da aula</label>
                                 </div>
                                 <input type="text" id="linkInput" name="linkInput" placeholder="Insira o link da aula" >
-                                <input type="submit" value="Adicionar aula">
+                                <input id="adicionarAula" type="submit" value="Adicionar aula">
                             </div>
                             
 
@@ -308,7 +309,7 @@
                         </div>
 
                         
-                            <button  class="adicionarLink" onclick="myFunction()">Adicionar ao Bloco</button>
+                            <button  class="adicionarLink" id="criarModulo">Adicionar ao Bloco</button>
                             <!-- <button  class="adicionarLink" onclick="myFunction()">Concluir Modulo</button> -->
                         
 
@@ -419,6 +420,9 @@
             $("#abrir_modal_tecnologias").click(function () {
                 $("#modal_tecnologias").css("display", "block");
             })
+            $("#enviar_resposta").click(function () {
+                $("#modal_tecnologias").css("display", "none");
+            })
 
 
         });
@@ -525,16 +529,42 @@
 
 
 document.addEventListener('DOMContentLoaded', function () {
-    const criarCurso = document.getElementById('formCriarCurso');
-
-    criarCurso.addEventListener('submit', function (e) {
+    const criarCurso = document.getElementById('finalizarCadastroCurso');
+    const criarAula = document.getElementById('adicionarAula')
+    const criarModulo = document.getElementById('criarModulo')
+    let respostaCurso;
+    let idsAulas = [];
+    let idsModulos = [];
+    async function atualizarInteresses(url, IDs) {
+        await fetch(url, {
+            method: "POST",
+            headers: {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+            },
+            body: JSON.stringify(IDs)
+    })
+            .then(function (res) {
+                if (res.ok) {
+                    console.log("Interesses atualizados com sucesso!");
+                // window.location.href = 'home.html';
+                } else {
+                    console.error("Falha ao atualizar interesses.");
+                }
+        })
+            .catch(function (error) {
+                console.error("Erro na solicitação: " + error);
+        });
+        }
+    criarCurso.addEventListener('click',async function (e) {
         e.preventDefault();
-
+        
         const nomeCurso = document.getElementById('nomeCurso').value;
         const imagemCurso = document.getElementById('imagemCurso').value;
         const descricaoCurso = document.getElementById('descricaoCurso').value;
+        
 
-        fetch("http://localhost:8080/cursos", {
+       await fetch("http://localhost:8080/cursos", {
             method: "POST",
             headers: {
                 "Accept": "application/json",
@@ -548,25 +578,136 @@ document.addEventListener('DOMContentLoaded', function () {
                 concluido: false,
             })
         })
-            .then(function (res) {
-                if (res.ok) {
-                    alert("Curso cadastrado com sucesso!");
-                    setTimeout(buscarUltimoId, 5000);
-                    return res.json(); // Retorna o corpo da resposta como JSON
-                } else {
-                    throw new Error("Erro ao cadastrar curso. Por favor, tente novamente.");
-                }
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                localStorage.setItem('idCurso',data.idCurso);
             })
             .catch(function (error) {
                 console.error("Erro na solicitação: " + error);
             });
+        if (selecionados !== '') {
+        console.log(selecionados);
+        var IDs = selecionados.map(function(string) {
+            return Number(string);
+        });
+
+            const url = "http://localhost:8080/cursosInteresses/" + localStorage.getItem('idCurso');
+
+            atualizarInteresses(url, IDs);
+
+            
+            
+    } else {
+        alert("Selecione pelo menos uma tecnologia para continuar!");
+        }
+        if (idsModulos.length > 0) {
+            await fetch("http://localhost:8080/cursosmodulos/" + localStorage.getItem("idCurso"),
+            {   method:"POST",
+                headers:{
+                    "Accept": "application/json",
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(idsModulos)
+            })
+            .then(function (res) {
+                if (res.ok) {
+                    console.log("Curso criado com sucesso!");
+                // window.location.href = 'home.html';
+                } else {
+                    console.error("Falha ao Criar curso.");
+                }
+        })
+            .catch(function (error) {
+                console.error("Erro na solicitação: " + error);
+        });
+        }
+      
     });
+
+    criarAula.addEventListener("click", async () =>{
+        const nomeAula = document.getElementById('nomeDaAula').value;
+        const linkAula = document.getElementById('linkInput').value;
+        
+        if(linkAula != "" && nomeAula != ""){
+            await fetch("http://localhost:8080/aula",{
+            method: 'POST',
+            headers: {
+                "Accept": "application/json",
+                "Content-Type": "application/json"
+    
+            },
+            body: JSON.stringify({
+                nomeAula: nomeAula,
+                linkAula: linkAula
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                idsAulas.push(data.idAula);
+                console.log(idsAulas);
+                console.log(data);
+            })
+            .catch(function (error) {
+                console.error("Erro na solicitação: " + error);
+            });
+        }
+        else
+        {
+            console.log("Preencha os campos da aula para continuar");
+        }
+    
+    })
+
+    criarModulo.addEventListener('click',async()=>{
+        const nomeModulo = document.getElementById("nomeModulo").value
+        console.log(nomeModulo)
+        if(idsAulas.length > 0 && nomeModulo != ""){
+            //Cria um modulo
+            await fetch("http://localhost:8080/modulos",{
+            method: "POST",
+            headers: {
+                "Accept": "application/json",
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                nomeModulo: nomeModulo
+            })
+            })  
+            .then(response => response.json())
+            .then( data => {
+                 idsModulos.push(data.idModulo);
+                 console.log(data)
+        
+            })
+            .catch(function (error) {
+                console.error("Erro na solicitação: " + error);
+            })
+            console.log(idsAulas);
+            //Associar modulos as aulas 
+            await fetch("http://localhost:8080/modulosaulas/" + idsModulos[idsModulos.length - 1],{
+                method: "POST",
+                headers: {
+                    "Accept": "application/json",
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(idsAulas)
+            })
+            .catch(function (error) {
+                console.error("Erro na solicitação: " + error);
+            })
+        }
+        else{
+            console.log("adicione pele menos uma aula para continuar")
+        }
+    })
+
 });
 
 
         
     </script>
-    <script src="../static/js/insereInteressesCursos.js"></script>
+     <script src="../static/js/insereInteressesCursos.js"></script> 
 
 </body>
 
