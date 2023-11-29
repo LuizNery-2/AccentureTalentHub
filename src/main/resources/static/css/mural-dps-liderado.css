@@ -399,4 +399,74 @@ main .soft-skill p {
     right: 0;
     bottom: -35px
 }
+@media screen and (max-width: 1200px){
 
+}
+
+@media screen and (max-width: 1024px){
+    #menu-desktop {
+        width: 80px;
+        height: 90%;
+    }
+
+    main {
+        margin-left: 80px;
+        padding: 0 30px;
+    }
+
+    .perfil {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 768px){
+    #menu-desktop {
+        width: 75px;
+        height: 85%;
+    }
+
+    main {
+        margin-left: 75px;
+        padding: 0 20px;
+    }
+
+    .perfil {
+        width: 90%;
+    }
+}
+
+/* @media screen and (max-width: 560px){
+    
+} */
+
+@media screen and (max-width: 480px){
+    #menu-desktop {
+        width: 70px;
+        height: 80%;
+    }
+
+    main {
+        margin-left: 70px;
+        padding: 0 10px;
+    }
+
+    .perfil {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 280px){
+      #menu-desktop {
+        width: 65px;
+        height: 75%;
+    }
+
+    main {
+        margin-left: 65px;
+        padding: 0 5px;
+    }
+
+    .perfil {
+        width: 100%;
+    }
+}
