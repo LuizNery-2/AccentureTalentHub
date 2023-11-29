@@ -180,8 +180,38 @@
                     infoCursoDiv.appendChild(ul);
                 
                     const button = document.createElement('button');
+                    button.classList.add('button_curso')
                     button.textContent = 'Saiba mais';
+
+                    // Adicione um evento de clique ao botão
+                    button.addEventListener('click', function() {
+                        abrirModal(curso); // Chame a função para abrir o modal com as informações do curso
+                    });
+
                     infoCursoDiv.appendChild(button);
+
+                    function abrirModal(curso) {
+                    // Atualize dinamicamente os elementos no modal com as informações do curso
+                    const capaCurso = document.getElementById('capa_curso');
+                    const detalheCurso = document.getElementById('detalhe_curso');
+                    const imgCurso = capaCurso.querySelector('img');
+                    const nomeCurso = detalhe_curso.querySelector('.nomeCurso');
+                    const descricaoCurso = detalhe_curso.querySelector('.descricaoCurso');
+                    const horasTotais = capaCurso.querySelector('.horasTotais');
+                    // const instrutor = capaCurso.querySelector('.txt_info_curso:nth-child(2)');
+                    const categorias = capaCurso.querySelector('.categorias');
+                    
+                    imgCurso.src = curso.imagem;
+                    nomeCurso.textContent = curso.nome;
+                    descricaoCurso.textContent = curso.descricao;
+                    horasTotais.textContent = 'Horas totais: ' + curso.quantidadeHoras;
+                    // instrutor.textContent = 'Instrutor: ' + curso.instrutor;
+                    categorias.textContent = 'Categorias: ' + curso.interesses.join(' | ');
+
+                    // Abra o modal
+                    const modal = document.querySelector('.modal');
+                    modal.style.display = 'block';
+                }
                 
                     // Adicione os elementos criados à hierarquia
                     cursoDiv.appendChild(infoCursoDiv);
@@ -201,17 +231,15 @@
             
             <div id="detalhe_curso">
                 <div id="capa_curso">
-                    <img src="../static/img/curso_js.png" alt="">
-                    <p class="txt_info_curso">Horas totais: 5H</p>
-                    <p class="txt_info_curso">Instrutor: Jorge Dário</p>
-                    <p class="txt_info_curso">Categorias: P.O.O | CSS | JavaScript-puro</p>
+                    <img src="" alt="">
+                    <p class="txt_info_curso horasTotais"></p>
+                    <p class="txt_info_curso categorias"></p>
+                    <p class="txt_info_curso"></p>
                 </div>
                 <div>
-                    <h3 style="text-align: center; color: #fff; font-weight: normal;">Curso JavaScript</h3>
+                    <h3 class="nomeCurso" style="text-align: center; color: #fff; font-weight: normal;"></h3>
                     <br>
-                    <p style="margin-bottom: 0.5%; color: #fff;">Mussum Ipsum, cacilds vidis litro abertis.  Mé faiz elementum girarzis, 
-                        nisi eros vermeio. Mais vale um bebadis conhecidiss, que um alcoolatra anonimis.Mussum Ipsum, cacilds vidis litro abertis.  Mé faiz elementum girarzis, 
-                        nisi eros vermeio. Mais vale um bebadis conhecidiss, que um alcoolatra anonimis.</p>
+                    <p class="descricaoCurso" style="margin-bottom: 0.5%; color: #fff; font-size: 13px !important; padding: 0 5% !important; text-align: justify !important;"></p>
                    
                     <input id="adicionar_sala" type="submit" name="" value="Adicionar a sua sala">
                 </div>
