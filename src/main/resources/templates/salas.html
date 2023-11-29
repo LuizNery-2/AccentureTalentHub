@@ -183,9 +183,10 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
+            const url = "http://localhost:8080/salasUsuario/" + localStorage.getItem('idUsuario');
             // Função para buscar salas do servidor
             function getSalas() {
-                fetch("http://localhost:8080/salas")
+                fetch(url)
                     .then(response => response.json())
                     .then(data => showSalas(data))
                     .catch(error => console.error('Erro ao buscar salas:', error));
