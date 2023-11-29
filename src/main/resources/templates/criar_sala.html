@@ -393,11 +393,11 @@
 
                     const checkbox = document.createElement("input");
                     checkbox.type = "checkbox";
-                    checkbox.id = `curso${curso.IdCurso}`;
-                    checkbox.value = curso.IdCurso;
+                    checkbox.id = `curso_${curso.idCurso}`;
+                    checkbox.value = curso.idCurso;
 
                     const label = document.createElement("label");
-                    label.htmlFor = `curso${curso.IdCurso}`;
+                    label.htmlFor = `curso_${curso.idCurso}`;
                     label.appendChild(document.createTextNode(curso.nome));
 
                     checkboxDiv.appendChild(checkbox);
@@ -409,16 +409,17 @@
 
             // Função para obter valores selecionados e enviar para o servidor
             function enviarCursosSelecionados() {
-                const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
-                const idsCursos = Array.from(checkboxes).map(checkbox => checkbox.value);
+                const checkboxesCursos = document.querySelectorAll('input[type="checkbox"]:checked');
+                const idsCursos = Array.from(checkboxesCursos).map(checkbox => checkbox.value);
 
                 const idSala = localStorage.getItem('idSala');
 
                 // Remover aspas duplas se presentes
                 const IdSala = idSala.replace(/"/g, '');
 
-                const url = "http://localhost:8080/salasCursos/" + IdSala;
-
+                const url = "http://localhost:8080/cursosSalas/" + IdSala;
+                alert(url)
+                alert(idsCursos)
                 // Enviar os IDs dos usuários selecionados para o servidor
                 fetch(url,{
                     method: "POST",
@@ -428,7 +429,7 @@
                     body: JSON.stringify(idsCursos),
                 })
                 .then(response => response.text())
-                .then(data => alert(data))
+                .then(data => console.log(data))
                 .catch(error => console.error('Erro ao enviar usuários selecionados:', error));
             }
 
