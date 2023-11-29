@@ -157,20 +157,13 @@
                     <img id="icon_trilha" src="../static/img/estrela.png">
                 </div>
                 <div id="box_exemplos_trilhas">
-                    <div class="multiple-items">
+                    <!-- <div class="multiple-items">
                         <a href="sala_de_aula.html">
                             <img src="../static/img/Sala1.png" alt="">
                         </a>
-                        <a href="#">
-                            <img src="../static/img/Sala2.png" alt="">
-                        </a>
-                        <a href="#">
-                            <img src="../static/img/Sala1.png" alt="">
-                        </a>
-                        <a href="#">
-                            <img src="../static/img/Sala2.png" alt="">
-                        </a>
-                    </div>
+                    
+                    </div> -->
+                    <div class="multiple-items" id="dynamic-content-container"></div>
                 </div>
             </div>
 
@@ -261,6 +254,8 @@
         // numeroBarra.textContent = localStorage.getItem('nome');
         cargo.textContent = localStorage.getItem('cargo');
     </script>
+
+    <script src="../static/js/puxarSalas.js"></script>
 
 </body>
 </html>
