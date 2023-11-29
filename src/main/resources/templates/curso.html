@@ -207,10 +207,12 @@
                     horasTotais.textContent = 'Horas totais: ' + curso.quantidadeHoras;
                     // instrutor.textContent = 'Instrutor: ' + curso.instrutor;
                     categorias.textContent = 'Categorias: ' + curso.interesses.join(' | ');
-
+                    
                     // Abra o modal
                     const modal = document.querySelector('.modal');
                     modal.style.display = 'block';
+
+                    localStorage.setItem('idDoCurso', curso.idCurso);
                 }
                 
                     // Adicione os elementos criados à hierarquia
@@ -268,11 +270,59 @@
                 $("#box_info_dashboard").css("opacity", "1");
             });
 
-            $("#adicionar_sala").click(function() {
-                alert("Curso adicionado com sucesso!");
-                window.location.href = 'minha_sala_de_aula.html';
-            })
+            // $("#adicionar_sala").click(function() {
+            //     alert("Curso adicionado com sucesso!");
+            //     window.location.href = 'minha_sala_de_aula.html';
+            // })
         });
+    </script>
+
+    <script>
+        const url = "http://localhost:8080/salasUsuario/" + localStorage.getItem('idUsuario');
+        const nomeDaSalaProcurada = 'Minha sala de aula';
+
+        fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            // Procurando a sala com o nome desejado
+            const salaEncontrada = data.find(sala => sala.nome === nomeDaSalaProcurada);
+
+            if (salaEncontrada) {
+            // Se a sala for encontrada, você pode acessar o ID
+            const idDaSala = salaEncontrada.idSala;
+
+            localStorage.setItem('salaPessoal', idDaSala);
+
+            // // Exibindo o ID no console (você pode ajustar isso conforme necessário)
+            // console.log(`O ID da sala "${nomeDaSalaProcurada}" é: ${idDaSala}`);
+            // } else {
+            // console.log(`Sala "${nomeDaSalaProcurada}" não encontrada.`);
+            }
+        })
+        .catch(error => console.error('Erro ao buscar dados do backend:', error));
+    </script>
+
+    <script>
+
+        const buttonAdicionarCurso = document.getElementById('adicionar_sala');
+        buttonAdicionarCurso.addEventListener('click', function() {
+            const urlCursoSala = "http://localhost:8080/cursosSalas/" + localStorage.getItem('salaPessoal');
+
+                const arrayCurso = [localStorage.getItem('idDoCurso')];
+                // Enviar os IDs dos usuários selecionados para o servidor
+                fetch(urlCursoSala,{
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(arrayCurso),
+                })
+                .then(response => response.text())
+                .then(data => console.log(data))
+                .catch(error => console.error('Erro ao enviar usuários selecionados:', error));
+        });
+       
+            
     </script>
 
 
