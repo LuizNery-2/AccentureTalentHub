@@ -400,8 +400,21 @@ main .soft-skill p {
     bottom: -35px
 }
 @media screen and (max-width: 1200px){
+    #menu-desktop {
+        width: 85px;
+        height: 95%;
+    }
 
+    main {
+        margin-left: 85px;
+        padding: 0 35px;
+    }
+
+    .perfil {
+        width: 80%;
+    }
 }
+
 
 @media screen and (max-width: 1024px){
     #menu-desktop {
@@ -434,10 +447,6 @@ main .soft-skill p {
         width: 90%;
     }
 }
-
-/* @media screen and (max-width: 560px){
-    
-} */
 
 @media screen and (max-width: 480px){
     #menu-desktop {
