@@ -56,31 +56,6 @@ public class AssociationsController {
 
         return ResponseEntity.status(HttpStatus.OK).body("Interesses adicionados ao Curso com sucesso");
     }
-    @PostMapping("cursosSalas/{idSalas}")
-    public ResponseEntity<String> saveCursosSalas(@PathVariable(value = "idSalas") UUID idSala,@RequestBody List<UUID> idCursos)
-    {
-        Optional<SalaModel> salaO = salaRepository.findById(idSala);
-
-        if (salaO.isEmpty()) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Sala não encontrado");
-        }
-
-        var salaModel = salaO.get();
-
-        for (UUID idCurso : idCursos) {
-            Optional<CursoModel> cursoO = cursoRepository.findById(idCurso);
-            if (cursoO.isEmpty()) {
-                return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Curso com ID " + idCurso + " não encontrado");
-            }
-            var cursoModel = cursoO.get();
-            associatesEntitiesService.associarCursoSalas(cursoModel,salaModel);
-        }
-
-        return ResponseEntity.status(HttpStatus.OK).body("Interesses adicionados ao Curso com sucesso");
-    }
-
-
-
 
     @PostMapping("usuariosInteresses/{idUsuario}")
     public ResponseEntity<String> saveUsuarioInteresse(@PathVariable(value = "idUsuario") UUID idUsuario,@RequestBody List<Long> idsInteresses)
@@ -199,26 +174,33 @@ public class AssociationsController {
         return ResponseEntity.status(HttpStatus.OK).body(salasDoUsuario);
     }
 
-    @PostMapping("/salasCursos/{idSala}")
-    public ResponseEntity<String> cadastrarCursosSalas(@PathVariable(value = "idSala") UUID idSala,@RequestBody List<UUID> idCursos){
+    @PostMapping("cursosSalas/{idSala}")
+    public ResponseEntity<String> cadastrarCursosSalas(@PathVariable(value= "idSala")UUID idSala, @RequestBody List<UUID> idsCursos ){
         Optional<SalaModel> salaO = salaRepository.findById(idSala);
         if (salaO.isEmpty())
         {
-           return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Sala não encontrado");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Sala não encontrada");
         }
         var salaModel = salaO.get();
-        for (UUID idCurso : idCursos)
-        {
-            Optional<CursoModel> cusoO = cursoRepository.findById(idCurso);
-            if (cusoO.isEmpty())
-            {
-                return  ResponseEntity.status(HttpStatus.NOT_FOUND).body("Curso com o ID " + idCurso + " não encontrado");
+        for (UUID IdCurso : idsCursos) {
+            Optional<CursoModel> cursoO = cursoRepository.findById(IdCurso);
+            if (cursoO.isEmpty()) {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Usuario com ID " + IdCurso + " não encontrado");
             }
-            var cursoModel =  cusoO.get();
-            associatesEntitiesService.associarCursoSalas(cursoModel, salaModel);
+            var cursoModel = cursoO.get();
+        
+            // Certifique-se de que salaModel tem um valor antes de chamar associarUsuariosSalas
+            if (salaModel != null) {
+                associatesEntitiesService.associarCursoSalas(cursoModel, salaModel);
+            } else {
+                
+                return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Erro interno do servidor");
+            }
         }
-        return ResponseEntity.status(HttpStatus.OK).body("Curso cadastrado com sucesso");
+        return ResponseEntity.status(HttpStatus.OK).body("Usuarios adicionados a sala com sucesso");
     }
+
+
     @PostMapping("/cursosmodulos/{idCurso}")
     public ResponseEntity<String> cadastrarCursoModulo(@PathVariable(value = "idCurso")UUID idCurso,@RequestBody List<UUID> idsModulos) {
         Optional<CursoModel> cursoO = cursoRepository.findById(idCurso);
