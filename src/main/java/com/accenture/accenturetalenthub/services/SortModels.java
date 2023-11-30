@@ -4,7 +4,6 @@ package com.accenture.accenturetalenthub.services;
 import com.accenture.accenturetalenthub.models.AulaModel;
 import com.accenture.accenturetalenthub.models.CursoModel;
 import com.accenture.accenturetalenthub.models.ModuloModel;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
