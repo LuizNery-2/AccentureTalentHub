@@ -479,8 +479,11 @@
                 console.error("Erro na solicitação: " + error);
             })
             }       
-            async function preencherBoxModulosCursos() {
+            async function preencherCurso() {
                 boxModulosCurso.querySelector('h1').innerHTML = curso.nome
+                tituloAulaAtual.querySelector('h2').innerHTML = curso.modulos[0].aulas[0].nomeAula;
+                videoYouTube.src = curso.modulos[0].aulas[0].linkAula; 
+                descricao.querySelector('p').innerHTML = curso.descricao;
                 console.log(curso.modulos)
                 for (let i = 0; i < curso.modulos.length; i++) {
                     const modulosCursos = document.createElement('div')
@@ -532,15 +535,9 @@
                     
                 }
             }
-            async function preencherCurso(){
-                
-                tituloAulaAtual.querySelector('h2').innerHTML = curso.modulos[0].aulas[0].nomeAula;
-                videoYouTube.src = curso.modulos[0].aulas[0].linkAula; 
-                descricao.querySelector('p').innerHTML = curso.descricao;
-            }
+          
             async function inicializarPagina(){
                  await getCurso();
-                 await preencherBoxModulosCursos();
                  await preencherCurso()
             }
             inicializarPagina();
