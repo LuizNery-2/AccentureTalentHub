@@ -433,10 +433,26 @@ main .soft-skill p {
 }
 
 @media screen and (max-width: 768px){
+    Body{
+        width: 100%;
+        height: 100%;
+    }
     #menu-desktop {
         width: 75px;
         height: 85%;
     }
+
+    .header-perfil input {
+        display: flex;
+        flex-direction:column ;
+    }
+    
+    #iconLupa {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+
 
     main {
         margin-left: 75px;
@@ -446,12 +462,41 @@ main .soft-skill p {
     .perfil {
         width: 90%;
     }
+    
+    .avaliacao {
+        margin-top: 13px;
+        display: flex;
+        align-items: center;
+        gap: 19px;
+    }
+
+    .img-avaliador {
+        width: 30px;
+        height: 30px;
+        background-color: #5B2182;
+        border-radius: 50%;
+    }
 }
 
 @media screen and (max-width: 480px){
+    Body{
+        width: 100%;
+        height: 100%;
+    }
     #menu-desktop {
         width: 70px;
         height: 80%;
+    }
+    .header-perfil input {
+        display: flex;
+        flex-direction:column ;
+    }
+
+    #iconLupa {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+
     }
 
     main {
@@ -460,12 +505,19 @@ main .soft-skill p {
     }
 
     .perfil {
-        width: 100%;
+        width: 90%;
     }
+
 }
 
 @media screen and (max-width: 280px){
-      #menu-desktop {
+     body{
+        display: flex !important;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    #menu-desktop {
         width: 65px;
         height: 75%;
     }
