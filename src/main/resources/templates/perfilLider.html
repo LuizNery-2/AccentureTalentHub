@@ -137,7 +137,7 @@
                     </div>
                 </div>
                 <div id="box_detalhes_perfil">
-                    <img src="../static/img/lider.png">
+                    <img style="width: 350px; height: 401px;" id="fotoPerfil" src="">
                     <div id="info_perfil">
                         <div>
                             <h3 id="cargoUsuario" style="color: #fff;"></h3>
@@ -250,10 +250,12 @@
         const nivel = document.getElementById('nivel');
         // const numeroBarra = document.getElementById('numeroBarra');
         const cargo = document.getElementById('cargoUsuario');
+        const fotoPerfil = document.getElementById('fotoPerfil');
 
         nomeUsuario.textContent = localStorage.getItem('nome');
         nivel.textContent = localStorage.getItem('nivel');
         // numeroBarra.textContent = localStorage.getItem('nome');
+        fotoPerfil.src = localStorage.getItem('foto');
         cargo.textContent = localStorage.getItem('cargo');
     </script>
 </body>
