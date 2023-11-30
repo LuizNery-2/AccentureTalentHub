@@ -250,7 +250,7 @@
                     <p style="font-size: 15px; text-align: right;">SEU PROGRESSO</p>
                     <div style="width: 90%; margin-left: 10%;" id="barra_progresso"></div>
                 </div>
-                <div class="modulos_curso">
+                <!-- <div class="modulos_curso">
                     <div class="titulo_modulo">
                         <h4>Módulo 1</h4>
                         <img src="../static/img/icon_expandir.png">
@@ -419,7 +419,7 @@
                             <p>Quiz</p>
                         </div>
                         <hr style="width: 100%; margin-top: 3%;" color="#421561">
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </section>
@@ -453,6 +453,103 @@
             
         });
     </script>
+    <script>
+        //inserindo dados dianmicamnete atraves do banco de dados para
+        document.addEventListener("DOMContentLoaded", function(){
+            const boxModulosCurso = document.getElementById("box_modulos_curso")
+            const tituloAulaAtual = document.getElementById("box_info_header")
+            const videoYouTube = document.querySelector("iframe")
+            const descricao = document.getElementById("box_descricao")
+            
+            let curso;
+            async function getCurso(){
+                await fetch("http://localhost:8080/cursos/c2d9c465-0a16-4da0-ab56-dfea7ee6719c",{
+                    method: "GET",
+                    headers: {
+                    "Accept": "application/json",
+                    "Content-Type": "application/json"
+                    }
+                })
+                .then(response => response.json())
+                .then(data => {
+                    curso = data
+                    console.log(curso)
+                })
+                .catch(function (error) {
+                console.error("Erro na solicitação: " + error);
+            })
+            }       
+            async function preencherBoxModulosCursos() {
+                boxModulosCurso.querySelector('h1').innerHTML = curso.nome
+                console.log(curso.modulos)
+                for (let i = 0; i < curso.modulos.length; i++) {
+                    const modulosCursos = document.createElement('div')
+                    const moduloTitulo = document.createElement('div')
+                    const moduloTituloH4 = document.createElement('h4')
+                    const expandirIMG = document.createElement('img')
+
+                    modulosCursos.classList.add('modulos_curso')
+                    moduloTitulo.classList.add('titulo_modulo')
+
+                    moduloTituloH4.innerHTML = curso.modulos[i].nomeModulo;
+                    expandirIMG.src = "../static/img/icon_expandir.png";
+
+                    moduloTitulo.appendChild(moduloTituloH4)
+                    moduloTitulo.appendChild(expandirIMG);
+                    modulosCursos.appendChild(moduloTitulo);
+                    boxModulosCurso.appendChild(modulosCursos)
+
+                    for (let j = 0; j < curso.modulos[i].aulas.length; j++) {
+                        const boxAulas = document.createElement('div');
+                        const aulasModulo = document.createElement('div');
+                        const imgAulas = document.createElement('img');
+                        const nomeAula = document.createElement('p');
+                        const linhaHorizontal = document.createElement('hr');
+
+                        aulasModulo.classList.add('aulas_modulo');
+                        aulasModulo.classList.add('titulo_modulo');
+                        boxAulas.classList.add('box_aulas');
+
+                        imgAulas.src = "../static/img/icon_video.png";
+                        nomeAula.innerHTML = curso.modulos[i].aulas[j].nomeAula;
+
+                        linhaHorizontal.style.width = '100%';
+                        linhaHorizontal.style.marginTop = '3%';
+                        linhaHorizontal.style.color = '#421561';
+
+                        aulasModulo.appendChild(imgAulas);
+                        aulasModulo.appendChild(nomeAula);
+                        boxAulas.appendChild(aulasModulo);
+                        boxAulas.appendChild(linhaHorizontal);
+
+                        boxModulosCurso.appendChild(boxAulas);
+                        aulasModulo.addEventListener('click',() =>{
+                            tituloAulaAtual.querySelector('h2').innerHTML = curso.modulos[i].aulas[j].nomeAula;
+                            videoYouTube.src = curso.modulos[i].aulas[j].linkAula; 
+                        })
+                    }
+                    
+                    
+                }
+            }
+            async function preencherCurso(){
+                
+                tituloAulaAtual.querySelector('h2').innerHTML = curso.modulos[0].aulas[0].nomeAula;
+                videoYouTube.src = curso.modulos[0].aulas[0].linkAula; 
+                descricao.querySelector('p').innerHTML = curso.descricao;
+            }
+            async function inicializarPagina(){
+                 await getCurso();
+                 await preencherBoxModulosCursos();
+                 await preencherCurso()
+            }
+            inicializarPagina();
+            
+
+
+        })
+    </script>
+    
 
 </body>
 </html>

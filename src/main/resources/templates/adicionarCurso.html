@@ -535,6 +535,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let respostaCurso;
     let idsAulas = [];
     let idsModulos = [];
+    let contadorAulas = 1;
     async function atualizarInteresses(url, IDs) {
         await fetch(url, {
             method: "POST",
@@ -622,7 +623,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 console.error("Erro na solicitação: " + error);
         });
         }
-      
+      contadorAulas = 1;
     });
 
     criarAula.addEventListener("click", async () =>{
@@ -638,7 +639,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
             },
             body: JSON.stringify({
-                nomeAula: nomeAula,
+                nomeAula: "Aula " + contadorAulas +": " +  nomeAula,
                 linkAula: linkAula
                 })
             })
@@ -651,6 +652,7 @@ document.addEventListener('DOMContentLoaded', function () {
             .catch(function (error) {
                 console.error("Erro na solicitação: " + error);
             });
+            contadorAulas++;
         }
         else
         {
@@ -671,7 +673,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                nomeModulo: nomeModulo
+                nomeModulo:"Modulo " + idsModulos.length+1 + ": " + nomeModulo
             })
             })  
             .then(response => response.json())
@@ -696,6 +698,7 @@ document.addEventListener('DOMContentLoaded', function () {
             .catch(function (error) {
                 console.error("Erro na solicitação: " + error);
             })
+            idsAulas = []
         }
         else{
             console.log("adicione pele menos uma aula para continuar")

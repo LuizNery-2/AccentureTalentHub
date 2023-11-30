@@ -32,7 +32,7 @@ public class ModuloModel implements Serializable{
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonIgnoreProperties("modulos")
-    private Set<AulaModel> aulas = new HashSet<>();
+    private Set<AulaModel> aulas = new LinkedHashSet<>();
 
     @ManyToOne
     @JsonIgnoreProperties("modulos")

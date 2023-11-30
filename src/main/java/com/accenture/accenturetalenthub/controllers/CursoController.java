@@ -3,6 +3,7 @@ package com.accenture.accenturetalenthub.controllers;
 import com.accenture.accenturetalenthub.dtos.CursoRecordDto;
 import com.accenture.accenturetalenthub.models.CursoModel;
 import com.accenture.accenturetalenthub.repositories.CursoRepository;
+import com.accenture.accenturetalenthub.services.SortModels;
 import jakarta.validation.Valid;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class CursoController{
     @Autowired
     CursoRepository cursoRepository;
+    @Autowired
+    SortModels sortModels;
 
      @PostMapping("/cursos")
      public ResponseEntity<CursoModel> saveCurso(@RequestBody @Valid CursoRecordDto cursoRecordDto)
@@ -42,7 +45,8 @@ public class CursoController{
         if (cursoO.isEmpty()){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Curso não encontrado");
         }
-        return ResponseEntity.status(HttpStatus.OK).body(cursoO.get());
+        var cursoModel = sortModels.ordenarModulosAulas(cursoO.get());
+        return ResponseEntity.status(HttpStatus.OK).body(cursoModel);
     }
     
     @PutMapping("/cursos/{id}")
