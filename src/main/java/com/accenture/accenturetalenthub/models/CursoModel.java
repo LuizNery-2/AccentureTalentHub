@@ -27,6 +27,17 @@ public class CursoModel implements Serializable {
             inverseJoinColumns = @JoinColumn(name = "Interesse_Id")
     )
     private Set<InteresseModel> interesses =new HashSet<>();
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "forum_id", referencedColumnName = "idForum")
+    private ForumModel forumModel; 
+
+    public ForumModel getForumModel() {
+        return forumModel;
+    }
+
+    public void setForumModel(ForumModel forumModel) {
+        this.forumModel = forumModel;
+    }
 
     public UUID getIdCurso() {
         return IdCurso;
