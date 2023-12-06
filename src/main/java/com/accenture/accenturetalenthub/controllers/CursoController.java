@@ -2,6 +2,7 @@ package com.accenture.accenturetalenthub.controllers;
 
 import com.accenture.accenturetalenthub.dtos.CursoRecordDto;
 import com.accenture.accenturetalenthub.models.CursoModel;
+import com.accenture.accenturetalenthub.models.ForumModel;
 import com.accenture.accenturetalenthub.repositories.CursoRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.BeanUtils;
@@ -23,8 +24,10 @@ public class CursoController{
     @PostMapping("/cursos")
     public ResponseEntity<CursoModel> saveCurso(@RequestBody @Valid CursoRecordDto cursoRecordDto)
     {
+        ForumModel forum = new ForumModel();
         var cursoModel  = new CursoModel();
         BeanUtils.copyProperties(cursoRecordDto, cursoModel);
+        cursoModel.setForumModel(forum);
         return ResponseEntity.status(HttpStatus.CREATED).body(cursoRepository.save(cursoModel));
 
     }
