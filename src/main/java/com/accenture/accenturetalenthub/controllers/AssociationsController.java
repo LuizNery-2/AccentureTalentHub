@@ -169,9 +169,23 @@ public class AssociationsController {
         }
 
         UsuarioModel usuario = usuarioO.get();
-        Set<SalaModel> salasDoUsuario = usuario.getSalas(); // Substitua 'getSalas()' pelo método correto
+        Set<SalaModel> salasDoUsuario = usuario.getSalas(); 
 
         return ResponseEntity.status(HttpStatus.OK).body(salasDoUsuario);
+    }
+
+    @GetMapping("cursosSalas/{idSala}")
+    public ResponseEntity<Set<CursoModel>> cursoDaSala(@PathVariable(value = "idSala") UUID idSala) {
+        Optional<SalaModel> salaO = salaRepository.findById(idSala);
+
+        if (salaO.isEmpty()) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
+
+        SalaModel sala = salaO.get();
+        Set<CursoModel> cursoDaSala = sala.getCursos(); 
+
+        return ResponseEntity.status(HttpStatus.OK).body(cursoDaSala);
     }
 
     @PostMapping("cursosSalas/{idSala}")
@@ -199,6 +213,8 @@ public class AssociationsController {
         }
         return ResponseEntity.status(HttpStatus.OK).body("Usuarios adicionados a sala com sucesso");
     }
+
+    
 
 
     @PostMapping("/cursosmodulos/{idCurso}")
