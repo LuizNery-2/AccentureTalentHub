@@ -2,23 +2,22 @@ package com.accenture.accenturetalenthub.models;
 
 import jakarta.persistence.*;
 import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
-import java.util.UUID;
+import java.util.*;
 
 import static jakarta.persistence.GenerationType.AUTO;
 
 @Entity
 @Table(name = "TB_CURSOS")
 public class CursoModel implements Serializable {
-    private static final long serialVersionUID = 1l;
+    private static final long serialVersionUID = 2l;
 
     @Id
     @GeneratedValue(strategy = AUTO)
     private UUID IdCurso;
     private String nome;
     private String descricao;
-    private Boolean concluido;
+    private Boolean concluido = false;
+    private int quantidadeHoras;
     private int pontuacaoGeral;
     @ManyToMany
     @JoinTable(
@@ -37,6 +36,27 @@ public class CursoModel implements Serializable {
 
     public void setForumModel(ForumModel forumModel) {
         this.forumModel = forumModel;
+    }
+
+    @ManyToMany(mappedBy = "cursos")
+    private List<UsuarioModel> usuarios = new ArrayList<>();
+    @ManyToMany(mappedBy = "curso")
+    private Set<SalaModel> salas = new HashSet<>();
+
+    public List<UsuarioModel> getUsuarios() {
+        return usuarios;
+    }
+
+    public void setUsuarios(List<UsuarioModel> usuarios) {
+        this.usuarios = usuarios;
+    }
+
+    public Set<SalaModel> getSalas() {
+        return salas;
+    }
+
+    public void setSalas(Set<SalaModel> salas) {
+        this.salas = salas;
     }
 
     public UUID getIdCurso() {
@@ -81,5 +101,13 @@ public class CursoModel implements Serializable {
 
     public void setInteresses(Set<InteresseModel> interesses) {
         this.interesses = interesses;
+    }
+
+    public int getQuantidadeHoras() {
+        return quantidadeHoras;
+    }
+
+    public void setQuantidadeHoras(int quantidadeHoras) {
+        this.quantidadeHoras = quantidadeHoras;
     }
 }

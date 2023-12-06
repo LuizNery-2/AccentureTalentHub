@@ -1,26 +1,26 @@
 package com.accenture.accenturetalenthub.models;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.UUID;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import static jakarta.persistence.GenerationType.AUTO;
 
 
 @Entity
 @Table(name = "TB_AULAS")
-public class AulasModel implements Serializable{
+public class AulaModel implements Serializable{
     private static final long serialVersionUID = 1l;
 
 
     @Id
     @GeneratedValue(strategy = AUTO)
-    private UUID IdModulo;
+    private UUID IdAula;
 
+    @ManyToMany(mappedBy = "aulas")
+    private ArrayList<ModuloModel> modulos;
     private String nomeAula;
 
     private String linkAula;
@@ -29,11 +29,11 @@ public class AulasModel implements Serializable{
     //Get and Setters
 
     public UUID getIdModulo() {
-        return IdModulo;
+        return IdAula;
     }
 
     public void setIdModulo(UUID idModulo) {
-        IdModulo = idModulo;
+        IdAula = idModulo;
     }
 
     public String getNomeAula() {

@@ -10,7 +10,7 @@ import java.util.Set;
 @Entity
 @Table(name = "TB_INTERESSES")
 public class InteresseModel implements Serializable {
-    private static final long serialVersionUID = 2l;
+    private static final long serialVersionUID = 4l;
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
@@ -19,7 +19,7 @@ public class InteresseModel implements Serializable {
     private String categoria;
     private int pontuacaoInteresse;
     @ManyToMany(mappedBy = "interesses")
-    private Set<CursoModel> curso = new HashSet<>();
+    private Set<CursoModel> cursos = new HashSet<>();
 
     @ManyToMany(mappedBy = "interesses")
     private Set<UsuarioModel> usuario = new HashSet<>();

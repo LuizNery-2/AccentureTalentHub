@@ -17,8 +17,8 @@ import static jakarta.persistence.GenerationType.AUTO;
 
 @Entity
 @Table(name = "TB_MODULOS")
-public class ModulosModel implements Serializable{
-    private static final long serialVersionUID = 1l;
+public class ModuloModel implements Serializable{
+    private static final long serialVersionUID = 5l;
 
     @Id
     @GeneratedValue(strategy = AUTO)
@@ -33,7 +33,7 @@ public class ModulosModel implements Serializable{
             joinColumns =   @JoinColumn(name = "modulo_id"),
             inverseJoinColumns = @JoinColumn(name = "Aula_Id")
     )
-    private ArrayList<AulasModel> aulas;
+    private ArrayList<AulaModel> aulas;
 
 
     //Get and Setters
@@ -54,11 +54,11 @@ public class ModulosModel implements Serializable{
         this.nomeModulo = nomeModulo;
     }
 
-    public ArrayList<AulasModel> getAulas() {
+    public ArrayList<AulaModel> getAulas() {
         return aulas;
     }
 
-    public void setAulas(ArrayList<AulasModel> aulas) {
+    public void setAulas(ArrayList<AulaModel> aulas) {
         this.aulas = aulas;
     }
 }
