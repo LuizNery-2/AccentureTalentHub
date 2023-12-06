@@ -1,5 +1,6 @@
 package com.accenture.accenturetalenthub.repositories;
 
+import java.util.Optional;
 import java.util.UUID;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -9,6 +10,6 @@ import com.accenture.accenturetalenthub.models.ForumModel;
 @Repository
 
 public interface ForumRepository extends JpaRepository<ForumModel, UUID> {
-
+    Optional<ForumModel> findById(UUID IdForum);
 }
 

@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -21,10 +22,10 @@ public class ForumModel implements Serializable {
     @GeneratedValue(strategy = AUTO)
     private UUID IdForum;
 
-    @OneToMany(mappedBy = "forumModel")
+    @OneToMany(mappedBy = "forumModel", cascade = CascadeType.ALL)
     private List<ComentarioForum> comentarioForum = new ArrayList<>();
 
-    @OneToMany(mappedBy = "forumModel")
+    @OneToMany(mappedBy = "forumModel", cascade = CascadeType.ALL)
     private List<ComentarioRespostaForum> comentarioResposta = new ArrayList<>();
 
     public UUID getIdForum() {
