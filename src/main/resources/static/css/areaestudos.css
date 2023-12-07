@@ -129,21 +129,301 @@
     display: block;
 }
 
-@media screen and (max-width: 1200px){
-
+#info_instrutor div {
+    width: 50%;
+    margin-left: 10px;
 }
 
-@media screen and (max-width: 1024px){
-    
-}
-
-@media screen and (max-width: 768px){
-    
-}
-
-/* @media screen and (max-width: 560px){
-    
+/* #box_info ul li{
+    align-self: center !important;
 } */
+
+@media screen and (max-width: 1300px){
+    #box_info_curso iframe{
+        width: 753px !important;
+        height: 423px !important;
+    }
+
+    #box_modulos_curso h1{
+        font-size: 30px !important;
+        align-self: flex-end !important;
+    }
+
+    #barra_progresso{
+        width: 80% !important;
+        height: 15px !important;
+    }
+
+    .box_aulas img {
+        width: 22px;
+    }
+
+    #box_info_header{
+        width: 98%;
+    }
+
+    .txt_mensagem, .mensagens_chat p {
+        font-weight: 200 !important;
+        font-size: 12px !important;
+    }
+
+    #foto_chat {
+        width: 45px !important;
+        align-self: flex-start;
+        margin-top: 1rem;
+        margin-right: 1rem;
+    }
+
+    #info_instrutor span{
+        font-size: 12px;
+    }
+
+    #info_instrutor img{
+        width: 90px !important;
+        height: auto;
+    }
+
+}
+
+@media screen and (max-width: 1110px){
+    #box_info_curso iframe{
+        width: 40.8125rem !important;
+        height: 22.9375rem !important;
+    }
+
+    #box_modulos_curso h1{
+        font-size: 25px !important;
+        align-self: flex-end !important;
+    }
+
+    #box_modulos_curso p{
+        font-size: 12px !important;
+    }
+
+    #barra_progresso{
+        width: 70% !important;
+        height: 12px !important;
+    }
+
+    .box_aulas img {
+        width: 20px;
+    }
+
+    #box_info_header{
+        width: 100%;
+    }
+
+    #box_info_curso {
+        margin-left: 10px;
+    }
+
+    #box_info_header h2{
+        font-size: 18px;
+    }
+
+    #box_info_header button{
+        font-size: 12px;
+        height: auto !important;
+        width: auto;
+        padding-top: 1% !important;
+        padding-bottom: 1%;
+        padding-left: 3%;
+        padding-right: 3%;
+        margin-top: 1%;
+    }
+    .lista_descricao, .lista_sobre, .lista_forum, .elemento_lista{
+        font-size: 12px !important;
+        height: auto !important;
+        padding-top: 1% !important;
+        padding-bottom: 1%;
+    }
+
+    #box_descricao p {
+        font-size: 12px;
+        width: 98%;
+    }
+
+    /* Bloco 1 */
+
+    #box_info_curso {
+        width: 55%;
+    }
+
+    #box_info {
+        width: 100% !important;
+    }
+
+    #box_info_header {
+        width: 100% !important;
+    }
+
+
+}
+
+@media screen and (max-width: 968px){
+    #box_info_curso iframe{
+        width: 453px !important;
+        height: 254px !important;
+    }
+
+    #box_modulos_curso h1{
+        font-size: 20px !important;
+    }
+
+    #box_modulos_curso p{
+        font-size: 10px !important;
+    }
+
+    #barra_progresso{
+        width: 80% !important;
+        height: 10px !important;
+    }
+
+    .box_aulas img {
+        width: 20px;
+    }
+
+    #box_info_header{
+        width: 100%;
+    }
+
+    #box_info_curso {
+        margin-left: 35px;
+    }
+
+    #box_info_header h2{
+        font-size: 14px;
+    }
+
+    #box_info_header, #box_info{
+        width: 75%;
+    }
+    
+    .lista_descricao, .lista_sobre, .lista_forum, .elemento_lista, #box_info_header button{
+        font-size: 10px !important;
+    }
+
+    .lista_descricao, .lista_sobre, .lista_forum, .elemento_lista{
+        width:  auto !important;
+        padding-left: 3%;
+        padding-right: 3%;
+    }
+
+    #box_descricao p {
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width: 790px){
+    #box_info_curso iframe{
+        width: 300px !important;
+        height: 168px !important;
+    }
+}
+@media screen and (max-width: 650px){
+    
+    
+
+    #box_modulos_curso h1{
+        font-size: 16px !important;
+    }
+
+    #box_modulos_curso p{
+        font-size: 8px !important;
+    }
+
+    #barra_progresso{
+        width: 80% !important;
+        height: 8px !important;
+    }
+
+    .box_aulas img {
+        width: 18px;
+    }
+
+    #box_info_header h2{
+        font-size: 12px;
+    }
+
+    
+    .lista_descricao, .lista_sobre, .lista_forum, .elemento_lista, #box_info_header button{
+        font-size: 8px !important;
+    }
+
+
+    #box_descricao p {
+        font-size: 8px;
+    }
+
+    .titulo_modulo img{
+        width: 10px;
+    }
+    .titulo_modulo{
+        font-size: 9px;
+    }
+}
+
+
+@media screen and (max-width: 560px){
+    section{
+        flex-direction: column !important;
+        gap: 15px
+    }
+
+    #box_nome_progresso {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    #box_modulos_curso{
+        width: 90%;
+        justify-content: center;
+        height: 30%;
+    }
+
+    .modulos_curso {
+        margin-left: 0 !important;
+        padding-left: 2rem !important;
+    }
+
+    #box_info ul {
+        flex-wrap: wrap;
+    }
+
+    #box_info_curso {
+        width: 90% !important;
+        margin-left: 0 !important;
+        margin-top: 60px !important;
+    }
+
+    #box_info_curso iframe{
+        width: 100% !important;
+        height: 220px !important;
+    }
+
+    .titulo_modulo h4{
+        margin-right: 0 !important;
+    }
+
+    .titulo_modulo{
+        gap: 1rem;
+    }
+
+    .aulas_modulo img{
+        margin-right: 0 !important;
+    }
+
+    #barra_progresso {
+        width: 90px !important;
+        height: 6px !important;
+    }
+    
+    #box_nome_progresso p {
+        font-size: 6px !important;
+    }
+
+}
 
 @media screen and (max-width: 480px){
     

@@ -360,6 +360,16 @@
     #botao_avaliacao{
         width: 15px;
     }
+
+    #lista_foto img {
+        width: 45px !important;
+    }
+
+    #lista_foto p {
+        font-size: 8px !important;
+    }
+
+
 }
 
 @media screen and (max-width: 480px){
