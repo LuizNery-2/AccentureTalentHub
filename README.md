@@ -49,12 +49,6 @@ com a senha trocada, ele escolhe as tecnologias que se interessa.
 melhoria da comunicação eficaz entre líderes e liderados, o saneamento de lacunas no desenvolvimento profissional, o alinhamento dos funcionários com as metas da empresa e a prevenção da perda de talentos valiosos.
 
 
-
-
-
-
-
-
 <h2> Como implementar a solução:</h2>
 <h3> Requisitos </h3>
 
@@ -80,7 +74,7 @@ _<h4> Clique em "Gerar projeto" e salve o arquivo do projeto em seu computador. 
 Se você estiver usando o PostgreSQL, siga estas etapas para configurar o banco de dados:
 
 
-            1. Instale o PostgreSQL.
+            1. Instale o PostgreSQL ou Mysql (da sua preferência).
             2. Crie um usuário e uma senha para o banco de dados.
             3. Crie um banco de dados para a solução.
    
