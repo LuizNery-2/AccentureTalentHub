@@ -90,10 +90,9 @@
 
 .box_metas img{
     cursor: pointer;
-    width: 20px;
 }
 
-#button_area_interesse, #button_alterar_senha{
+.button_carreira, .button_carreira1{
     background-color: #40165D;
     width: 50%;
     display: flex;
@@ -102,14 +101,9 @@
     border-radius: 30px;
     height: 60px;
     cursor: pointer;
-    border-style: none;
 }
 
-#button_alterar_senha{
-    width: 35%;
-}
-
-#button_area_interesse p, #button_alterar_senha p{
+.button_carreira p, .button_carreira1 p{
     margin-left: 2%;
 }
 
@@ -155,7 +149,7 @@ input[type='submit']:hover{
     width: 500px;
     height: 550px;
     position: absolute;
-    top: 90%;
+    top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: #3F115F;
@@ -164,10 +158,10 @@ input[type='submit']:hover{
     display: none;
     flex-direction: column;
     justify-content: space-between;
+    
 }
 .txt_info_curso-senha{
     color: #C881FD;
-    font-weight: 400;
 }
 .alterar-senha-inputs{
     margin-top: 40px;
@@ -181,124 +175,21 @@ input[type='submit']:hover{
     background-color: transparent;
 }
 
-.input_metas{
-    background-color: transparent;
-    border-style: none;
-    width: 90%;
-}
+@media screen and (max-width: 1200px){
 
-#button_atualizar_plano{
-    background-color:#5B2182;
-    color:#fff;
-    border-style: none;
-    padding-left: 2%;
-    padding-right: 2%;
-    border-radius: 30px;
-    width: 30%;
-    align-self: flex-end;
-}
-
-#botoes_atualizar_perfil{
-    display:flex;
-    flex-direction: row;
-    justify-content: space-around;
-    flex-wrap: wrap !important;
-}
-
-#botoes_atualizar_perfil img{
-   width: 30px;
-}
-
-#botoes_atualizar_perfil button{
-    height: auto; 
-    padding: 2%;
-}
-
-#poligono{
-    width: 42px;
-    height: 50px;
-}
-
-#modal-senha{
-    margin-top: 100px !important;
-    background-color: #b31717;
-}
-
-@media screen and (max-width: 1100px){
-    #box_detalhes_perfil img{
-        width: 300px;
-    }
-    #box_detalhes_perfil{
-        width: 300px;
-        height: 470px;
-    }
-
-    #box_center_perfil{
-        gap:20px;
-        margin-left: 50px;
-        margin-bottom: 50px;
-    }
-
-    #box_carreira{
-        height:475px;
-    }
 }
 
 @media screen and (max-width: 1024px){
-    #box_detalhes_perfil img{
-        width: 200px;
-    }
-    #box_detalhes_perfil{
-        width: 200px;
-        height: 330px;
-    }
-
-    #button_area_interesse img, #button_alterar_senha img{
-        width: 25px !important;
-    }
-    .box_metas img {
-        width: 20px;
-
-    }
-
-    #box_center_perfil{
-        gap:20px;
-        margin-left: 50px;
-        margin-bottom: 50px;
-    }
-
-    #box_carreira{
-        height:475px;
-    }
-    #nome_perfil{
-        width: 150px;
-        height: 30px;
-    }
-
-    #barra_progresso{
-        width: 85% !important;
-    }
-
-    #info_perfil p{
-        margin-right: 30px;
-    }
-
+    
 }
 
 @media screen and (max-width: 768px){
-    #poligono p{
-        font-size: 15px;
-    }
-    #box_informacoes_perfil p{
-        font-size: 12px !important;
-    }
+    
 }
 
-@media screen and (max-width: 560px){
-    #box_center_perfil{
-        flex-wrap: wrap;
-    }
-}
+/* @media screen and (max-width: 560px){
+    
+} */
 
 @media screen and (max-width: 480px){
     

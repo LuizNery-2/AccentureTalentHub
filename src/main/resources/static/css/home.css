@@ -97,72 +97,68 @@ main{
 
 
 
-@media screen and (max-width: 1200px){
-    .box_trilhas{
-        width: 100%;
-        margin: 5% auto;
-        padding-left: 5%;
-    }
-    
-
-    #logo-descrita{
-        width: 500px !important;
+@media screen and (max-width: 1181px){
+    html, body{
+        font-size: 15px;
     }
 
+    #txt_perfil h3{
+        font-size: 30px;
+    }
+
+    #info_perfil p{
+        font-size: 12px;
+    }
+
+    .footer_geral p{
+        font-size: 15px;
+    }
+}
+ 
+@media screen and (max-width: 1121px){
+    html, body{
+        font-size: 12px;
+    }
+    .footer_geral p{
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 1048px){
     .multiple-items img{
         width: 350px !important;
         border-radius: 10px;
     }
-
-    .multiple-items-cursos img{
-        width: 300px !important;
-    }
-}
-
-@media screen and (max-width: 1024px){
     .box_trilhas{
-        width: 95%;
+        width: 85%;
     }
+
+    
+}
+ 
+@media screen and (max-width: 847px){
     #logo-descrita{
         width: 450px !important;
     }
 
-    header{
-        height: 202px;
-    }
+}
 
+
+
+@media screen and (max-width: 705px){
     .multiple-items img{
-        width: 320px !important;
+        width: 300px !important;
         border-radius: 10px;
     }
-
-    .multiple-items-cursos img{
-        width: 270px !important;
+    .box_trilhas{
+        width: 75%;
+    }
+    #logo-descrita{
+        width: 350px !important;
     }
 }
 
-@media screen and (max-width: 768px){
-    
-    #box_info_perfil{
-        width: 100% !important;
-    }
-
-    #box_info_perfil{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-
-    #box_perfil{
-        flex-wrap: wrap-reverse !important;
-    }
-
-    .search-container {
-        
-        margin-bottom: 2rem !important;
-    }
-
+@media screen and (max-width: 600px){
     .box_trilhas{
         width: 100%;
         margin: 5% auto;
@@ -170,90 +166,40 @@ main{
     }
 
     #logo-descrita{
-        width: 380px !important;
-    }
-
-    .box_trilhas{
-        width: 90%;
-    }
-
-    .multiple-items img{
-        width: 280px !important;
-        border-radius: 10px;
-    }
-
-    .multiple-items-cursos img{
-        width: 230px !important;
-    }
-
-}
-
-@media screen and (max-width: 560px){
-    #logo-descrita{
         width: 300px !important;
-        margin-top: 50px;
     }
 
-    .box_trilhas{
-        width: 85%;
+    #box_info_perfil img{
+        width: 90px !important;
     }
 
-    header{
-        height: 120px;
+    #box_info_perfil p{
+        font-size: 10px;
     }
-
     
-}
-
-@media screen and (max-width: 480px){
-    #logo-descrita{
-        width: 230px !important;
-    } 
-
-    .box_trilhas{
-        width: 80%;
-        width: 100%;
-        margin: 5px;
-        margin-top: 10px;
+    #barra_progresso{
+        width: 100% !important;
+        height: 15px !important;
     }
 
-    .footer_geral{
-        margin-top: 25px !important;
-    }
-    #box_perfil{
-        margin-bottom: 18px;
-    }
-
-    #icon_trilha{
-        width: 15px !important;
-        margin-left: 5px;
-    }
-
-    .box_trilhas h2{
-        font-size: 12px;
-        font-weight: 500;
-    }
-
-    .multiple-items img{
+    #info_perfil{
         width: 150px !important;
-        border-radius: 8px;
-    }
-
-    .multiple-items-cursos img{
-        width: 120px !important;
-        border-radius: 8px;
-    }
-
-
-}
-
-@media screen and (max-width: 280px){
-    #logo-descrita{
-        width: 180px !important;
     }
     
-    .box_trilhas{
-        width: 75%;
+    #info_perfil p{
+        
+        font-size: 8px !important;
+    }
+
+    #txt_perfil h3{
+        font-size: 18px !important;
+    }
+
+    #txt_perfil p{
+        background-color: #9200FF;
+        width: 60px !important;
+        height: 12px !important;
+        text-align: center;
     }
 
 }
