@@ -1,11 +1,11 @@
 package com.accenture.accenturetalenthub.models;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 
-import jakarta.persistence.ElementCollection;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -19,56 +19,82 @@ import static jakarta.persistence.GenerationType.AUTO;
 @Entity
 @Table(name = "TB_USUARIOS")
 public class UsuarioModel implements Serializable {
-    private static final long serialVersionUID = 1l;
+    private static final long serialVersionUID = 7l;
     @Id
     @GeneratedValue(strategy = AUTO)
     private UUID IdUsuario;
+    private String senha;
+    private String usuario;
+    private String nome; 
+    private String cargo;
+    
+    @Column(columnDefinition = "TEXT")
+    private String foto;
+    private String email;
+   
 
-    @ElementCollection
+    private int pontuacaoGeral;
+    private int nivel;
+    private int nivelInteresse;
+    private int nivelUsuario;
+   
+
     @ManyToMany
     @JoinTable(
             name = "TB_USUARIO_CURSO",
             joinColumns =   @JoinColumn(name = "usuario_id"),
             inverseJoinColumns = @JoinColumn(name = "Curso_Id")
     )
-    private List<CursoModel> cursosConcluidos = new ArrayList<>();
-    
-    @ElementCollection
+    @JsonIgnoreProperties("usuarios")
+    private Set<CursoModel> cursos = new HashSet<>();
+
     @ManyToMany
     @JoinTable(
             name = "TB_USUARIO_INTERESSES",
             joinColumns =   @JoinColumn(name = "usuario_id"),
             inverseJoinColumns = @JoinColumn(name = "Interesse_Id")
     )
-    private List<InteresseModel> interesses = new ArrayList<>();
-    
-
-    
-    private String senha;
-    private String usuario;
-    private String nome; 
-    private String cargo;
-    // A representação de 'foto' depende do seu aplicativo; pode ser uma URL ou um Blob.
-    private String foto;
-    private int pontuacaoGeral;
-    private int nivel;
-    private int nivelInteresse;
-    
+    @JsonIgnoreProperties("usuarios")
+    private Set<InteresseModel> interesses = new HashSet<>();
+    @ManyToMany
+    @JoinTable(
+            name = "TB_USUARIOS_SALAS",
+            joinColumns = @JoinColumn(name = "usuario_id"),
+            inverseJoinColumns = @JoinColumn(name = "Sala_id")
+    )
+    @JsonIgnoreProperties("usuarios")
+    private  Set<SalaModel> salas = new HashSet<>();
     // getters e setters
-    public List<InteresseModel> getInteresses() {
+     public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+     public int getNivelUsuario() {
+        return nivelUsuario;
+    }
+
+    public void setNivelUsuario(int nivelUsuario) {
+        this.nivelUsuario = nivelUsuario;
+    }
+    
+    public Set<InteresseModel> getInteresses() {
         return interesses;
     }
 
-    public void setInteresses(List<InteresseModel> interesses) {
+    public void setInteresses(Set<InteresseModel> interesses) {
         this.interesses = interesses;
     }
 
-    public List<CursoModel> getCursosConcluidos() {
-        return cursosConcluidos;
+    public Set<CursoModel> getCursos() {
+        return cursos;
     }
 
-    public void setCursosConcluidos(List<CursoModel> cursosConcluidos) {
-        this.cursosConcluidos = cursosConcluidos;
+    public void setCursos(Set<CursoModel> cursos) {
+        this.cursos = cursos;
     }
 
     public String getUsuario() {
@@ -143,5 +169,12 @@ public class UsuarioModel implements Serializable {
     public void setNivelInteresse(int nivelInteresse) {
         this.nivelInteresse = nivelInteresse;
     }
-    
+
+    public Set<SalaModel> getSalas() {
+        return salas;
+    }
+
+    public void setSalas(Set<SalaModel> salas) {
+        this.salas = salas;
+    }
 }
