@@ -26,6 +26,7 @@ html, body{
     justify-content: space-between;
     align-items: center;
     position: fixed;
+    z-index: 1;
 }
 
 .lista_dashboard{
@@ -58,6 +59,7 @@ html, body{
 /* css do menu lateral RESPONSIVO*/
 
 .nav-responsivo{
+    z-index: 1;
     width: 220px;
     height: 100%;
     background-color: #0E0E0E;
@@ -149,10 +151,10 @@ html, body{
 
 /* Botao suspenso do perfil */
 
-#menu-suspenso {
+/* #menu-suspenso {
     position: none;
     bottom: 7rem; 
-    left: 1.5rem; 
+    left: 1.5rem;
     display: flex;
     flex-direction: column;
     padding-right: 10px !important;
@@ -181,7 +183,7 @@ html, body{
 
 #menu-suspenso.active {
     display: flex;
-}
+} */
 
 /*Botao suspenso do perfil*/
 
@@ -190,7 +192,8 @@ html, body{
 
 #box_info_dashboard{
     width: 100%;
-    padding-left: 5%;
+    /* padding-left: 5%; */
+    margin-left: 90px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -201,7 +204,10 @@ html, body{
     width: 584px;
 }
 
+/* Código de perfil */
+
 #box_perfil{
+    /* flex-wrap: wrap; */
     width: 90%;
     display: flex;
     flex-direction: row;
@@ -210,7 +216,7 @@ html, body{
 }
 
 #box_info_perfil{
-    width: 100%;
+    width: 50%;
     display: flex;
     align-items: center;
 }
@@ -255,6 +261,9 @@ html, body{
     width: 130px;
 }
 
+/* FIM Código de perfil */
+
+
 #barra_progresso{
     width: 100%;
     height: 20px;
@@ -269,6 +278,7 @@ html, body{
     position: relative;
     width: 400px;
     margin: 0 auto;
+    z-index: 0;
 }
 
 .search-container input[type="search"] {
@@ -307,19 +317,38 @@ html, body{
         font-size: 14px;
     }
 
-    #txt_perfil h3{
-        font-size: 30px;
-    }
-
-    #info_perfil p{
-        font-size: 12px;
-    }
-
     .footer_geral p{
         font-size: 14px;
     }
+    
+    #info_perfil{
+        width: 220px;
+    }
+    
+    #info_perfil p{
+        font-size: 11px;
+    }
+    
+    #txt_perfil h3{
+        font-size: 30px;
+    }
+    
+    #txt_perfil p{
+        font-size: 13px;
+    }
+    
+    #box_info_perfil img{
+        width: 120px;
+    }
 
-
+    .search-container {
+        width: 380px;
+    }
+    
+    .search-container input[type="search"] {
+        width: 380px;
+    }
+    
 }
 
 @media screen and (max-width: 1024px){
@@ -327,74 +356,115 @@ html, body{
         font-size: 13px;
     }
 
-    #box_perfil{
-        width: 85%;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        align-items: center;
-    }
-    
-    #box_info_perfil{
-        width: 100%;
-        display: flex;
-        align-items: center;
-    }
-    
-    #info_perfil{
-        width: 250px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        margin-left: 2%;
+    .footer_geral p{
+        font-size: 13px;
     }
 
+    #info_perfil{
+        width: 210px;
+    }
+    
+    #info_perfil p{
+        font-size: 10px;
+    }
+    
     #txt_perfil h3{
-        font-size: 25px;
+        font-size: 26px;
+    }
+    
+    #txt_perfil p{
+        font-size: 12px;
+    }
+    
+    #box_info_perfil img{
+        width: 100px;
     }
 
     .search-container {
-        position: relative;
+        width: 360px;
+    }
+    
+    .search-container input[type="search"] {
+        width: 360px;
+    }
+
+}
+
+@media screen and (max-width: 980px){
+    .search-container {
         width: 300px;
-        margin: 0 auto;
+    }
+
+    
+    .search-container input[type="search"] {
+        width: 300px;
+    }
+}
+
+@media screen and (max-width: 980px){
+    .search-container {
+        width: 300px;
     }
     
     .search-container input[type="search"] {
         width: 300px;
-        padding: 8px 28px 8px 8px;
-        border: 1px solid #B05CEF;
-        border-radius: 120px;
-        background-color: transparent;
-        outline: none;
-        color: #fff;
     }
-
-
-
-
 }
+
 
 @media screen and (max-width: 768px){
     html, body{
-        font-size: 12px;
+        font-size: 11px;
     }
 
-    #box_perfil{
-        flex-direction: column;
-        align-items: center;
-        gap: 3rem;
-    }  
-
-    #box_info_perfil{
-        width: 60%;
-        display: flex;
-        align-items: center;
+    .footer_geral p{
+        font-size: 11px;
     }
+
+    #info_perfil p{
+        font-size: 9px;
+    }
+    
+    #txt_perfil h3{
+        font-size: 20px;
+    }
+
+    #info_perfil{
+        width: 210px;
+    }
+    
+    #txt_perfil p{
+        font-size: 11px;
+        width: 60px;
+        height: 16px;
+    }
+    
+    #box_info_perfil img{
+        width: 80px;
+    }
+
+    .search-container {
+        width: 250px;
+    }
+    
+    .search-container input[type="search"] {
+        width: 250px;
+        padding: 8px 28px 8px 8px;
+
+    }
+
+
+    #barra_progresso{
+        height: 14px;
+        height: 9px;
+
+    }
+
 }
 
 @media screen and (max-width: 560px){
-    html, body{
-        font-size: 11px;
+    .nav-responsivo{
+        display: flex;
     }
 
     #menu-desktop{
@@ -407,28 +477,113 @@ html, body{
     }
 
     #box_info_dashboard{
-        padding-left: 0;
+        padding-left: 0 !important;
     }
 
-    #box_info_perfil{
-        width: 100%;
+    html, body{
+        font-size: 10px;
     }
 
+    .footer_geral p{
+        font-size: 10px;
+    }
+
+    #info_perfil p{
+        font-size: 8px;
+    }
+    
+    #txt_perfil h3{
+        font-size: 18px;
+    }
+
+    #info_perfil{
+        width: 180px;
+    }
+    
+    #txt_perfil p{
+        font-size: 10px;
+        width: 50px;
+        height: 14px;
+    }
+    
+    #box_info_perfil img{
+        width: 70px;
+    }
+
+    .search-container {
+        width: 220px;
+    }
+    
+    .search-container input[type="search"] {
+        width: 220px;
+        height: 25px;
+        padding: 7px 27px 7px 7px;
+
+    }
+
+    #barra_progresso{
+        height: 14px;
+    }
+
+
+    #box_info_dashboard{
+        margin-left: 0px;   
+    }
 
 }
 
 @media screen and (max-width: 480px){
-    html, body{
-        font-size: 11px;
-    }
-
+    
     .fundo-pixel {
         background-image: none !important;
     }
+
+    #info_perfil p{
+        font-size: 8px;
+    }
+    
+    #txt_perfil h3{
+        font-size: 15px;
+    }
+
+    #info_perfil{
+        width: 150px;
+    }
+    
+    #txt_perfil p{
+        font-size: 8px;
+        width: 40px;
+        height: 12px;
+    }
+    
+    #box_info_perfil img{
+        width: 60px;
+    }
+
+    .search-container {
+        width: 200px;
+    }
+    
+    .search-container input[type="search"] {
+        width: 200px;
+        height: 25px;
+        padding: 7px 27px 7px 7px;
+
+    }
+
+    #barra_progresso{
+        height: 14px;
+    }
+
 }
 
 @media screen and (max-width: 280px){
-    html, body{
-        font-size: 10px;
+    
+    #box_info_dashboard{
+        width: 100%;
+        padding-left: 0 !important;
     }
+    
+    
+
 }

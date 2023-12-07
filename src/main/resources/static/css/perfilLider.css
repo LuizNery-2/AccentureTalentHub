@@ -49,18 +49,26 @@
 }
 
 #box_carreira{
-    margin-top: 70px;
+    margin-top: 50px !important;
     margin-left: 2%;
     border: 2px solid #5B2182;
-    width: 60%;
-    height: 350px;
+    width: 100% !important;
+    height: auto !important;
     border-radius: 15px;
+}
+
+#botoes_criar{
+    display: flex;
+    flex-direction: row;
+    margin-top: 1.75rem;
+    justify-content: space-around;
 }
 
 #box_carreira h2{
     background-color: #5B2182;
     width: 50%;
-    height: 50px;
+    height: auto !important;
+    padding: 1%;
     text-align: center;
     color: #fff;
     font-weight: normal;
@@ -112,19 +120,20 @@
     margin-left: 10%;
     margin-bottom: 70px;
     border: 2px solid #5B2182;
-    width: 83%;
-    height: 300px;
+    width: 92%;
+    height: 310px;
     border-radius: 15px;
 }
 #box_equipe h2{
     background-color: #5B2182;
     width: 50%;
-    height: 50px;
-    width: 300px;
+    height: auto;
     text-align: center;
     color: #fff;
     font-weight: normal;
     border-bottom-right-radius: 50px;
+    border-top-left-radius: 10px;
+    padding: 1%;
 }
 
 .button_criar{
@@ -145,6 +154,17 @@
     list-style: none;
     /* margin-top: 20px;
     margin-left: 50px; */
+    overflow-x: scroll;
+}
+
+#lista_foto::-webkit-scrollbar {
+    height: 7px;
+}
+
+#lista_foto::-webkit-scrollbar-thumb {
+    background-color: #B05CEF;
+    border-radius: 3.5px;
+    cursor: pointer;
 }
 
 #lista_foto li{
@@ -171,21 +191,176 @@
 
 }
 
-@media screen and (max-width: 1200px){
+#button_criar_sala, #button_add_curso{
+    background-color: #B05CEF;
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    height: 60px;
+    cursor: pointer;
+    border-style: none;
+    gap: 8px;
+    font-weight: 600;
+}
 
+#box_alterar_criar{
+    width: 100%;
+}
+
+#botoes_atualizar_perfil{
+    margin-bottom: 1.75rem;
+}
+
+#botoes_criar img{
+    width: 25px;
+}
+
+/* #botoes_atualizar_perfil img {
+    width: 30px;
+} */
+
+
+@media screen and (max-width: 1220px){
+    #box_equipe{
+        margin-left: 13%;
+        width: 85%;
+    }
+    
+    #box_equipe h2, #box_carreira h2{
+        font-size: 18px;
+    }
+
+    #box_carreira {
+        width: 90%;
+    }
+    
 }
 
 @media screen and (max-width: 1024px){
+    #box_carreira h2{
+        font-size: 16px;
+    }
     
+    .box_metas p{
+        color: #B05CEF;
+        font-size: 12px;
+    }
+    
+    .box_metas img{
+        cursor: pointer;
+        width: 12px !important;
+    }
+
+    #botoes_criar img{
+        width: 20px;
+    }
+
+    #botoes_criar button, #botoes_atualizar_perfil button{
+        height: auto;
+        padding-top: 2%;
+        padding-bottom: 2%;
+    }
 }
 
 @media screen and (max-width: 768px){
-    
+    #botoes_criar button, #botoes_atualizar_perfil button{
+        font-size: 10px;
+    }
+
+    #botoes_criar, #botoes_atualizar_perfil{
+        display: flex !important;
+        flex-wrap: wrap !important;
+    }
+
+    #box_carreira h2, #box_equipe h2{
+        font-size: 14px;
+    }
+
+    #lista_foto img{
+        width: 60px !important;
+    }
+    #box_equipe{
+        margin-left: 16%;
+        width: 75%;
+    }
+    #box_carreira {
+        width: 85% !important;
+        height: auto;
+    }
+
+    .inputAvaliacaoLider{
+        font-size: 10px;
+        height: auto;
+        padding-top: 2%;
+        padding-bottom: 2%;
+    }
+
+    #botao_avaliacao{
+        width: 15px;
+    }
 }
 
-/* @media screen and (max-width: 560px){
-    
-} */
+@media screen and (max-width: 560px){
+    #box_center_perfil{
+        padding: 0 !important;
+        padding-top: 8% !important;
+    }
+    #box_carreira {
+        height: auto !important;
+        margin-left: 7% !important;
+        margin-top: 2% !important;
+        justify-content: center !important;
+    }
+
+    #botoes_criar button, #botoes_atualizar_perfil button{
+        font-size: 8px;
+    }
+
+    #botoes_criar img, #botoes_atualizar_perfil img{
+        width: 12px !important;
+    }
+
+    #botoes_criar, #botoes_atualizar_perfil{
+        display: flex !important;
+        flex-wrap: wrap !important;
+    }
+
+    #botoes_atualizar_perfil{
+        display: flex !important;
+        flex-wrap: wrap !important;
+    }
+
+    #box_info_metas input, #box_info_metas p{
+        font-size: 10px;
+    }
+
+    #box_carreira h2, #box_equipe h2{
+        font-size: 12px;
+    }
+
+    #box_center_perfil{
+        justify-content: center;
+        margin-top: -80px;
+        margin-left: 0 !important; 
+    }
+    #box_equipe{
+        margin-left: 12%;
+        height: auto;
+    }
+
+    .inputAvaliacaoLider{
+        font-size: 10px;
+        height: auto;
+        padding-top: 2%;
+        padding-bottom: 2%;
+    }
+
+    #botao_avaliacao{
+        width: 15px;
+    }
+}
 
 @media screen and (max-width: 480px){
     

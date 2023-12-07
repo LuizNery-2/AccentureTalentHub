@@ -3,12 +3,11 @@
     display: flex;
     justify-content: center;
     margin-top: 20px;
-    
 }
 
 .caixa_criacao {
     width: 780px;
-    height: 850px;
+    height: 800px;
     background-color: #3B0B5A;
     border-radius: 5px;
     border: 1px solid #E1BBFD;
@@ -28,7 +27,6 @@
 
 .forms_criarCurso {
     display: flex;
-    flex-direction: column;
     justify-content: space-around;
 }
 
@@ -45,9 +43,10 @@
 }
 
 .banner_curso {
-    
-    height: 25px;
-    width: 100%;
+    padding: 20px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    height: 120px;
     background-color:#5B2182;
     border-radius: 5px;
     margin-bottom: 30px;
@@ -55,14 +54,11 @@
     justify-content: center;
     align-items: center;
     color: #ffff;
-    border: none;
 }
 
 .descricao_curso {
     width: 270px;
-    padding: 0;
     height: 120px;
-    resize: none;
     background-color: #5B2182;
     border-radius: 5px;
     margin-bottom: 30px;
@@ -194,20 +190,6 @@
   background-color: #B429E6 ;
   color: #fff;
   cursor: pointer;
-}
-
-#nomeModulo
-{
-  color: white;
-  background-color:  #3F115F;
-  border: none;
-  font-size:1.5rem;
-  margin-bottom: 1rem;
-  width: 35%;
-}
-#nomeModulo:focus
-{
-  outline: none;
 }
 
 @media screen and (max-width: 1200px){
