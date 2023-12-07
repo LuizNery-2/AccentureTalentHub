@@ -222,7 +222,6 @@
 } */
 
 
-
 @media screen and (max-width: 1220px){
     #box_equipe{
         margin-left: 13%;
@@ -361,16 +360,6 @@
     #botao_avaliacao{
         width: 15px;
     }
-
-    #lista_foto img {
-        width: 45px !important;
-    }
-
-    #lista_foto p {
-        font-size: 8px !important;
-    }
-
-
 }
 
 @media screen and (max-width: 480px){

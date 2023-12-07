@@ -1,8 +1,8 @@
 #poligono{
     background-image: url("../img/Polygon.png") !important;
     background-size: 100% 100%;
-    width: 55px !important;
-    height: 55px !important;
+    width: 62px;
+    height: 70px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -53,21 +53,18 @@
     margin-left: 2%;
     border: 2px solid #5B2182;
     width: 60%;
-    height: auto !important;
+    height: 530px;
     border-radius: 15px;
 }
 
 #box_carreira h2{
     background-color: #5B2182;
     width: 50%;
-    height: auto;
-    padding-bottom: 2%;
-    padding-top: 2%;
+    height: 50px;
     text-align: center;
     color: #fff;
     font-weight: normal;
     border-bottom-left-radius: 50px;
-    border-top-right-radius: 10px;
 }
 
 #box_info_metas{
@@ -206,7 +203,6 @@ input[type='submit']:hover{
     flex-direction: row;
     justify-content: space-around;
     flex-wrap: wrap !important;
-    margin-bottom: 2% !important;
 }
 
 #botoes_atualizar_perfil img{
@@ -223,22 +219,9 @@ input[type='submit']:hover{
     height: 50px;
 }
 
-.modal-senha{
-    margin-top: 200px !important;
-}
-
-.alterar-senha-inputs input {
-    border-style: none;
-    font-size: 12px;
-    padding: 2%;
-    color:#3F115F;
-    border-radius: 60px !important;
-}
-
-.alterar-senha-inputs {
-    display: flex;
-    flex-direction: column;
-    gap: 10px !important;
+#modal-senha{
+    margin-top: 100px !important;
+    background-color: #b31717;
 }
 
 @media screen and (max-width: 1100px){
@@ -300,35 +283,6 @@ input[type='submit']:hover{
         margin-right: 30px;
     }
 
-    #box_carreira h2{
-        font-size: 15px !important;
-    }
-
-    #botoes_atualizar_perfil button, #button_atualizar_plano {
-        font-size: 12px;
-    }
-
-    #button_area_interesse img, #button_alterar_senha img {
-        width: 20px !important;
-    }
-
-    .box_metas img {
-        width: 15px;
-    }
-
-    #box_carreira {
-        width: 60%;
-    }
-
-    .alterar-senha-inputs input {
-        font-size: 10px !important;
-    }
-    
-    .alterar-senha-inputs h4 {
-        font-size: 15px !important;
-
-    }
-
 }
 
 @media screen and (max-width: 768px){
@@ -340,101 +294,9 @@ input[type='submit']:hover{
     }
 }
 
-@media screen and (max-width: 768px){
-    .input_metas {
-        font-size: 10px;
-    }
-
-    #box_carreira h2 {
-        font-size: 12px !important;
-        width: 60%;
-    }
-
-    #box_informacoes_perfil p {
-        font-size: 10px !important;
-    }
-
-    #nome_perfil {
-        height: auto;
-        width: 100%;
-        padding: 3%;
-        padding-right: 7%;
-    }
-
-    #poligono {
-        height: 50px !important;
-        width: 70px !important;
-    }
-
-    #botoes_atualizar_perfil button, #button_atualizar_plano {
-        font-size: 10px;
-    }
-
-    #alterar-senha h3 {
-        font-size: 20px !important;
-    }
-    #alterar-senha img {
-        width: 25px !important;
-        height: 25px !important;
-    }
-    
-    .alterar-senha-inputs h4 {
-        font-size: 15px !important;
-
-    }
-}
-
-@media screen and (max-width: 550px){
+@media screen and (max-width: 560px){
     #box_center_perfil{
-        flex-direction: column;
-        align-items: center !important;
-        margin-left: 0 !important;
-        padding: 0 !important;
-    }
-
-    #box_carreira{
-        width: 80%;
-        margin-top: 0px;
-    }
-
-    #box_detalhes_perfil {
-        margin-top: 5px;
-        margin-bottom: 5px;
-    }
-    #box_informacoes_perfil {
-        margin-top: 50px
-    }
-
-    .modal-senha{
-        width: 70%;
-        height: 450px;
-    }
-
-    #alterar-senha h3 {
-        font-size: 15px !important;
-    }
-    #alterar-senha img {
-        width: 20px !important;
-        height: 20px !important;
-    }
-
-    .alterar-senha-inputs{
-        display: flex;
-        flex-direction: column;
-        padding-left: 10px;
-    }
-    
-    .alterar-senha-inputs h4 {
-        font-size: 10px !important;
-
-    }
-    .alterar-senha-inputs input {
-        font-size: 10px !important;
-        width: 95% !important;
-
-    }
-    .txt_info_curso-senha {
-        font-size: 8px !important;
+        flex-wrap: wrap;
     }
 }
 
@@ -443,8 +305,5 @@ input[type='submit']:hover{
 }
 
 @media screen and (max-width: 280px){
-    .modal-senha{
-        width: 70%;
-        height: 510px;
-    }
+    
 }
