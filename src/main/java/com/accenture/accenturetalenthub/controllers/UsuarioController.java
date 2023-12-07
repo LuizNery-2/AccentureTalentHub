@@ -32,13 +32,30 @@ public class UsuarioController {
     @Autowired
     UsuarioRepository usuarioRepository;
 
+    // @PostMapping("/usuario")
+    // public ResponseEntity<UsuarioModel> saveUsuario(@RequestBody UsuarioRecordDto usuarioRecordDto){
+    //     var usuarioModel = new UsuarioModel();
+    //     BeanUtils.copyProperties(usuarioRecordDto, usuarioModel);
+
+    //     return ResponseEntity.status(HttpStatus.CREATED).body(usuarioRepository.save(usuarioModel));
+
+    // }
+
     @PostMapping("/usuario")
     public ResponseEntity<UsuarioModel> saveUsuario(@RequestBody UsuarioRecordDto usuarioRecordDto){
         var usuarioModel = new UsuarioModel();
         BeanUtils.copyProperties(usuarioRecordDto, usuarioModel);
 
-        return ResponseEntity.status(HttpStatus.CREATED).body(usuarioRepository.save(usuarioModel));
+        UsuarioModel savedUsuario = usuarioRepository.save(usuarioModel);
 
+        // Verifica se o usuário foi salvo corretamente antes de retornar
+        if(savedUsuario.getIdUsuario() != null){
+            // Retorna o usuário e o status 201 Created
+            return ResponseEntity.status(HttpStatus.CREATED).body(savedUsuario);
+        } else {
+            // Em caso de falha ao salvar, retorna um status de erro
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
     }
 
     @GetMapping("/usuario")
