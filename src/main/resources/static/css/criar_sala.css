@@ -28,25 +28,75 @@
 }
 
 @media screen and (max-width: 1200px){
-
+    .box_CriarSala{
+        width: 70%;
+        transform: translate(240px, 2%);   
+    }
+    .box_CriarSala h2{
+        margin-top: 2%;
+        margin-bottom: 25px;
+    } 
+    .banner_CriarSala{
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
 }
 
 @media screen and (max-width: 1024px){
-    
+    .box_CriarSala{
+        width: 80%;
+        transform: translate(160px, 2%);   
+    }
+    .box_CriarSala h2{
+        margin-top: 1.5%;
+        margin-bottom: 20px;
+    } 
+    .banner_CriarSala{
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
 }
 
 @media screen and (max-width: 768px){
-    
+    .box_CriarSala{
+        width: 90%;
+        transform: translate(80px, 2%);   
+    }
+    .box_CriarSala h2{
+        margin-top: 1%;
+        margin-bottom: 15px;
+    } 
+    .banner_CriarSala{
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
 }
 
-/* @media screen and (max-width: 560px){
-    
-} */
-
 @media screen and (max-width: 480px){
-    
+    .box_CriarSala{
+        width: 100%;
+        transform: translate(0px, 2%);   
+    }
+    .box_CriarSala h2{
+        margin-top: 0.5%;
+        margin-bottom: 10px;
+    } 
+    .banner_CriarSala{
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
 }
 
 @media screen and (max-width: 280px){
-    
+    .box_CriarSala{
+        padding: 1%;
+    }
+    .box_CriarSala h2{
+        margin-top: 0.2%;
+        margin-bottom: 5px;
+    } 
+    .banner_CriarSala{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
 }
