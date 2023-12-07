@@ -13,8 +13,6 @@
 
     <!-- Importação dos arquivos Jquary -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="../static/js/script.js"></script>
-
 </head>
 <body id="">
     <main>
@@ -49,9 +47,7 @@
     
             <ul>
                 <li id="icon_usuario_menu" class="lista_dashboard">
-                    <a href="perfil.html">
-                        <img class="icon_menu" src="../static/img/icon_perfil.png">
-                    </a>
+                    <img class="icon_menu" src="../static/img/icon_perfil.png">
                 </li>
             </ul>
         </nav>
@@ -100,15 +96,22 @@
             </ul>
             <ul class="lista_dashboard-responsivo">
                 <li id="icon_usuario_menu-responsivo" class="lista_dashboard-responsivo">
-                    <a class="link-page-responsivo" href="perfil.html">
+                    <div class="link-page-responsivo">
                         <img class="icon_menu-responsivo" src="../static/img/icon_perfil.png">
                         <p>Perfil</p>
-                    </a>
+                    </div>
                 </li>
             </ul>
         </nav>
 
         <!--  FIM DO NAV RESPONSIVO -->
+
+        <div id="menu-suspenso">
+            <ul>
+                <li><a href="perfil.html">Perfil</a></li>
+                <li><a href="index.html">Sair</a></li>
+            </ul>
+        </div>
     
         <section id="box_info_dashboard">
             <header></header>
@@ -126,7 +129,7 @@
 
                 <div class="info_sala_caracteristicas">
                     <div>
-                        <p id="data_criacao" style="font-size: 10px;">Criado em 00/00/0000 por Keylane Cardoso</p>
+                        <p style="font-size: 10px;">Criado em 00/00/0000 por Keylane Cardoso</p>
                         <p style="font-size: 18px;">Faltam 30 dias para o encerramento da sala</p>
                     </div>
                     <br>
@@ -134,7 +137,7 @@
                     <div>
                         <p style="font-size: 20px;">SEU PROGRESSO</p>
                         <div style="width: 60%; margin-left: 40%;" id="barra_progresso"></div>
-                        <p id="qtd_horas" style="font-size: 14px;">Esta sala possui 20H</p>
+                        <p style="font-size: 14px;">Esta sala possui 20H</p>
                     </div>
                 </div>
             </div>

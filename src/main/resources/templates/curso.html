@@ -17,7 +17,6 @@
 
     <!-- Importação dos arquivos Jquary -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="../static/js/script.js"></script>
 
 </head>
 <body id="">
@@ -59,210 +58,48 @@
                 </li>
             </ul>
         </nav>
-
-        <!--  Este nav só será ativado quando as páginas estiverem no modo responsivo! -->
-        <!--  INICIO DO NAV RESPONSIVO -->
-        <div id="icon-menu-responsivo">
-            <img src="../static/img/menu-aberto.png">
-        </div>
-        
-        <nav class="nav-responsivo">
-            <ul class="lista_dashboard-responsivo">
-                <li id="icon_fechar-responsivo">
-                    <img src="../static/img/icon_fechar.png">
-                </li>
-                <li>
-                    <a id="logo-responsivo" href="home.html">
-                        <img src="../static/img/logo-responsivo.png">
-                        <p>AccentureTalentHub</p>
-                    </a>
-                </li>
-                <li class="active-responsivo">
-                    <a class="link-page-responsivo" href="curso.html">
-                        <img class="icon_menu-responsivo" src="../static/img/icon_cursos.png">
-                        <p>Cursos</p>
-                    </a>         
-                </li>
-                <li>
-                    <a class="link-page-responsivo" href="salas.html">
-                        <img class="icon_menu-responsivo" src="../static/img/icon_trilhas.png">
-                        <p>Salas</p>
-                    </a>                
-                </li>
-                <li>
-                    <a class="link-page-responsivo" href="desenvol_pessoal.html">
-                        <img class="icon_menu-responsivo" src="../static/img/icon_dp.png">
-                        <p>Mural DPS</p>
-                    </a> 
-                </li>
-                <li>
-                    <a class="link-page-responsivo" href="curso_concluido.html">
-                        <img class="icon_menu-responsivo" src="../static/img/icon_cursos_concluidos.png">
-                        <p>Cursos Concluídos</p>
-                    </a>
-                </li>
-            </ul>
-            <ul class="lista_dashboard-responsivo">
-                <li id="icon_usuario_menu-responsivo" class="lista_dashboard-responsivo">
-                    <a class="link-page-responsivo" href="perfil.html">
-                        <img class="icon_menu-responsivo" src="../static/img/icon_perfil.png">
-                        <p>Perfil</p>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-
-        <!--  FIM DO NAV RESPONSIVO -->
-
     
         <section id="box_info_dashboard">
 
             <header style="text-align: left; display: block;">
                 <h1 id="title_curso" style="text-align: left;">Cursos</h1>
                 <br>
-                <!-- <div id="box_perfil">
-                    <div id="box_info_perfil"> -->
+                <div id="box_perfil">
+                    <div id="box_info_perfil">
                         
-                        <!-- <div style="width: 100%;"> -->
-                            <div class="box_filtro_search">
-                                <div class="box_filtro">
-                                    <img id="Icon_filtrar" src="../static/img/Icon_filtrar.png">
-                                    <ul class="lista_filtro">
-                                        <li>
-                                            <p>HTML</p>
-                                            <img class="icon_fechar" src="../static/img/icon_fechar.png">
-                                        </li>
-                                        <li>
-                                            <p>CSS</p>
-                                            <img class="icon_fechar" src="../static/img/icon_fechar.png">
-                                        </li>
-                                        <li>
-                                            <p>JavaScript</p>
-                                            <img class="icon_fechar" src="../static/img/icon_fechar.png">
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div  class="search-container">
+                        <div style="width: 100%;">
+                            <div class="box_filtro">
+                                <img id="Icon_filtrar" src="../static/img/Icon_filtrar.png">
+                                <!-- <ul class="lista_filtro">
+                                    <li>
+                                        <p>HTML</p>
+                                        <img class="icon_fechar" src="../static/img/icon_fechar.png">
+                                    </li>
+                                    <li>
+                                        <p>CSS</p>
+                                        <img class="icon_fechar" src="../static/img/icon_fechar.png">
+                                    </li>
+                                    <li>
+                                        <p>JavaScript</p>
+                                        <img class="icon_fechar" src="../static/img/icon_fechar.png">
+                                    </li>
+                                </ul> -->
+    
+                                <div style="left: 15%;" class="search-container">
                                     <input type="search">
                                     <i class="fas fa-search"></i>
-                                </div>
-                            </div>
-                        <!-- </div> -->
-                    <!-- </div>
-                </div> -->
-            </header>
-            
-            <!-- <div class="box_trilhas"> -->
-
-                <div class="box_escolha_cursos">
-                    <div class="center_cursos"> <!--Aqui só pode ter três divs de cursos. -->
-                        <div class="box_curso">
-                            <div class="info_curso">
-                                <div>
-                                    <img class="img_curso" src="../static/img/curso_js.png" alt="">
-                                    <h2>Curso JavaScript</h2>
-                                </div>
-                                <div>
-                                    <ul>
-                                        <li>P.O.O</li>
-                                        <li>CSS</li>
-                                        <li>JavaScript-puro</li>
-                                    </ul>
-                                    <button class="button_curso">Saiba mais</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="box_curso">
-                            <div class="info_curso">
-                                <div>
-                                    <img class="img_curso" src="../static/img/curso_js.png" alt="">
-                                    <h2>Curso JavaScript</h2>
-                                </div>
-                                <div>
-                                    <ul>
-                                        <li>P.O.O</li>
-                                        <li>CSS</li>
-                                        <li>JavaScript-puro</li>
-                                        <button>Saiba mais</button>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="box_curso">
-                            <div class="info_curso">
-                                <div>
-                                    <img class="img_curso" src="../static/img/curso_js.png" alt="">
-                                    <h2>Curso JavaScript</h2>
-                                </div>
-                                <div>
-                                    <ul>
-                                        <li>P.O.O</li>
-                                        <li>CSS</li>
-                                        <li>JavaScript-puro</li>
-                                        <button>Saiba mais</button>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="center_cursos"> <!--Aqui só pode ter três divs de cursos. -->
-                        <div class="box_curso">
-                            <div class="info_curso">
-                                <div>
-                                    <img class="img_curso" src="../static/img/curso_js.png" alt="">
-                                    <h2>Curso JavaScript</h2>
-                                </div>
-                                <div>
-                                    <ul>
-                                        <li>P.O.O</li>
-                                        <li>CSS</li>
-                                        <li>JavaScript-puro</li>
-                                        <button>Saiba mais</button>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="box_curso">
-                            <div class="info_curso">
-                                <div>
-                                    <img class="img_curso" src="../static/img/curso_js.png" alt="">
-                                    <h2>Curso JavaScript</h2>
-                                </div>
-                                <div>
-                                    <ul>
-                                        <li>P.O.O</li>
-                                        <li>CSS</li>
-                                        <li>JavaScript-puro</li>
-                                        <button>Saiba mais</button>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="box_curso">
-                            <div class="info_curso">
-                                <div>
-                                    <img class="img_curso" src="../static/img/curso_js.png" alt="">
-                                    <h2>Curso JavaScript</h2>
-                                </div>
-                                <div>
-                                    <ul>
-                                        <li>P.O.O</li>
-                                        <li>CSS</li>
-                                        <li>JavaScript-puro</li>
-                                        <button>Saiba mais</button>
-                                    </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            <!-- </div> -->
-
+            </header>
+            
+             <div class="box_trilhas">
+               
+                
+            </div>
+            <div id="cursos-container" class="center_cursos" style=" display: flex; flex-direction:column; justify-content:space-between; margin: 2% 0;"></div>
            
 
         </section>
@@ -275,17 +112,15 @@
             
             <div id="detalhe_curso">
                 <div id="capa_curso">
-                    <img src="../static/img/curso_js.png" alt="">
-                    <p class="txt_info_curso">Horas totais: 5H</p>
-                    <p class="txt_info_curso">Instrutor: Jorge Dário</p>
-                    <p class="txt_info_curso">Categorias: P.O.O | CSS | JavaScript-puro</p>
+                    <img src="" alt="">
+                    <p class="txt_info_curso horasTotais"></p>
+                    <p class="txt_info_curso categorias"></p>
+                    <p class="txt_info_curso"></p>
                 </div>
                 <div>
-                    <h3 style="text-align: center; color: #fff; font-weight: normal;">Curso JavaScript</h3>
+                    <h3 class="nomeCurso" style="text-align: center; color: #fff; font-weight: normal;"></h3>
                     <br>
-                    <p style="margin-bottom: 0.5%; color: #fff;">Mussum Ipsum, cacilds vidis litro abertis.  Mé faiz elementum girarzis, 
-                        nisi eros vermeio. Mais vale um bebadis conhecidiss, que um alcoolatra anonimis.Mussum Ipsum, cacilds vidis litro abertis.  Mé faiz elementum girarzis, 
-                        nisi eros vermeio. Mais vale um bebadis conhecidiss, que um alcoolatra anonimis.</p>
+                    <p class="descricaoCurso" style="margin-bottom: 0.5%; color: #fff; font-size: 13px !important; padding: 0 5% !important; text-align: justify !important;"></p>
                    
                     <input id="adicionar_sala" type="submit" name="" value="Adicionar a sua sala">
                 </div>
@@ -314,12 +149,186 @@
                 $("#box_info_dashboard").css("opacity", "1");
             });
 
-            $("#adicionar_sala").click(function() {
-                alert("Curso adicionado com sucesso!");
-                window.location.href = 'minha_sala_de_aula.html';
-            })
+            // $("#adicionar_sala").click(function() {
+            //     alert("Curso adicionado com sucesso!");
+            //     window.location.href = 'minha_sala_de_aula.html';
+            // })
         });
     </script>
+     <script>
+        document.addEventListener('DOMContentLoaded', function() {
+                    // Ao carregar a página, faça uma solicitação fetch para obter os cursos
+                    
+                    fetch('http://localhost:8080/cursos')
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Erro ao obter cursos: ' + response.statusText);
+                        }
+                        return response.json();
+                    })
+                    .then(cursos => {
+                        if (Array.isArray(cursos)) {
+                            const cursosContainer = document.getElementById('cursos-container');
+            
+                            // Variáveis para controle
+                            let cursosContainerAtual;
+                            let cursosDentroContainerAtual = 0;
+            
+                            cursos.forEach(curso => {
+                                // Verifica se atingiu o limite de cursos dentro do contêiner
+                                if (!cursosContainerAtual || cursosDentroContainerAtual >= 3) {
+                                    
+                                
+                                    // Cria um novo contêiner
+                                    cursosContainerAtual = document.createElement('div');
+                                    cursosContainerAtual.classList.add('center_cursos');
+                                    cursosDentroContainerAtual = 0;
+                
+                                        
+                                    // Adiciona o novo contêiner à página
+                                        
+                                    cursosContainer.appendChild(cursosContainerAtual);
+                                    
+                                }
+                        
+                                // Cria a div do curso e adiciona ao contêiner atual
+                                const cursoDiv = criarCursoDiv(curso);
+                                cursosContainerAtual.appendChild(cursoDiv);
+                                
+                                cursosDentroContainerAtual++;
+                                
+                            });
+                        } else {
+                            console.error('Erro ao obter cursos: A resposta não contém uma array de cursos.');
+                        }
+                    })
+                    .catch(error => console.error('Erro ao obter cursos:', error));
+        });
+        function criarCursoDiv(curso) {
+            // Crie a div do curso conforme necessário
+            const cursoDiv = document.createElement('div');
+            cursoDiv.classList.add('box_curso');
+        
+            const infoCursoDiv = document.createElement('div');
+            infoCursoDiv.classList.add('info_curso');
+        
+            // Adicione as informações do curso à div do curso
+            const imgCurso = document.createElement('img');
+            imgCurso.classList.add('img_curso');
+
+            // Decodifica a URL antes de atribuí-la ao src
+            const decodedUrl = decodeURIComponent(curso.imagem);
+            imgCurso.src = decodedUrl;
+
+            infoCursoDiv.appendChild(imgCurso);
+            
+            const h2 = document.createElement('h2');
+            h2.textContent = curso.nome; // Substitua 'nome' pelo campo real em seus dados de curso
+            infoCursoDiv.appendChild(h2);
+        
+            const ul = document.createElement('ul');
+            // curso.interesses.forEach(interesses => {
+            //     const li = document.createElement('li');
+            //     li.textContent = interesses; // Substitua 'habilidade' pelo campo real em seus dados de curso
+            //     ul.appendChild(li);
+            // });
+            infoCursoDiv.appendChild(ul);
+        
+            const button = document.createElement('button');
+            button.classList.add('button_curso')
+            button.textContent = 'Saiba mais';
+
+            // Adicione um evento de clique ao botão
+            button.addEventListener('click', function() {
+                abrirModal(curso); // Chame a função para abrir o modal com as informações do curso
+            });
+
+            infoCursoDiv.appendChild(button);
+
+            function abrirModal(curso) {
+            // Atualize dinamicamente os elementos no modal com as informações do curso
+            const capaCurso = document.getElementById('capa_curso');
+            const detalheCurso = document.getElementById('detalhe_curso');
+            const imgCurso = capaCurso.querySelector('img');
+            const nomeCurso = detalhe_curso.querySelector('.nomeCurso');
+            const descricaoCurso = detalhe_curso.querySelector('.descricaoCurso');
+            const horasTotais = capaCurso.querySelector('.horasTotais');
+            // const instrutor = capaCurso.querySelector('.txt_info_curso:nth-child(2)');
+            const categorias = capaCurso.querySelector('.categorias');
+            
+            imgCurso.src = curso.imagem;
+            nomeCurso.textContent = curso.nome;
+            descricaoCurso.textContent = curso.descricao;
+            horasTotais.textContent = 'Horas totais: ' + curso.quantidadeHoras;
+            // instrutor.textContent = 'Instrutor: ' + curso.instrutor;
+            categorias.textContent = 'Categorias: ' + curso.interesses.join(' | ');
+            
+            // Abra o modal
+            const modal = document.querySelector('.modal');
+            modal.style.display = 'block';
+
+            localStorage.setItem('idDoCurso', curso.idCurso);
+            console.log(localStorage.getItem('idDoCurso'))
+        }
+        
+            // Adicione os elementos criados à hierarquia
+            cursoDiv.appendChild(infoCursoDiv);
+        
+            return cursoDiv;
+        }
+       
+    </script>
+
+    <script>
+        const url = "http://localhost:8080/salasUsuario/" + localStorage.getItem('idUsuario');
+        const nomeDaSalaProcurada = 'Minha sala de aula';
+
+        fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            
+            const salaEncontrada = data.find(sala => sala.nome === nomeDaSalaProcurada);
+
+            if (salaEncontrada) {
+           
+                const idDaSala = salaEncontrada.idSala;
+
+                localStorage.setItem('salaPessoal', idDaSala);
+
+            
+            }
+        })
+        .catch(error => console.error('Erro ao buscar dados do backend:', error));
+    </script>
+
+    <script>
+
+        const buttonAdicionarCurso = document.getElementById('adicionar_sala');
+        buttonAdicionarCurso.addEventListener('click', function() {
+            // const urlCursoSala = "http://localhost:8080/cursosSalas/" + localStorage.getItem('salaPessoal');
+
+            //     const arrayCurso = [localStorage.getItem('idDoCurso')];
+            //     // Enviar os IDs dos usuários selecionados para o servidor
+            //     fetch(urlCursoSala,{
+            //         method: "POST",
+            //         headers: {
+            //             "Content-Type": "application/json",
+            //         },
+            //         body: JSON.stringify(arrayCurso),
+            //     })
+            //     .then(response => response.text())
+            //     .then(data => console.log(data))
+            //     .catch(error => console.error('Erro ao enviar usuários selecionados:', error));
+            alert('Curso adicionado a sala com sucesso!');
+            
+        });
+       
+            
+    </script>
+
+
+
+
 
 </body>
 </html>

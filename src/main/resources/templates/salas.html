@@ -18,7 +18,6 @@
 
     <!-- Importação dos arquivos Jquary -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="../static/js/script.js"></script>
 
 </head>
 <body id="">
@@ -54,9 +53,7 @@
     
             <ul>
                 <li id="icon_usuario_menu" class="lista_dashboard">
-                    <a href="perfil.html">
-                        <img class="icon_menu" src="../static/img/icon_perfil.png">
-                    </a>
+                    <img class="icon_menu" src="../static/img/icon_perfil.png">
                 </li>
             </ul>
         </nav>
@@ -105,23 +102,30 @@
             </ul>
             <ul class="lista_dashboard-responsivo">
                 <li id="icon_usuario_menu-responsivo" class="lista_dashboard-responsivo">
-                    <a class="link-page-responsivo" href="perfil.html">
+                    <div class="link-page-responsivo">
                         <img class="icon_menu-responsivo" src="../static/img/icon_perfil.png">
                         <p>Perfil</p>
-                    </a>
+                    </div>
                 </li>
             </ul>
         </nav>
 
         <!--  FIM DO NAV RESPONSIVO -->
+
+        <div id="menu-suspenso">
+            <ul>
+                <li><a href="perfil.html">Perfil</a></li>
+                <li><a href="index.html">Sair</a></li>
+            </ul>
+        </div>
     
         <section id="box_info_dashboard">
             <header style="text-align: left; display: block;">
                 <h1 id="title_curso" style="text-align: left;">Salas</h1>
                 <br>
                 <div id="box_perfil">
-                    <!-- <div id="box_info_perfil">   -->
-                        <!-- <div style="width: 100%;"> -->
+                    <div id="box_info_perfil">  
+                        <div style="width: 100%;">
                             <div class="box_filtro">
                                 <img id="Icon_filtrar" src="../static/img/Icon_filtrar.png">
                                 <ul class="lista_filtro">
@@ -138,81 +142,22 @@
                                         <img class="icon_fechar" src="../static/img/icon_fechar.png">
                                     </li>
                                 </ul>
-                            </div>
         
-                            <div style="left: 15%;" class="search-container">
-                                <input type="search">
-                                <i class="fas fa-search"></i>
+                                <div style="left: 15%;" class="search-container">
+                                    <input type="search">
+                                    <i class="fas fa-search"></i>
+                                </div>
                             </div>
-                            
-                        <!-- </div> -->
-                    <!-- </div> -->
+                        </div>
+                    </div>
                 </div>
             </header>
             
             <div class="box_trilhas">
 
-                <div class="box_escolha_cusos">
-                    <div class="center_cursos">
-                        <div class="box_curso" id="box_sua_sala">
-                            <div class="info_curso">
-                                <img src="../static/img/curso_js.png" alt="">
-                                <div class="info_curso_txt">
-                                    <h2>Sua sala Pessoal</h2>
-                                    <p>Criada por você no dia 00/00/0000</p>
-                                    <button id="minha_sala">Entrar</button>
-                                </div>  
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="center_cursos">
-                        <div class="box_curso">
-                            <div class="info_curso">
-                                <img src="../static/img/Sala2.png" alt="">
-                                <div class="info_curso_txt">
-                                    <h2>Nome da Sala</h2>
-                                    <p>Criada por xxxxxx no dia 00/00/0000</p>
-                                    <p>Mussum Ipsum, cacilds vidis litro abertis. 
-                                    In elementis mé pra quem é amistosis quis leo. 
-                                    Negão é teu passadis, eu sou faxa pretis. </p>
-                                    <button class="sala_de_aula">Entrar</button>
-                                </div>  
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="center_cursos">
-                        <div class="box_curso">
-                            <div class="info_curso">
-                                <img src="../static/img/curso_js.png" alt="">
-                                <div class="info_curso_txt">
-                                    <h2>Nome da Sala</h2>
-                                    <p>Criada por xxxxxx no dia 00/00/0000</p>
-                                    <p>Mussum Ipsum, cacilds vidis litro abertis. 
-                                    In elementis mé pra quem é amistosis quis leo. 
-                                    Negão é teu passadis, eu sou faxa pretis. </p>
-                                    <button>Entrar</button>
-                                </div>  
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="center_cursos">
-                        <div class="box_curso">
-                            <div class="info_curso">
-                                <img src="../static/img/curso_js.png" alt="">
-                                <div class="info_curso_txt">
-                                    <h2>Nome da Sala</h2>
-                                    <p>Criada por xxxxxx no dia 00/00/0000</p>
-                                    <p>Mussum Ipsum, cacilds vidis litro abertis. 
-                                    In elementis mé pra quem é amistosis quis leo. 
-                                    Negão é teu passadis, eu sou faxa pretis. </p>
-                                    <button>Entrar</button>
-                                </div>  
-                            </div>
-                        </div>
-                    </div>
+                
+                <div class="box_escolha_cusos" id="salasContainer">
+                    <!-- O conteúdo será preenchido dinamicamente aqui -->
                 </div>
             </div>
         </section>
@@ -234,6 +179,59 @@
             })
 
         });
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const url = "http://localhost:8080/salasUsuario/" + localStorage.getItem('idUsuario');
+            // Função para buscar salas do servidor
+            function getSalas() {
+                fetch(url)
+                    .then(response => response.json())
+                    .then(data => showSalas(data))
+                    .catch(error => console.error('Erro ao buscar salas:', error));
+            }
+
+            // Função para exibir as salas na página
+            function showSalas(salas) {
+                const salasContainer = document.getElementById("salasContainer");
+                salasContainer.innerHTML = ""; // Limpar conteúdo existente
+
+                salas.forEach(sala => {
+                const centerCursoDiv = document.createElement("div");
+                centerCursoDiv.className = "center_cursos";
+
+                const salaDiv = document.createElement("div");
+                salaDiv.className = "box_curso";
+
+                salaDiv.innerHTML = `
+                    <div class="info_curso">
+                        <img src="${sala.banner}" alt="Imagem do Curso">
+                        <div class="info_curso_txt">
+                            <h2>${sala.nome}</h2>
+                            
+                            <p>${sala.descricao}</p>
+                            
+                            <button id="minha_sala"><a style="text-decoration: none; color: black;" href="minha_sala_de_aula.html" class="btn btn-primary">Entrar</a></button>
+                        </div>
+                    </div>
+                `;
+
+                centerCursoDiv.appendChild(salaDiv);
+                salasContainer.appendChild(centerCursoDiv);
+                });
+            }
+
+            // Função para formatar a data (você pode ajustar conforme necessário)
+            function formatDate(dateString) {
+                const options = { year: 'numeric', month: 'numeric', day: 'numeric' };
+                return new Date(dateString).toLocaleDateString(undefined, options);
+            }
+
+            // Chamar a função para buscar salas ao carregar a página
+            getSalas();
+        });
+
     </script>
 
 </body>

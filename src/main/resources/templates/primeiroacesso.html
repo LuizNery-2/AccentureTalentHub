@@ -12,6 +12,7 @@
     <link rel="stylesheet" type="text/css" href="../static/css/geralstyle.css">
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
 </head>
 <body id="body_primeiro_acesso">
     <section id="box_center">
@@ -84,64 +85,67 @@
         const validacaoCaracteres = document.getElementById('validacao-caracteres');
         const formNovaSenha = document.querySelector('.formNovaSenha');
         const mensagemErro = document.querySelector('.mensagem-erro');
+        const codigoVerificacao = document.getElementById('codigoVerificacao');
 
-        senhaInput.addEventListener('input', function () {
-            const senha = senhaInput.value;
-            const senhaConfirmacao = senhaConfirmacaoInput.value;
 
-            // Validação do tamanho mínimo
-            if (senha.length >= 8) {
-                validacaoMinimo.style.color = 'green';
+
+        function gerarCodigoAleatorio(tamanho) {
+            const caracteres = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            let codigo = '';
+
+            for (let i = 0; i < tamanho; i++) {
+                const indice = Math.floor(Math.random() * caracteres.length);
+                codigo += caracteres.charAt(indice);
             }
 
-            // Validação de letras minúsculas e maiúsculas
-            if (/[a-z]/.test(senha) && /[A-Z]/.test(senha)) {
-                validacaoLetras.style.color = 'green';
-            }
+            return codigo;
+        }
 
-            // Validação de caracteres especiais (por exemplo, !, @, #, $, etc.)
-            if (/[!@#$%^&*]/.test(senha)) {
-                validacaoCaracteres.style.color = 'green';
-            }
+        function enviarCodigoPorEmail() {
+            fetch("http://localhost:8080/sending-email", {
+                method: "POST",
+                headers: {
+                    "Accept": "application/json",
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    ownerRef: "Suporte",
+                    emailFrom: "accenturetalenthub@gmail.com",
+                    emailTo: localStorage.getItem('emailUsuario'),
+                    subject: "Código de Verificação",
+                    text: "Seu código de verificação é: " + localStorage.getItem('codigoAleatorio')
+                })
+            })
+            .then(function (res) {
+                if (res.ok) {
+                    console.log("E-mail enviado com sucesso!");
+                } else {
+                    console.error("Falha ao enviar o e-mail.");
+                }
+            })
+            .catch(function (error) {
+                console.error("Erro na solicitação: " + error);
+            });
+        }
+
+
+
+        document.addEventListener("DOMContentLoaded", function() {
+
+            // Gera o código aleatório
+            const codigoAleatorio = gerarCodigoAleatorio(8);
+
+            // Armazena o código aleatório no localStorage
+            localStorage.setItem('codigoAleatorio', codigoAleatorio);
+
+            // Envia o código por e-mail para o backend
+            enviarCodigoPorEmail();
+            
         });
 
-        formNovaSenha.addEventListener('submit', function (e) {
-        e.preventDefault();
-
-            const senha = senhaInput.value;
-            const senhaConfirmacao = senhaConfirmacaoInput.value;
-
-            // Validação de confirmação de senha
-            if (senha === senhaConfirmacao) {
-
-                // const dadosNovaSenha = {
-                //     novaSenha: senhaConfirmacao
-                // };
-
-                //Use o Axios para enviar o objeto JSON para o backend
-
-                //Importe a biblioteca Axios
-                //const axios = require('axios');
-
-                // axios.post('/sua-rota-backend', dadosNovaSenha)
-                //     .then(response => {
-                //     // Lógica para lidar com a resposta do backend
-                //     console.log('Resposta do servidor:', response.data);
-                //     })
-                //     .catch(error => {
-                //     // Lógica para lidar com erros na solicitação
-                //     console.error('Erro na solicitação:', error);
-                // });
-
-                window.location.href = 'areainteresse.html';
-            } else {
-                const mensagem = 'As senhas não são correspondentes';
-                mensagemErro.textContent = mensagem;
-            }
-
-
-        });
+        
 
     </script>
+    <script type="text/javascript" src="../static/js/mudarSenha.js"></script>
 </body>
 </html>

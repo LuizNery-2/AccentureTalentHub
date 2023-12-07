@@ -11,15 +11,12 @@
     <link rel="stylesheet" type="text/css" href="../static/css/perfil.css">
     <link rel="stylesheet" type="text/css" href="../static/css/curso.css">
 
-    
 
     <!-- Importação dos arquivos CSS para barra de pesquisa -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
     <!-- Importação dos arquivos Jquary -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="../static/js/script.js"></script>
-
 
 </head>
 <body id="">
@@ -55,9 +52,7 @@
     
             <ul>
                 <li id="icon_usuario_menu" class="lista_dashboard">
-                    <a href="perfil.html">
-                        <img class="icon_menu" src="../static/img/icon_perfil.png">
-                    </a>
+                    <img class="icon_menu" src="../static/img/icon_perfil.png">
                 </li>
             </ul>
         </nav>
@@ -106,15 +101,22 @@
             </ul>
             <ul class="lista_dashboard-responsivo">
                 <li id="icon_usuario_menu-responsivo" class="lista_dashboard-responsivo">
-                    <a class="link-page-responsivo" href="perfil.html">
+                    <div class="link-page-responsivo">
                         <img class="icon_menu-responsivo" src="../static/img/icon_perfil.png">
                         <p>Perfil</p>
-                    </a>
+                    </div>
                 </li>
             </ul>
         </nav>
 
         <!--  FIM DO NAV RESPONSIVO -->
+
+        <div id="menu-suspenso">
+            <ul>
+                <li><a href="perfil.html">Perfil</a></li>
+                <li><a href="index.html">Sair</a></li>
+            </ul>
+        </div>
     
         <section id="box_info_dashboard">
 
@@ -128,26 +130,21 @@
                 <div id="box_informacoes_perfil">
                     <div id="poligono">
                         <p>Nível</p>
-                        <p style="font-size: 20px;">1</p>
+                        <p id="nivel" style="font-size: 20px;"></p>
                     </div>
-                    <!-- <div id="nome_perfil"> -->
-                        <p id="nome_perfil" style="font-size: 15px; text-align: center;">Keylane Cardoso</p>
-                    <!-- </div> -->
+                    <div id="nome_perfil">
+                        <P id="nomeUsuario" style="font-size: 15px; text-align: center;"></P>
+                    </div>
                 </div>
                 <div id="box_detalhes_perfil">
-
-                    
-
-
-                    <img src="../static/img/img_key.png">
+                    <img style="width: 350px; height: 401px;" id="fotoPerfil" src="">
                     <div id="info_perfil">
                         <div>
-                            <h3 style="color: #fff;">Estagiária</h3>
-                            <p style="text-align: left;">Analise de Dados</p>
+                            <h3 id="cargoUsuario" style="color: #fff;"></h3>
                         </div>
                         <br>
                         <div id="barra_progresso"></div>
-                        <p>950/1000</p>
+                        <p id="numeroBarra"></p>
                     </div>
                 </div>
             </div>
@@ -156,29 +153,7 @@
                     <div style="width: 50%;"></div>
                     <h2>Atualize seus Dados</h2>
                 </div>
-
-                <form id="box_info_metas">
-                    <p style="color: #E1BBFD;">Plano de Carreira</p>
-                    <div class="box_metas">
-                        <p>1.</p>
-                        <input class="input_metas" type="text" placeholder="Meta 1">
-                        <img src="../static/img/lapis.png">
-                    </div>
-                    <div class="box_metas">
-                        <p>2.</p>
-                        <input class="input_metas" type="text" placeholder="Meta 2">
-                        <img src="../static/img/lapis.png">
-                    </div>
-                    <div class="box_metas">
-                        <p>3.</p>
-                        <input class="input_metas" type="text" placeholder="Meta 3">
-                        <img src="../static/img/lapis.png">
-                    </div>
-                    <input type="submit" id="button_atualizar_plano" name="enviarPlanoCarreira" value="Atualizar Plano">
-                </form>
-
-
-                <!-- <div id="box_info_metas">
+                <div id="box_info_metas">
                     <p style="color: #E1BBFD;">Plano de Carreira</p>
                     <div class="box_metas">
                         <p>1. Meta 1</p>
@@ -192,19 +167,9 @@
                         <p>3. Meta 3</p>
                         <img src="../static/img/lapis.png">
                     </div>
-                </div> -->
-                <div id="botoes_atualizar_perfil">
-                    <button type="button" id="button_area_interesse" onclick="window.location.href='../templates/areainteresse.html'">
-                        <img src="../static/img/interativo.png">
-                            <p style="color: #E1BBFD;">Atualizar Áreas de Interesse</p>
-                    </button>
-                    <button type="button" id="button_alterar_senha">
-                        <img src="../static/img/redefinir-senha.png">
-                            <p style="color: #E1BBFD;">Alterar Senha</p>
-                    </button>
                 </div>
-                
-                <!-- <div style="display: flex; flex-direction: column; align-items: center; margin-top: 5%;">
+
+                <div style="display: flex; flex-direction: column; align-items: center; margin-top: 5%;">
                     <div class="button_carreira1">
                         <img src="../static/img/interativo.png">
                         <p style="color: #E1BBFD;">Atualizar Áreas de Interesse</p>
@@ -214,7 +179,7 @@
                         <img src="../static/img/redefinir-senha.png">
                         <p style="color: #E1BBFD;">Alterar Senha</p>
                     </div>
-                </div> -->
+                </div>
 
                
             </div>
@@ -230,36 +195,36 @@
         
         <div id="detalhe_senha">
             <div id="alterar-senha">
-                <div style="display: flex; flex-direction: row; justify-content: center; gap:5px">
+                <div style="display: flex; flex-direction: row; margin-left: 50px;">
                     <img src="../static/img/redefinir-senha.png">
-                    <h3 style="color: #fff; font-weight: 400; font-size: 25px;">Alterar Senha</h3>
+                    <h3 style="color: #fff; font-weight: normal; font-size: 25px;">Alterar Senha</h3>
                 </div>
 
                 <div class="alterar-senha-inputs">
-                    <div>
-                        <h4 style="color: #E1BBFD; font-size: 20px; font-weight: 400;">Insira sua senha mais recente</h4>
-                        <input type="text" style="border-radius: 10px; width: 100%;">
-                    </div>
-                    <div>
-                        <h4 style="color: #E1BBFD; font-size: 20px; font-weight: 400;">Insira sua nova senha</h4>
-                        <input type="text" style="border-radius: 10px; width: 100%;" >
-                        <p class="txt_info_curso-senha" style="font-size: 10px;">
-                            *Mínimo de 8 caracteres <br>
-                            *Letras minúsculas e maiúsculas <br>
-                            *Caracteres especiais. <br>
-                            *Lembre-se de criar uma senha diferente das que  você já utiliza.
-                        </p>
-                    </div>
-                    <div>
-                        <h4 style="color: #E1BBFD; font-size: 20px; font-weight: 400;">Confirme sua senha</h4>
-                        <input type="text" style="border-radius: 10px; width: 100%;">
-                    </div>
-                    </div>        
-                        <input id="altere_Senha" type="submit" name="" value="Cadastrar">   
-                    </div>
-                </div>
+
+                    <h4 style="color: #E1BBFD; font-size: 20px;">Insira sua senha mais recente</h4>
+                    <input type="text" style="border-radius: 10px; width: 100%;">
+                    
+                    <h4 style="color: #E1BBFD; font-size: 20px;">Insira sua nova senha</h4>
+                <input type="text" style="border-radius: 10px; width: 100%;" >
+                <p class="txt_info_curso-senha" style="font-size: 10px;">
+                    *Mínimo de 8 caracteres <br>
+                    *Letras minúsculas e maiúsculas <br>
+                    *Caracteres especiais. <br>
+                    *Lembre-se de criar uma senha diferente das que  você já utiliza.</p>
+                    
+                <h4 style="color: #E1BBFD; font-size: 20px;">Confirme sua senha</h4>
+                <input type="text" style="border-radius: 10px; width: 100%;">
+
             </div>
-        </div>    
+                
+                
+                    <input id="altere_Senha" type="submit" name="" value="Cadastrar">
+
+            </div>
+          
+            
+        </div>
     </section>
         
     </main>
@@ -272,7 +237,7 @@
 
     <script>
         $(document).ready(function(){
-            $("#button_alterar_senha").click(function() {
+            $(".button_carreira").click(function() {
                 $(".modal-senha").css("display", "flex");
                 $("#box_info_dashboard").css("opacity", "0.5");
             });
@@ -282,7 +247,21 @@
                 $("#box_info_dashboard").css("opacity", "1");
             })
         });
+
+        const nomeUsuario = document.getElementById('nomeUsuario');
+        const nivel = document.getElementById('nivel');
+        // const numeroBarra = document.getElementById('numeroBarra');
+        const cargo = document.getElementById('cargoUsuario');
+        const fotoPerfil = document.getElementById('fotoPerfil');
+
+
+        nomeUsuario.textContent = localStorage.getItem('nome');
+        nivel.textContent = localStorage.getItem('nivel');
+        // numeroBarra.textContent = localStorage.getItem('nome');
+        fotoPerfil.src = localStorage.getItem('foto');
+        cargo.textContent = localStorage.getItem('cargo');
     </script>
+    
 
 </body>
 </html>

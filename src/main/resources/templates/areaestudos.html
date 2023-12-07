@@ -17,8 +17,6 @@
 
     <!-- Importação dos arquivos Jquary -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="../static/js/script.js"></script>
-    <!-- NÃO QUER PEGAR O LINK DO JS -->
 
 </head>
 <body id="">
@@ -54,9 +52,7 @@
     
             <ul>
                 <li id="icon_usuario_menu" class="lista_dashboard">
-                    <a href="perfil.html">
-                        <img class="icon_menu" src="../static/img/icon_perfil.png">
-                    </a>
+                    <img class="icon_menu" src="../static/img/icon_perfil.png">
                 </li>
             </ul>
         </nav>
@@ -105,22 +101,29 @@
             </ul>
             <ul class="lista_dashboard-responsivo">
                 <li id="icon_usuario_menu-responsivo" class="lista_dashboard-responsivo">
-                    <a class="link-page-responsivo" href="perfil.html">
+                    <div class="link-page-responsivo">
                         <img class="icon_menu-responsivo" src="../static/img/icon_perfil.png">
                         <p>Perfil</p>
-                    </a>
+                    </div>
                 </li>
             </ul>
         </nav>
 
         <!--  FIM DO NAV RESPONSIVO -->
 
+        <div id="menu-suspenso">
+            <ul>
+                <li><a href="perfil.html">Perfil</a></li>
+                <li><a href="index.html">Sair</a></li>
+            </ul>
+        </div>
+
         
-        <section style="padding-left: 8%; padding-top: 1%; display: flex; justify-content: space-around;">
+        <section style="padding-left: 8%; padding-top: 1%; display: flex;">
             <div id="box_info_curso">
                 <iframe width="853" height="480" src="https://www.youtube.com/embed/cadVHEq_8B0" frameborder="0"></iframe>
                 <div id="box_info_header">
-                    <h2>Apresentação do Curso</h2>
+                    <h2></h2>
                     <button>Concluir aula</button>
                 </div>
                 <br>
@@ -130,7 +133,7 @@
                             <li class="lista_descricao lista_action">Descrição</li>
                             <li class="lista_sobre">Sobre o Instrutor</li>
                             <li class="lista_forum">Fórum</li>
-                            <li class="elemento_lista" style="color: #B05CEF;">Horas Totais: 5H</li>
+                            <li style="color: #B05CEF;">Horas Totais: 5H</li>
                         </ul>
                     </div>
                     <p style="color: #B05CEF;">Mussum Ipsum, cacilds vidis litro abertis.  In elementis mé pra quem é 
@@ -145,7 +148,7 @@
                             <li class="lista_descricao">Descrição</li>
                             <li class="lista_sobre lista_action">Sobre o Instrutor</li>
                             <li class="lista_forum">Fórum</li>
-                            <li class="elemento_lista" style="color: #B05CEF;">Horas Totais: 5H</li>
+                            <li style="color: #B05CEF;">Horas Totais: 5H</li>
                         </ul>
                     </div>
                     <div id="info_instrutor">
@@ -154,12 +157,12 @@
                             <span>Nome: </span> <span class="txt_bold">Alisson Barbosa</span>
                             <br>
                             <span>Cargo: </span> <span>Cargo atual</span>
-                            <!-- <br>
+                            <br>
                             <p style="color: #B05CEF; margin-left: 2%;">Mussum Ipsum, cacilds vidis litro abertis.  In elementis mé pra quem é 
                                 amistosis quis leo. Mauris nec dolor in eros commodo tempor. Aenean aliquam
                                 molestie leo, vitae iaculis nisl. Si u mundo tá muito paradis? Toma um mé 
                                 que o mundo vai girarzis! Per aumento de cachacis, eu reclamis.
-                             </p> -->
+                             </p>
                         </div>
                     </div>
                 </div>
@@ -170,14 +173,14 @@
                             <li class="lista_descricao">Descrição</li>
                             <li class="lista_sobre">Sobre o Instrutor</li>
                             <li class="lista_forum lista_action">Fórum</li>
-                            <li class="elemento_lista" style="color: #B05CEF;">Horas Totais: 5H</li>
+                            <li style="color: #B05CEF;">Horas Totais: 5H</li>
                         </ul>
                     </div>
                     <div class="chat" style="border: 3px solid #fff;">
                         
                         <div class="area_mensagens">
                             <div class="mensagens_chat">
-                                <img id="foto_chat" src="../static/img/img_jhonnatas.png">
+                                <img src="../static/img/img_jhonnatas.png">
                                 <div style="margin-left: 1%;">
                                     <p style="color: #fff;">Jhonnatas</p>
                                     <p class="txt_mensagem">Mussum Ipsum, cacilds vidis litro abertis.  In elementis mé pra quem 
@@ -191,7 +194,7 @@
                             </div>
     
                             <div class="mensagens_chat">
-                                <img id="foto_chat" src="../static/img/img_jhonnatas.png">
+                                <img src="../static/img/img_jhonnatas.png">
                                 <div style="margin-left: 1%;">
                                     <p style="color: #fff;">Jhonnatas</p>
                                     <p class="txt_mensagem">Mussum Ipsum, cacilds vidis litro abertis.  In elementis mé pra quem 
@@ -205,7 +208,7 @@
                             </div>
     
                             <div class="mensagens_chat">
-                                <img id="foto_chat" src="../static/img/img_jhonnatas.png">
+                                <img src="../static/img/img_jhonnatas.png">
                                 <div style="margin-left: 1%;">
                                     <p style="color: #fff;">Jhonnatas</p>
                                     <p class="txt_mensagem">Mussum Ipsum, cacilds vidis litro abertis.  In elementis mé pra quem 
@@ -219,7 +222,7 @@
                             </div>
     
                             <div class="mensagens_chat">
-                                <img id="foto_chat" src="../static/img/img_jhonnatas.png">
+                                <img src="../static/img/img_jhonnatas.png">
                                 <div style="margin-left: 1%;">
                                     <p style="color: #fff;">Jhonnatas</p>
                                     <p class="txt_mensagem">Mussum Ipsum, cacilds vidis litro abertis.  In elementis mé pra quem 
@@ -241,186 +244,27 @@
                 </div>
             </div>
             <div id="box_modulos_curso">
-                <div id="box_nome_progresso">
-                    <h1 style="text-align: center; font-size: 35px;">Javascript Puro</h1>
-                    <br>
-                    <div style="display: flex; flex-direction: column; align-items: flex-end; margin-right: 1rem;">
-                        <p style="font-size: 15px; text-align: right;">SEU PROGRESSO</p>
-                        <div style="width: 90%; margin-left: 10%;" id="barra_progresso"></div>
-                    </div>
+                <h1 style="text-align: center; font-size: 35px;"></h1>
+                <br>
+                <div>
+                    <p style="font-size: 15px; text-align: right;">SEU PROGRESSO</p>
+                    <div style="width: 90%; margin-left: 10%;" id="barra_progresso"></div>
                 </div>
-                    
-                <div class="modulos_curso">
+                <!-- <div class="modulos_curso">
                     <div class="titulo_modulo">
-                        <h4>Módulo 1</h4>
+                        <h4></h4>
                         <img src="../static/img/icon_expandir.png">
                     </div>
                     <div class="box_aulas">
                         <div class="titulo_modulo aulas_modulo">
                             <img src="../static/img/icon_video.png">
-                            <p>Nome da Aula</p>
+                            <p></p>
                         </div>
                         <hr style="width: 100%; margin-top: 3%;" color="#421561">
                     </div>
-                    <div class="box_aulas">
-                        <div class="titulo_modulo aulas_modulo">
-                            <img src="../static/img/icon_video.png">
-                            <p>Nome da Aula</p>
-                        </div>
-                        <hr style="width: 100%; margin-top: 3%;" color="#421561">
-                    </div>
-                    <div class="box_aulas">
-                        <div class="titulo_modulo aulas_modulo">
-                            <img src="../static/img/arquivo.png">
-                            <p>Material de Apoio</p>
-                        </div>
-                        <hr style="width: 100%; margin-top: 3%;" color="#421561">
-                    </div>
-                    <div class="box_aulas">
-                        <div class="titulo_modulo aulas_modulo">
-                            <img src="../static/img/perguntando.png">
-                            <p>Quiz</p>
-                        </div>
-                        <hr style="width: 100%; margin-top: 3%;" color="#421561">
-                    </div>
-                </div>
-
-                <div class="modulos_curso">
-                    <div class="titulo_modulo">
-                        <h4>Módulo 2</h4>
-                        <img src="../static/img/icon_expandir.png">
-                    </div>
-                    <div class="box_aulas">
-                        <div class="titulo_modulo aulas_modulo">
-                            <img src="../static/img/icon_video.png">
-                            <p>Nome da Aula</p>
-                        </div>
-                        <hr style="width: 100%; margin-top: 3%;" color="#421561">
-                    </div>
-                    <div class="box_aulas">
-                        <div class="titulo_modulo aulas_modulo">
-                            <img src="../static/img/icon_video.png">
-                            <p>Nome da Aula</p>
-                        </div>
-                        <hr style="width: 100%; margin-top: 3%;" color="#421561">
-                    </div>
-                    <div class="box_aulas">
-                        <div class="titulo_modulo aulas_modulo">
-                            <img src="../static/img/arquivo.png">
-                            <p>Material de Apoio</p>
-                        </div>
-                        <hr style="width: 100%; margin-top: 3%;" color="#421561">
-                    </div>
-                    <div class="box_aulas">
-                        <div class="titulo_modulo aulas_modulo">
-                            <img src="../static/img/perguntando.png">
-                            <p>Quiz</p>
-                        </div>
-                        <hr style="width: 100%; margin-top: 3%;" color="#421561">
-                    </div>
-                </div>
-                <div class="modulos_curso">
-                    <div class="titulo_modulo">
-                        <h4>Módulo 3</h4>
-                        <img src="../static/img/icon_expandir.png">
-                    </div>
-                    <div class="box_aulas">
-                        <div class="titulo_modulo aulas_modulo">
-                            <img src="../static/img/icon_video.png">
-                            <p>Nome da Aula</p>
-                        </div>
-                        <hr style="width: 100%; margin-top: 3%;" color="#421561">
-                    </div>
-                    <div class="box_aulas">
-                        <div class="titulo_modulo aulas_modulo">
-                            <img src="../static/img/icon_video.png">
-                            <p>Nome da Aula</p>
-                        </div>
-                        <hr style="width: 100%; margin-top: 3%;" color="#421561">
-                    </div>
-                    <div class="box_aulas">
-                        <div class="titulo_modulo aulas_modulo">
-                            <img src="../static/img/arquivo.png">
-                            <p>Material de Apoio</p>
-                        </div>
-                        <hr style="width: 100%; margin-top: 3%;" color="#421561">
-                    </div>
-                    <div class="box_aulas">
-                        <div class="titulo_modulo aulas_modulo">
-                            <img src="../static/img/perguntando.png">
-                            <p>Quiz</p>
-                        </div>
-                        <hr style="width: 100%; margin-top: 3%;" color="#421561">
-                    </div>
-                </div>
-                <div class="modulos_curso">
-                    <div class="titulo_modulo">
-                        <h4>Módulo 4</h4>
-                        <img src="../static/img/icon_expandir.png">
-                    </div>
-                    <div class="box_aulas">
-                        <div class="titulo_modulo aulas_modulo">
-                            <img src="../static/img/icon_video.png">
-                            <p>Nome da Aula</p>
-                        </div>
-                        <hr style="width: 100%; margin-top: 3%;" color="#421561">
-                    </div>
-                    <div class="box_aulas">
-                        <div class="titulo_modulo aulas_modulo">
-                            <img src="../static/img/icon_video.png">
-                            <p>Nome da Aula</p>
-                        </div>
-                        <hr style="width: 100%; margin-top: 3%;" color="#421561">
-                    </div>
-                    <div class="box_aulas">
-                        <div class="titulo_modulo aulas_modulo">
-                            <img src="../static/img/arquivo.png">
-                            <p>Material de Apoio</p>
-                        </div>
-                        <hr style="width: 100%; margin-top: 3%;" color="#421561">
-                    </div>
-                    <div class="box_aulas">
-                        <div class="titulo_modulo aulas_modulo">
-                            <img src="../static/img/perguntando.png">
-                            <p>Quiz</p>
-                        </div>
-                        <hr style="width: 100%; margin-top: 3%;" color="#421561">
-                    </div>
-                </div>
-                <div class="modulos_curso">
-                    <div class="titulo_modulo">
-                        <h4>Módulo 5</h4>
-                        <img src="../static/img/icon_expandir.png">
-                    </div>
-                    <div class="box_aulas">
-                        <div class="titulo_modulo aulas_modulo">
-                            <img src="../static/img/icon_video.png">
-                            <p>Nome da Aula</p>
-                        </div>
-                        <hr style="width: 100%; margin-top: 3%;" color="#421561">
-                    </div>
-                    <div class="box_aulas">
-                        <div class="titulo_modulo aulas_modulo">
-                            <img src="../static/img/icon_video.png">
-                            <p>Nome da Aula</p>
-                        </div>
-                        <hr style="width: 100%; margin-top: 3%;" color="#421561">
-                    </div>
-                    <div class="box_aulas">
-                        <div class="titulo_modulo aulas_modulo">
-                            <img src="../static/img/arquivo.png">
-                            <p>Material de Apoio</p>
-                        </div>
-                        <hr style="width: 100%; margin-top: 3%;" color="#421561">
-                    </div>
-                    <div class="box_aulas">
-                        <div class="titulo_modulo aulas_modulo">
-                            <img src="../static/img/perguntando.png">
-                            <p>Quiz</p>
-                        </div>
-                        <hr style="width: 100%; margin-top: 3%;" color="#421561">
-                    </div>
-                </div>
+                </div> -->
+                
+                
             </div>
         </section>
         
@@ -453,6 +297,100 @@
             
         });
     </script>
+    <script>
+        //inserindo dados dianmicamnete atraves do banco de dados para
+        document.addEventListener("DOMContentLoaded", function(){
+            const boxModulosCurso = document.getElementById("box_modulos_curso")
+            const tituloAulaAtual = document.getElementById("box_info_header")
+            const videoYouTube = document.querySelector("iframe")
+            const descricao = document.getElementById("box_descricao")
+            
+            let curso;
+            async function getCurso(){
+                await fetch("http://localhost:8080/cursos/ebd00129-8097-444d-b75a-1e6418453370",{
+                    method: "GET",
+                    headers: {
+                    "Accept": "application/json",
+                    "Content-Type": "application/json"
+                    }
+                })
+                .then(response => response.json())
+                .then(data => {
+                    curso = data
+                    console.log(curso)
+                })
+                .catch(function (error) {
+                console.error("Erro na solicitação: " + error);
+            })
+            }       
+            async function preencherCurso() {
+                boxModulosCurso.querySelector('h1').innerHTML = curso.nome
+                tituloAulaAtual.querySelector('h2').innerHTML = curso.modulos[0].aulas[0].nomeAula;
+                videoYouTube.src = curso.modulos[0].aulas[0].linkAula; 
+                descricao.querySelector('p').innerHTML = curso.descricao;
+                console.log(curso.modulos)
+                for (let i = 0; i < curso.modulos.length; i++) {
+                    const modulosCursos = document.createElement('div')
+                    const moduloTitulo = document.createElement('div')
+                    const moduloTituloH4 = document.createElement('h4')
+                    const expandirIMG = document.createElement('img')
+
+                    modulosCursos.classList.add('modulos_curso')
+                    moduloTitulo.classList.add('titulo_modulo')
+
+                    moduloTituloH4.innerHTML = curso.modulos[i].nomeModulo;
+                    expandirIMG.src = "../static/img/icon_expandir.png";
+
+                    moduloTitulo.appendChild(moduloTituloH4)
+                    moduloTitulo.appendChild(expandirIMG);
+                    modulosCursos.appendChild(moduloTitulo);
+                    boxModulosCurso.appendChild(modulosCursos)
+
+                    for (let j = 0; j < curso.modulos[i].aulas.length; j++) {
+                        const boxAulas = document.createElement('div');
+                        const aulasModulo = document.createElement('div');
+                        const imgAulas = document.createElement('img');
+                        const nomeAula = document.createElement('p');
+                        const linhaHorizontal = document.createElement('hr');
+
+                        aulasModulo.classList.add('aulas_modulo');
+                        aulasModulo.classList.add('titulo_modulo');
+                        boxAulas.classList.add('box_aulas');
+
+                        imgAulas.src = "../static/img/icon_video.png";
+                        nomeAula.innerHTML = curso.modulos[i].aulas[j].nomeAula;
+
+                        linhaHorizontal.style.width = '100%';
+                        linhaHorizontal.style.marginTop = '3%';
+                        linhaHorizontal.style.color = '#421561';
+
+                        aulasModulo.appendChild(imgAulas);
+                        aulasModulo.appendChild(nomeAula);
+                        boxAulas.appendChild(aulasModulo);
+                        boxAulas.appendChild(linhaHorizontal);
+
+                        boxModulosCurso.appendChild(boxAulas);
+                        aulasModulo.addEventListener('click',() =>{
+                            tituloAulaAtual.querySelector('h2').innerHTML = curso.modulos[i].aulas[j].nomeAula;
+                            videoYouTube.src = curso.modulos[i].aulas[j].linkAula; 
+                        })
+                    }
+                    
+                    
+                }
+            }
+          
+            async function inicializarPagina(){
+                 await getCurso();
+                 await preencherCurso()
+            }
+            inicializarPagina();
+            
+
+
+        })
+    </script>
+    
 
 </body>
 </html>
